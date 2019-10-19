@@ -357,6 +357,7 @@
 				1C26CE4623594307008BB2D2 /* Frameworks */,
 				1C26CE4723594307008BB2D2 /* Resources */,
 				17D798FD29E96046D0A7EE3A /* [CP] Embed Pods Frameworks */,
+				1C51B4B2235B7C8A009ECCE1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -492,6 +493,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-garbageCollection/Pods-garbageCollection-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		1C51B4B2235B7C8A009ECCE1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		6D4084D30FC354E271371748 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
