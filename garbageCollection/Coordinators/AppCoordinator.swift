@@ -56,8 +56,12 @@ private extension AppCoordinator {
         let coordinators: [RootViewCoordinator] = [calendarCoordinator, mapCoordinator, settingsCoordinator]
         self.childCoordinators = coordinators
         
+        coordinators.forEach { $0.start() }
+        
         let tabBar = UITabBarController()
         tabBar.setViewControllers(coordinators.map { $0.rootViewController }, animated: true)
+        
+        rootViewController = tabBar
     }
     
 }

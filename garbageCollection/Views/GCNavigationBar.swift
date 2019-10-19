@@ -22,8 +22,9 @@ class GCNavigationBar: UINavigationBar {
         titleTextAttributes = [.foregroundColor: UIColor.white]//, .font: Fonts.Nunito.bold.size(18)]
         largeTitleTextAttributes = [.foregroundColor: UIColor.white]//, .font: Fonts.Nunito.bold.size(34)]
         
-        tintColor = .defaultBlue
-        barTintColor = .white
+        tintColor = .white
+        barTintColor = .defaultBlue
+        
         shadowImage = UIImage()
         isTranslucent = false
     }
