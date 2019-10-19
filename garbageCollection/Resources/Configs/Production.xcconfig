@@ -10,3 +10,5 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 #include "Pods/Target Support Files/Pods-garbageCollection/Pods-garbageCollection.release.xcconfig"
+
+APP_NAME = Coleta
