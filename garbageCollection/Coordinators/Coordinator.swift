@@ -11,6 +11,7 @@ import Foundation
 /// The Coordinator protocol
 public protocol Coordinator: class {
     var childCoordinators: [Coordinator] { get set }
+    func start()
 }
 
 public extension Coordinator {
