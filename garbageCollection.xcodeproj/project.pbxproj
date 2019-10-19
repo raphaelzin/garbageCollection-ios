@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C14E5BE235BACFE00E3CD94 /* ScheduledCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14E5BD235BACFE00E3CD94 /* ScheduledCollectionCell.swift */; };
+		1C14E5C1235BB48400E3CD94 /* NeighbourhoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14E5C0235BB48400E3CD94 /* NeighbourhoodSelectorView.swift */; };
+		1C14E5C4235BB96D00E3CD94 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14E5C3235BB96D00E3CD94 /* UIImage.swift */; };
 		1C26CE4D23594308008BB2D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE4C23594308008BB2D2 /* AppDelegate.swift */; };
 		1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */; };
 		1C26CE562359430C008BB2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C26CE552359430C008BB2D2 /* Assets.xcassets */; };
@@ -54,6 +57,9 @@
 
 /* Begin PBXFileReference section */
 		100451D4EEFF1FAC0E8A6DBD /* Pods-garbageCollection-garbageCollectionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollection-garbageCollectionUITests.release.xcconfig"; path = "Target Support Files/Pods-garbageCollection-garbageCollectionUITests/Pods-garbageCollection-garbageCollectionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1C14E5BD235BACFE00E3CD94 /* ScheduledCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledCollectionCell.swift; sourceTree = "<group>"; };
+		1C14E5C0235BB48400E3CD94 /* NeighbourhoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodSelectorView.swift; sourceTree = "<group>"; };
+		1C14E5C3235BB96D00E3CD94 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		1C26CE4923594307008BB2D2 /* garbageCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = garbageCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C26CE4C23594308008BB2D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +137,30 @@
 				ADC0BC4DF550F1DAFC2EEB9D /* Pods_garbageCollectionTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C14E5B9235BACC300E3CD94 /* CalendarFlow */ = {
+			isa = PBXGroup;
+			children = (
+				1C31CC01235B6A7F00653E19 /* Calendar */,
+			);
+			path = CalendarFlow;
+			sourceTree = "<group>";
+		};
+		1C14E5BC235BACE900E3CD94 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1C14E5BD235BACFE00E3CD94 /* ScheduledCollectionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1C14E5BF235BB44500E3CD94 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C14E5C0235BB48400E3CD94 /* NeighbourhoodSelectorView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1C26CE4023594307008BB2D2 = {
@@ -235,7 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				1C46181623594A560054B22B /* Common */,
-				1C31CC01235B6A7F00653E19 /* Calendar */,
+				1C14E5B9235BACC300E3CD94 /* CalendarFlow */,
 				1C31CBF6235B5B9900653E19 /* Map */,
 				1C31CC02235B6A8600653E19 /* Settings */,
 			);
@@ -282,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				1C31CBFE235B5DD700653E19 /* UIColor.swift */,
+				1C14E5C3235BB96D00E3CD94 /* UIImage.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -299,6 +330,8 @@
 			children = (
 				1C31CC03235B6AA600653E19 /* CalendarController.swift */,
 				1C31CC09235B705400653E19 /* CalendarViewModel.swift */,
+				1C14E5BF235BB44500E3CD94 /* Views */,
+				1C14E5BC235BACE900E3CD94 /* Cells */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -584,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */,
+				1C14E5C4235BB96D00E3CD94 /* UIImage.swift in Sources */,
 				1C31CBFB235B5D8000653E19 /* GCNavigationController.swift in Sources */,
 				1C31CBF1235B5B2C00653E19 /* MapCoordinator.swift in Sources */,
 				1C31CC04235B6AA600653E19 /* CalendarController.swift in Sources */,
@@ -592,11 +626,13 @@
 				1C31CBED235B566A00653E19 /* Coordinator.swift in Sources */,
 				1C31CBF5235B5B8C00653E19 /* SettingsCoordinator.swift in Sources */,
 				1C31CC08235B6AC100653E19 /* SettingsController.swift in Sources */,
+				1C14E5BE235BACFE00E3CD94 /* ScheduledCollectionCell.swift in Sources */,
 				1C31CC0A235B705400653E19 /* CalendarViewModel.swift in Sources */,
 				1C31CBEF235B578100653E19 /* Environment.swift in Sources */,
 				1C31CC0E235B72BC00653E19 /* MapViewModel.swift in Sources */,
 				1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */,
 				1C31CBFF235B5DD700653E19 /* UIColor.swift in Sources */,
+				1C14E5C1235BB48400E3CD94 /* NeighbourhoodSelectorView.swift in Sources */,
 				1C31CBEB235B564B00653E19 /* RootViewCoordinator.swift in Sources */,
 				1C46181823594A6B0054B22B /* SplashController.swift in Sources */,
 				1C31CC06235B6AB300653E19 /* MapController.swift in Sources */,

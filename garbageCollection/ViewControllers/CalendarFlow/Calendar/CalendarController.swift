@@ -16,4 +16,8 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
     
     weak var coordinatorDelegate: CalendarControllerCoordinatorDelegate?
     
+    private lazy var tableView: UITableView = {
+        let tv = UITableView(frame: .zero, style: .plain)
+        return tv
+    }()
 }
