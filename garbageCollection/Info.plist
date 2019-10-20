@@ -34,6 +34,10 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>PARSE_APP_ID</key>
+	<string>$(PARSE_APP_ID)</string>
+	<key>PARSE_SERVER_URL</key>
+	<string>$(PARSE_SERVER_URL)</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
