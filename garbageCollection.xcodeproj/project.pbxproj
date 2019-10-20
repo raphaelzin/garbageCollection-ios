@@ -33,6 +33,16 @@
 		1C31CC0C235B70CC00653E19 /* GCViewModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CC0B235B70CC00653E19 /* GCViewModelController.swift */; };
 		1C31CC0E235B72BC00653E19 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CC0D235B72BC00653E19 /* MapViewModel.swift */; };
 		1C46181823594A6B0054B22B /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C46181723594A6B0054B22B /* SplashController.swift */; };
+		1C57CAF2235CE114004D0E0C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C57CAF1235CE114004D0E0C /* String.swift */; };
+		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
+		1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA2235CBE6B00664DE7 /* Installation.swift */; };
+		1CF15BA5235CC35C00664DE7 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA4235CC35C00664DE7 /* City.swift */; };
+		1CF15BA7235CC36E00664DE7 /* CollectionPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA6235CC36E00664DE7 /* CollectionPoint.swift */; };
+		1CF15BA9235CC37F00664DE7 /* CollectionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA8235CC37F00664DE7 /* CollectionSchedule.swift */; };
+		1CF15BAB235CC39900664DE7 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BAA235CC39900664DE7 /* Feedback.swift */; };
+		1CF15BAD235CC3AF00664DE7 /* Neighbourhood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BAC235CC3AF00664DE7 /* Neighbourhood.swift */; };
+		1CF15BAF235CC3C700664DE7 /* RubbishReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BAE235CC3C700664DE7 /* RubbishReport.swift */; };
+		1CF15BB1235CCBE600664DE7 /* garbageCollectionModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BB0235CCBE600664DE7 /* garbageCollectionModelTests.swift */; };
 		44951860BA1C5FC9B320A43F /* Pods_garbageCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754C934B9F35301ECE101BCC /* Pods_garbageCollection.framework */; };
 		4FDB432F94DF2AA7747DDF62 /* Pods_garbageCollectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC0BC4DF550F1DAFC2EEB9D /* Pods_garbageCollectionTests.framework */; };
 		53C57C7ECF6A42E5C1591A6D /* Pods_garbageCollection_garbageCollectionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4293A371DD06D01EC75FBE6 /* Pods_garbageCollection_garbageCollectionUITests.framework */; };
@@ -91,6 +101,16 @@
 		1C31CC0B235B70CC00653E19 /* GCViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCViewModelController.swift; sourceTree = "<group>"; };
 		1C31CC0D235B72BC00653E19 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		1C46181723594A6B0054B22B /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		1C57CAF1235CE114004D0E0C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
+		1CF15BA2235CBE6B00664DE7 /* Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installation.swift; sourceTree = "<group>"; };
+		1CF15BA4235CC35C00664DE7 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		1CF15BA6235CC36E00664DE7 /* CollectionPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPoint.swift; sourceTree = "<group>"; };
+		1CF15BA8235CC37F00664DE7 /* CollectionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSchedule.swift; sourceTree = "<group>"; };
+		1CF15BAA235CC39900664DE7 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		1CF15BAC235CC3AF00664DE7 /* Neighbourhood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neighbourhood.swift; sourceTree = "<group>"; };
+		1CF15BAE235CC3C700664DE7 /* RubbishReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishReport.swift; sourceTree = "<group>"; };
+		1CF15BB0235CCBE600664DE7 /* garbageCollectionModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = garbageCollectionModelTests.swift; sourceTree = "<group>"; };
 		230CA8F4FBB518C122C2F346 /* Pods-garbageCollectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollectionTests.release.xcconfig"; path = "Target Support Files/Pods-garbageCollectionTests/Pods-garbageCollectionTests.release.xcconfig"; sourceTree = "<group>"; };
 		5E136BBFF91D51B0B72DD3DA /* Pods-garbageCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollection.release.xcconfig"; path = "Target Support Files/Pods-garbageCollection/Pods-garbageCollection.release.xcconfig"; sourceTree = "<group>"; };
 		754C934B9F35301ECE101BCC /* Pods_garbageCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_garbageCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				1C26CE7C235943D7008BB2D2 /* Core */,
+				1CF15B9E235CBB2500664DE7 /* Models */,
 				1C31CBF7235B5D0E00653E19 /* Views */,
 				1C31CC00235B647500653E19 /* Utils */,
 				1C461815235949FE0054B22B /* Coordinators */,
@@ -203,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				1C26CE632359430C008BB2D2 /* garbageCollectionTests.swift */,
+				1CF15BB0235CCBE600664DE7 /* garbageCollectionModelTests.swift */,
 				1C26CE652359430C008BB2D2 /* Info.plist */,
 			);
 			path = garbageCollectionTests;
@@ -304,6 +326,7 @@
 		1C31CBFC235B5DB800653E19 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				1C57CAF1235CE114004D0E0C /* String.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -321,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				1C26CE8023594462008BB2D2 /* Extensions */,
+				1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -363,6 +387,28 @@
 				1C46181723594A6B0054B22B /* SplashController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		1CF15B9E235CBB2500664DE7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1CF15B9F235CBB3800664DE7 /* Parse */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1CF15B9F235CBB3800664DE7 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				1CF15BA2235CBE6B00664DE7 /* Installation.swift */,
+				1CF15BA4235CC35C00664DE7 /* City.swift */,
+				1CF15BA6235CC36E00664DE7 /* CollectionPoint.swift */,
+				1CF15BA8235CC37F00664DE7 /* CollectionSchedule.swift */,
+				1CF15BAA235CC39900664DE7 /* Feedback.swift */,
+				1CF15BAE235CC3C700664DE7 /* RubbishReport.swift */,
+				1CF15BAC235CC3AF00664DE7 /* Neighbourhood.swift */,
+			);
+			path = Parse;
 			sourceTree = "<group>";
 		};
 		9FFD45C963FCAFA94B5FD08D /* Pods */ = {
@@ -635,24 +681,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */,
-				1C14E5C4235BB96D00E3CD94 /* UIImage.swift in Sources */,
+				1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */,
 				1C31CBFB235B5D8000653E19 /* GCNavigationController.swift in Sources */,
 				1C31CBF1235B5B2C00653E19 /* MapCoordinator.swift in Sources */,
+				1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */,
 				1C31CC04235B6AA600653E19 /* CalendarController.swift in Sources */,
 				1C31CBF3235B5B7E00653E19 /* CalendarCoordinator.swift in Sources */,
 				1C26CE4D23594308008BB2D2 /* AppDelegate.swift in Sources */,
 				1C31CBED235B566A00653E19 /* Coordinator.swift in Sources */,
 				1C31CBF5235B5B8C00653E19 /* SettingsCoordinator.swift in Sources */,
+				1CF15BA7235CC36E00664DE7 /* CollectionPoint.swift in Sources */,
 				1C31CC08235B6AC100653E19 /* SettingsController.swift in Sources */,
-				1C14E5BE235BACFE00E3CD94 /* ScheduledCollectionCell.swift in Sources */,
+				1CF15BAB235CC39900664DE7 /* Feedback.swift in Sources */,
+				1CF15BA9235CC37F00664DE7 /* CollectionSchedule.swift in Sources */,
 				1C31CC0A235B705400653E19 /* CalendarViewModel.swift in Sources */,
 				1C31CBEF235B578100653E19 /* Environment.swift in Sources */,
 				1C31CC0E235B72BC00653E19 /* MapViewModel.swift in Sources */,
+				1CF15BAD235CC3AF00664DE7 /* Neighbourhood.swift in Sources */,
+				1C57CAF2235CE114004D0E0C /* String.swift in Sources */,
+				1CF15BAF235CC3C700664DE7 /* RubbishReport.swift in Sources */,
 				1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */,
 				1C31CBFF235B5DD700653E19 /* UIColor.swift in Sources */,
 				1C14E5C1235BB48400E3CD94 /* NeighbourhoodSelectorView.swift in Sources */,
 				1C31CBEB235B564B00653E19 /* RootViewCoordinator.swift in Sources */,
 				1C46181823594A6B0054B22B /* SplashController.swift in Sources */,
+				1CF15BA5235CC35C00664DE7 /* City.swift in Sources */,
 				1C31CC06235B6AB300653E19 /* MapController.swift in Sources */,
 				1C31CC0C235B70CC00653E19 /* GCViewModelController.swift in Sources */,
 				1C31CBF9235B5D2B00653E19 /* GCNavigationBar.swift in Sources */,
@@ -664,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C26CE642359430C008BB2D2 /* garbageCollectionTests.swift in Sources */,
+				1CF15BB1235CCBE600664DE7 /* garbageCollectionModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
