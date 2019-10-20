@@ -10,7 +10,6 @@ import UIKit
 
 extension UIImage {
     
-    
     /// Helper for SF Symbols
     @available(iOS 13.0, *)
     func image(for sfSymbol: String, weight: UIImage.SymbolWeight) -> UIImage? {

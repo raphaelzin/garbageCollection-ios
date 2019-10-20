@@ -18,7 +18,14 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
 
     private lazy var tableView: UITableView = {
         let tv = UITableView(frame: .zero, style: .plain)
+        tv.tableFooterView = UIView()
         return tv
+    }()
+    
+    private lazy var neighbourhoodSelector: NeighbourhoodSelectorView = {
+        let header = NeighbourhoodSelectorView()
+        header.delegate = self
+        return header
     }()
 
     override init(viewModel: CalendarViewModelType) {
@@ -48,6 +55,28 @@ private extension CalendarController {
     
     func configureLayout() {
         
+        view.addSubview(neighbourhoodSelector)
+        neighbourhoodSelector.snp.makeConstraints { (make) in
+            make.leading.top.trailing.equalTo(view)
+            make.height.equalTo(40)
+        }
+        
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
+            make.leading.bottom.trailing.equalTo(view)
+            make.top.equalTo(neighbourhoodSelector.snp.bottom)
+        }
+        
+    }
+    
+}
+
+// MARK: Delegate conformances
+
+extension CalendarController: NeighbourhoodSelectorViewDelegate {
+    
+    func didRequestNeighbourhoodSelection() {
+        print(#function)
     }
     
 }
