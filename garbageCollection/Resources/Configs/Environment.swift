@@ -27,7 +27,8 @@ extension Environment {
     
     enum Key: String {
         case bundleId
-        case appId
+        case parseAppId = "PARSE_APP_ID"
+        case parseServerURL = "PARSE_SERVER_URL"
     }
     
 }
