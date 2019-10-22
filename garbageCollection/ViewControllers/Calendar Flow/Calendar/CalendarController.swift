@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import RxDataSources
 
 protocol CalendarControllerCoordinatorDelegate: class {
     
@@ -14,7 +17,15 @@ protocol CalendarControllerCoordinatorDelegate: class {
 
 class CalendarController: GCViewModelController<CalendarViewModelType> {
     
+    // Attributes
+    
     weak var coordinatorDelegate: CalendarControllerCoordinatorDelegate?
+    
+    private var dataSource: RxTableViewSectionedAnimatedDataSource<GenericSection<WeekDayCollectionSchedule>>!
+    
+    let disposeBag = DisposeBag()
+    
+    // Subviews
 
     private lazy var tableView: UITableView = {
         let tv = UITableView(frame: .zero, style: .plain)
@@ -27,6 +38,8 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
         header.delegate = self
         return header
     }()
+    
+    // Init
 
     override init(viewModel: CalendarViewModelType) {
         super.init(viewModel: viewModel)
@@ -39,6 +52,27 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+// MARK: Private binding UI components
+
+private extension CalendarController {
+    
+    func bindTableView() {
+        dataSource = RxTableViewSectionedAnimatedDataSource<GenericSection<WeekDayCollectionSchedule>>(
+            configureCell: { _, tableView, indexPath, item in
+                let cell = tableView.dequeue(cellClass: ScheduledCollectionCell.self, indexPath: indexPath)
+                cell.configure(with: item)
+                return cell
+        })
+        
+        viewModel.selectedNeighbourhoodObservable.map { (fullSchedule) -> [GenericSection<WeekDayCollectionSchedule>] in
+            print("Event")
+            return [GenericSection(items: fullSchedule, header: "")]
+        }.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        
+    }
+
 }
 
 // MARK: Private Layout methods

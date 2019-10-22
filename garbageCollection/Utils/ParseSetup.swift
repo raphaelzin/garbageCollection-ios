@@ -17,8 +17,6 @@ class ParseSetup {
     }
     
     class func setupConnection() {
-        debugPrint("App Id: \(Environment.getValue(forKey: .parseAppId))\nServer URL: \(Environment.getValue(forKey: .parseServerURL))")
-        
         let configuration = ParseClientConfiguration {
             $0.applicationId = Environment.getValue(forKey: .parseAppId)
             $0.server = Environment.getValue(forKey: .parseServerURL)
@@ -28,12 +26,14 @@ class ParseSetup {
         Parse.enableLocalDatastore()
         Parse.initialize(with: configuration)
 
-//        Installation.current()?.badge = 0
-//        Installation.current()?.saveInBackground()
+        Installation.current()?.badge = 0
+        Installation.current()?.saveInBackground()
     }
     
     class func registerSubclasses() {
-//        Installation.registerSubclass()
-//        User.registerSubclass()
+        Installation.registerSubclass()
+        City.registerSubclass()
+        Neighbourhood.registerSubclass()
     }
+    
 }

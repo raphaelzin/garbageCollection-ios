@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class ScheduledCollectionCell: UITableViewCell {
     
@@ -52,8 +51,14 @@ class ScheduledCollectionCell: UITableViewCell {
 // MARK: Public configuration methods
 
 extension ScheduledCollectionCell {
-    
-    // TODO
+
+    func configure(with collectionSchedule: WeekDayCollectionSchedule) {
+        weekDayLabel.text = collectionSchedule.weekday.fullname
+        scheduleDetailsLabel.text = collectionSchedule.schedule.description
+        shiftIconImageView.image = collectionSchedule.shift.icon
+        
+        backgroundColor = collectionSchedule.shift.tint
+    }
     
 }
 
