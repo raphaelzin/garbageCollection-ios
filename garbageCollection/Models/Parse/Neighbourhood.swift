@@ -14,7 +14,7 @@ class Neighbourhood: PFObject, PFSubclassing {
     @NSManaged var name: String?
     @NSManaged var identifier: String?
     
-    static func parseClassName() -> String { return "City" }
+    static func parseClassName() -> String { return "Neighbourhood" }
     
 }
 
