@@ -13,7 +13,16 @@ import RxSwift
 class CollectionPointsManager {
     
     func collectionSchedule(for neighbourhood: Neighbourhood) -> Single<CollectionSchedule> {
-        return .never()
+        guard let query = CollectionSchedule.query() else { return .error(GCError.Misc.invalidquery) }
+        query.whereKey(CollectionSchedule.Properties.neighbourhood, equalTo: neighbourhood)
+        
+        return query.rx.getFirstObject().map { (object) -> CollectionSchedule in
+            if let collectionSchedule = object as? CollectionSchedule {
+                return collectionSchedule
+            } else {
+                throw GCError.Server.invalidQueryResult
+            }
+        }.asSingle()
     }
     
 }

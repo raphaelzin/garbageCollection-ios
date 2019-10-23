@@ -15,16 +15,21 @@ class ScheduledCollectionCell: UITableViewCell {
     private lazy var shiftIconImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
+        iv.tintColor = .white
         return iv
     }()
     
     private lazy var weekDayLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 16, weight: .semibold)
         return label
     }()
     
     private lazy var scheduleDetailsLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 12, weight: .semibold)
         return label
     }()
     
@@ -46,6 +51,13 @@ class ScheduledCollectionCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Lifecycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        dropShadow()
+    }
+    
 }
 
 // MARK: Public configuration methods
@@ -57,7 +69,7 @@ extension ScheduledCollectionCell {
         scheduleDetailsLabel.text = collectionSchedule.schedule.description
         shiftIconImageView.image = collectionSchedule.shift.icon
         
-        backgroundColor = collectionSchedule.shift.tint
+        containerView.backgroundColor = collectionSchedule.shift.tint
     }
     
 }
@@ -70,7 +82,6 @@ private extension ScheduledCollectionCell {
         addSubview(containerView)
         containerView.snp.makeConstraints { (make) in
             make.edges.equalTo(self).inset(UIEdgeInsets(top: 6, left: 12, bottom: 6, right: 12))
-            make.height.equalTo(70)
         }
         
         containerView.addSubview(shiftIconImageView)
@@ -90,10 +101,21 @@ private extension ScheduledCollectionCell {
         
         containerView.addSubview(scheduleDetailsLabel)
         scheduleDetailsLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(weekDayLabel.snp.bottom).offset(8)
+            make.top.equalTo(weekDayLabel.snp.bottom).offset(2)
             make.leading.equalTo(shiftIconImageView.snp.trailing).offset(16)
             make.trailing.equalTo(containerView).offset(-16)
+            make.bottom.equalTo(containerView).offset(-14)
         }
+    }
+    
+    /// Drop shadow for container view
+    func dropShadow() {
+        let shadowPath = UIBezierPath(roundedRect: containerView.frame, cornerRadius: 10).cgPath
+        containerView.layer.shadowPath = shadowPath
+        containerView.layer.shadowRadius = 4
+        containerView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        containerView.layer.shadowOffset = CGSize(width: -8, height: -3)
+        containerView.layer.shadowOpacity = 0.5
     }
     
 }

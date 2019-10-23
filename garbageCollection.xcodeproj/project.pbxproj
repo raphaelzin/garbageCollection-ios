@@ -48,6 +48,7 @@
 		1C835E27235EA88000CC21EB /* ParseRxCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1D235EA88000CC21EB /* ParseRxCallbacks.swift */; };
 		1C835E28235EA88000CC21EB /* PFFileObject+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1E235EA88000CC21EB /* PFFileObject+Rx.swift */; };
 		1C835E29235EA88000CC21EB /* PFQuery+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1F235EA88000CC21EB /* PFQuery+Rx.swift */; };
+		1C835E2B235FC73F00CC21EB /* GCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E2A235FC73F00CC21EB /* GCError.swift */; };
 		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
 		1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA2235CBE6B00664DE7 /* Installation.swift */; };
 		1CF15BA5235CC35C00664DE7 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA4235CC35C00664DE7 /* City.swift */; };
@@ -131,6 +132,7 @@
 		1C835E1D235EA88000CC21EB /* ParseRxCallbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseRxCallbacks.swift; sourceTree = "<group>"; };
 		1C835E1E235EA88000CC21EB /* PFFileObject+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFFileObject+Rx.swift"; sourceTree = "<group>"; };
 		1C835E1F235EA88000CC21EB /* PFQuery+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFQuery+Rx.swift"; sourceTree = "<group>"; };
+		1C835E2A235FC73F00CC21EB /* GCError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCError.swift; sourceTree = "<group>"; };
 		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
 		1CF15BA2235CBE6B00664DE7 /* Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installation.swift; sourceTree = "<group>"; };
 		1CF15BA4235CC35C00664DE7 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				1C26CE8023594462008BB2D2 /* Extensions */,
 				1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */,
 				1C835E0C235E9B9B00CC21EB /* GenericSection.swift */,
+				1C835E2A235FC73F00CC21EB /* GCError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C835E2B235FC73F00CC21EB /* GCError.swift in Sources */,
 				1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */,
 				1C835E26235EA88000CC21EB /* PFCloud+Rx.swift in Sources */,
 				1C835E28235EA88000CC21EB /* PFFileObject+Rx.swift in Sources */,
