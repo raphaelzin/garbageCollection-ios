@@ -28,4 +28,3 @@ extension GenericSection: AnimatableSectionModelType {
     
     var identity: String { return header }
 }
-

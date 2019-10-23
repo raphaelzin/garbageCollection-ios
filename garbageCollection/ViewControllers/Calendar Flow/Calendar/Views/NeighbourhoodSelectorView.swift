@@ -71,8 +71,8 @@ class NeighbourhoodSelectorView: UIView {
 
 extension NeighbourhoodSelectorView {
     
-    func configure() {
-        
+    func configure(with neighbourhoodName: String) {
+        neighbourhoodNameLabel.text = neighbourhoodName
     }
     
 }

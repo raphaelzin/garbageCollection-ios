@@ -30,6 +30,11 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
     private lazy var tableView: UITableView = {
         let tv = UITableView(frame: .zero, style: .plain)
         tv.tableFooterView = UIView()
+        tv.separatorStyle = .none
+        tv.showsVerticalScrollIndicator = false
+        tv.keyboardDismissMode = .interactive
+        tv.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
+        tv.registerCell(cellClass: ScheduledCollectionCell.self)
         return tv
     }()
     
@@ -39,6 +44,14 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
         return header
     }()
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView()
+        ai.color = .defaultBlue
+        ai.startAnimating()
+        ai.isHidden = true
+        return ai
+    }()
+    
     // Init
 
     override init(viewModel: CalendarViewModelType) {
@@ -46,6 +59,10 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
         
         configureLayout()
         configureView()
+        
+        bindTableView()
+        bindSelectedNeighbourhood()
+        bindViewModelState()
     }
     
     required init?(coder: NSCoder) {
@@ -66,11 +83,27 @@ private extension CalendarController {
                 return cell
         })
         
-        viewModel.selectedNeighbourhoodObservable.map { (fullSchedule) -> [GenericSection<WeekDayCollectionSchedule>] in
-            print("Event")
-            return [GenericSection(items: fullSchedule, header: "")]
-        }.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        viewModel.selectedCollectionSchedule.map { (fullSchedule) -> [GenericSection<WeekDayCollectionSchedule>] in
+            return [GenericSection(items: fullSchedule?.weeklyCollection ?? [], header: "")]
+        }
+        .bind(to: tableView.rx.items(dataSource: dataSource))
+        .disposed(by: disposeBag)
         
+        tableView.rx.itemSelected.bind { (indexPath) in
+            self.tableView.deselectRow(at: indexPath, animated: true)
+        }.disposed(by: disposeBag)
+    }
+    
+    func bindSelectedNeighbourhood() {
+        viewModel.selectedNeighbourhoodObservable.subscribe(onNext: { (neighbourhood) in
+            self.neighbourhoodSelector.configure(with: neighbourhood?.name ?? "Selecionar")
+            }).disposed(by: disposeBag)
+    }
+    
+    func bindViewModelState() {
+        viewModel.state.bind { (state) in
+            self.activityIndicator.isHidden = state == .idle
+        }.disposed(by: disposeBag)
     }
 
 }
@@ -101,6 +134,10 @@ private extension CalendarController {
             make.top.equalTo(neighbourhoodSelector.snp.bottom)
         }
         
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { (make) in
+            make.center.equalTo(view)
+        }
     }
     
 }

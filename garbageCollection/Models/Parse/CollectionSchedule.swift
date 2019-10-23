@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-class CollectionSchedule {
+class CollectionSchedule: PFObject, PFSubclassing {
     
     @NSManaged var identifier: String?
     @NSManaged var cityName: String?
@@ -44,6 +44,9 @@ class CollectionSchedule {
             WeekDayCollectionSchedule(shift: shift, schedule: schedule, weekday: $0, neighbourhoodId: identifier ?? "")
         }
     }
+    
+    static func parseClassName() -> String { "CollectionSchedule" }
+    
 }
 
 // MARK: Custom Subtypes
