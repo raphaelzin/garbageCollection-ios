@@ -49,6 +49,10 @@
 		1C835E28235EA88000CC21EB /* PFFileObject+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1E235EA88000CC21EB /* PFFileObject+Rx.swift */; };
 		1C835E29235EA88000CC21EB /* PFQuery+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1F235EA88000CC21EB /* PFQuery+Rx.swift */; };
 		1C835E2B235FC73F00CC21EB /* GCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E2A235FC73F00CC21EB /* GCError.swift */; };
+		1C835E2E23611DE200CC21EB /* NeighbourhoodSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E2D23611DE200CC21EB /* NeighbourhoodSelectionController.swift */; };
+		1C835E3023611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E2F23611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift */; };
+		1C835E3323611F1D00CC21EB /* NeighbourhoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */; };
+		1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */; };
 		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
 		1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA2235CBE6B00664DE7 /* Installation.swift */; };
 		1CF15BA5235CC35C00664DE7 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA4235CC35C00664DE7 /* City.swift */; };
@@ -133,6 +137,10 @@
 		1C835E1E235EA88000CC21EB /* PFFileObject+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFFileObject+Rx.swift"; sourceTree = "<group>"; };
 		1C835E1F235EA88000CC21EB /* PFQuery+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFQuery+Rx.swift"; sourceTree = "<group>"; };
 		1C835E2A235FC73F00CC21EB /* GCError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCError.swift; sourceTree = "<group>"; };
+		1C835E2D23611DE200CC21EB /* NeighbourhoodSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodSelectionController.swift; sourceTree = "<group>"; };
+		1C835E2F23611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodSelectionViewModel.swift; sourceTree = "<group>"; };
+		1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodCell.swift; sourceTree = "<group>"; };
+		1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodsManager.swift; sourceTree = "<group>"; };
 		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
 		1CF15BA2235CBE6B00664DE7 /* Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installation.swift; sourceTree = "<group>"; };
 		1CF15BA4235CC35C00664DE7 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -194,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				1C31CC01235B6A7F00653E19 /* Calendar */,
+				1C835E2C23611DC300CC21EB /* Neighbourhood Selection */,
 			);
 			path = "Calendar Flow";
 			sourceTree = "<group>";
@@ -430,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				1C835E13235EA61200CC21EB /* CollectionPointsManager.swift */,
+				1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -449,6 +459,24 @@
 				1C835E16235EA87F00CC21EB /* PFUser+Rx.swift */,
 			);
 			path = RxParseExtensions;
+			sourceTree = "<group>";
+		};
+		1C835E2C23611DC300CC21EB /* Neighbourhood Selection */ = {
+			isa = PBXGroup;
+			children = (
+				1C835E2D23611DE200CC21EB /* NeighbourhoodSelectionController.swift */,
+				1C835E2F23611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift */,
+				1C835E3123611F0800CC21EB /* Cells */,
+			);
+			path = "Neighbourhood Selection";
+			sourceTree = "<group>";
+		};
+		1C835E3123611F0800CC21EB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		1CF15B9E235CBB2500664DE7 /* Models */ = {
@@ -758,6 +786,8 @@
 				1C26CE4D23594308008BB2D2 /* AppDelegate.swift in Sources */,
 				1C835E25235EA88000CC21EB /* PFAnonymousUtils+Rx.swift in Sources */,
 				1C31CBED235B566A00653E19 /* Coordinator.swift in Sources */,
+				1C835E3023611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift in Sources */,
+				1C835E3323611F1D00CC21EB /* NeighbourhoodCell.swift in Sources */,
 				1C31CBF5235B5B8C00653E19 /* SettingsCoordinator.swift in Sources */,
 				1C835E27235EA88000CC21EB /* ParseRxCallbacks.swift in Sources */,
 				1CF15BA7235CC36E00664DE7 /* CollectionPoint.swift in Sources */,
@@ -770,6 +800,7 @@
 				1C835E0D235E9B9B00CC21EB /* GenericSection.swift in Sources */,
 				1C31CC0E235B72BC00653E19 /* MapViewModel.swift in Sources */,
 				1CF15BAD235CC3AF00664DE7 /* Neighbourhood.swift in Sources */,
+				1C835E2E23611DE200CC21EB /* NeighbourhoodSelectionController.swift in Sources */,
 				1C57CAF2235CE114004D0E0C /* String.swift in Sources */,
 				1CF15BAF235CC3C700664DE7 /* RubbishReport.swift in Sources */,
 				1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */,
@@ -787,6 +818,7 @@
 				1C31CC0C235B70CC00653E19 /* GCViewModelController.swift in Sources */,
 				1C31CBF9235B5D2B00653E19 /* GCNavigationBar.swift in Sources */,
 				1C835E0B235E9AE100CC21EB /* ScheduledCollectionCell.swift in Sources */,
+				1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */,
 				1C835E11235EA2CB00CC21EB /* UITableViewCell.swift in Sources */,
 				1C835E29235EA88000CC21EB /* PFQuery+Rx.swift in Sources */,
 			);

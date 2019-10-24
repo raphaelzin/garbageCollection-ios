@@ -12,3 +12,6 @@
 #include "Pods/Target Support Files/Pods-garbageCollection/Pods-garbageCollection.debug.xcconfig"
 
 APP_NAME = Coleta β
+
+PARSE_APP_ID = garbageCollection-appId-8rp3vGzbhPVMQKNB
+PARSE_SERVER_URL = http:/$()/fortaleza-garbage-collection.herokuapp.com/parse

@@ -32,7 +32,9 @@ class CalendarViewModel: CalendarViewModelType {
     
     private let fullCollectionSchedule = BehaviorRelay<CollectionSchedule?>(value: nil)
     
-    private var stateRelay = BehaviorRelay<State>(value: .idle)
+    private let notificationsActive = BehaviorRelay<Bool>(value: false)
+    
+    private let stateRelay = BehaviorRelay<State>(value: .idle)
     
     // Observables
     
@@ -50,20 +52,6 @@ class CalendarViewModel: CalendarViewModelType {
     
     init() {
         bindCollectionScheduleToNeighbourhood()
-        
-        Neighbourhood
-            .query()?
-            .rx
-            .getFirstObject()
-            .delay(.seconds(2), scheduler: MainScheduler.instance)
-            .do { self.stateRelay.accept(.loading) }
-            .delay(.seconds(4), scheduler: MainScheduler.instance)
-            .asSingle()
-            .map { $0 as! Neighbourhood }
-            .do { self.stateRelay.accept(.idle) }
-            .subscribe(onSuccess: { self.select(neighbourhood: $0) })
-            .disposed(by: disposeBag)
-            
     }
 
 }
@@ -94,11 +82,15 @@ private extension CalendarViewModel {
     
     /// Make sure the collection schedule is up to date with the selected neighbourhood
     func bindCollectionScheduleToNeighbourhood() {
-        selectedNeighbourhoodObservable.compactMap { $0 }.flatMap { (neighbourhood) -> Single<CollectionSchedule> in
-            return self.collectionPointsManager.collectionSchedule(for: neighbourhood)
+        selectedNeighbourhoodObservable
+            .compactMap { $0 }
+            .do { self.stateRelay.accept(.loading) }
+            .flatMap { (neighbourhood) -> Single<CollectionSchedule> in
+                return self.collectionPointsManager.collectionSchedule(for: neighbourhood)
             }
-        .bind(to: fullCollectionSchedule)
-        .disposed(by: disposeBag)
+            .do { self.stateRelay.accept(.idle) }
+            .bind(to: fullCollectionSchedule)
+            .disposed(by: disposeBag)
     }
     
 }
