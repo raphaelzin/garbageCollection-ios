@@ -23,7 +23,30 @@ class CalendarCoordinator: RootViewCoordinator {
     func start() {
         let viewModel = CalendarViewModel()
         let calendarController = CalendarController(viewModel: viewModel)
+        calendarController.coordinatorDelegate = self
         
         navigationController.pushViewController(calendarController, animated: true)
     }
+}
+
+extension CalendarCoordinator: CalendarControllerCoordinatorDelegate {
+    
+    func didRequestNeighbourhoodSelection(from controller: CalendarController) {
+        let viewModel = NeighbourhoodSelectionViewModel()
+        let selectionController = NeighbourhoodSelectionController(viewModel: viewModel)
+        selectionController.coordinatorDelegate = self
+        selectionController.delegate = controller
+        selectionController.hidesBottomBarWhenPushed = true
+        
+        navigationController.pushViewController(selectionController, animated: true)
+    }
+    
+}
+
+extension CalendarCoordinator: NeighbourhoodSelectionCoordenatorDelegate {
+    
+    func didRequestDismiss(from controller: NeighbourhoodSelectionController) {
+        navigationController.popViewController(animated: true)
+    }
+    
 }

@@ -12,7 +12,7 @@ import RxSwift
 import RxDataSources
 
 protocol CalendarControllerCoordinatorDelegate: class {
-    
+    func didRequestNeighbourhoodSelection(from controller: CalendarController)
 }
 
 class CalendarController: GCViewModelController<CalendarViewModelType> {
@@ -101,9 +101,16 @@ private extension CalendarController {
     }
     
     func bindViewModelState() {
-        viewModel.state.bind { (state) in
-            self.activityIndicator.isHidden = state == .idle
-        }.disposed(by: disposeBag)
+        viewModel
+            .state
+            .map { $0 == .idle }
+            .asDriver(onErrorJustReturn: false)
+            .drive(self.activityIndicator.rx.isHidden)
+            .disposed(by: disposeBag)
+    }
+    
+    func bindBellState() {
+        // TODO: implement notification management
     }
 
 }
@@ -114,6 +121,7 @@ private extension CalendarController {
     
     func configureView() {
         navigationItem.title = "Calendário de coleta"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         if #available(iOS 13.0, *) {
             tabBarItem = UITabBarItem(title: "Calendário", image: UIImage(systemName: "calendar"), tag: 0)
@@ -147,7 +155,15 @@ private extension CalendarController {
 extension CalendarController: NeighbourhoodSelectorViewDelegate {
     
     func didRequestNeighbourhoodSelection() {
-        print(#function)
+        coordinatorDelegate?.didRequestNeighbourhoodSelection(from: self)
+    }
+    
+}
+
+extension CalendarController: NeighbourhoodSelectorDelegate {
+    
+    func didSelect(neighbourhood: Neighbourhood) {
+        viewModel.select(neighbourhood: neighbourhood)
     }
     
 }
