@@ -43,12 +43,12 @@ class NeighbourhoodSelectionController: GCViewModelController<NeighbourhoodSelec
         return tableView
     }()
     
-    lazy var searchBar: UISearchBar = {
-        let sb = UISearchBar(frame: .zero)
-        sb.placeholder = "Procurar bairro"
-        sb.searchTextField.backgroundColor = .white
-        
-        return sb
+    private lazy var searchController: UISearchController = {
+        let sc = UISearchController(searchResultsController: nil)
+        sc.searchBar.placeholder = "Buscar bairro"
+        sc.searchBar.searchTextField.backgroundColor = .white
+        sc.obscuresBackgroundDuringPresentation = false
+        return sc
     }()
     
     lazy var backgroundLabel: UILabel = {
@@ -58,22 +58,26 @@ class NeighbourhoodSelectionController: GCViewModelController<NeighbourhoodSelec
         return label
     }()
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView()
+        ai.color = .defaultBlue
+        ai.startAnimating()
+        ai.isHidden = true
+        return ai
+    }()
+
     // Lifecycle
     
     override init(viewModel: NeighbourhoodSelectionViewModelType) {
         super.init(viewModel: viewModel)
-        
+
         configureView()
         configureLayout()
         configureNavBar()
         
         bindSearchResults()
         bindTableView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationItem.titleView = searchBar
+        stateBinding()
     }
     
     required init?(coder: NSCoder) {
@@ -92,7 +96,7 @@ class NeighbourhoodSelectionController: GCViewModelController<NeighbourhoodSelec
 private extension NeighbourhoodSelectionController {
     
     func bindSearchResults() {
-        searchBar.rx.text.orEmpty
+        searchController.searchBar.rx.text.orEmpty
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe { [weak viewModel] (event) in
@@ -112,18 +116,32 @@ private extension NeighbourhoodSelectionController {
         })
         
         // Binds the countrys to the tableView
-        viewModel.neighbourhoods.map { [weak self] in
-            self?.tableView.backgroundView = $0.isEmpty ? self!.backgroundLabel : nil
-            return [GenericSection(items: $0, header: "")]
-            }.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
-        
+        Observable
+            .combineLatest(viewModel.neighbourhoods, viewModel.state)
+            .map { [weak self] (items, state) -> [GenericSection<Neighbourhood>] in
+                self?.tableView.backgroundView = items.isEmpty && state == .idle ? self!.backgroundLabel : nil
+                return [GenericSection(items: items, header: "")]
+        }.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+
         // Bind the events itemSelected and modelSelected so we can tell the delegates that we selected the country and should dismiss the vc
         Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Neighbourhood.self)).bind { [weak self] indexPath, neighbourhood in
             self?.tableView.deselectRow(at: indexPath, animated: true)
-            self?.searchBar.resignFirstResponder()
+            self?.searchController.searchBar.resignFirstResponder()
             self?.delegate?.didSelect(neighbourhood: neighbourhood)
             self?.coordinatorDelegate?.didRequestDismiss(from: self!)
             }.disposed(by: disposeBag)
+    }
+    
+    func stateBinding() {
+        viewModel
+        .state
+        .map { $0 == .idle }
+            .do(onNext: { (next) in
+                print("is idle: \(next)")
+            })
+        .asDriver(onErrorJustReturn: false)
+        .drive(self.activityIndicator.rx.isHidden)
+        .disposed(by: disposeBag)
     }
     
 }
@@ -141,13 +159,17 @@ private extension NeighbourhoodSelectionController {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaInsets)
         }
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { (make) in
+            make.center.equalTo(view)
+        }
     }
     
     func configureNavBar() {
-        searchBar.sizeToFit()
-        searchBar.barTintColor = .clear
-        searchBar.backgroundImage = UIImage()
-        
+        navigationItem.title = "Bairros"
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController = searchController
     }
     
 }

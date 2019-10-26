@@ -84,11 +84,14 @@ private extension CalendarViewModel {
     func bindCollectionScheduleToNeighbourhood() {
         selectedNeighbourhoodObservable
             .compactMap { $0 }
-            .do { self.stateRelay.accept(.loading) }
-            .flatMap { (neighbourhood) -> Single<CollectionSchedule> in
-                return self.collectionPointsManager.collectionSchedule(for: neighbourhood)
+            .do(onNext: { [weak self] _ in
+                self?.fullCollectionSchedule.accept(nil)
+                self?.stateRelay.accept(.loading)
+            })
+            .flatMap { [unowned self] (neighbourhood) -> Single<CollectionSchedule> in
+                self.collectionPointsManager.collectionSchedule(for: neighbourhood)
             }
-            .do { self.stateRelay.accept(.idle) }
+            .do(onNext: { [weak stateRelay] _ in stateRelay?.accept(.idle) })
             .bind(to: fullCollectionSchedule)
             .disposed(by: disposeBag)
     }

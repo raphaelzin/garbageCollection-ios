@@ -19,8 +19,8 @@ class GCNavigationBar: UINavigationBar {
     }
     
     func setupAppearence() {
-        titleTextAttributes = [.foregroundColor: UIColor.white]//, .font: Fonts.Nunito.bold.size(18)]
-        largeTitleTextAttributes = [.foregroundColor: UIColor.white]//, .font: Fonts.Nunito.bold.size(34)]
+        titleTextAttributes = [.foregroundColor: UIColor.white]
+        largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         
         tintColor = .white
         barTintColor = .defaultBlue

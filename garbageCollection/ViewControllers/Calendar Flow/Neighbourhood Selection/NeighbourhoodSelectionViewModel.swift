@@ -11,26 +11,48 @@ import RxSwift
 import RxCocoa
 
 protocol NeighbourhoodSelectionViewModelType: class {
+    // Bindable attributes
     var neighbourhoods: Observable<[Neighbourhood]> { get }
+    var state: Observable<NeighbourhoodSelectionViewModel.State> { get }
     
     func fetchNeighbourhoods(with term: String)
 }
 
 class NeighbourhoodSelectionViewModel: NeighbourhoodSelectionViewModelType {
     
+    // Attributes
+    
     private let disposeBag = DisposeBag()
+    
+    private let neighbourhoodsManager = NeighbourhoodsManager()
+    
+    // Relays
     
     private let neighbourhoodsRelay = BehaviorRelay<[Neighbourhood]>(value: [])
     
-    private let neighbourhoodsManager = NeighbourhoodsManager()
+    private let stateRelay = BehaviorRelay<State>(value: .loading)
+    
+    // Observables
     
     var neighbourhoods: Observable<[Neighbourhood]> {
         return neighbourhoodsRelay.asObservable()
     }
     
+    var state: Observable<State> {
+        return stateRelay.asObservable()
+    }
+    
+    // Lifecycle
+    
     init() {
         fetchNeighbourhoods()
     }
+    
+}
+
+extension NeighbourhoodSelectionViewModel {
+    
+    enum State { case loading, idle }
     
 }
 
@@ -41,8 +63,10 @@ extension NeighbourhoodSelectionViewModel {
     func fetchNeighbourhoods(with term: String = "") {
         neighbourhoodsManager
             .fetchNeighbourhoods(with: term)
-            .subscribe(onSuccess: { (neighbourhoods) in
-                self.neighbourhoodsRelay.accept(neighbourhoods)
+            .do(onSuccess: { [weak self] _ in self?.stateRelay.accept(.loading) })
+            .subscribe(onSuccess: { [weak self] (neighbourhoods) in
+                self?.stateRelay.accept(.idle)
+                self?.neighbourhoodsRelay.accept(neighbourhoods)
             })
             .disposed(by: disposeBag)
     }

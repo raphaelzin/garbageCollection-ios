@@ -89,14 +89,14 @@ private extension CalendarController {
         .bind(to: tableView.rx.items(dataSource: dataSource))
         .disposed(by: disposeBag)
         
-        tableView.rx.itemSelected.bind { (indexPath) in
-            self.tableView.deselectRow(at: indexPath, animated: true)
+        tableView.rx.itemSelected.bind { [weak tableView] (indexPath) in
+            tableView?.deselectRow(at: indexPath, animated: true)
         }.disposed(by: disposeBag)
     }
     
     func bindSelectedNeighbourhood() {
-        viewModel.selectedNeighbourhoodObservable.subscribe(onNext: { (neighbourhood) in
-            self.neighbourhoodSelector.configure(with: neighbourhood?.name ?? "Selecionar")
+        viewModel.selectedNeighbourhoodObservable.subscribe(onNext: { [weak neighbourhoodSelector] (neighbourhood) in
+            neighbourhoodSelector?.configure(with: neighbourhood?.name ?? "Selecionar")
             }).disposed(by: disposeBag)
     }
     
