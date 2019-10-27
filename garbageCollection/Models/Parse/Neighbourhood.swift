@@ -33,11 +33,7 @@ extension Neighbourhood {
 }
 
 extension Neighbourhood: IdentifiableType {
-    
-    typealias Identity = String
-    
-    var identity: String {
-        return objectId ?? (name ?? "")
-    }
+
+    var identity: String { objectId ?? (name ?? "") }
     
 }

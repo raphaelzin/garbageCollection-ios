@@ -25,8 +25,8 @@ class CollectionSchedule: PFObject, PFSubclassing {
     @NSManaged var city: City?
     
     // Validated types
-    var typedDays: [WeekDay] {
-        days.compactMap { WeekDay(rawValue: $0) }
+    var typedDays: [Date.WeekDay] {
+        days.compactMap { Date.WeekDay(rawValue: $0) }
     }
     
     var typedSchedule: Schedule? {
@@ -74,37 +74,13 @@ extension CollectionSchedule {
         }
     }
     
-    enum WeekDay: String {
-        case mon = "seg"
-        case tue = "ter"
-        case wed = "qua"
-        case thu = "qui"
-        case fri = "sex"
-        case sat = "sab"
-        case sun = "dom"
-        
-        var fullname: String {
-            switch self {
-            case .mon: return "Segunda feira"
-            case .tue: return "Terça feira"
-            case .wed: return "Quarta feira"
-            case .thu: return "Quinta feira"
-            case .fri: return "Sexta feira"
-            case .sat: return "Sábado"
-            case .sun: return "Domingo"
-            }
-        }
-    }
-    
     enum Schedule {
-        case specificTime(String)
-        case timeWindow(String, String)
+        case specificTime(Date.Time)
+        case timeWindow(Date.Time, Date.Time)
         
         init?(raw: String) {
             let noSpacesRaw = raw.replacingOccurrences(of: " ", with: "")
-            let timeComponents = noSpacesRaw.split(separator: "-").map { String($0) }
-            
-            guard (timeComponents.allSatisfy { $0.isValidTime }) else { return nil }
+            let timeComponents = noSpacesRaw.split(separator: "-").compactMap { Date.Time(String($0)) }
             
             if timeComponents.count == 2 {
                 self = .timeWindow(timeComponents.first!, timeComponents.last!)
@@ -123,7 +99,7 @@ extension CollectionSchedule {
             }
         }
     }
-    
+
 }
 
 // MARK: Properties

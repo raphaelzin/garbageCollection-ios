@@ -136,9 +136,6 @@ private extension NeighbourhoodSelectionController {
         viewModel
         .state
         .map { $0 == .idle }
-            .do(onNext: { (next) in
-                print("is idle: \(next)")
-            })
         .asDriver(onErrorJustReturn: false)
         .drive(self.activityIndicator.rx.isHidden)
         .disposed(by: disposeBag)

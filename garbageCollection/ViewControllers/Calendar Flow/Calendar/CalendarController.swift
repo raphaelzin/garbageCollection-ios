@@ -63,6 +63,7 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
         bindTableView()
         bindSelectedNeighbourhood()
         bindViewModelState()
+        bindBellState()
     }
     
     required init?(coder: NSCoder) {
@@ -104,6 +105,7 @@ private extension CalendarController {
         viewModel
             .state
             .map { $0 == .idle }
+            .observeOn(MainScheduler.asyncInstance)
             .asDriver(onErrorJustReturn: false)
             .drive(self.activityIndicator.rx.isHidden)
             .disposed(by: disposeBag)
@@ -111,8 +113,69 @@ private extension CalendarController {
     
     func bindBellState() {
         // TODO: implement notification management
+        viewModel
+            .notificationsActiveRelay
+            .map { UIImage(systemName: $0 ? "bell.slash.fill" : "bell.fill" ) }
+            .observeOn(MainScheduler.asyncInstance)
+            .subscribe(onNext: { [weak self] (image) in
+                self?.navigationItem.rightBarButtonItem?.image = image
+            }).disposed(by: disposeBag)
     }
 
+}
+
+// MARK: Private methods
+
+private extension CalendarController {
+    
+    func promptDefaultRemoval() {
+        let alert = UIAlertController(title: "Atenção",
+                                      message: "Este bairro será removido como o seu bairro padrāo e as notificações serão desativadas.",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Remover", style: .destructive, handler: { _ in
+            self.viewModel.bellTapped()
+        }))
+        
+        present(alert, animated: true)
+
+    }
+    
+    func promptDefaultCreation() {
+        let alert = UIAlertController(title: "Atenção",
+                                      message: "Este bairro será definido como o seu bairro padrāo e as notificações serão ativadas.",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Ativar notificações", style: .default, handler: { _ in
+            self.viewModel.bellTapped()
+        }))
+        
+        present(alert, animated: true)
+    }
+    
+    func promptNotificationsDisabled() {
+        let alert = UIAlertController(title: "Atenção",
+                                      message: "As notificações foram desativadas, você pode ativar novamente nas suas configurações",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Configurações", style: .default, handler: { _ in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+                UIApplication.shared.canOpenURL(settingsUrl) else { return }
+            
+            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                print("Settings opened: \(success)")
+            })
+        }))
+        
+        present(alert, animated: true)
+    }
+    
 }
 
 // MARK: Private Layout methods
@@ -122,6 +185,10 @@ private extension CalendarController {
     func configureView() {
         navigationItem.title = "Calendário de coleta"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(onBellTap))
         
         if #available(iOS 13.0, *) {
             tabBarItem = UITabBarItem(title: "Calendário", image: UIImage(systemName: "calendar"), tag: 0)
@@ -146,6 +213,37 @@ private extension CalendarController {
         activityIndicator.snp.makeConstraints { (make) in
             make.center.equalTo(view)
         }
+    }
+    
+}
+
+// MARK: Private selectors
+
+private extension CalendarController {
+    
+    @objc func onBellTap() {
+        UNUserNotificationCenter.current()
+            .rx
+            .getAuthorizationStatus()
+            .flatMap { (status) -> Single<Bool> in
+                guard status != .authorized else { return .just(true) }
+                return UNUserNotificationCenter.current().rx.requestAuthorization(options: [.badge, .alert, .sound])
+            }
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { (granted) in
+                guard granted else {
+                    self.promptNotificationsDisabled()
+                    return
+                }
+                
+                if self.viewModel.getNotificationsActive {
+                    self.promptDefaultRemoval()
+                } else {
+                    self.promptDefaultCreation()
+                }
+                
+            })
+            .disposed(by: disposeBag)
     }
     
 }

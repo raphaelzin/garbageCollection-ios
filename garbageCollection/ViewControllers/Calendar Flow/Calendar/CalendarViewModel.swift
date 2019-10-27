@@ -14,27 +14,39 @@ protocol CalendarViewModelType: class {
     // Bindable attributes
     var selectedNeighbourhoodObservable: Observable<Neighbourhood?> { get }
     var selectedCollectionSchedule: Observable<CollectionSchedule?> { get }
+    var notificationsActiveRelay: BehaviorRelay<Bool> { get }
     var state: Observable<CalendarViewModel.State> { get }
+    
+    var getNotificationsActive: Bool { get }
+    
+    var notificationActive: Observable<Bool> { get }
     
     // Functions
     func select(neighbourhood: Neighbourhood)
+    func bellTapped()
 }
 
 class CalendarViewModel: CalendarViewModelType {
     
     private lazy var collectionPointsManager = CollectionPointsManager()
     
+    private lazy var notificationsManager = NotificationsManager()
+    
     private let disposeBag = DisposeBag()
+    
+    var getNotificationsActive: Bool {
+        return notificationsActiveRelay.value
+    }
     
     // Relays
     
-    private let selectedNeighbourhoodRelay = BehaviorRelay<Neighbourhood?>(value: nil)
+    private let selectedNeighbourhoodRelay = BehaviorRelay<Neighbourhood?>(value: Installation.current()?.neighbourhood)
     
     private let fullCollectionSchedule = BehaviorRelay<CollectionSchedule?>(value: nil)
     
-    private let notificationsActive = BehaviorRelay<Bool>(value: false)
-    
     private let stateRelay = BehaviorRelay<State>(value: .idle)
+    
+    let notificationsActiveRelay = BehaviorRelay<Bool>(value: false)
     
     // Observables
     
@@ -47,7 +59,11 @@ class CalendarViewModel: CalendarViewModelType {
     }
     
     var state: Observable<State> {
-        return stateRelay.asObservable()
+        stateRelay.asObservable()
+    }
+    
+    var notificationActive: Observable<Bool> {
+        notificationsActiveRelay.asObservable()
     }
     
     init() {
@@ -68,10 +84,20 @@ extension CalendarViewModel {
     
     func select(neighbourhood: Neighbourhood) {
         selectedNeighbourhoodRelay.accept(neighbourhood)
+        Installation.current()?.neighbourhood = neighbourhood
+        Installation.current()?.saveEventually()
     }
     
-    func userTappedBell() {
+    func bellTapped() {
+        if notificationsActiveRelay.value {
+            Installation.current()?.neighbourhood = nil
+        } else if let collectionSchedule = fullCollectionSchedule.value {
+            notificationsManager.setupNotifications(for: collectionSchedule)
+            Installation.current()?.neighbourhood = selectedNeighbourhoodRelay.value
+        }
         
+        Installation.current()?.saveEventually()
+        notificationsActiveRelay.accept(!notificationsActiveRelay.value)
     }
     
 }

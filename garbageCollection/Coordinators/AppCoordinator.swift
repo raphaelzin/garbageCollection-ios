@@ -40,6 +40,7 @@ class AppCoordinator: RootViewCoordinator {
     
     /// Starts the coordinator
     public func start() {
+        _ = try? Installation.current()?.neighbourhood?.fetch()
         setupTabBar()
     }
 }
