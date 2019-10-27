@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-class CollectionSchedule {
+class CollectionSchedule: PFObject, PFSubclassing {
     
     @NSManaged var identifier: String?
     @NSManaged var cityName: String?
@@ -25,8 +25,8 @@ class CollectionSchedule {
     @NSManaged var city: City?
     
     // Validated types
-    var typedDays: [WeekDay] {
-        days.compactMap { WeekDay(rawValue: $0) }
+    var typedDays: [Date.WeekDay] {
+        days.compactMap { Date.WeekDay(rawValue: $0) }
     }
     
     var typedSchedule: Schedule? {
@@ -37,6 +37,16 @@ class CollectionSchedule {
         Shift(rawValue: shift ?? "")
     }
     
+    // Helper getters
+    var weeklyCollection: [WeekDayCollectionSchedule] {
+        guard let shift = typedShift, let schedule = typedSchedule else { return [] }
+        return typedDays.compactMap {
+            WeekDayCollectionSchedule(shift: shift, schedule: schedule, weekday: $0, neighbourhoodId: identifier ?? "")
+        }
+    }
+    
+    static func parseClassName() -> String { "CollectionSchedule" }
+    
 }
 
 // MARK: Custom Subtypes
@@ -46,27 +56,31 @@ extension CollectionSchedule {
     enum Shift: String {
         case morning = "DIURNO"
         case night = "NOTURNO"
-    }
-    
-    enum WeekDay: String {
-        case mon = "seg"
-        case tue = "ter"
-        case wed = "qua"
-        case thu = "qui"
-        case fri = "sex"
-        case sat = "sab"
-        case sun = "dom"
+        
+        var icon: UIImage? {
+            guard #available(iOS 13, *) else { return nil }
+            
+            switch self {
+            case .morning: return UIImage(systemName: "sun.max")!
+            case .night: return UIImage(systemName: "moon")!
+            }
+        }
+        
+        var tint: UIColor {
+            switch self {
+            case .morning: return .lighterBlue
+            case .night: return .darkerBlue
+            }
+        }
     }
     
     enum Schedule {
-        case specificTime(String)
-        case timeWindow(String, String)
+        case specificTime(Date.Time)
+        case timeWindow(Date.Time, Date.Time)
         
         init?(raw: String) {
             let noSpacesRaw = raw.replacingOccurrences(of: " ", with: "")
-            let timeComponents = noSpacesRaw.split(separator: "-").map { String($0) }
-            
-            guard (timeComponents.allSatisfy { $0.isValidTime }) else { return nil }
+            let timeComponents = noSpacesRaw.split(separator: "-").compactMap { Date.Time(String($0)) }
             
             if timeComponents.count == 2 {
                 self = .timeWindow(timeComponents.first!, timeComponents.last!)
@@ -77,8 +91,15 @@ extension CollectionSchedule {
                 return nil
             }
         }
+        
+        var description: String {
+            switch self {
+            case .specificTime(let schedule): return "Às \(schedule)"
+            case .timeWindow(let start, let end): return "Entre \(start) e \(end)"
+            }
+        }
     }
-    
+
 }
 
 // MARK: Properties
