@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,8 +22,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         appCoordinator = AppCoordinator(window: window!)
         appCoordinator.start()
-        
+        checknotifi()
+        requestAuthorization()
         return true
+    }
+    
+    private func requestAuthorization() {
+        
+    }
+    
+    func checknotifi() {
+        
+        UNUserNotificationCenter.current().getPendingNotificationRequests { (notifs) in
+            print(notifs.count)
+            notifs.forEach { (x) in
+                print("> \(x.content.body)")
+            }
+        }
     }
 
     // MARK: UISceneSession Lifecycle

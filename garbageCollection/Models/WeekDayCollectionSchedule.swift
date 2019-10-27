@@ -12,17 +12,15 @@ import Differentiator
 struct WeekDayCollectionSchedule {
     let shift: CollectionSchedule.Shift
     let schedule: CollectionSchedule.Schedule
-    let weekday: CollectionSchedule.WeekDay
+    let weekday: Date.WeekDay
     
     let neighbourhoodId: String
 }
 
 extension WeekDayCollectionSchedule: IdentifiableType {
-    typealias Identity = Int
     
-    var identity: Int {
-        return "\(weekday.fullname) \(neighbourhoodId)".hash
-    }
+    var identity: Int { "\(weekday.fullname) \(neighbourhoodId)".hash }
+    
 }
 
 extension WeekDayCollectionSchedule: Equatable {

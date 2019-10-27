@@ -11,4 +11,14 @@ import Parse
 
 class Installation: PFInstallation {
     
+    // Parse attributes
+    @NSManaged private var minutesInAdvance: NSNumber?
+    @NSManaged var neighbourhood: Neighbourhood?
+    
+    // helper getters
+    
+    var minutesBeforeCollectionNotification: Int {
+        return minutesInAdvance?.intValue ?? 0
+    }
+    
 }
