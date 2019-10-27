@@ -26,20 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         requestAuthorization()
         return true
     }
-    
-    private func requestAuthorization() {
-        
-    }
-    
-    func checknotifi() {
-        
-        UNUserNotificationCenter.current().getPendingNotificationRequests { (notifs) in
-            print(notifs.count)
-            notifs.forEach { (x) in
-                print("> \(x.content.body)")
-            }
-        }
-    }
 
     // MARK: UISceneSession Lifecycle
 /*

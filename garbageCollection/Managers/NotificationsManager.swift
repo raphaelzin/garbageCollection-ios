@@ -36,9 +36,6 @@ class NotificationsManager {
             body = "Só pra te lembrar da coleta de lixo entre \(start) e \(end)"
         }
         
-        print(collectionDate)
-        print(body)
-        
         let antecipationInterval = TimeInterval(Installation.current()?.minutesBeforeCollectionNotification ?? 0)*60
         let notificationDate = collectionDate.addingTimeInterval(-antecipationInterval)
         
@@ -53,13 +50,13 @@ class NotificationsManager {
 
         let request = UNNotificationRequest(identifier: "NotificationAt-\(notificationDate))", content: content, trigger: trigger)
 
-        UNUserNotificationCenter.current().add(request) { (error) in
-            print("Did complete")
+        UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
-                print("Uh oh! We had an error: \(error)")
+                print(error)
+            } else {
+                print("Notifications scheduled")
             }
         }
-        
     }
     
 }

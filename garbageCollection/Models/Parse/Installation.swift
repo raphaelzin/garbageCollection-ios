@@ -13,7 +13,10 @@ class Installation: PFInstallation {
     
     // Parse attributes
     @NSManaged private var minutesInAdvance: NSNumber?
+    
     @NSManaged var neighbourhood: Neighbourhood?
+    @NSManaged var hintsEnabled: Bool
+    @NSManaged var notificationsEnabled: Bool
     
     // helper getters
     
