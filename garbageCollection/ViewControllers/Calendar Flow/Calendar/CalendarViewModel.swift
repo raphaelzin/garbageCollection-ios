@@ -17,7 +17,7 @@ protocol CalendarViewModelType: class {
     var notificationsActiveRelay: BehaviorRelay<Bool> { get }
     var state: Observable<CalendarViewModel.State> { get }
     
-    var getNotificationsActive: Bool { get }
+    var areNotificationsActive: Bool { get }
     
     var notificationActive: Observable<Bool> { get }
     
@@ -34,7 +34,7 @@ class CalendarViewModel: CalendarViewModelType {
     
     private let disposeBag = DisposeBag()
     
-    var getNotificationsActive: Bool {
+    var areNotificationsActive: Bool {
         return notificationsActiveRelay.value
     }
     
@@ -84,16 +84,15 @@ extension CalendarViewModel {
     
     func select(neighbourhood: Neighbourhood) {
         selectedNeighbourhoodRelay.accept(neighbourhood)
-        Installation.current()?.neighbourhood = neighbourhood
-        Installation.current()?.saveEventually()
     }
     
     func bellTapped() {
         if notificationsActiveRelay.value {
-            Installation.current()?.neighbourhood = nil
+            Installation.current()?.notificationsEnabled = false
         } else if let collectionSchedule = fullCollectionSchedule.value {
             notificationsManager.setupNotifications(for: collectionSchedule)
             Installation.current()?.neighbourhood = selectedNeighbourhoodRelay.value
+            Installation.current()?.notificationsEnabled = true
         }
         
         Installation.current()?.saveEventually()
@@ -110,9 +109,14 @@ private extension CalendarViewModel {
     func bindCollectionScheduleToNeighbourhood() {
         selectedNeighbourhoodObservable
             .compactMap { $0 }
-            .do(onNext: { [weak self] _ in
+            .do(onNext: { [weak self] neighbourhood in
                 self?.fullCollectionSchedule.accept(nil)
                 self?.stateRelay.accept(.loading)
+                
+                if let installation = Installation.current() {
+                    let notificationsEnabled = (installation.neighbourhood == .some(neighbourhood)) && installation.notificationsEnabled
+                    self?.notificationsActiveRelay.accept(notificationsEnabled)
+                }
             })
             .flatMap { [unowned self] (neighbourhood) -> Single<CollectionSchedule> in
                 self.collectionPointsManager.collectionSchedule(for: neighbourhood)

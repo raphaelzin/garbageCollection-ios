@@ -112,10 +112,9 @@ private extension CalendarController {
     }
     
     func bindBellState() {
-        // TODO: implement notification management
         viewModel
             .notificationsActiveRelay
-            .map { UIImage(systemName: $0 ? "bell.slash.fill" : "bell.fill" ) }
+            .map { UIImage(systemName: $0 ? "bell.slash" : "bell" ) }
             .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] (image) in
                 self?.navigationItem.rightBarButtonItem?.image = image
@@ -128,14 +127,14 @@ private extension CalendarController {
 
 private extension CalendarController {
     
-    func promptDefaultRemoval() {
+    func promptWillRemoveDefaultNeighbourhood() {
         let alert = UIAlertController(title: "Atenção",
-                                      message: "Este bairro será removido como o seu bairro padrāo e as notificações serão desativadas.",
+                                      message: "Tem certeza que você quer desativar as notificações sobre coletas?",
                                       preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
         
-        alert.addAction(UIAlertAction(title: "Remover", style: .destructive, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Desativar", style: .destructive, handler: { _ in
             self.viewModel.bellTapped()
         }))
         
@@ -143,9 +142,9 @@ private extension CalendarController {
 
     }
     
-    func promptDefaultCreation() {
+    func promptWillDefineDefaultNeighbourhood() {
         let alert = UIAlertController(title: "Atenção",
-                                      message: "Este bairro será definido como o seu bairro padrāo e as notificações serão ativadas.",
+                                      message: "Tem certeza que você quer ativar as notificações sobre coletas para este bairro?",
                                       preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
@@ -168,9 +167,7 @@ private extension CalendarController {
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
                 UIApplication.shared.canOpenURL(settingsUrl) else { return }
             
-            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                print("Settings opened: \(success)")
-            })
+            UIApplication.shared.open(settingsUrl)
         }))
         
         present(alert, animated: true)
@@ -236,10 +233,10 @@ private extension CalendarController {
                     return
                 }
                 
-                if self.viewModel.getNotificationsActive {
-                    self.promptDefaultRemoval()
+                if self.viewModel.areNotificationsActive {
+                    self.promptWillRemoveDefaultNeighbourhood()
                 } else {
-                    self.promptDefaultCreation()
+                    self.promptWillDefineDefaultNeighbourhood()
                 }
                 
             })
