@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 protocol MapControllerCoordinatorDelegate: class {
     
@@ -15,6 +16,13 @@ protocol MapControllerCoordinatorDelegate: class {
 class MapController: GCViewModelController<MapViewModelType> {
     
     weak var coordinatorDelegate: MapControllerCoordinatorDelegate?
+    
+    // Subviews
+    
+    private lazy var mapView: MKMapView = {
+        let map = MKMapView()
+        return map
+    }()
     
     override init(viewModel: MapViewModelType) {
         super.init(viewModel: viewModel)
@@ -42,7 +50,10 @@ private extension MapController {
     }
     
     func configureLayout() {
-        
+        view.addSubview(mapView)
+        mapView.snp.makeConstraints { (make) in
+            make.edges.equalTo(view)
+        }
     }
     
 }

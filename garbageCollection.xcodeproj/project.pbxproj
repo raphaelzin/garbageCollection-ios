@@ -35,6 +35,8 @@
 		1C696C432364C37500632085 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C422364C37500632085 /* NotificationsManager.swift */; };
 		1C696C452365EB7500632085 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C442365EB7500632085 /* Date.swift */; };
 		1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4723660CA300632085 /* UserNotification+Rx.swift */; };
+		1C696C4C2366617C00632085 /* CollectionPointFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4B2366617C00632085 /* CollectionPointFilterController.swift */; };
+		1C696C4E2366619200632085 /* CollectionPointFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4D2366619200632085 /* CollectionPointFilterViewModel.swift */; };
 		1C835E0A235E917200CC21EB /* WeekDayCollectionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E09235E917200CC21EB /* WeekDayCollectionSchedule.swift */; };
 		1C835E0B235E9AE100CC21EB /* ScheduledCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14E5BD235BACFE00E3CD94 /* ScheduledCollectionCell.swift */; };
 		1C835E0D235E9B9B00CC21EB /* GenericSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E0C235E9B9B00CC21EB /* GenericSection.swift */; };
@@ -56,6 +58,7 @@
 		1C835E3023611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E2F23611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift */; };
 		1C835E3323611F1D00CC21EB /* NeighbourhoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */; };
 		1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */; };
+		1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3432023666A2C001B1790 /* GCExpandableButton.swift */; };
 		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
 		1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA2235CBE6B00664DE7 /* Installation.swift */; };
 		1CF15BA5235CC35C00664DE7 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA4235CC35C00664DE7 /* City.swift */; };
@@ -127,6 +130,8 @@
 		1C696C422364C37500632085 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		1C696C442365EB7500632085 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		1C696C4723660CA300632085 /* UserNotification+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserNotification+Rx.swift"; sourceTree = "<group>"; };
+		1C696C4B2366617C00632085 /* CollectionPointFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointFilterController.swift; sourceTree = "<group>"; };
+		1C696C4D2366619200632085 /* CollectionPointFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointFilterViewModel.swift; sourceTree = "<group>"; };
 		1C835E09235E917200CC21EB /* WeekDayCollectionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayCollectionSchedule.swift; sourceTree = "<group>"; };
 		1C835E0C235E9B9B00CC21EB /* GenericSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericSection.swift; sourceTree = "<group>"; };
 		1C835E0E235EA27E00CC21EB /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
@@ -147,6 +152,7 @@
 		1C835E2F23611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodSelectionViewModel.swift; sourceTree = "<group>"; };
 		1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodCell.swift; sourceTree = "<group>"; };
 		1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodsManager.swift; sourceTree = "<group>"; };
+		1CE3432023666A2C001B1790 /* GCExpandableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCExpandableButton.swift; sourceTree = "<group>"; };
 		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
 		1CF15BA2235CBE6B00664DE7 /* Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installation.swift; sourceTree = "<group>"; };
 		1CF15BA4235CC35C00664DE7 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -337,7 +343,7 @@
 			children = (
 				1C46181623594A560054B22B /* Common */,
 				1C14E5B9235BACC300E3CD94 /* Calendar Flow */,
-				1C31CBF6235B5B9900653E19 /* Map */,
+				1C31CBF6235B5B9900653E19 /* Map Flow */,
 				1C31CC02235B6A8600653E19 /* Settings */,
 			);
 			path = ViewControllers;
@@ -353,13 +359,13 @@
 			path = Configs;
 			sourceTree = "<group>";
 		};
-		1C31CBF6235B5B9900653E19 /* Map */ = {
+		1C31CBF6235B5B9900653E19 /* Map Flow */ = {
 			isa = PBXGroup;
 			children = (
-				1C31CC05235B6AB300653E19 /* MapController.swift */,
-				1C31CC0D235B72BC00653E19 /* MapViewModel.swift */,
+				1C696C4A2366615600632085 /* Filter */,
+				1C696C4923665F5900632085 /* Map */,
 			);
-			path = Map;
+			path = "Map Flow";
 			sourceTree = "<group>";
 		};
 		1C31CBF7235B5D0E00653E19 /* Views */ = {
@@ -368,6 +374,7 @@
 				1C31CBF8235B5D2B00653E19 /* GCNavigationBar.swift */,
 				1C31CBFA235B5D8000653E19 /* GCNavigationController.swift */,
 				1C31CC0B235B70CC00653E19 /* GCViewModelController.swift */,
+				1CE3432023666A2C001B1790 /* GCExpandableButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -449,6 +456,24 @@
 				1C696C4723660CA300632085 /* UserNotification+Rx.swift */,
 			);
 			path = UserNotifications;
+			sourceTree = "<group>";
+		};
+		1C696C4923665F5900632085 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1C31CC05235B6AB300653E19 /* MapController.swift */,
+				1C31CC0D235B72BC00653E19 /* MapViewModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		1C696C4A2366615600632085 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				1C696C4B2366617C00632085 /* CollectionPointFilterController.swift */,
+				1C696C4D2366619200632085 /* CollectionPointFilterViewModel.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		1C835E12235EA5FB00CC21EB /* Managers */ = {
@@ -801,7 +826,9 @@
 				1C31CBF3235B5B7E00653E19 /* CalendarCoordinator.swift in Sources */,
 				1C696C452365EB7500632085 /* Date.swift in Sources */,
 				1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */,
+				1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */,
 				1C835E20235EA88000CC21EB /* PFUser+Rx.swift in Sources */,
+				1C696C4C2366617C00632085 /* CollectionPointFilterController.swift in Sources */,
 				1C26CE4D23594308008BB2D2 /* AppDelegate.swift in Sources */,
 				1C835E25235EA88000CC21EB /* PFAnonymousUtils+Rx.swift in Sources */,
 				1C31CBED235B566A00653E19 /* Coordinator.swift in Sources */,
@@ -829,6 +856,7 @@
 				1C835E22235EA88000CC21EB /* PFPush+Rx.swift in Sources */,
 				1C31CBEB235B564B00653E19 /* RootViewCoordinator.swift in Sources */,
 				1C835E24235EA88000CC21EB /* PFObject+Rx.swift in Sources */,
+				1C696C4E2366619200632085 /* CollectionPointFilterViewModel.swift in Sources */,
 				1C46181823594A6B0054B22B /* SplashController.swift in Sources */,
 				1CF15BA5235CC35C00664DE7 /* City.swift in Sources */,
 				1C31CC06235B6AB300653E19 /* MapController.swift in Sources */,
