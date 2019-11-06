@@ -2,7 +2,7 @@
 //  CollectionPointsManager.swift
 //  garbageCollection
 //
-//  Created by Raphael Souza on 2019-10-21.
+//  Created by Raphael Souza on 2019-11-05.
 //  Copyright © 2019 Raphael Inc. All rights reserved.
 //
 
@@ -12,12 +12,11 @@ import RxSwift
 
 class CollectionPointsManager {
     
-    func collectionSchedule(for neighbourhood: Neighbourhood) -> Single<CollectionSchedule> {
-        guard let query = CollectionSchedule.query() else { return .error(GCError.Misc.invalidquery) }
-        query.whereKey(CollectionSchedule.Properties.neighbourhood, equalTo: neighbourhood)
+    func collectionPoints() -> Single<[CollectionPoint]> {
+        guard let query = CollectionPoint.query() else { return .error(GCError.Misc.invalidquery) }
         
-        return query.rx.getFirstObject().map { (object) -> CollectionSchedule in
-            if let collectionSchedule = object as? CollectionSchedule {
+        return query.rx.findObjects().map { (result) -> [CollectionPoint] in
+            if let collectionSchedule = result as? [CollectionPoint] {
                 return collectionSchedule
             } else {
                 throw GCError.Server.invalidQueryResult

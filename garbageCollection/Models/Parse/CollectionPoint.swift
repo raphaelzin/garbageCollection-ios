@@ -22,8 +22,64 @@ class CollectionPoint: PFObject, PFSubclassing {
     
     @NSManaged private var type: String?
     
+    var safeType: PointType? {
+        get { PointType(rawValue: type ?? "") }
+        set { type = newValue?.rawValue }
+    }
+    
     static func parseClassName() -> String { return "CollectionPoint" }
     
+}
+
+// MARK: Subtypes
+
+extension CollectionPoint {
+    
+    enum PointType: String {
+        case ecopoint
+        case association
+        case pev = "PEV"
+        case pcee = "PCEE"
+        case ogr = "OGR"
+        
+        var shortName: String {
+            switch self {
+            case .ecopoint: return "Ecoponto"
+            case .association: return "Associação"
+            case .pev, .pcee, .ogr: return self.rawValue
+            }
+        }
+            
+        var fullName: String {
+            switch self {
+            case .ecopoint: return "Ecoponto"
+            case .association: return "Associação"
+            case .pcee: return "Ponto de coleta de eletro-eletrônicos"
+            case .pev: return "Ponto de entrega voluntária"
+            case .ogr: return "Pontos de coleta de Óleo e gordura residual"
+            }
+        }
+        
+        var icon: UIImage {
+            switch self {
+            case .ecopoint: return UIImage(systemName: "arrow.3.trianglepath")!
+            case .association: return UIImage(systemName: "arrow.3.trianglepath")!
+            case .pcee: return UIImage(systemName: "arrow.3.trianglepath")!
+            case .pev: return UIImage(systemName: "arrow.3.trianglepath")!
+            case .ogr: return UIImage(systemName: "arrow.3.trianglepath")!
+            }
+        }
+        
+        var tintColor: UIColor {
+            switch self {
+            case .association: return .skyBlue
+            case .ecopoint: return .coolGreen
+            case .pcee: return .coolGreen
+            case .pev: return .orangeyRed
+            case .ogr: return .marigold
+            }
+        }
+    }
 }
 
 // MARK: Properties

@@ -134,7 +134,7 @@ extension GCExpandableButton {
             .delay(.seconds(Int(afterInterval)), scheduler: MainScheduler.instance)
             .asSingle()
             .asDriver(onErrorJustReturn: .collapsed)
-            .drive(self.stateRelay)
+            .drive(stateRelay)
             .disposed(by: disposeBag)
     }
     

@@ -37,12 +37,16 @@
 		1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4723660CA300632085 /* UserNotification+Rx.swift */; };
 		1C696C4C2366617C00632085 /* CollectionPointFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4B2366617C00632085 /* CollectionPointFilterController.swift */; };
 		1C696C4E2366619200632085 /* CollectionPointFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4D2366619200632085 /* CollectionPointFilterViewModel.swift */; };
+		1C7A43BD23724F59005210B9 /* CollectionPointsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */; };
+		1C7A43BF23725DCE005210B9 /* CollectionPointMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43BE23725DCE005210B9 /* CollectionPointMarker.swift */; };
+		1C7A43C123725E97005210B9 /* PFGeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43C023725E97005210B9 /* PFGeoPoint.swift */; };
+		1C7A43C423727B29005210B9 /* CollectionPointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43C323727B28005210B9 /* CollectionPointAnnotationView.swift */; };
 		1C835E0A235E917200CC21EB /* WeekDayCollectionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E09235E917200CC21EB /* WeekDayCollectionSchedule.swift */; };
 		1C835E0B235E9AE100CC21EB /* ScheduledCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14E5BD235BACFE00E3CD94 /* ScheduledCollectionCell.swift */; };
 		1C835E0D235E9B9B00CC21EB /* GenericSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E0C235E9B9B00CC21EB /* GenericSection.swift */; };
 		1C835E0F235EA27E00CC21EB /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E0E235EA27E00CC21EB /* UITableView.swift */; };
 		1C835E11235EA2CB00CC21EB /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E10235EA2CB00CC21EB /* UITableViewCell.swift */; };
-		1C835E14235EA61200CC21EB /* CollectionPointsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E13235EA61200CC21EB /* CollectionPointsManager.swift */; };
+		1C835E14235EA61200CC21EB /* CollectionScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E13235EA61200CC21EB /* CollectionScheduleManager.swift */; };
 		1C835E20235EA88000CC21EB /* PFUser+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E16235EA87F00CC21EB /* PFUser+Rx.swift */; };
 		1C835E21235EA88000CC21EB /* PFGeoPoint+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E17235EA87F00CC21EB /* PFGeoPoint+Rx.swift */; };
 		1C835E22235EA88000CC21EB /* PFPush+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E18235EA87F00CC21EB /* PFPush+Rx.swift */; };
@@ -132,11 +136,15 @@
 		1C696C4723660CA300632085 /* UserNotification+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserNotification+Rx.swift"; sourceTree = "<group>"; };
 		1C696C4B2366617C00632085 /* CollectionPointFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointFilterController.swift; sourceTree = "<group>"; };
 		1C696C4D2366619200632085 /* CollectionPointFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointFilterViewModel.swift; sourceTree = "<group>"; };
+		1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointsManager.swift; sourceTree = "<group>"; };
+		1C7A43BE23725DCE005210B9 /* CollectionPointMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointMarker.swift; sourceTree = "<group>"; };
+		1C7A43C023725E97005210B9 /* PFGeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFGeoPoint.swift; sourceTree = "<group>"; };
+		1C7A43C323727B28005210B9 /* CollectionPointAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointAnnotationView.swift; sourceTree = "<group>"; };
 		1C835E09235E917200CC21EB /* WeekDayCollectionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayCollectionSchedule.swift; sourceTree = "<group>"; };
 		1C835E0C235E9B9B00CC21EB /* GenericSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericSection.swift; sourceTree = "<group>"; };
 		1C835E0E235EA27E00CC21EB /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		1C835E10235EA2CB00CC21EB /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
-		1C835E13235EA61200CC21EB /* CollectionPointsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointsManager.swift; sourceTree = "<group>"; };
+		1C835E13235EA61200CC21EB /* CollectionScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScheduleManager.swift; sourceTree = "<group>"; };
 		1C835E16235EA87F00CC21EB /* PFUser+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFUser+Rx.swift"; sourceTree = "<group>"; };
 		1C835E17235EA87F00CC21EB /* PFGeoPoint+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFGeoPoint+Rx.swift"; sourceTree = "<group>"; };
 		1C835E18235EA87F00CC21EB /* PFPush+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFPush+Rx.swift"; sourceTree = "<group>"; };
@@ -371,6 +379,7 @@
 		1C31CBF7235B5D0E00653E19 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1C7A43C223727B10005210B9 /* Map views */,
 				1C31CBF8235B5D2B00653E19 /* GCNavigationBar.swift */,
 				1C31CBFA235B5D8000653E19 /* GCNavigationController.swift */,
 				1C31CC0B235B70CC00653E19 /* GCViewModelController.swift */,
@@ -476,10 +485,20 @@
 			path = Filter;
 			sourceTree = "<group>";
 		};
+		1C7A43C223727B10005210B9 /* Map views */ = {
+			isa = PBXGroup;
+			children = (
+				1C7A43BE23725DCE005210B9 /* CollectionPointMarker.swift */,
+				1C7A43C323727B28005210B9 /* CollectionPointAnnotationView.swift */,
+			);
+			path = "Map views";
+			sourceTree = "<group>";
+		};
 		1C835E12235EA5FB00CC21EB /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				1C835E13235EA61200CC21EB /* CollectionPointsManager.swift */,
+				1C835E13235EA61200CC21EB /* CollectionScheduleManager.swift */,
+				1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */,
 				1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */,
 				1C696C422364C37500632085 /* NotificationsManager.swift */,
 			);
@@ -499,6 +518,7 @@
 				1C835E18235EA87F00CC21EB /* PFPush+Rx.swift */,
 				1C835E1F235EA88000CC21EB /* PFQuery+Rx.swift */,
 				1C835E16235EA87F00CC21EB /* PFUser+Rx.swift */,
+				1C7A43C023725E97005210B9 /* PFGeoPoint.swift */,
 			);
 			path = RxParseExtensions;
 			sourceTree = "<group>";
@@ -817,15 +837,18 @@
 				1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */,
 				1C835E26235EA88000CC21EB /* PFCloud+Rx.swift in Sources */,
 				1C835E28235EA88000CC21EB /* PFFileObject+Rx.swift in Sources */,
-				1C835E14235EA61200CC21EB /* CollectionPointsManager.swift in Sources */,
+				1C835E14235EA61200CC21EB /* CollectionScheduleManager.swift in Sources */,
 				1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */,
+				1C7A43BD23724F59005210B9 /* CollectionPointsManager.swift in Sources */,
 				1C31CBFB235B5D8000653E19 /* GCNavigationController.swift in Sources */,
 				1C31CBF1235B5B2C00653E19 /* MapCoordinator.swift in Sources */,
 				1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */,
 				1C31CC04235B6AA600653E19 /* CalendarController.swift in Sources */,
 				1C31CBF3235B5B7E00653E19 /* CalendarCoordinator.swift in Sources */,
+				1C7A43BF23725DCE005210B9 /* CollectionPointMarker.swift in Sources */,
 				1C696C452365EB7500632085 /* Date.swift in Sources */,
 				1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */,
+				1C7A43C123725E97005210B9 /* PFGeoPoint.swift in Sources */,
 				1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */,
 				1C835E20235EA88000CC21EB /* PFUser+Rx.swift in Sources */,
 				1C696C4C2366617C00632085 /* CollectionPointFilterController.swift in Sources */,
@@ -856,6 +879,7 @@
 				1C835E22235EA88000CC21EB /* PFPush+Rx.swift in Sources */,
 				1C31CBEB235B564B00653E19 /* RootViewCoordinator.swift in Sources */,
 				1C835E24235EA88000CC21EB /* PFObject+Rx.swift in Sources */,
+				1C7A43C423727B29005210B9 /* CollectionPointAnnotationView.swift in Sources */,
 				1C696C4E2366619200632085 /* CollectionPointFilterViewModel.swift in Sources */,
 				1C46181823594A6B0054B22B /* SplashController.swift in Sources */,
 				1CF15BA5235CC35C00664DE7 /* City.swift in Sources */,
