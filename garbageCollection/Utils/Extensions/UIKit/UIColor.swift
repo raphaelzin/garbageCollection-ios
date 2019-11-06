@@ -20,14 +20,24 @@ extension UIColor {
       return UIColor(red: 63.0 / 255.0, green: 97.0 / 255.0, blue: 174.0 / 255.0, alpha: 1.0)
     }
     
-    // HEX: #6B9EEA
+    /// HEX: #6B9EEA
     @nonobjc class var lighterBlue: UIColor {
       return UIColor(red: 107.0 / 255.0, green: 158.0 / 255.0, blue: 234.0 / 255.0, alpha: 1.0)
     }
     
-    // HEX: #979797
+    /// HEX: #979797
     @nonobjc class var secondaryLightGray: UIColor {
       return UIColor(white: 151.0 / 255.0, alpha: 0.37)
+    }
+    
+    /// HEX: #8D8D8D
+    @nonobjc class var brownGrey: UIColor {
+      return UIColor(white: 141.0 / 255.0, alpha: 1.0)
+    }
+
+    /// HEX: #F83A3A
+    @nonobjc class var orangeyRed: UIColor {
+      return UIColor(red: 248.0 / 255.0, green: 58.0 / 255.0, blue: 58.0 / 255.0, alpha: 1.0)
     }
 
 }
