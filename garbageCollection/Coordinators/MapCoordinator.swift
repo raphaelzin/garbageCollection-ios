@@ -23,7 +23,30 @@ class MapCoordinator: RootViewCoordinator {
     func start() {
         let viewModel = MapViewModel()
         let controller = MapController(viewModel: viewModel)
-        
+        controller.coordinatorDelegate = self
         navigationController.pushViewController(controller, animated: true)
     }
+}
+
+extension MapCoordinator: MapControllerCoordinatorDelegate {
+
+    func didRequestFilterSelection(from controller: MapController) {
+        let viewModel = CollectionPointFilterViewModel()
+        let filtersController = CollectionPointFilterController(viewModel: viewModel)
+        
+        filtersController.coordinatorDelegate = self
+        filtersController.filterDelegate = controller
+        
+        let navigationController = GCNavigationController(rootController: filtersController)
+        controller.present(navigationController, animated: true)
+    }
+    
+}
+
+extension MapCoordinator: CollectionPointFilterCoordinatorDelegate {
+    
+    func didRequestDismiss(from controller: CollectionPointFilterController) {
+        controller.dismiss(animated: true)
+    }
+    
 }

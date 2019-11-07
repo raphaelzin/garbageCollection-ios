@@ -35,7 +35,7 @@ class CollectionPoint: PFObject, PFSubclassing {
 
 extension CollectionPoint {
     
-    enum PointType: String {
+    enum PointType: String, CaseIterable {
         case ecopoint
         case association
         case pev = "PEV"

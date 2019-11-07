@@ -11,7 +11,7 @@ import MapKit
 import RxSwift
 
 protocol MapControllerCoordinatorDelegate: class {
-    
+    func didRequestFilterSelection(from controller: MapController)
 }
 
 class MapController: GCViewModelController<MapViewModelType> {
@@ -31,6 +31,7 @@ class MapController: GCViewModelController<MapViewModelType> {
     private lazy var filterButton: GCExpandableButton = {
         let btn = GCExpandableButton()
         btn.contentTextColor = .brownGrey
+        btn.delegate = self
         return btn
     }()
     
@@ -39,6 +40,7 @@ class MapController: GCViewModelController<MapViewModelType> {
         btn.contentTextColor = .white
         btn.buttonBackgroundColor = .orangeyRed
         btn.contentBackgroundColor = .orangeyRed
+        btn.delegate = self
         
         let image = UIImage(systemName: "exclamationmark.triangle")?.withTintColor(.white, renderingMode: .alwaysOriginal)
         btn.buttonIcon = image
@@ -132,7 +134,8 @@ extension MapController: MKMapViewDelegate {
         for marker in markers {
             mapView.addAnnotation(marker)
         }
-        print(#function)
+        
+        mapView.showAnnotations(mapView.annotations, animated: true)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -147,10 +150,18 @@ extension MapController: GCExpandableButtonDelegate {
     
     func didTap(button: GCExpandableButton) {
         if button == filterButton {
-            
+            coordinatorDelegate?.didRequestFilterSelection(from: self)
         } else {
             
         }
+    }
+    
+}
+
+extension MapController: FilterSelectorDelegate {
+    
+    func didSelect(filters: [CollectionPoint.PointType]) {
+        viewModel.updateSelected(filters: filters)
     }
     
 }

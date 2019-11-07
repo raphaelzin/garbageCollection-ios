@@ -41,6 +41,7 @@
 		1C7A43BF23725DCE005210B9 /* CollectionPointMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43BE23725DCE005210B9 /* CollectionPointMarker.swift */; };
 		1C7A43C123725E97005210B9 /* PFGeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43C023725E97005210B9 /* PFGeoPoint.swift */; };
 		1C7A43C423727B29005210B9 /* CollectionPointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43C323727B28005210B9 /* CollectionPointAnnotationView.swift */; };
+		1C7A43C72373C119005210B9 /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43C62373C119005210B9 /* SelectableCell.swift */; };
 		1C835E0A235E917200CC21EB /* WeekDayCollectionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E09235E917200CC21EB /* WeekDayCollectionSchedule.swift */; };
 		1C835E0B235E9AE100CC21EB /* ScheduledCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14E5BD235BACFE00E3CD94 /* ScheduledCollectionCell.swift */; };
 		1C835E0D235E9B9B00CC21EB /* GenericSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E0C235E9B9B00CC21EB /* GenericSection.swift */; };
@@ -140,6 +141,7 @@
 		1C7A43BE23725DCE005210B9 /* CollectionPointMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointMarker.swift; sourceTree = "<group>"; };
 		1C7A43C023725E97005210B9 /* PFGeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFGeoPoint.swift; sourceTree = "<group>"; };
 		1C7A43C323727B28005210B9 /* CollectionPointAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointAnnotationView.swift; sourceTree = "<group>"; };
+		1C7A43C62373C119005210B9 /* SelectableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
 		1C835E09235E917200CC21EB /* WeekDayCollectionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayCollectionSchedule.swift; sourceTree = "<group>"; };
 		1C835E0C235E9B9B00CC21EB /* GenericSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericSection.swift; sourceTree = "<group>"; };
 		1C835E0E235EA27E00CC21EB /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 			children = (
 				1C696C4B2366617C00632085 /* CollectionPointFilterController.swift */,
 				1C696C4D2366619200632085 /* CollectionPointFilterViewModel.swift */,
+				1C7A43C52373C0F3005210B9 /* Cells */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -492,6 +495,14 @@
 				1C7A43C323727B28005210B9 /* CollectionPointAnnotationView.swift */,
 			);
 			path = "Map views";
+			sourceTree = "<group>";
+		};
+		1C7A43C52373C0F3005210B9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1C7A43C62373C119005210B9 /* SelectableCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		1C835E12235EA5FB00CC21EB /* Managers */ = {
@@ -870,6 +881,7 @@
 				1C31CC0E235B72BC00653E19 /* MapViewModel.swift in Sources */,
 				1CF15BAD235CC3AF00664DE7 /* Neighbourhood.swift in Sources */,
 				1C835E2E23611DE200CC21EB /* NeighbourhoodSelectionController.swift in Sources */,
+				1C7A43C72373C119005210B9 /* SelectableCell.swift in Sources */,
 				1C57CAF2235CE114004D0E0C /* String.swift in Sources */,
 				1CF15BAF235CC3C700664DE7 /* RubbishReport.swift in Sources */,
 				1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */,

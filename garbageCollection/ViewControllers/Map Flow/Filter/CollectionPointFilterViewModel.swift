@@ -7,3 +7,35 @@
 //
 
 import Foundation
+
+protocol CollectionPointFilterViewModelType: class {
+    var collectionPointTypes: [CollectionPoint.PointType] { get }
+    var selectedCollectionPoints: [CollectionPoint.PointType] { get }
+    
+    func select(type: CollectionPoint.PointType)
+    func unselect(type: CollectionPoint.PointType)
+}
+
+class CollectionPointFilterViewModel: CollectionPointFilterViewModelType {
+    
+    // MARK: Attributes
+    
+    let collectionPointTypes = CollectionPoint.PointType.allCases
+    
+    private(set) var selectedCollectionPoints = CollectionPoint.PointType.allCases
+    
+}
+
+extension CollectionPointFilterViewModel {
+    
+    func unselect(type: CollectionPoint.PointType) {
+        guard let index = selectedCollectionPoints.firstIndex(of: type) else { return }
+        selectedCollectionPoints.remove(at: index)
+    }
+    
+    func select(type: CollectionPoint.PointType) {
+        guard !selectedCollectionPoints.contains(type) else { return }
+        selectedCollectionPoints.append(type)
+    }
+    
+}
