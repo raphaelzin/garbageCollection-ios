@@ -161,6 +161,7 @@ extension MapController: GCExpandableButtonDelegate {
 extension MapController: FilterSelectorDelegate {
     
     func didSelect(filters: [CollectionPoint.PointType]) {
+        filterButton.setContent(filters.map { $0.shortName }.joined(separator: " / "))
         viewModel.updateSelected(filters: filters)
     }
     
