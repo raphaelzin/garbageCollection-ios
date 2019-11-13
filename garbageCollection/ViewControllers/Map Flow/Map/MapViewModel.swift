@@ -12,6 +12,7 @@ import RxSwift
 
 protocol MapViewModelType: class {
     var collectionPoints: Observable<[CollectionPoint]> { get }
+    var selectedFilters: [CollectionPoint.PointType] { get }
     
     func updateSelected(filters: [CollectionPoint.PointType])
 }
@@ -24,7 +25,7 @@ class MapViewModel: MapViewModelType {
     
     private let collectionPointsRelay = BehaviorRelay<[CollectionPoint]>(value: [])
     
-    private let selectedFiltersRelay = BehaviorRelay<[CollectionPoint.PointType]>(value: [])
+    private let selectedFiltersRelay = BehaviorRelay<[CollectionPoint.PointType]>(value: CollectionPoint.PointType.allCases)
     
     private let disposeBag = DisposeBag()
     
@@ -35,9 +36,12 @@ class MapViewModel: MapViewModelType {
             .combineLatest(collectionPointsRelay.asObservable(), selectedFiltersRelay.asObservable())
             .map { (collectionPoints, filters) -> [CollectionPoint] in
                 guard !filters.isEmpty else { return collectionPoints }
-                return collectionPoints.filter { $0.safeType != nil && filters.contains($0.safeType!)
+                return collectionPoints.filter { $0.safeType != nil && filters.contains($0.safeType!) }
             }
-        }
+    }
+    
+    var selectedFilters: [CollectionPoint.PointType] {
+        return selectedFiltersRelay.value
     }
     
     // MARK: Lifecycle

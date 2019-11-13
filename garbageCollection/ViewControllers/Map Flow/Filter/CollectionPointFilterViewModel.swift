@@ -24,6 +24,12 @@ class CollectionPointFilterViewModel: CollectionPointFilterViewModelType {
     
     private(set) var selectedCollectionPoints = CollectionPoint.PointType.allCases
     
+    // MARK: Lifecycle
+    
+    init(currentSelectedFilters: [CollectionPoint.PointType]) {
+        selectedCollectionPoints = currentSelectedFilters
+    }
+    
 }
 
 extension CollectionPointFilterViewModel {

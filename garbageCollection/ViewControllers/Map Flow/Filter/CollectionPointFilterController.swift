@@ -105,6 +105,12 @@ private extension CollectionPointFilterController {
                 self.viewModel.unselect(type: type)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.collectionPointTypes.enumerated().filter { viewModel.selectedCollectionPoints.contains($0.element) }.forEach {
+            let indexPath = IndexPath(row: $0.offset, section: 0)
+            tableView.selectRow(at: IndexPath(row: $0.offset, section: 0), animated: false, scrollPosition: .none)
+            (tableView.cellForRow(at: indexPath) as? SelectableCell)?.configure(selected: true)
+        }
     }
     
 }
@@ -114,7 +120,6 @@ private extension CollectionPointFilterController {
 private extension CollectionPointFilterController {
     
     @objc func onFilterTap() {
-        print("selected types: \(viewModel.selectedCollectionPoints.map { $0.shortName })")
         filterDelegate?.didSelect(filters: viewModel.selectedCollectionPoints)
         coordinatorDelegate?.didRequestDismiss(from: self)
     }

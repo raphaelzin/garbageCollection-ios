@@ -11,7 +11,7 @@ import MapKit
 import RxSwift
 
 protocol MapControllerCoordinatorDelegate: class {
-    func didRequestFilterSelection(from controller: MapController)
+    func didRequestFilterSelection(from controller: MapController, with currentFilters: [CollectionPoint.PointType])
 }
 
 class MapController: GCViewModelController<MapViewModelType> {
@@ -32,6 +32,10 @@ class MapController: GCViewModelController<MapViewModelType> {
         let btn = GCExpandableButton()
         btn.contentTextColor = .brownGrey
         btn.delegate = self
+        
+        let image = UIImage(systemName: "line.horizontal.3.decrease.circle")?.withTintColor(.defaultBlue, renderingMode: .alwaysOriginal)
+        btn.buttonIcon = image
+        
         return btn
     }()
     
@@ -54,7 +58,7 @@ class MapController: GCViewModelController<MapViewModelType> {
         super.viewDidAppear(animated)
         
         reportButton.setState(.expanded, afterInterval: 1)
-        reportButton.setState(.collapsed, afterInterval: 4)
+        reportButton.setState(.collapsed, afterInterval: 3)
     }
     
     override init(viewModel: MapViewModelType) {
@@ -150,7 +154,7 @@ extension MapController: GCExpandableButtonDelegate {
     
     func didTap(button: GCExpandableButton) {
         if button == filterButton {
-            coordinatorDelegate?.didRequestFilterSelection(from: self)
+            coordinatorDelegate?.didRequestFilterSelection(from: self, with: viewModel.selectedFilters)
         } else {
             
         }
@@ -161,7 +165,8 @@ extension MapController: GCExpandableButtonDelegate {
 extension MapController: FilterSelectorDelegate {
     
     func didSelect(filters: [CollectionPoint.PointType]) {
-        filterButton.setContent(filters.map { $0.shortName }.joined(separator: " / "))
+        let content = filters.count == CollectionPoint.PointType.allCases.count ? "" : filters.map { $0.shortName }.joined(separator: " / ")
+        filterButton.setContent(content)
         viewModel.updateSelected(filters: filters)
     }
     

@@ -30,8 +30,8 @@ class MapCoordinator: RootViewCoordinator {
 
 extension MapCoordinator: MapControllerCoordinatorDelegate {
 
-    func didRequestFilterSelection(from controller: MapController) {
-        let viewModel = CollectionPointFilterViewModel()
+    func didRequestFilterSelection(from controller: MapController, with currentSelection: [CollectionPoint.PointType]) {
+        let viewModel = CollectionPointFilterViewModel(currentSelectedFilters: currentSelection)
         let filtersController = CollectionPointFilterController(viewModel: viewModel)
         
         filtersController.coordinatorDelegate = self
