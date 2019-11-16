@@ -52,6 +52,12 @@ class MapController: GCViewModelController<MapViewModelType> {
         return btn
     }()
     
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        return cv
+    }()
+    
     // MARK: Lifecycle
     
     override func viewDidAppear(_ animated: Bool) {
@@ -169,5 +175,11 @@ extension MapController: FilterSelectorDelegate {
         filterButton.setContent(content)
         viewModel.updateSelected(filters: filters)
     }
+    
+}
+
+extension MapController: UIScrollViewDelegate {
+    
+    
     
 }

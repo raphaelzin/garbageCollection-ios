@@ -63,6 +63,8 @@
 		1C835E3023611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E2F23611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift */; };
 		1C835E3323611F1D00CC21EB /* NeighbourhoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */; };
 		1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */; };
+		1CB6CAAF2380AF6900E790CC /* CGCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAAE2380AF6900E790CC /* CGCollectionViewFlowLayout.swift */; };
+		1CB6CAB12380B15800E790CC /* CollectionPointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */; };
 		1CC05479237E00C200268662 /* parseConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC05478237E00C200268662 /* parseConnectionTest.swift */; };
 		1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3432023666A2C001B1790 /* GCExpandableButton.swift */; };
 		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
@@ -163,6 +165,8 @@
 		1C835E2F23611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodSelectionViewModel.swift; sourceTree = "<group>"; };
 		1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodCell.swift; sourceTree = "<group>"; };
 		1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodsManager.swift; sourceTree = "<group>"; };
+		1CB6CAAE2380AF6900E790CC /* CGCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointCollectionViewCell.swift; sourceTree = "<group>"; };
 		1CC05478237E00C200268662 /* parseConnectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parseConnectionTest.swift; sourceTree = "<group>"; };
 		1CE3432023666A2C001B1790 /* GCExpandableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCExpandableButton.swift; sourceTree = "<group>"; };
 		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
@@ -389,6 +393,7 @@
 				1C31CBFA235B5D8000653E19 /* GCNavigationController.swift */,
 				1C31CC0B235B70CC00653E19 /* GCViewModelController.swift */,
 				1CE3432023666A2C001B1790 /* GCExpandableButton.swift */,
+				1CB6CAAE2380AF6900E790CC /* CGCollectionViewFlowLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 			children = (
 				1C31CC05235B6AB300653E19 /* MapController.swift */,
 				1C31CC0D235B72BC00653E19 /* MapViewModel.swift */,
+				1CB6CAAC2380AF3D00E790CC /* Cells */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -551,6 +557,14 @@
 			isa = PBXGroup;
 			children = (
 				1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1CB6CAAC2380AF3D00E790CC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -857,6 +871,7 @@
 				1C31CBFB235B5D8000653E19 /* GCNavigationController.swift in Sources */,
 				1C31CBF1235B5B2C00653E19 /* MapCoordinator.swift in Sources */,
 				1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */,
+				1CB6CAAF2380AF6900E790CC /* CGCollectionViewFlowLayout.swift in Sources */,
 				1C31CC04235B6AA600653E19 /* CalendarController.swift in Sources */,
 				1C31CBF3235B5B7E00653E19 /* CalendarCoordinator.swift in Sources */,
 				1C7A43BF23725DCE005210B9 /* CollectionPointMarker.swift in Sources */,
@@ -888,6 +903,7 @@
 				1C57CAF2235CE114004D0E0C /* String.swift in Sources */,
 				1CF15BAF235CC3C700664DE7 /* RubbishReport.swift in Sources */,
 				1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */,
+				1CB6CAB12380B15800E790CC /* CollectionPointCollectionViewCell.swift in Sources */,
 				1C31CBFF235B5DD700653E19 /* UIColor.swift in Sources */,
 				1C835E23235EA88000CC21EB /* Observable+ParseCreate.swift in Sources */,
 				1C14E5C1235BB48400E3CD94 /* NeighbourhoodSelectorView.swift in Sources */,
