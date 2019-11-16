@@ -49,7 +49,7 @@ class NotificationsManager {
         content.categoryIdentifier = "CollectionSchedule"
 
         let request = UNNotificationRequest(identifier: "NotificationAt-\(notificationDate))", content: content, trigger: trigger)
-
+        
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print(error)

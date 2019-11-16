@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1C26CE5E2359430C008BB2D2"
+               BuildableName = "garbageCollectionTests.xctest"
+               BlueprintName = "garbageCollectionTests"
+               ReferencedContainer = "container:garbageCollection.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1C26CE692359430C008BB2D2"
+               BuildableName = "garbageCollectionUITests.xctest"
+               BlueprintName = "garbageCollectionUITests"
+               ReferencedContainer = "container:garbageCollection.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -80,7 +80,9 @@ extension CollectionSchedule {
         
         init?(raw: String) {
             let noSpacesRaw = raw.replacingOccurrences(of: " ", with: "")
-            let timeComponents = noSpacesRaw.split(separator: "-").compactMap { Date.Time(String($0)) }
+            let rawTimeComponents = noSpacesRaw.split(separator: "-").map { Date.Time(String($0)) }
+            let timeComponents = rawTimeComponents.compactMap { $0 }
+            guard rawTimeComponents.count == timeComponents.count else { return nil }
             
             if timeComponents.count == 2 {
                 self = .timeWindow(timeComponents.first!, timeComponents.last!)

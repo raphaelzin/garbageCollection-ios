@@ -63,6 +63,7 @@
 		1C835E3023611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E2F23611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift */; };
 		1C835E3323611F1D00CC21EB /* NeighbourhoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */; };
 		1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */; };
+		1CC05479237E00C200268662 /* parseConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC05478237E00C200268662 /* parseConnectionTest.swift */; };
 		1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3432023666A2C001B1790 /* GCExpandableButton.swift */; };
 		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
 		1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA2235CBE6B00664DE7 /* Installation.swift */; };
@@ -162,6 +163,7 @@
 		1C835E2F23611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodSelectionViewModel.swift; sourceTree = "<group>"; };
 		1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodCell.swift; sourceTree = "<group>"; };
 		1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodsManager.swift; sourceTree = "<group>"; };
+		1CC05478237E00C200268662 /* parseConnectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parseConnectionTest.swift; sourceTree = "<group>"; };
 		1CE3432023666A2C001B1790 /* GCExpandableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCExpandableButton.swift; sourceTree = "<group>"; };
 		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
 		1CF15BA2235CBE6B00664DE7 /* Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installation.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				1C26CE632359430C008BB2D2 /* garbageCollectionTests.swift */,
 				1CF15BB0235CCBE600664DE7 /* garbageCollectionModelTests.swift */,
+				1CC05478237E00C200268662 /* parseConnectionTest.swift */,
 				1C26CE652359430C008BB2D2 /* Info.plist */,
 			);
 			path = garbageCollectionTests;
@@ -914,6 +917,7 @@
 			files = (
 				1C26CE642359430C008BB2D2 /* garbageCollectionTests.swift in Sources */,
 				1CF15BB1235CCBE600664DE7 /* garbageCollectionModelTests.swift in Sources */,
+				1CC05479237E00C200268662 /* parseConnectionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
