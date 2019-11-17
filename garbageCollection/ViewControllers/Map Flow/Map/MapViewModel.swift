@@ -14,6 +14,7 @@ protocol MapViewModelType: class {
     var collectionPoints: Observable<[CollectionPoint]> { get }
     var selectedFilters: [CollectionPoint.PointType] { get }
     
+    func indexPath(of collectionPoint: CollectionPoint) -> IndexPath?
     func updateSelected(filters: [CollectionPoint.PointType])
 }
 
@@ -58,6 +59,11 @@ extension MapViewModel {
     
     func updateSelected(filters: [CollectionPoint.PointType]) {
         selectedFiltersRelay.accept(filters)
+    }
+    
+    func indexPath(of collectionPoint: CollectionPoint) -> IndexPath? {
+        guard let row = collectionPointsRelay.value.firstIndex(of: collectionPoint) else { return nil }
+        return IndexPath(row: row, section: 0)
     }
     
 }

@@ -53,8 +53,16 @@ class MapController: GCViewModelController<MapViewModelType> {
     }()
     
     private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewLayout()
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 64, height: 115)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.registerCell(cellClass: CollectionPointCollectionViewCell.self)
+        cv.clipsToBounds = false
+        cv.backgroundColor = .clear
+        cv.showsHorizontalScrollIndicator = false
+        cv.contentInset = UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
+        cv.rx.setDelegate(self).disposed(by: disposeBag)
         return cv
     }()
     
@@ -115,6 +123,13 @@ private extension MapController {
             make.width.greaterThanOrEqualTo(36)
             make.height.equalTo(36)
         }
+        
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { (make) in
+            make.height.equalTo(115)
+            make.leading.trailing.equalTo(view)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-12)
+        }
     }
     
 }
@@ -128,6 +143,13 @@ private extension MapController {
             .collectionPoints
             .bind { [weak self] (collectionPoints) in
                 self?.setupMarkers(with: collectionPoints)
+        }.disposed(by: disposeBag)
+        
+        viewModel
+            .collectionPoints
+            .bind(to: collectionView.rx.items(cellIdentifier: CollectionPointCollectionViewCell.defaultIdentifier,
+                                              cellType: CollectionPointCollectionViewCell.self)) { _, model, cell in
+                                                cell.configure(with: model)
         }.disposed(by: disposeBag)
     }
     
@@ -152,7 +174,26 @@ extension MapController: MKMapViewDelegate {
         guard let annotation = annotation as? CollectionPointMarker else { return nil }
         return CollectionPointAnnotationView(annotation: annotation)
     }
-}
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let annotation = view.annotation as? CollectionPointMarker,
+            let index = viewModel.indexPath(of: annotation.collectionPoint) else { return }
+        focus(on: annotation.collectionPoint)
+        collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+    }
+    
+    func focus(on collectionPoint: CollectionPoint) {
+        guard let annotation = (mapView.annotations.filter { ($0 as? CollectionPointMarker)?.collectionPoint == collectionPoint }.first) else { return }
+        
+        let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 600, longitudinalMeters: 600)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func select(collectionPoint: CollectionPoint) {
+        
+    }
+    
+ }
 
 // MARK: Delegate conformances
 
@@ -178,8 +219,22 @@ extension MapController: FilterSelectorDelegate {
     
 }
 
-extension MapController: UIScrollViewDelegate {
+extension MapController: UICollectionViewDelegate {
     
-    
-    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.x + scrollView.bounds.width/2
+        guard let indexPath = collectionView.indexPathForItem(at: CGPoint(x: offset, y: 0)) else { return }
+        
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+//        mapView.selectAnnotation(mapView.annotations[indexPath.row], animated: true)
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            scrollViewDidEndDecelerating(scrollView)
+        }
+    }
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        scrollViewDidEndDecelerating(scrollView)
+    }
 }
