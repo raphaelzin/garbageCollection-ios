@@ -41,11 +41,30 @@ extension MapCoordinator: MapControllerCoordinatorDelegate {
         controller.present(navigationController, animated: true)
     }
     
+    func didRequestRubbishReport(from controller: MapController) {
+        let viewModel = RubbishReportViewModel()
+        let rubbishReportController = RubbishReportController(viewModel: viewModel)
+        rubbishReportController.coordinatorDelegate = self
+        
+        let navigator = GCNavigationController(rootController: rubbishReportController)
+        navigator.modalPresentationStyle = .fullScreen
+        
+        controller.present(navigator, animated: true)
+    }
+    
 }
 
 extension MapCoordinator: CollectionPointFilterCoordinatorDelegate {
     
     func didRequestDismiss(from controller: CollectionPointFilterController) {
+        controller.dismiss(animated: true)
+    }
+    
+}
+
+extension MapCoordinator: RubbishReportControllerDelegate {
+    
+    func didRequestDismiss(from controller: RubbishReportController) {
         controller.dismiss(animated: true)
     }
     

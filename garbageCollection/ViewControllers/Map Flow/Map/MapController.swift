@@ -12,6 +12,7 @@ import RxSwift
 
 protocol MapControllerCoordinatorDelegate: class {
     func didRequestFilterSelection(from controller: MapController, with currentFilters: [CollectionPoint.PointType])
+    func didRequestRubbishReport(from controller: MapController)
 }
 
 class MapController: GCViewModelController<MapViewModelType> {
@@ -203,7 +204,7 @@ extension MapController: GCExpandableButtonDelegate {
         if button == filterButton {
             coordinatorDelegate?.didRequestFilterSelection(from: self, with: viewModel.selectedFilters)
         } else {
-            
+            coordinatorDelegate?.didRequestRubbishReport(from: self)
         }
     }
     

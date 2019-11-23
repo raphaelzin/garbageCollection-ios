@@ -50,3 +50,11 @@ extension CalendarCoordinator: NeighbourhoodSelectionCoordenatorDelegate {
     }
     
 }
+
+extension CalendarCoordinator: RubbishReportControllerDelegate {
+    
+    func didRequestDismiss(from controller: RubbishReportController) {
+        controller.dismiss(animated: true)
+    }
+    
+}

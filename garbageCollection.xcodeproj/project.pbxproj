@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1C14E5C1235BB48400E3CD94 /* NeighbourhoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14E5C0235BB48400E3CD94 /* NeighbourhoodSelectorView.swift */; };
+		1C1799892389F39E0075F06C /* RubbishReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1799882389F39E0075F06C /* RubbishReportController.swift */; };
+		1C17998B2389F3D90075F06C /* RubbishReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C17998A2389F3D90075F06C /* RubbishReportViewModel.swift */; };
+		1C17998E2389F54A0075F06C /* PictureSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C17998D2389F54A0075F06C /* PictureSelectionView.swift */; };
 		1C26CE4D23594308008BB2D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE4C23594308008BB2D2 /* AppDelegate.swift */; };
 		1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */; };
 		1C26CE562359430C008BB2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C26CE552359430C008BB2D2 /* Assets.xcassets */; };
@@ -56,7 +59,6 @@
 		1C835E25235EA88000CC21EB /* PFAnonymousUtils+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1B235EA88000CC21EB /* PFAnonymousUtils+Rx.swift */; };
 		1C835E26235EA88000CC21EB /* PFCloud+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1C235EA88000CC21EB /* PFCloud+Rx.swift */; };
 		1C835E27235EA88000CC21EB /* ParseRxCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1D235EA88000CC21EB /* ParseRxCallbacks.swift */; };
-		1C835E28235EA88000CC21EB /* PFFileObject+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1E235EA88000CC21EB /* PFFileObject+Rx.swift */; };
 		1C835E29235EA88000CC21EB /* PFQuery+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1F235EA88000CC21EB /* PFQuery+Rx.swift */; };
 		1C835E2B235FC73F00CC21EB /* GCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E2A235FC73F00CC21EB /* GCError.swift */; };
 		1C835E2E23611DE200CC21EB /* NeighbourhoodSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E2D23611DE200CC21EB /* NeighbourhoodSelectionController.swift */; };
@@ -104,6 +106,9 @@
 		1C14E5BD235BACFE00E3CD94 /* ScheduledCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledCollectionCell.swift; sourceTree = "<group>"; };
 		1C14E5C0235BB48400E3CD94 /* NeighbourhoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodSelectorView.swift; sourceTree = "<group>"; };
 		1C14E5C3235BB96D00E3CD94 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		1C1799882389F39E0075F06C /* RubbishReportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishReportController.swift; sourceTree = "<group>"; };
+		1C17998A2389F3D90075F06C /* RubbishReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishReportViewModel.swift; sourceTree = "<group>"; };
+		1C17998D2389F54A0075F06C /* PictureSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureSelectionView.swift; sourceTree = "<group>"; };
 		1C26CE4923594307008BB2D2 /* garbageCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = garbageCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C26CE4C23594308008BB2D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +121,6 @@
 		1C26CE6A2359430C008BB2D2 /* garbageCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = garbageCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C26CE6E2359430C008BB2D2 /* garbageCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = garbageCollectionUITests.swift; sourceTree = "<group>"; };
 		1C26CE702359430C008BB2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C26CE83235944D9008BB2D2 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		1C26CE86235944FC008BB2D2 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		1C31CBE8235B55D400653E19 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1C31CBEA235B564B00653E19 /* RootViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 		1C835E2F23611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodSelectionViewModel.swift; sourceTree = "<group>"; };
 		1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodCell.swift; sourceTree = "<group>"; };
 		1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodsManager.swift; sourceTree = "<group>"; };
+		1C9902DD2389CB520000A457 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		1CB6CAAE2380AF6900E790CC /* CGCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointCollectionViewCell.swift; sourceTree = "<group>"; };
 		1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
@@ -252,6 +257,24 @@
 				1C14E5C0235BB48400E3CD94 /* NeighbourhoodSelectorView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1C1799872389F3650075F06C /* Rubbish Report */ = {
+			isa = PBXGroup;
+			children = (
+				1C1799882389F39E0075F06C /* RubbishReportController.swift */,
+				1C17998A2389F3D90075F06C /* RubbishReportViewModel.swift */,
+				1C17998C2389F50D0075F06C /* Subviews */,
+			);
+			path = "Rubbish Report";
+			sourceTree = "<group>";
+		};
+		1C17998C2389F50D0075F06C /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				1C17998D2389F54A0075F06C /* PictureSelectionView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		1C26CE4023594307008BB2D2 = {
@@ -372,8 +395,8 @@
 		1C26CE82235944AD008BB2D2 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				1C9902DD2389CB520000A457 /* Development.xcconfig */,
 				1C31CBEE235B578100653E19 /* Environment.swift */,
-				1C26CE83235944D9008BB2D2 /* Development.xcconfig */,
 				1C26CE86235944FC008BB2D2 /* Production.xcconfig */,
 			);
 			path = Configs;
@@ -382,6 +405,7 @@
 		1C31CBF6235B5B9900653E19 /* Map Flow */ = {
 			isa = PBXGroup;
 			children = (
+				1C1799872389F3650075F06C /* Rubbish Report */,
 				1C696C4A2366615600632085 /* Filter */,
 				1C696C4923665F5900632085 /* Map */,
 			);
@@ -869,7 +893,6 @@
 				1C835E2B235FC73F00CC21EB /* GCError.swift in Sources */,
 				1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */,
 				1C835E26235EA88000CC21EB /* PFCloud+Rx.swift in Sources */,
-				1C835E28235EA88000CC21EB /* PFFileObject+Rx.swift in Sources */,
 				1C835E14235EA61200CC21EB /* CollectionScheduleManager.swift in Sources */,
 				1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */,
 				1C7A43BD23724F59005210B9 /* CollectionPointsManager.swift in Sources */,
@@ -906,6 +929,7 @@
 				1C7A43C72373C119005210B9 /* SelectableCell.swift in Sources */,
 				1C57CAF2235CE114004D0E0C /* String.swift in Sources */,
 				1CF15BAF235CC3C700664DE7 /* RubbishReport.swift in Sources */,
+				1C1799892389F39E0075F06C /* RubbishReportController.swift in Sources */,
 				1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */,
 				1CB6CAB12380B15800E790CC /* CollectionPointCollectionViewCell.swift in Sources */,
 				1C31CBFF235B5DD700653E19 /* UIColor.swift in Sources */,
@@ -924,11 +948,13 @@
 				1C835E0A235E917200CC21EB /* WeekDayCollectionSchedule.swift in Sources */,
 				1C835E0F235EA27E00CC21EB /* UITableView.swift in Sources */,
 				1C31CC0C235B70CC00653E19 /* GCViewModelController.swift in Sources */,
+				1C17998E2389F54A0075F06C /* PictureSelectionView.swift in Sources */,
 				1C31CBF9235B5D2B00653E19 /* GCNavigationBar.swift in Sources */,
 				1C835E0B235E9AE100CC21EB /* ScheduledCollectionCell.swift in Sources */,
 				1C696C432364C37500632085 /* NotificationsManager.swift in Sources */,
 				1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */,
 				1C835E11235EA2CB00CC21EB /* UITableViewCell.swift in Sources */,
+				1C17998B2389F3D90075F06C /* RubbishReportViewModel.swift in Sources */,
 				1C835E29235EA88000CC21EB /* PFQuery+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -980,7 +1006,7 @@
 /* Begin XCBuildConfiguration section */
 		1C26CE712359430C008BB2D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C26CE83235944D9008BB2D2 /* Development.xcconfig */;
+			baseConfigurationReference = 1C9902DD2389CB520000A457 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1096,7 +1122,7 @@
 		};
 		1C26CE742359430C008BB2D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C26CE83235944D9008BB2D2 /* Development.xcconfig */;
+			baseConfigurationReference = 1C9902DD2389CB520000A457 /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
