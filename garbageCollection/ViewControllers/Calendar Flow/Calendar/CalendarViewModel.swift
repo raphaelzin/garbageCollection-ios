@@ -28,7 +28,7 @@ protocol CalendarViewModelType: class {
 
 class CalendarViewModel: CalendarViewModelType {
     
-    private lazy var collectionPointsManager = CollectionPointsManager()
+    private lazy var collectionPointsManager = CollectionScheduleManager()
     
     private lazy var notificationsManager = NotificationsManager()
     

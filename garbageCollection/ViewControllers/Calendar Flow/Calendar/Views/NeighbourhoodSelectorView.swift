@@ -32,8 +32,7 @@ class NeighbourhoodSelectorView: UIView {
         let label = UILabel()
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        label.text = "Centro"
-        
+        label.text = "Selecionar"
         return label
     }()
     
@@ -57,6 +56,7 @@ class NeighbourhoodSelectorView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        configureView()
         configureLayout()
         setupGestures()
     }
@@ -100,6 +100,10 @@ private extension NeighbourhoodSelectorView {
  // MARK: Private layout methods
 
 private extension NeighbourhoodSelectorView {
+    
+    func configureView() {
+        backgroundColor = .systemBackground
+    }
     
     func configureLayout() {
         addSubview(leftLabel)
