@@ -10,6 +10,7 @@ import UIKit
 
 protocol RubbishReportControllerDelegate: class {
     func didRequestDismiss(from controller: RubbishReportController)
+    func didRequestDetailsInput(from controller: RubbishReportController)
 }
 
 class RubbishReportController: GCViewModelController<RubbishReportViewModelType> {
@@ -51,7 +52,7 @@ class RubbishReportController: GCViewModelController<RubbishReportViewModelType>
 
 private extension RubbishReportController {
     
-    enum FieldType: Int, CaseIterable {
+    enum FieldType: Int, UITableViewCellConfigurator, CaseIterable {
         case `where`, when, details
         
         var accessory: UITableViewCell.AccessoryType {
@@ -61,7 +62,7 @@ private extension RubbishReportController {
             }
         }
         
-        var placeholder: String {
+        var title: String {
             switch self {
             case .details: return "Você tem mais detalhes?"
             case .when: return "Quando você viu o entulho?"
@@ -100,6 +101,7 @@ private extension RubbishReportController {
     
     func configureNavigationBar() {
         navigationItem.title = "Reportar entulho"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Fechar", style: .plain, target: self, action: #selector(onCloseTap))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .done, target: self, action: #selector(onSaveTap))
@@ -143,8 +145,7 @@ extension RubbishReportController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let fieldType = FieldType(rawValue: indexPath.section)!
         let cell = tableView.dequeue(cellClass: UITableViewCell.self, indexPath: indexPath)
-        cell.textLabel?.text = fieldType.placeholder
-        cell.accessoryType = fieldType.accessory
+        cell.configure(with: fieldType)
         return cell
     }
     
@@ -154,6 +155,23 @@ extension RubbishReportController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch FieldType(rawValue: indexPath.section)! {
+        case .details:
+            coordinatorDelegate?.didRequestDetailsInput(from: self)
+        default:
+            print("To do")
+        }
+        
+    }
+    
+}
+
+// MARK: delegate conformances
+
+extension RubbishReportController: TextInputControllerDelegate {
+    
+    func didEnter(text: String) {
+        print("Did enter: \(text)")
     }
     
 }

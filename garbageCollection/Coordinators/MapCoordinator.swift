@@ -68,4 +68,22 @@ extension MapCoordinator: RubbishReportControllerDelegate {
         controller.dismiss(animated: true)
     }
     
+    func didRequestDetailsInput(from controller: RubbishReportController) {
+        let textInputController = TextInputController(configurator: .init(title: "Detalhes",
+                                                                          placeholder: "Detalhes sobre o descarte impróprio.",
+                                                                          actionButtonTitle: "Salvar"))
+        textInputController.delegate = controller
+        textInputController.coordinatorDelegate = self
+        
+        controller.navigationController?.pushViewController(textInputController, animated: true)
+    }
+
+}
+
+extension MapCoordinator: TextInputControllerCoordinatorDelegate {
+    
+    func didRequestDismiss(from controller: TextInputController) {
+        controller.dismiss(animated: true)
+    }
+    
 }

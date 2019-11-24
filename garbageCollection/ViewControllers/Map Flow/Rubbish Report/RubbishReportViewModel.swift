@@ -14,6 +14,4 @@ protocol RubbishReportViewModelType: class {
 
 class RubbishReportViewModel: RubbishReportViewModelType {
     
-    
-    
 }

@@ -8,8 +8,17 @@
 
 import UIKit
 
-public extension UITableViewCell {
+extension UITableViewCell {
     static var defaultIdentifier: String {
         return String(describing: self)
     }
+}
+
+extension UITableViewCell {
+    
+    func configure(with configurator: UITableViewCellConfigurator) {
+        textLabel?.text = configurator.title
+        accessoryType = configurator.accessory
+    }
+    
 }
