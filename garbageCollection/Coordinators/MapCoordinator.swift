@@ -83,7 +83,7 @@ extension MapCoordinator: RubbishReportControllerDelegate {
 extension MapCoordinator: TextInputControllerCoordinatorDelegate {
     
     func didRequestDismiss(from controller: TextInputController) {
-        controller.dismiss(animated: true)
+        controller.navigationController?.popViewController(animated: true)
     }
     
 }

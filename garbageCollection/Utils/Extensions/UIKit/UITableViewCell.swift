@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 extension UITableViewCell {
     static var defaultIdentifier: String {
@@ -19,6 +21,16 @@ extension UITableViewCell {
     func configure(with configurator: UITableViewCellConfigurator) {
         textLabel?.text = configurator.title
         accessoryType = configurator.accessory
+    }
+    
+    func bindContent(with driver: Driver<String?>, placeholder: String, disposeBag: DisposeBag) {
+        driver
+            .do(onNext: { (value) in
+                self.textLabel?.textColor = value == nil ? .lightGray : .label
+            })
+            .map { $0 ?? placeholder }
+            .drive(textLabel!.rx.text)
+            .disposed(by: disposeBag)
     }
     
 }

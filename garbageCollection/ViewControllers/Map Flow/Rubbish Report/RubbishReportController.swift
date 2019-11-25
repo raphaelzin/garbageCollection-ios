@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol RubbishReportControllerDelegate: class {
     func didRequestDismiss(from controller: RubbishReportController)
@@ -16,6 +17,8 @@ protocol RubbishReportControllerDelegate: class {
 class RubbishReportController: GCViewModelController<RubbishReportViewModelType> {
     
     // MARK: Attributes
+    
+    private let disposeBag = DisposeBag()
     
     weak var coordinatorDelegate: RubbishReportControllerDelegate?
     
@@ -29,8 +32,10 @@ class RubbishReportController: GCViewModelController<RubbishReportViewModelType>
         return tv
     }()
     
-    private lazy var headerView: UIView = {
-        UIView()
+    private lazy var headerView: PictureSelectionView = {
+        let view = PictureSelectionView()
+        view.delegate = self
+        return view
     }()
     
     // MARK: Lifecycle
@@ -40,6 +45,7 @@ class RubbishReportController: GCViewModelController<RubbishReportViewModelType>
         
         configureLayout()
         configureNavigationBar()
+        configuretableViewHeader()
     }
     
     required init?(coder: NSCoder) {
@@ -50,7 +56,7 @@ class RubbishReportController: GCViewModelController<RubbishReportViewModelType>
 
 // MARK: Subtypes
 
-private extension RubbishReportController {
+extension RubbishReportController {
     
     enum FieldType: Int, UITableViewCellConfigurator, CaseIterable {
         case `where`, when, details
@@ -99,6 +105,15 @@ private extension RubbishReportController {
         }
     }
     
+    func configuretableViewHeader() {
+        tableView.tableHeaderView = headerView
+        headerView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor).isActive = true
+        headerView.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor).isActive = true
+        headerView.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
+        tableView.tableHeaderView?.layoutIfNeeded()
+        tableView.tableHeaderView = self.tableView.tableHeaderView
+    }
+    
     func configureNavigationBar() {
         navigationItem.title = "Reportar entulho"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -145,7 +160,12 @@ extension RubbishReportController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let fieldType = FieldType(rawValue: indexPath.section)!
         let cell = tableView.dequeue(cellClass: UITableViewCell.self, indexPath: indexPath)
+        
         cell.configure(with: fieldType)
+        cell.bindContent(with: viewModel.driver(for: fieldType),
+                         placeholder: fieldType.title,
+                         disposeBag: disposeBag)
+        
         return cell
     }
     
@@ -171,7 +191,15 @@ extension RubbishReportController: UITableViewDelegate {
 extension RubbishReportController: TextInputControllerDelegate {
     
     func didEnter(text: String) {
-        print("Did enter: \(text)")
+        viewModel.detailsRelay.accept(text)
+    }
+    
+}
+
+extension RubbishReportController: PictureSelectionViewDelegate {
+    
+    func didRequestPicture(from pictureSelectionView: PictureSelectionView) {
+        print("Did enter: \(pictureSelectionView)")
     }
     
 }

@@ -98,8 +98,8 @@ private extension TextInputController {
 private extension TextInputController {
     
     @objc func onSaveTap() {
-        coordinatorDelegate?.didRequestDismiss(from: self)
         delegate?.didEnter(text: textView.text)
+        coordinatorDelegate?.didRequestDismiss(from: self)
     }
     
     @objc func onViewTap() {
