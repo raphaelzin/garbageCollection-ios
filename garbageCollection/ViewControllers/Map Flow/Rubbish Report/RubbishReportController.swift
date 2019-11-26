@@ -12,6 +12,7 @@ import RxSwift
 protocol RubbishReportControllerDelegate: class {
     func didRequestDismiss(from controller: RubbishReportController)
     func didRequestDetailsInput(from controller: RubbishReportController)
+    func didRequestDateSelection(from controller: RubbishReportController, callback: @escaping (Date) -> Void)
 }
 
 class RubbishReportController: GCViewModelController<RubbishReportViewModelType> {
@@ -178,6 +179,10 @@ extension RubbishReportController: UITableViewDelegate {
         switch FieldType(rawValue: indexPath.section)! {
         case .details:
             coordinatorDelegate?.didRequestDetailsInput(from: self)
+        case .when:
+            coordinatorDelegate?.didRequestDateSelection(from: self) { [weak viewModel] date in
+                viewModel?.whenRelay.accept(date)
+            }
         default:
             print("To do")
         }

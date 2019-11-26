@@ -64,6 +64,15 @@ extension MapCoordinator: CollectionPointFilterCoordinatorDelegate {
 
 extension MapCoordinator: RubbishReportControllerDelegate {
     
+    func didRequestDateSelection(from controller: RubbishReportController, callback: @escaping (Date) -> Void) {
+        let alert = UIAlertController(style: .actionSheet, title: "Selecione uma data")
+        alert.addDatePicker(mode: .dateAndTime, date: Date(), minimumDate: nil, maximumDate: nil) { date in
+            callback(date)
+        }
+        alert.addAction(title: "Cancelar", style: .cancel)
+        controller.present(alert, animated: true)
+    }
+    
     func didRequestDismiss(from controller: RubbishReportController) {
         controller.dismiss(animated: true)
     }

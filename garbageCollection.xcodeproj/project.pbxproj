@@ -68,6 +68,9 @@
 		1C835E3323611F1D00CC21EB /* NeighbourhoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */; };
 		1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */; };
 		1C8996FC238AE2AC0004057A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8996FB238AE2AC0004057A /* Location.swift */; };
+		1C8EA74E238C95C700BADB1A /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EA74D238C95C700BADB1A /* DatePickerViewController.swift */; };
+		1C8EA750238C9BFD00BADB1A /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EA74F238C9BFD00BADB1A /* UIAlertController.swift */; };
+		1C8EA752238C9DEA00BADB1A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EA751238C9DEA00BADB1A /* UIView.swift */; };
 		1CB6CAB12380B15800E790CC /* CollectionPointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */; };
 		1CB6CAB32380BC7300E790CC /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */; };
 		1CB6CAB52380BC7D00E790CC /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB42380BC7D00E790CC /* UICollectionView.swift */; };
@@ -176,6 +179,9 @@
 		1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodCell.swift; sourceTree = "<group>"; };
 		1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodsManager.swift; sourceTree = "<group>"; };
 		1C8996FB238AE2AC0004057A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1C8EA74D238C95C700BADB1A /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		1C8EA74F238C9BFD00BADB1A /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		1C8EA751238C9DEA00BADB1A /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		1C9902DD2389CB520000A457 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		1CB6CAAE2380AF6900E790CC /* CGCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -435,6 +441,7 @@
 				1C31CC0B235B70CC00653E19 /* GCViewModelController.swift */,
 				1CE3432023666A2C001B1790 /* GCExpandableButton.swift */,
 				1CB6CAAE2380AF6900E790CC /* CGCollectionViewFlowLayout.swift */,
+				1C8EA74D238C95C700BADB1A /* DatePickerViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -451,12 +458,14 @@
 		1C31CBFD235B5DC300653E19 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				1C8EA751238C9DEA00BADB1A /* UIView.swift */,
 				1C31CBFE235B5DD700653E19 /* UIColor.swift */,
 				1C14E5C3235BB96D00E3CD94 /* UIImage.swift */,
 				1C835E0E235EA27E00CC21EB /* UITableView.swift */,
 				1C835E10235EA2CB00CC21EB /* UITableViewCell.swift */,
 				1CB6CAB42380BC7D00E790CC /* UICollectionView.swift */,
 				1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */,
+				1C8EA74F238C9BFD00BADB1A /* UIAlertController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -923,6 +932,8 @@
 				1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */,
 				1C7A43C123725E97005210B9 /* PFGeoPoint.swift in Sources */,
 				1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */,
+				1C8EA752238C9DEA00BADB1A /* UIView.swift in Sources */,
+				1C8EA74E238C95C700BADB1A /* DatePickerViewController.swift in Sources */,
 				1C835E20235EA88000CC21EB /* PFUser+Rx.swift in Sources */,
 				1C696C4C2366617C00632085 /* CollectionPointFilterController.swift in Sources */,
 				1C26CE4D23594308008BB2D2 /* AppDelegate.swift in Sources */,
@@ -938,6 +949,7 @@
 				1C31CC08235B6AC100653E19 /* SettingsController.swift in Sources */,
 				1CF15BAB235CC39900664DE7 /* Feedback.swift in Sources */,
 				1CF15BA9235CC37F00664DE7 /* CollectionSchedule.swift in Sources */,
+				1C8EA750238C9BFD00BADB1A /* UIAlertController.swift in Sources */,
 				1C31CC0A235B705400653E19 /* CalendarViewModel.swift in Sources */,
 				1C31CBEF235B578100653E19 /* Environment.swift in Sources */,
 				1C835E0D235E9B9B00CC21EB /* GenericSection.swift in Sources */,
