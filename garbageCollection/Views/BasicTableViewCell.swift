@@ -57,7 +57,7 @@ private extension BasicTableViewCell {
     func configureLayout() {
         addSubview(basicLabel)
         basicLabel.snp.makeConstraints { (make) in
-            make.edges.equalTo(self).inset(UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 32))
+            make.edges.equalTo(self).inset(UIEdgeInsets(top: 6, left: 16, bottom: 6, right: 32))
             make.height.greaterThanOrEqualTo(38)
         }
     }

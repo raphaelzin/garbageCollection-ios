@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol PictureSelectionViewDelegate: class {
     func didRequestPicture(from pictureSelectionView: PictureSelectionView)
@@ -16,6 +18,8 @@ class PictureSelectionView: UIView {
     
     // MARK: Attributes
     
+    private let disposeBag = DisposeBag()
+    
     weak var delegate: PictureSelectionViewDelegate?
     
     // MARK: Subviews
@@ -23,6 +27,7 @@ class PictureSelectionView: UIView {
     private lazy var imageView: UIImageView = {
         let iv = UIImageView()
         iv.tintColor = .defaultBlue
+        iv.contentMode = .scaleAspectFit
         return iv
     }()
     
@@ -52,6 +57,18 @@ class PictureSelectionView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+// MARK: public configurator methods
+
+extension PictureSelectionView {
+    
+    func configure(with driver: Driver<UIImage?>) {
+        driver
+            .drive(imageView.rx.image)
+            .disposed(by: disposeBag)
     }
     
 }

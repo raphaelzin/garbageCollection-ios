@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Photos
+import AVKit
 
 class MapCoordinator: RootViewCoordinator {
     
@@ -87,12 +89,70 @@ extension MapCoordinator: RubbishReportControllerDelegate {
         controller.navigationController?.pushViewController(textInputController, animated: true)
     }
 
+    func didRequestImagePick(from controller: RubbishReportController) {
+        PHPhotoLibrary.requestAuthorization { auth in
+            if auth == .authorized {
+                
+            }
+        }
+    }
+    
 }
 
 extension MapCoordinator: TextInputControllerCoordinatorDelegate {
     
     func didRequestDismiss(from controller: TextInputController) {
         controller.navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+// MARK: Photo access
+
+extension MapCoordinator {
+    
+    func didRequestPhoto(from controller: UIViewController, withSource source: UIImagePickerController.SourceType) {
+        if source == .camera {
+            didRequestCamera(from: controller)
+        } else if source == .photoLibrary {
+            didRequestPhotoLibrary(from: controller)
+        }
+    }
+    
+    private func didRequestCamera(from controller: UIViewController) {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else { return }
+        
+        AVCaptureDevice.requestAccess(for: .video) { success in
+            DispatchQueue.main.async {
+                guard success else {
+                    return
+                }
+                
+                let picker = UIImagePickerController()
+                picker.sourceType = .camera
+                picker.delegate = controller as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+                picker.allowsEditing = true
+                
+                controller.present(picker, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    private func didRequestPhotoLibrary(from controller: UIViewController) {
+        PHPhotoLibrary.requestAuthorization { status in
+            DispatchQueue.main.async {
+                guard status == .authorized else {
+                    return
+                }
+                
+                let picker = UIImagePickerController(navigationBarClass: GCNavigationBar.self, toolbarClass: nil)
+                picker.sourceType = .photoLibrary
+                picker.delegate = controller as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+                picker.allowsEditing = true
+                picker.mediaTypes = ["public.image"]
+                controller.present(picker, animated: true, completion: nil)
+            }
+        }
     }
     
 }

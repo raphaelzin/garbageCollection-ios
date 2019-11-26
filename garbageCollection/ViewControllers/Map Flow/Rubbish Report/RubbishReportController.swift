@@ -13,6 +13,7 @@ protocol RubbishReportControllerDelegate: class {
     func didRequestDismiss(from controller: RubbishReportController)
     func didRequestDetailsInput(from controller: RubbishReportController)
     func didRequestDateSelection(from controller: RubbishReportController, callback: @escaping (Date) -> Void)
+    func didRequestPhoto(from controller: UIViewController, withSource source: UIImagePickerController.SourceType)
 }
 
 class RubbishReportController: GCViewModelController<RubbishReportViewModelType> {
@@ -36,6 +37,8 @@ class RubbishReportController: GCViewModelController<RubbishReportViewModelType>
     private lazy var headerView: PictureSelectionView = {
         let view = PictureSelectionView()
         view.delegate = self
+        view.configure(with: viewModel.pictureRelay.asDriver())
+        
         return view
     }()
     
@@ -205,7 +208,33 @@ extension RubbishReportController: TextInputControllerDelegate {
 extension RubbishReportController: PictureSelectionViewDelegate {
     
     func didRequestPicture(from pictureSelectionView: PictureSelectionView) {
-        print("Did enter: \(pictureSelectionView)")
+        let sourcePickAlert = UIAlertController(style: .actionSheet)
+        sourcePickAlert.addAction(UIAlertAction(title: "Tirar uma foto", style: .default, handler: { _ in
+            self.coordinatorDelegate?.didRequestPhoto(from: self, withSource: .camera)
+        }))
+        
+        sourcePickAlert.addAction(UIAlertAction(title: "Escolhar da biblioteca", style: .default, handler: { _ in
+            self.coordinatorDelegate?.didRequestPhoto(from: self, withSource: .photoLibrary)
+        }))
+        
+        sourcePickAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(sourcePickAlert, animated: true)
+    }
+    
+}
+
+extension RubbishReportController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let edited = info[.editedImage] as? UIImage {
+            viewModel.pictureRelay.accept(edited)
+        } else if let original = info[.originalImage] as? UIImage {
+            viewModel.pictureRelay.accept(original)
+        }
+        
+        picker.dismiss(animated: true)
     }
     
 }

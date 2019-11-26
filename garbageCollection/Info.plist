@@ -26,11 +26,11 @@
 	<array>
 		<string>armv7</string>
 	</array>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
@@ -43,6 +43,10 @@
 	<string>$(PARSE_APP_ID)</string>
 	<key>PARSE_SERVER_URL</key>
 	<string>$(PARSE_SERVER_URL)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Necessário para que você possa escolhar uma foto da biblioteca ao reportar um ponto de descarte impróprio</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Necessário para que você possa tirar uma foto ao reportar um ponto de descarte impróprio</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

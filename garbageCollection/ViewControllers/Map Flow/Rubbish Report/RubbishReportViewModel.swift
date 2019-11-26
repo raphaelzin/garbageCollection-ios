@@ -13,6 +13,7 @@ import RxCocoa
 protocol RubbishReportViewModelType: class {
     var whenRelay: BehaviorRelay<Date?> { get }
     var detailsRelay: BehaviorRelay<String?> { get }
+    var pictureRelay: BehaviorRelay<UIImage?> { get }
     var locationRelay: BehaviorRelay<Location?> { get }
     
     var isValidInput: Driver<Bool> { get }
