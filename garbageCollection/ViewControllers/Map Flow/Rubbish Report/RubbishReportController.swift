@@ -27,7 +27,7 @@ class RubbishReportController: GCViewModelController<RubbishReportViewModelType>
     
     private lazy var tableView: UITableView = {
         let tv = UITableView(frame: .zero, style: .grouped)
-        tv.registerCell(cellClass: UITableViewCell.self)
+        tv.registerCell(cellClass: BasicTableViewCell.self)
         tv.dataSource = self
         tv.delegate = self
         return tv
@@ -160,7 +160,7 @@ extension RubbishReportController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let fieldType = FieldType(rawValue: indexPath.section)!
-        let cell = tableView.dequeue(cellClass: UITableViewCell.self, indexPath: indexPath)
+        let cell = tableView.dequeue(cellClass: BasicTableViewCell.self, indexPath: indexPath)
         
         cell.configure(with: fieldType)
         cell.bindContent(with: viewModel.driver(for: fieldType),
@@ -197,6 +197,7 @@ extension RubbishReportController: TextInputControllerDelegate {
     
     func didEnter(text: String) {
         viewModel.detailsRelay.accept(text)
+        tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .automatic)
     }
     
 }

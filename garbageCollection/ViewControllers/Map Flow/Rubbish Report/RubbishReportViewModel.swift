@@ -34,9 +34,9 @@ class RubbishReportViewModel: RubbishReportViewModelType {
         
     var isValidInput: Driver<Bool> {
         Driver
-            .combineLatest(locationRelay.asDriver(), whenRelay.asDriver(), detailsRelay.asDriver(), pictureRelay.asDriver())
-            .map { location, when, details, picture -> Bool in
-                picture != nil && location != nil && when != nil && !(details ?? "").isEmpty
+            .combineLatest(locationRelay.asDriver(), whenRelay.asDriver(), pictureRelay.asDriver())
+            .map { location, when, picture -> Bool in
+                ([picture, location, when] as [Any?]).allSatisfy { $0 != nil }
         }
     }
     
@@ -49,7 +49,7 @@ extension RubbishReportViewModel {
     func driver(for fieldType: RubbishReportController.FieldType) -> Driver<String?> {
         switch fieldType {
         case .details: return detailsRelay.asDriver()
-        case .when: return whenRelay.asDriver().map { $0?.formatted(as: .fullDate) }
+        case .when: return whenRelay.asDriver().map { $0?.formatted(as: .hourAndDate) }
         case .where: return locationRelay.asDriver().map { $0?.address }
         }
     }

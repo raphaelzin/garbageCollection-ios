@@ -11,7 +11,7 @@ import Foundation
 extension Date {
     
     enum Format: String {
-        case fullDate = "EEEE, d MMM yyyy"
+        case hourAndDate = "HH:MM - EEEE, d MMM"
     }
     
     func formatted(as format: Format) -> String {

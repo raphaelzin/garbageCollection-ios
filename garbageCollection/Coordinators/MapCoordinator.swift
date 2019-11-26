@@ -69,7 +69,7 @@ extension MapCoordinator: RubbishReportControllerDelegate {
         alert.addDatePicker(mode: .dateAndTime, date: Date(), minimumDate: nil, maximumDate: nil) { date in
             callback(date)
         }
-        alert.addAction(title: "Cancelar", style: .cancel)
+        alert.addAction(title: "Fechar", style: .cancel)
         controller.present(alert, animated: true)
     }
     

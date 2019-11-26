@@ -19,6 +19,7 @@
 		1C26CE592359430C008BB2D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C26CE572359430C008BB2D2 /* LaunchScreen.storyboard */; };
 		1C26CE642359430C008BB2D2 /* garbageCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE632359430C008BB2D2 /* garbageCollectionTests.swift */; };
 		1C26CE6F2359430C008BB2D2 /* garbageCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE6E2359430C008BB2D2 /* garbageCollectionUITests.swift */; };
+		1C309ED9238CA73200B2F063 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C309ED8238CA73200B2F063 /* BasicTableViewCell.swift */; };
 		1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CBE8235B55D400653E19 /* AppCoordinator.swift */; };
 		1C31CBEB235B564B00653E19 /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CBEA235B564B00653E19 /* RootViewCoordinator.swift */; };
 		1C31CBED235B566A00653E19 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CBEC235B566A00653E19 /* Coordinator.swift */; };
@@ -130,6 +131,7 @@
 		1C26CE6E2359430C008BB2D2 /* garbageCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = garbageCollectionUITests.swift; sourceTree = "<group>"; };
 		1C26CE702359430C008BB2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C26CE86235944FC008BB2D2 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		1C309ED8238CA73200B2F063 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		1C31CBE8235B55D400653E19 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1C31CBEA235B564B00653E19 /* RootViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
 		1C31CBEC235B566A00653E19 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 				1CE3432023666A2C001B1790 /* GCExpandableButton.swift */,
 				1CB6CAAE2380AF6900E790CC /* CGCollectionViewFlowLayout.swift */,
 				1C8EA74D238C95C700BADB1A /* DatePickerViewController.swift */,
+				1C309ED8238CA73200B2F063 /* BasicTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -979,6 +982,7 @@
 				1CB6CAB52380BC7D00E790CC /* UICollectionView.swift in Sources */,
 				1C835E0A235E917200CC21EB /* WeekDayCollectionSchedule.swift in Sources */,
 				1C835E0F235EA27E00CC21EB /* UITableView.swift in Sources */,
+				1C309ED9238CA73200B2F063 /* BasicTableViewCell.swift in Sources */,
 				1C31CC0C235B70CC00653E19 /* GCViewModelController.swift in Sources */,
 				1C17998E2389F54A0075F06C /* PictureSelectionView.swift in Sources */,
 				1C31CBF9235B5D2B00653E19 /* GCNavigationBar.swift in Sources */,
