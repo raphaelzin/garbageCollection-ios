@@ -97,6 +97,22 @@ extension MapCoordinator: RubbishReportControllerDelegate {
         }
     }
     
+    func didRequestLocation(from controller: UIViewController) {
+        let viewModel = LocationSelectionViewModel()
+        let locationSelectionController = LocationSelectionController(viewModel: viewModel)
+        locationSelectionController.coordinatorDelegate = self
+        
+        controller.navigationController?.pushViewController(locationSelectionController, animated: true)
+    }
+    
+}
+
+extension MapCoordinator: LocationSelectionControllerCoordinatorDelegate {
+    
+    func didRequestDismiss(from controller: UIViewController) {
+        controller.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension MapCoordinator: TextInputControllerCoordinatorDelegate {
@@ -131,8 +147,6 @@ extension MapCoordinator {
                 let picker = UIImagePickerController()
                 picker.sourceType = .camera
                 picker.delegate = controller as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
-                picker.allowsEditing = true
-                
                 controller.present(picker, animated: true, completion: nil)
             }
         }
@@ -148,7 +162,6 @@ extension MapCoordinator {
                 let picker = UIImagePickerController()
                 picker.sourceType = .photoLibrary
                 picker.delegate = controller as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
-                picker.allowsEditing = true
                 picker.mediaTypes = ["public.image"]
                 controller.present(picker, animated: true, completion: nil)
             }

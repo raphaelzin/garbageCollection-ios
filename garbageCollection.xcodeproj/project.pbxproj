@@ -13,6 +13,9 @@
 		1C17998E2389F54A0075F06C /* PictureSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C17998D2389F54A0075F06C /* PictureSelectionView.swift */; };
 		1C179990238A00150075F06C /* UITableViewCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C17998F238A00150075F06C /* UITableViewCellConfigurator.swift */; };
 		1C179993238A027A0075F06C /* TextInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C179992238A027A0075F06C /* TextInputController.swift */; };
+		1C23C961238DFD7C00100BA1 /* LocationSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C23C960238DFD7C00100BA1 /* LocationSelectionController.swift */; };
+		1C23C963238DFDB700100BA1 /* LocationSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C23C962238DFDB700100BA1 /* LocationSelectionViewModel.swift */; };
+		1C23C966238E026500100BA1 /* AddressSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C23C965238E026500100BA1 /* AddressSelectionView.swift */; };
 		1C26CE4D23594308008BB2D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE4C23594308008BB2D2 /* AppDelegate.swift */; };
 		1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */; };
 		1C26CE562359430C008BB2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C26CE552359430C008BB2D2 /* Assets.xcassets */; };
@@ -118,6 +121,9 @@
 		1C17998D2389F54A0075F06C /* PictureSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureSelectionView.swift; sourceTree = "<group>"; };
 		1C17998F238A00150075F06C /* UITableViewCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellConfigurator.swift; sourceTree = "<group>"; };
 		1C179992238A027A0075F06C /* TextInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputController.swift; sourceTree = "<group>"; };
+		1C23C960238DFD7C00100BA1 /* LocationSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionController.swift; sourceTree = "<group>"; };
+		1C23C962238DFDB700100BA1 /* LocationSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionViewModel.swift; sourceTree = "<group>"; };
+		1C23C965238E026500100BA1 /* AddressSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSelectionView.swift; sourceTree = "<group>"; };
 		1C26CE4923594307008BB2D2 /* garbageCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = garbageCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C26CE4C23594308008BB2D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -297,6 +303,24 @@
 				1C179992238A027A0075F06C /* TextInputController.swift */,
 			);
 			path = TextInputController;
+			sourceTree = "<group>";
+		};
+		1C23C95F238DFD6200100BA1 /* LocationSelectionController */ = {
+			isa = PBXGroup;
+			children = (
+				1C23C960238DFD7C00100BA1 /* LocationSelectionController.swift */,
+				1C23C962238DFDB700100BA1 /* LocationSelectionViewModel.swift */,
+				1C23C964238E024800100BA1 /* Views */,
+			);
+			path = LocationSelectionController;
+			sourceTree = "<group>";
+		};
+		1C23C964238E024800100BA1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C23C965238E026500100BA1 /* AddressSelectionView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1C26CE4023594307008BB2D2 = {
@@ -521,6 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				1C46181723594A6B0054B22B /* SplashController.swift */,
+				1C23C95F238DFD6200100BA1 /* LocationSelectionController */,
 				1C179991238A02570075F06C /* TextInputController */,
 			);
 			path = Common;
@@ -919,11 +944,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C23C966238E026500100BA1 /* AddressSelectionView.swift in Sources */,
 				1C835E2B235FC73F00CC21EB /* GCError.swift in Sources */,
 				1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */,
 				1C835E26235EA88000CC21EB /* PFCloud+Rx.swift in Sources */,
 				1C835E14235EA61200CC21EB /* CollectionScheduleManager.swift in Sources */,
 				1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */,
+				1C23C961238DFD7C00100BA1 /* LocationSelectionController.swift in Sources */,
 				1C7A43BD23724F59005210B9 /* CollectionPointsManager.swift in Sources */,
 				1C31CBFB235B5D8000653E19 /* GCNavigationController.swift in Sources */,
 				1C31CBF1235B5B2C00653E19 /* MapCoordinator.swift in Sources */,
@@ -955,6 +982,7 @@
 				1C8EA750238C9BFD00BADB1A /* UIAlertController.swift in Sources */,
 				1C31CC0A235B705400653E19 /* CalendarViewModel.swift in Sources */,
 				1C31CBEF235B578100653E19 /* Environment.swift in Sources */,
+				1C23C963238DFDB700100BA1 /* LocationSelectionViewModel.swift in Sources */,
 				1C835E0D235E9B9B00CC21EB /* GenericSection.swift in Sources */,
 				1C31CC0E235B72BC00653E19 /* MapViewModel.swift in Sources */,
 				1CF15BAD235CC3AF00664DE7 /* Neighbourhood.swift in Sources */,

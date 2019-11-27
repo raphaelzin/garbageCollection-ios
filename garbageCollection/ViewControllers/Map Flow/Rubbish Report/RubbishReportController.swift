@@ -14,6 +14,7 @@ protocol RubbishReportControllerDelegate: class {
     func didRequestDetailsInput(from controller: RubbishReportController)
     func didRequestDateSelection(from controller: RubbishReportController, callback: @escaping (Date) -> Void)
     func didRequestPhoto(from controller: UIViewController, withSource source: UIImagePickerController.SourceType)
+    func didRequestLocation(from controller: UIViewController)
 }
 
 class RubbishReportController: GCViewModelController<RubbishReportViewModelType> {
@@ -186,8 +187,8 @@ extension RubbishReportController: UITableViewDelegate {
             coordinatorDelegate?.didRequestDateSelection(from: self) { [weak viewModel] date in
                 viewModel?.whenRelay.accept(date)
             }
-        default:
-            print("To do")
+        case .where:
+            coordinatorDelegate?.didRequestLocation(from: self)
         }
         
     }

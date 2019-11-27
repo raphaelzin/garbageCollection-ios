@@ -148,7 +148,7 @@ private extension NeighbourhoodSelectionController {
 private extension NeighbourhoodSelectionController {
     
     func configureView() {
-        view.backgroundColor = .white
+//        view.backgroundColor = .white
     }
     
     func configureLayout() {
