@@ -217,7 +217,7 @@ extension RubbishReportController: PictureSelectionViewDelegate {
             self.coordinatorDelegate?.didRequestPhoto(from: self, withSource: .photoLibrary)
         }))
         
-        sourcePickAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        sourcePickAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
         
         self.present(sourcePickAlert, animated: true)
     }
@@ -226,7 +226,7 @@ extension RubbishReportController: PictureSelectionViewDelegate {
 
 extension RubbishReportController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
         if let edited = info[.editedImage] as? UIImage {
             viewModel.pictureRelay.accept(edited)

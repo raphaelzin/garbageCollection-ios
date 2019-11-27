@@ -24,10 +24,23 @@ class PictureSelectionView: UIView {
     
     // MARK: Subviews
     
+    private lazy var bluredImage: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        return iv
+    }()
+    
+    private lazy var blurFXView: UIVisualEffectView = {
+        let fx = UIBlurEffect(style: .light)
+        let fxView = UIVisualEffectView(effect: fx)
+        return fxView
+    }()
+    
     private lazy var imageView: UIImageView = {
         let iv = UIImageView()
-        iv.tintColor = .defaultBlue
         iv.contentMode = .scaleAspectFit
+        iv.clipsToBounds = true
         return iv
     }()
     
@@ -41,7 +54,7 @@ class PictureSelectionView: UIView {
     
     private lazy var separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor.darkGray
         return view
     }()
     
@@ -52,6 +65,7 @@ class PictureSelectionView: UIView {
         configureLayout()
         configureStack()
         
+        backgroundColor = .secondarySystemBackground
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onViewTap)))
     }
     
@@ -66,8 +80,19 @@ class PictureSelectionView: UIView {
 extension PictureSelectionView {
     
     func configure(with driver: Driver<UIImage?>) {
-        driver
+        let sharedDriver = driver.asSharedSequence()
+            
+        sharedDriver
             .drive(imageView.rx.image)
+            .disposed(by: disposeBag)
+        
+        sharedDriver
+            .drive(bluredImage.rx.image)
+            .disposed(by: disposeBag)
+        
+        sharedDriver
+            .map { $0 == nil}
+            .drive(blurFXView.rx.isHidden)
             .disposed(by: disposeBag)
     }
     
@@ -96,6 +121,16 @@ private extension PictureSelectionView {
         addSubview(infoStack)
         infoStack.snp.makeConstraints { (make) in
             make.center.equalTo(self)
+        }
+        
+        addSubview(bluredImage)
+        bluredImage.snp.makeConstraints { (make) in
+            make.edges.equalTo(self)
+        }
+        
+        addSubview(blurFXView)
+        blurFXView.snp.makeConstraints { (make) in
+            make.edges.equalTo(bluredImage)
         }
         
         addSubview(imageView)

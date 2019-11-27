@@ -145,7 +145,7 @@ extension MapCoordinator {
                     return
                 }
                 
-                let picker = UIImagePickerController(navigationBarClass: GCNavigationBar.self, toolbarClass: nil)
+                let picker = UIImagePickerController()
                 picker.sourceType = .photoLibrary
                 picker.delegate = controller as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
                 picker.allowsEditing = true
