@@ -78,6 +78,7 @@
 		1CB6CAB12380B15800E790CC /* CollectionPointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */; };
 		1CB6CAB32380BC7300E790CC /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */; };
 		1CB6CAB52380BC7D00E790CC /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB42380BC7D00E790CC /* UICollectionView.swift */; };
+		1CBA92FF238F57EC00CF01D4 /* GeocoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */; };
 		1CC05479237E00C200268662 /* parseConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC05478237E00C200268662 /* parseConnectionTest.swift */; };
 		1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3432023666A2C001B1790 /* GCExpandableButton.swift */; };
 		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
@@ -195,6 +196,7 @@
 		1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointCollectionViewCell.swift; sourceTree = "<group>"; };
 		1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		1CB6CAB42380BC7D00E790CC /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderManager.swift; sourceTree = "<group>"; };
 		1CC05478237E00C200268662 /* parseConnectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parseConnectionTest.swift; sourceTree = "<group>"; };
 		1CE3432023666A2C001B1790 /* GCExpandableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCExpandableButton.swift; sourceTree = "<group>"; };
 		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 				1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */,
 				1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */,
 				1C696C422364C37500632085 /* NotificationsManager.swift */,
+				1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1012,6 +1015,7 @@
 				1C835E0F235EA27E00CC21EB /* UITableView.swift in Sources */,
 				1C309ED9238CA73200B2F063 /* BasicTableViewCell.swift in Sources */,
 				1C31CC0C235B70CC00653E19 /* GCViewModelController.swift in Sources */,
+				1CBA92FF238F57EC00CF01D4 /* GeocoderManager.swift in Sources */,
 				1C17998E2389F54A0075F06C /* PictureSelectionView.swift in Sources */,
 				1C31CBF9235B5D2B00653E19 /* GCNavigationBar.swift in Sources */,
 				1C835E0B235E9AE100CC21EB /* ScheduledCollectionCell.swift in Sources */,

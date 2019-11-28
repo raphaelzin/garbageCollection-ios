@@ -49,7 +49,7 @@ class CollectionPointCollectionViewCell: UICollectionViewCell {
     private lazy var detailsLabel: UILabel = {
         let l = UILabel()
         l.numberOfLines = 0
-        l.textColor = .lightText
+        l.textColor = .lightGray
         l.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         return l
     }()

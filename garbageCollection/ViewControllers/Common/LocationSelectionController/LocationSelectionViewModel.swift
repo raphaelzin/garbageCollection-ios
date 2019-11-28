@@ -7,11 +7,18 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol LocationSelectionViewModelType: class {
-
+    func search(for address: String) -> Single<Location?>
 }
 
 class LocationSelectionViewModel: LocationSelectionViewModelType {
+    
+    private lazy var geocoderManager = GeocoderManager()
+    
+    func search(for address: String) -> Single<Location?> {
+        geocoderManager.location(for: address)
+    }
     
 }

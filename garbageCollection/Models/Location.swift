@@ -16,6 +16,18 @@ struct Location {
     let latitude: Double
     let longitude: Double
     
+    init(address: String, location: CLLocation) {
+        self.address = address
+        self.latitude = location.coordinate.latitude
+        self.longitude = location.coordinate.longitude
+    }
+    
+    init(address: String, latitude: Double, longitude: Double) {
+        self.address = address
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+    
     var asGeoPoint: PFGeoPoint {
         .init(latitude: latitude, longitude: longitude)
     }

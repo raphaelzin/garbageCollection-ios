@@ -21,10 +21,13 @@ class LocationSelectionController: GCViewModelController<LocationSelectionViewMo
     
     weak var coordinatorDelegate: LocationSelectionControllerCoordinatorDelegate?
     
+    private let disposeBag = DisposeBag()
+    
     // MARK: Subviews
     
     private lazy var mapView: MKMapView = {
         let mv = MKMapView()
+        mv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onMapTap)))
         return mv
     }()
     
@@ -49,10 +52,35 @@ class LocationSelectionController: GCViewModelController<LocationSelectionViewMo
         
         configureLayout()
         configureNavBar()
+        
+        bindAddressSearch()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+// MARK: Bindings
+
+private extension LocationSelectionController {
+    
+    func bindAddressSearch() {
+        
+        addressTextField
+            .rx
+            .text
+            .throttle(.seconds(2), scheduler: MainScheduler.asyncInstance)
+            .filter { !($0 ?? "").isEmpty }
+            .flatMap({ (address) -> Single<Location?> in
+                self.viewModel.search(for: address!)
+            })
+            .subscribe { (event) in
+                guard let location = event.element as? Location else { return }
+                print(location)
+        }.disposed(by: disposeBag)
+        
     }
     
 }
@@ -85,6 +113,10 @@ private extension LocationSelectionController {
     
     @objc func onSaveTap() {
         coordinatorDelegate?.didRequestDismiss(from: self)
+    }
+    
+    @objc func onMapTap() {
+        addressTextField.resignFirstResponder()
     }
     
 }
