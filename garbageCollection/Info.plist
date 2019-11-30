@@ -47,6 +47,8 @@
 	<string>Necessário para que você possa escolhar uma foto da biblioteca ao reportar um ponto de descarte impróprio</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Necessário para que você possa tirar uma foto ao reportar um ponto de descarte impróprio</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Necessário para mostrar onde você está no mapa</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

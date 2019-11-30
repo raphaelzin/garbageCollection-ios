@@ -25,7 +25,7 @@ class RubbishReportViewModel: RubbishReportViewModelType {
     
     // Relays
     
-    let whenRelay: BehaviorRelay<Date?> = .init(value: nil)
+    let whenRelay: BehaviorRelay<Date?> = .init(value: Date())
     
     let detailsRelay: BehaviorRelay<String?> = .init(value: nil)
     

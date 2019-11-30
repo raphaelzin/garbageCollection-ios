@@ -16,24 +16,8 @@ class GeocoderManager {
     
     func location(for latitude: Double, and longitude: Double) -> Single<Location?> {
         Single.create { single -> Disposable in
-            self.geocoder.reverseGeocodeLocation(CLLocation(latitude: latitude, longitude: longitude)) { (places: [CLPlacemark]?, error: Error?) in
-                if let error = error {
-                    single(.error(error))
-                }
-                
-                guard let places = places, !places.isEmpty else {
-                    single(.error(GCError.Geocoder.invalidGeocoderResponse))
-                    return
-                }
-                
-                let place = places.filter { singlePlace in singlePlace.locality == "Fortaleza" }.first
-                
-                guard let fortalezaPlace = place else {
-                    single(.success(nil))
-                    return
-                }
-                
-                single(.success(Location(address: fortalezaPlace.name ?? "", latitude: latitude, longitude: longitude)))
+            self.geocoder.reverseGeocodeLocation(CLLocation(latitude: latitude, longitude: longitude)) {
+                self.handleGeocodeResult(single: single, places: $0, error: $1)
             }
             return Disposables.create()
         }
@@ -42,29 +26,38 @@ class GeocoderManager {
     
     func location(for address: String) -> Single<Location?> {
         Single.create { (single) -> Disposable in
-            self.geocoder.geocodeAddressString(address) { places, error in
-                if let error = error {
-                    single(.error(error))
-                }
-                
-                guard let places = places, !places.isEmpty else {
-                    single(.error(GCError.Geocoder.invalidGeocoderResponse))
-                    return
-                }
-                
-                print(places)
-                let place = places.filter { singlePlace in singlePlace.locality == "Fortaleza" }.first
-                
-                guard let fortalezaPlace = place else {
-                    single(.success(nil))
-                    return
-                }
-
-                single(.success(Location(address: address, location: fortalezaPlace.location!)))
+            self.geocoder.geocodeAddressString(address) {
+                self.handleGeocodeResult(single: single, places: $0, error: $1)
             }
             return Disposables.create()
-            
         }
+    }
+    
+    func handleGeocodeResult(single: ((SingleEvent<Location?>) -> Void), places: [CLPlacemark]?, error: Error?) {
+        if let error = error {
+            print(error.localizedDescription)
+            // Filter geocode obliviousness error
+            if (error as NSError).code == 8 {
+                single(.success(nil))
+            } else {
+                single(.error(error))
+            }
+            return
+        }
+        
+        guard let places = places, !places.isEmpty else {
+            single(.error(GCError.Geocoder.invalidGeocoderResponse))
+            return
+        }
+        
+        let place = places.filter { singlePlace in singlePlace.locality == "Fortaleza" }.first
+        
+        guard let fortalezaPlace = place else {
+            single(.success(nil))
+            return
+        }
+        let name = [fortalezaPlace.name, fortalezaPlace.postalCode].compactMap { $0 }.joined(separator: " - ")
+        single(.success(Location(address: name, location: fortalezaPlace.location!)))
     }
     
 }

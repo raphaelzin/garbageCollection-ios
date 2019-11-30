@@ -19,6 +19,8 @@ class MapController: GCViewModelController<MapViewModelType> {
     
     weak var coordinatorDelegate: MapControllerCoordinatorDelegate?
     
+    private let locationManager = CLLocationManager()
+
     private let disposeBag = DisposeBag()
     
     // MARK: Subviews
@@ -26,6 +28,7 @@ class MapController: GCViewModelController<MapViewModelType> {
     private lazy var mapView: MKMapView = {
         let map = MKMapView()
         map.delegate = self
+        map.showsUserLocation = true
         return map
     }()
     
@@ -74,6 +77,8 @@ class MapController: GCViewModelController<MapViewModelType> {
         
         reportButton.setState(.expanded, afterInterval: 1)
         reportButton.setState(.collapsed, afterInterval: 3)
+        
+        locationManager.requestWhenInUseAuthorization()
     }
     
     override init(viewModel: MapViewModelType) {

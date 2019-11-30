@@ -46,6 +46,7 @@
 		1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4723660CA300632085 /* UserNotification+Rx.swift */; };
 		1C696C4C2366617C00632085 /* CollectionPointFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4B2366617C00632085 /* CollectionPointFilterController.swift */; };
 		1C696C4E2366619200632085 /* CollectionPointFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4D2366619200632085 /* CollectionPointFilterViewModel.swift */; };
+		1C7489B42390AA4B00958A13 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7489B32390AA4B00958A13 /* PaddingLabel.swift */; };
 		1C7A43BD23724F59005210B9 /* CollectionPointsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */; };
 		1C7A43BF23725DCE005210B9 /* CollectionPointMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43BE23725DCE005210B9 /* CollectionPointMarker.swift */; };
 		1C7A43C123725E97005210B9 /* PFGeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43C023725E97005210B9 /* PFGeoPoint.swift */; };
@@ -162,6 +163,7 @@
 		1C696C4723660CA300632085 /* UserNotification+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserNotification+Rx.swift"; sourceTree = "<group>"; };
 		1C696C4B2366617C00632085 /* CollectionPointFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointFilterController.swift; sourceTree = "<group>"; };
 		1C696C4D2366619200632085 /* CollectionPointFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointFilterViewModel.swift; sourceTree = "<group>"; };
+		1C7489B32390AA4B00958A13 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointsManager.swift; sourceTree = "<group>"; };
 		1C7A43BE23725DCE005210B9 /* CollectionPointMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointMarker.swift; sourceTree = "<group>"; };
 		1C7A43C023725E97005210B9 /* PFGeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFGeoPoint.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				1CB6CAAE2380AF6900E790CC /* CGCollectionViewFlowLayout.swift */,
 				1C8EA74D238C95C700BADB1A /* DatePickerViewController.swift */,
 				1C309ED8238CA73200B2F063 /* BasicTableViewCell.swift */,
+				1C7489B32390AA4B00958A13 /* PaddingLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -983,6 +986,7 @@
 				1CF15BAB235CC39900664DE7 /* Feedback.swift in Sources */,
 				1CF15BA9235CC37F00664DE7 /* CollectionSchedule.swift in Sources */,
 				1C8EA750238C9BFD00BADB1A /* UIAlertController.swift in Sources */,
+				1C7489B42390AA4B00958A13 /* PaddingLabel.swift in Sources */,
 				1C31CC0A235B705400653E19 /* CalendarViewModel.swift in Sources */,
 				1C31CBEF235B578100653E19 /* Environment.swift in Sources */,
 				1C23C963238DFDB700100BA1 /* LocationSelectionViewModel.swift in Sources */,
