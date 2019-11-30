@@ -13,17 +13,20 @@ import Parse
 struct Location {
     
     let address: String
+    let zipcode: String
     let latitude: Double
     let longitude: Double
     
-    init(address: String, location: CLLocation) {
+    init(address: String, zipcode: String, location: CLLocation) {
         self.address = address
+        self.zipcode = zipcode
         self.latitude = location.coordinate.latitude
         self.longitude = location.coordinate.longitude
     }
     
-    init(address: String, latitude: Double, longitude: Double) {
+    init(address: String, zipcode: String, latitude: Double, longitude: Double) {
         self.address = address
+        self.zipcode = zipcode
         self.latitude = latitude
         self.longitude = longitude
     }

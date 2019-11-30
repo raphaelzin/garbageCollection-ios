@@ -45,19 +45,16 @@ class GeocoderManager {
             return
         }
         
-        guard let places = places, !places.isEmpty else {
-            single(.error(GCError.Geocoder.invalidGeocoderResponse))
-            return
-        }
-        
-        let place = places.filter { singlePlace in singlePlace.locality == "Fortaleza" }.first
-        
-        guard let fortalezaPlace = place else {
+        guard let places = places, let place = places.filter({ $0.locality == "Fortaleza" }).first else {
             single(.success(nil))
             return
         }
-        let name = [fortalezaPlace.name, fortalezaPlace.postalCode].compactMap { $0 }.joined(separator: " - ")
-        single(.success(Location(address: name, location: fortalezaPlace.location!)))
+        
+        let location = Location(address: place.name ?? "",
+                                zipcode: place.postalCode ?? "",
+                                location: place.location!)
+        
+        single(.success(location))
     }
     
 }

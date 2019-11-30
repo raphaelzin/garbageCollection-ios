@@ -101,7 +101,7 @@ extension MapCoordinator: RubbishReportControllerDelegate {
         let viewModel = LocationSelectionViewModel()
         let locationSelectionController = LocationSelectionController(viewModel: viewModel)
         locationSelectionController.coordinatorDelegate = self
-        
+        locationSelectionController.delegate = controller as? LocationSelectionDelegate
         controller.navigationController?.pushViewController(locationSelectionController, animated: true)
     }
     

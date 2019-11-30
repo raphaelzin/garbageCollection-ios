@@ -14,6 +14,7 @@ class RubbishReport: PFObject, PFSubclassing {
     @NSManaged var location: PFGeoPoint?
     @NSManaged var address: String?
     @NSManaged var comment: String?
+    @NSManaged var zipcode: String?
     @NSManaged var isValid: Bool
     @NSManaged var reporter: Installation?
     @NSManaged var picture: PFFileObject?

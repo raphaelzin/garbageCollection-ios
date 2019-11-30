@@ -14,7 +14,7 @@ protocol LocationSelectionViewModelType: class {
     func search(for address: String) -> Single<Location?>
     func search(with latitude: Double, and longitude: Double) -> Single<Location?>
     
-    var selectedLocation: Observable<Location?> { get }
+    var selectedLocation: BehaviorRelay<Location?> { get }
 }
 
 class LocationSelectionViewModel: LocationSelectionViewModelType {
@@ -23,17 +23,13 @@ class LocationSelectionViewModel: LocationSelectionViewModelType {
     
     private lazy var geocoderManager = GeocoderManager()
     
-    private lazy var selectedLocationRelay: BehaviorRelay<Location?> = .init(value: nil)
-    
-    var selectedLocation: Observable<Location?> {
-        selectedLocationRelay.asObservable()
-    }
-    
+    lazy var selectedLocation: BehaviorRelay<Location?> = .init(value: nil)
+        
     func search(for address: String) -> Single<Location?> {
         geocoderManager
             .location(for: address)
             .do(onSuccess: { (location) in
-                self.selectedLocationRelay.accept(location)
+                self.selectedLocation.accept(location)
             })
     }
     
@@ -41,7 +37,7 @@ class LocationSelectionViewModel: LocationSelectionViewModelType {
         geocoderManager
             .location(for: latitude, and: longitude)
             .do(onSuccess: { (location) in
-                self.selectedLocationRelay.accept(location)
+                self.selectedLocation.accept(location)
             })
     }
     

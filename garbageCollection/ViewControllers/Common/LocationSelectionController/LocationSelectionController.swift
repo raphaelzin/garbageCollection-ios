@@ -15,11 +15,17 @@ protocol LocationSelectionControllerCoordinatorDelegate: class {
     func didRequestDismiss(from controller: UIViewController)
 }
 
+protocol LocationSelectionDelegate: class {
+    func didSelect(location: Location)
+}
+
 class LocationSelectionController: GCViewModelController<LocationSelectionViewModelType> {
     
     // MARK: Attributes
     
     weak var coordinatorDelegate: LocationSelectionControllerCoordinatorDelegate?
+    
+    weak var delegate: LocationSelectionDelegate?
     
     private let disposeBag = DisposeBag()
     
@@ -35,19 +41,14 @@ class LocationSelectionController: GCViewModelController<LocationSelectionViewMo
         return mv
     }()
     
-    private lazy var addressTextField: UITextField = {
-        let tf = UITextField()
-        tf.layer.cornerRadius = 22
-        tf.autocapitalizationType = .sentences
-        tf.autocorrectionType = .no
-        tf.leftViewMode = .always
-        tf.backgroundColor = .systemBackground
-        let imv = UIImageView(image: UIImage(systemName: "magnifyingglass"))
-        imv.contentMode = .center
-        imv.snp.makeConstraints { (make) in
-            make.size.equalTo(CGSize(width: 44, height: 44))
-        }
-        tf.leftView = imv
+    private lazy var addressTextField: GCSearchBarView = {
+        let tf = GCSearchBarView()
+        
+        tf.layer.shadowColor = UIColor.black.cgColor
+        tf.layer.shadowRadius = 4
+        tf.layer.shadowOpacity = 0.6
+        tf.layer.shadowOffset = .zero
+        
         return tf
     }()
     
@@ -68,13 +69,17 @@ class LocationSelectionController: GCViewModelController<LocationSelectionViewMo
         bindAddressSearch()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        addMarker()
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let region = MKCoordinateRegion(center: mapView.userLocation.coordinate,
+                                        latitudinalMeters: 500,
+                                        longitudinalMeters: 500)
+        mapView.setRegion(region, animated: false)
     }
     
 }
@@ -131,6 +136,11 @@ private extension LocationSelectionController {
     
     func configureNavBar() {
         navigationItem.title = "Selecionar localização"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar",
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(onSaveTap))
     }
     
 }
@@ -140,6 +150,8 @@ private extension LocationSelectionController {
 private extension LocationSelectionController {
     
     @objc func onSaveTap() {
+        guard let location = viewModel.selectedLocation.value else { return }
+        delegate?.didSelect(location: location)
         coordinatorDelegate?.didRequestDismiss(from: self)
     }
     
@@ -154,7 +166,6 @@ private extension LocationSelectionController {
 private extension LocationSelectionController {
     
     func focus(on location: Location) {
-        print("Focusing on \(location.address)")
         let center = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
         let region = MKCoordinateRegion(center: center, latitudinalMeters: 500, longitudinalMeters: 500)
         mapView.setRegion(region, animated: true)
@@ -165,15 +176,13 @@ private extension LocationSelectionController {
 extension LocationSelectionController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        guard !addressTextField.isFirstResponder else { return }
         let center = mapView.centerCoordinate
         viewModel
             .search(with: center.latitude, and: center.longitude)
             .subscribe(onSuccess: { (location) in
                 if let location = location {
-                    print(location)
                     self.addressTextField.text = location.address
-                } else {
-                    print("No address found")
                 }
             }, onError: { error in
                 print(error)

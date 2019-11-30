@@ -239,3 +239,11 @@ extension RubbishReportController: UIImagePickerControllerDelegate, UINavigation
     }
     
 }
+
+extension RubbishReportController: LocationSelectionDelegate {
+    
+    func didSelect(location: Location) {
+        viewModel.locationRelay.accept(location)
+    }
+    
+}
