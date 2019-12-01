@@ -54,7 +54,7 @@ class PictureSelectionView: UIView {
     
     private lazy var separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.darkGray
+        view.backgroundColor = UIColor.separator
         return view
     }()
     
@@ -65,7 +65,7 @@ class PictureSelectionView: UIView {
         configureLayout()
         configureStack()
         
-        backgroundColor = .secondarySystemBackground
+        backgroundColor = .secondarySystemGroupedBackground
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onViewTap)))
     }
     

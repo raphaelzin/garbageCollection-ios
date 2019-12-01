@@ -40,7 +40,6 @@ class RubbishReportController: GCViewModelController<RubbishReportViewModelType>
         let view = PictureSelectionView()
         view.delegate = self
         view.configure(with: viewModel.pictureRelay.asDriver())
-        
         return view
     }()
     

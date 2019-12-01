@@ -47,7 +47,7 @@ class NeighbourhoodSelectorView: UIView {
     
     private lazy var separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = .secondaryLightGray
+        view.backgroundColor = .separator
         return view
     }()
     
