@@ -12,6 +12,10 @@ import Foundation
 
 struct GCError {
     
+    enum UserInteraction: Error {
+        case invalidReportInput
+    }
+    
     enum Server: Error {
         case invalidQueryResult
         case serverUnreachable
@@ -29,6 +33,16 @@ struct GCError {
 }
 
 // Error descriptions
+
+extension GCError.UserInteraction {
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidReportInput: return "Houve um problema ao criar o reporte. Verifique se há uma foto, localização e data válida ou tente novamente mais tarde"
+        }
+    }
+    
+}
 
 extension GCError.Server: LocalizedError {
     

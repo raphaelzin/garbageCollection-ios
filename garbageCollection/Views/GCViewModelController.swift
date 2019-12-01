@@ -33,4 +33,12 @@ extension GCViewModelController {
         present(alert, animated: true)
     }
     
+    func simpleAlert(withTitle title: String?, message: String?, btnTitle: String = "Entendi") {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: btnTitle, style: .default, handler: nil))
+        
+        present(alert, animated: true)
+    }
+    
 }

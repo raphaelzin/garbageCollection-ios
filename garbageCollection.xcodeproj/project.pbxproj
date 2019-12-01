@@ -13,9 +13,12 @@
 		1C17998E2389F54A0075F06C /* PictureSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C17998D2389F54A0075F06C /* PictureSelectionView.swift */; };
 		1C179990238A00150075F06C /* UITableViewCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C17998F238A00150075F06C /* UITableViewCellConfigurator.swift */; };
 		1C179993238A027A0075F06C /* TextInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C179992238A027A0075F06C /* TextInputController.swift */; };
+		1C21B3CB23941E8B003E0090 /* RubbishReportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B3CA23941E8B003E0090 /* RubbishReportManager.swift */; };
+		1C21B3CD23941F8C003E0090 /* PFFileImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B3CC23941F8C003E0090 /* PFFileImageHelper.swift */; };
+		1C21B3CF2394206F003E0090 /* PFFileObject+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B3CE2394206F003E0090 /* PFFileObject+Rx.swift */; };
+		1C21B3D02394232C003E0090 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14E5C3235BB96D00E3CD94 /* UIImage.swift */; };
 		1C23C961238DFD7C00100BA1 /* LocationSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C23C960238DFD7C00100BA1 /* LocationSelectionController.swift */; };
 		1C23C963238DFDB700100BA1 /* LocationSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C23C962238DFDB700100BA1 /* LocationSelectionViewModel.swift */; };
-		1C23C966238E026500100BA1 /* AddressSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C23C965238E026500100BA1 /* AddressSelectionView.swift */; };
 		1C26CE4D23594308008BB2D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE4C23594308008BB2D2 /* AppDelegate.swift */; };
 		1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */; };
 		1C26CE562359430C008BB2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C26CE552359430C008BB2D2 /* Assets.xcassets */; };
@@ -124,9 +127,11 @@
 		1C17998D2389F54A0075F06C /* PictureSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureSelectionView.swift; sourceTree = "<group>"; };
 		1C17998F238A00150075F06C /* UITableViewCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellConfigurator.swift; sourceTree = "<group>"; };
 		1C179992238A027A0075F06C /* TextInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputController.swift; sourceTree = "<group>"; };
+		1C21B3CA23941E8B003E0090 /* RubbishReportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishReportManager.swift; sourceTree = "<group>"; };
+		1C21B3CC23941F8C003E0090 /* PFFileImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFFileImageHelper.swift; sourceTree = "<group>"; };
+		1C21B3CE2394206F003E0090 /* PFFileObject+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PFFileObject+Rx.swift"; sourceTree = "<group>"; };
 		1C23C960238DFD7C00100BA1 /* LocationSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionController.swift; sourceTree = "<group>"; };
 		1C23C962238DFDB700100BA1 /* LocationSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionViewModel.swift; sourceTree = "<group>"; };
-		1C23C965238E026500100BA1 /* AddressSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSelectionView.swift; sourceTree = "<group>"; };
 		1C26CE4923594307008BB2D2 /* garbageCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = garbageCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C26CE4C23594308008BB2D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,7 +188,6 @@
 		1C835E1B235EA88000CC21EB /* PFAnonymousUtils+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFAnonymousUtils+Rx.swift"; sourceTree = "<group>"; };
 		1C835E1C235EA88000CC21EB /* PFCloud+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFCloud+Rx.swift"; sourceTree = "<group>"; };
 		1C835E1D235EA88000CC21EB /* ParseRxCallbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseRxCallbacks.swift; sourceTree = "<group>"; };
-		1C835E1E235EA88000CC21EB /* PFFileObject+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFFileObject+Rx.swift"; sourceTree = "<group>"; };
 		1C835E1F235EA88000CC21EB /* PFQuery+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFQuery+Rx.swift"; sourceTree = "<group>"; };
 		1C835E2A235FC73F00CC21EB /* GCError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCError.swift; sourceTree = "<group>"; };
 		1C835E2D23611DE200CC21EB /* NeighbourhoodSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodSelectionController.swift; sourceTree = "<group>"; };
@@ -316,17 +320,8 @@
 			children = (
 				1C23C960238DFD7C00100BA1 /* LocationSelectionController.swift */,
 				1C23C962238DFDB700100BA1 /* LocationSelectionViewModel.swift */,
-				1C23C964238E024800100BA1 /* Views */,
 			);
 			path = LocationSelectionController;
-			sourceTree = "<group>";
-		};
-		1C23C964238E024800100BA1 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				1C23C965238E026500100BA1 /* AddressSelectionView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		1C26CE4023594307008BB2D2 = {
@@ -510,6 +505,7 @@
 			children = (
 				1C26CE8023594462008BB2D2 /* Extensions */,
 				1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */,
+				1C21B3CC23941F8C003E0090 /* PFFileImageHelper.swift */,
 				1C835E0C235E9B9B00CC21EB /* GenericSection.swift */,
 				1C835E2A235FC73F00CC21EB /* GCError.swift */,
 				1C17998F238A00150075F06C /* UITableViewCellConfigurator.swift */,
@@ -608,6 +604,7 @@
 			isa = PBXGroup;
 			children = (
 				1C835E13235EA61200CC21EB /* CollectionScheduleManager.swift */,
+				1C21B3CA23941E8B003E0090 /* RubbishReportManager.swift */,
 				1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */,
 				1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */,
 				1C696C422364C37500632085 /* NotificationsManager.swift */,
@@ -623,8 +620,8 @@
 				1C835E1D235EA88000CC21EB /* ParseRxCallbacks.swift */,
 				1C835E1B235EA88000CC21EB /* PFAnonymousUtils+Rx.swift */,
 				1C835E1C235EA88000CC21EB /* PFCloud+Rx.swift */,
-				1C835E1E235EA88000CC21EB /* PFFileObject+Rx.swift */,
 				1C835E17235EA87F00CC21EB /* PFGeoPoint+Rx.swift */,
+				1C21B3CE2394206F003E0090 /* PFFileObject+Rx.swift */,
 				1C835E1A235EA88000CC21EB /* PFObject+Rx.swift */,
 				1C835E18235EA87F00CC21EB /* PFPush+Rx.swift */,
 				1C835E1F235EA88000CC21EB /* PFQuery+Rx.swift */,
@@ -953,7 +950,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C23C966238E026500100BA1 /* AddressSelectionView.swift in Sources */,
 				1C835E2B235FC73F00CC21EB /* GCError.swift in Sources */,
 				1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */,
 				1C835E26235EA88000CC21EB /* PFCloud+Rx.swift in Sources */,
@@ -966,6 +962,7 @@
 				1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */,
 				1C31CC04235B6AA600653E19 /* CalendarController.swift in Sources */,
 				1C31CBF3235B5B7E00653E19 /* CalendarCoordinator.swift in Sources */,
+				1C21B3D02394232C003E0090 /* UIImage.swift in Sources */,
 				1C7A43BF23725DCE005210B9 /* CollectionPointMarker.swift in Sources */,
 				1C696C452365EB7500632085 /* Date.swift in Sources */,
 				1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */,
@@ -996,6 +993,7 @@
 				1C835E0D235E9B9B00CC21EB /* GenericSection.swift in Sources */,
 				1C31CC0E235B72BC00653E19 /* MapViewModel.swift in Sources */,
 				1CF15BAD235CC3AF00664DE7 /* Neighbourhood.swift in Sources */,
+				1C21B3CB23941E8B003E0090 /* RubbishReportManager.swift in Sources */,
 				1C835E2E23611DE200CC21EB /* NeighbourhoodSelectionController.swift in Sources */,
 				1C8996FC238AE2AC0004057A /* Location.swift in Sources */,
 				1C7A43C72373C119005210B9 /* SelectableCell.swift in Sources */,
@@ -1004,9 +1002,11 @@
 				1C1799892389F39E0075F06C /* RubbishReportController.swift in Sources */,
 				1C179990238A00150075F06C /* UITableViewCellConfigurator.swift in Sources */,
 				1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */,
+				1C21B3CD23941F8C003E0090 /* PFFileImageHelper.swift in Sources */,
 				1CB6CAB12380B15800E790CC /* CollectionPointCollectionViewCell.swift in Sources */,
 				1C31CBFF235B5DD700653E19 /* UIColor.swift in Sources */,
 				1C835E23235EA88000CC21EB /* Observable+ParseCreate.swift in Sources */,
+				1C21B3CF2394206F003E0090 /* PFFileObject+Rx.swift in Sources */,
 				1C14E5C1235BB48400E3CD94 /* NeighbourhoodSelectorView.swift in Sources */,
 				1C835E22235EA88000CC21EB /* PFPush+Rx.swift in Sources */,
 				1C31CBEB235B564B00653E19 /* RootViewCoordinator.swift in Sources */,

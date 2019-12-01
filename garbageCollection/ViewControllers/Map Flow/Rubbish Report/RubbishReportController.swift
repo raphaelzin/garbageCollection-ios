@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import SVProgressHUD
 
 protocol RubbishReportControllerDelegate: class {
     func didRequestDismiss(from controller: RubbishReportController)
@@ -130,14 +131,28 @@ private extension RubbishReportController {
 
 // MARK: Private selectors
 
-extension RubbishReportController {
+private extension RubbishReportController {
     
     @objc func onCloseTap() {
         coordinatorDelegate?.didRequestDismiss(from: self)
     }
     
     @objc func onSaveTap() {
-        print(#function)
+        guard viewModel.isValidInput else {
+            alert(error: GCError.UserInteraction.invalidReportInput)
+            return
+        }
+        
+        SVProgressHUD.show()
+        viewModel
+            .reportRubbish()
+            .subscribe(onCompleted: {
+                SVProgressHUD.dismiss()
+                self.coordinatorDelegate?.didRequestDismiss(from: self)
+            }, onError: { error in
+                self.alert(error: error)
+            })
+            .disposed(by: disposeBag)
     }
     
 }

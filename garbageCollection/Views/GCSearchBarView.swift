@@ -39,6 +39,8 @@ private extension GCSearchBarView {
         autocorrectionType = .no
         leftViewMode = .always
         backgroundColor = .systemBackground
+        returnKeyType = .done
+        
         let imv = UIImageView(image: UIImage(systemName: "magnifyingglass"))
         imv.contentMode = .center
         imv.snp.makeConstraints { (make) in

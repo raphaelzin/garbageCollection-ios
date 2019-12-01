@@ -26,5 +26,4 @@ class PaddingLabel: UILabel {
                       height: size.height + topInset + bottomInset)
     }
     
-    
 }

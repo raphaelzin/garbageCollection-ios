@@ -20,6 +20,15 @@ class RubbishReport: PFObject, PFSubclassing {
     @NSManaged var picture: PFFileObject?
     @NSManaged var seenTimestamp: Date?
     
+    init(location: Location) {
+        super.init()
+        
+        self.address = location.address
+        self.zipcode = location.zipcode
+        self.location = location.asGeoPoint
+        self.reporter = Installation.current()
+    }
+    
     static func parseClassName() -> String { return "RubbishReport" }
     
 }

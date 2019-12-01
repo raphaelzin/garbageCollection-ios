@@ -43,7 +43,7 @@ class LocationSelectionController: GCViewModelController<LocationSelectionViewMo
     
     private lazy var addressTextField: GCSearchBarView = {
         let tf = GCSearchBarView()
-        
+        tf.placeholder = "Procurar endereço"
         tf.layer.shadowColor = UIColor.black.cgColor
         tf.layer.shadowRadius = 4
         tf.layer.shadowOpacity = 0.6
@@ -67,6 +67,7 @@ class LocationSelectionController: GCViewModelController<LocationSelectionViewMo
         configureNavBar()
         
         bindAddressSearch()
+        bindLocationSelected()
     }
     
     required init?(coder: NSCoder) {
@@ -106,6 +107,18 @@ private extension LocationSelectionController {
             })
             .disposed(by: disposeBag)
         
+    }
+    
+    func bindLocationSelected() {
+        viewModel
+            .selectedLocation
+            .map { $0 != nil }
+            .subscribe(onNext: { (hasSelectedLocation) in
+                UIView.animate(withDuration: 0.3) {
+                    self.centerPosition.alpha = hasSelectedLocation ? 1 : 0
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -150,7 +163,11 @@ private extension LocationSelectionController {
 private extension LocationSelectionController {
     
     @objc func onSaveTap() {
-        guard let location = viewModel.selectedLocation.value else { return }
+        guard let location = viewModel.selectedLocation.value else {
+            simpleAlert(withTitle: "Opa!",
+                        message: "Você precisa selecionar um endereço antes de salvar.")
+            return
+        }
         delegate?.didSelect(location: location)
         coordinatorDelegate?.didRequestDismiss(from: self)
     }
@@ -176,7 +193,7 @@ private extension LocationSelectionController {
 extension LocationSelectionController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        guard !addressTextField.isFirstResponder else { return }
+        guard !addressTextField.isFirstResponder && viewModel.selectedLocation.value != nil else { return }
         let center = mapView.centerCoordinate
         viewModel
             .search(with: center.latitude, and: center.longitude)
