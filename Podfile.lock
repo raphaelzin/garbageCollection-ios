@@ -16,6 +16,7 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
   - SnapKit (5.0.1)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Parse
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - RxDataSources (~> 4.0)
   - RxSwift (~> 5)
   - SnapKit (~> 5.0.0)
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
@@ -34,6 +36,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SnapKit
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -44,7 +47,8 @@ SPEC CHECKSUMS:
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: b7a02e08e85b2df40e41ae372c1e238c31c2f3df
+PODFILE CHECKSUM: 9cea2261d86b75f96ea57d6a67a692c1255ff103
 
 COCOAPODS: 1.8.4

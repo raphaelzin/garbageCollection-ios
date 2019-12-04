@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		1C14E5C1235BB48400E3CD94 /* NeighbourhoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14E5C0235BB48400E3CD94 /* NeighbourhoodSelectorView.swift */; };
+		1C1799892389F39E0075F06C /* RubbishReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1799882389F39E0075F06C /* RubbishReportController.swift */; };
+		1C17998B2389F3D90075F06C /* RubbishReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C17998A2389F3D90075F06C /* RubbishReportViewModel.swift */; };
+		1C17998E2389F54A0075F06C /* PictureSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C17998D2389F54A0075F06C /* PictureSelectionView.swift */; };
+		1C179990238A00150075F06C /* UITableViewCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C17998F238A00150075F06C /* UITableViewCellConfigurator.swift */; };
+		1C179993238A027A0075F06C /* TextInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C179992238A027A0075F06C /* TextInputController.swift */; };
+		1C21B3CB23941E8B003E0090 /* RubbishReportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B3CA23941E8B003E0090 /* RubbishReportManager.swift */; };
+		1C21B3CD23941F8C003E0090 /* PFFileImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B3CC23941F8C003E0090 /* PFFileImageHelper.swift */; };
+		1C21B3CF2394206F003E0090 /* PFFileObject+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B3CE2394206F003E0090 /* PFFileObject+Rx.swift */; };
+		1C21B3D02394232C003E0090 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14E5C3235BB96D00E3CD94 /* UIImage.swift */; };
+		1C23C961238DFD7C00100BA1 /* LocationSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C23C960238DFD7C00100BA1 /* LocationSelectionController.swift */; };
+		1C23C963238DFDB700100BA1 /* LocationSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C23C962238DFDB700100BA1 /* LocationSelectionViewModel.swift */; };
 		1C26CE4D23594308008BB2D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE4C23594308008BB2D2 /* AppDelegate.swift */; };
 		1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */; };
 		1C26CE562359430C008BB2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C26CE552359430C008BB2D2 /* Assets.xcassets */; };
 		1C26CE592359430C008BB2D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C26CE572359430C008BB2D2 /* LaunchScreen.storyboard */; };
 		1C26CE642359430C008BB2D2 /* garbageCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE632359430C008BB2D2 /* garbageCollectionTests.swift */; };
 		1C26CE6F2359430C008BB2D2 /* garbageCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE6E2359430C008BB2D2 /* garbageCollectionUITests.swift */; };
+		1C309ED9238CA73200B2F063 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C309ED8238CA73200B2F063 /* BasicTableViewCell.swift */; };
 		1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CBE8235B55D400653E19 /* AppCoordinator.swift */; };
 		1C31CBEB235B564B00653E19 /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CBEA235B564B00653E19 /* RootViewCoordinator.swift */; };
 		1C31CBED235B566A00653E19 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CBEC235B566A00653E19 /* Coordinator.swift */; };
@@ -37,6 +49,7 @@
 		1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4723660CA300632085 /* UserNotification+Rx.swift */; };
 		1C696C4C2366617C00632085 /* CollectionPointFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4B2366617C00632085 /* CollectionPointFilterController.swift */; };
 		1C696C4E2366619200632085 /* CollectionPointFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4D2366619200632085 /* CollectionPointFilterViewModel.swift */; };
+		1C7489B42390AA4B00958A13 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7489B32390AA4B00958A13 /* PaddingLabel.swift */; };
 		1C7A43BD23724F59005210B9 /* CollectionPointsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */; };
 		1C7A43BF23725DCE005210B9 /* CollectionPointMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43BE23725DCE005210B9 /* CollectionPointMarker.swift */; };
 		1C7A43C123725E97005210B9 /* PFGeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43C023725E97005210B9 /* PFGeoPoint.swift */; };
@@ -56,17 +69,22 @@
 		1C835E25235EA88000CC21EB /* PFAnonymousUtils+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1B235EA88000CC21EB /* PFAnonymousUtils+Rx.swift */; };
 		1C835E26235EA88000CC21EB /* PFCloud+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1C235EA88000CC21EB /* PFCloud+Rx.swift */; };
 		1C835E27235EA88000CC21EB /* ParseRxCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1D235EA88000CC21EB /* ParseRxCallbacks.swift */; };
-		1C835E28235EA88000CC21EB /* PFFileObject+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1E235EA88000CC21EB /* PFFileObject+Rx.swift */; };
 		1C835E29235EA88000CC21EB /* PFQuery+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E1F235EA88000CC21EB /* PFQuery+Rx.swift */; };
 		1C835E2B235FC73F00CC21EB /* GCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E2A235FC73F00CC21EB /* GCError.swift */; };
 		1C835E2E23611DE200CC21EB /* NeighbourhoodSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E2D23611DE200CC21EB /* NeighbourhoodSelectionController.swift */; };
 		1C835E3023611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E2F23611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift */; };
 		1C835E3323611F1D00CC21EB /* NeighbourhoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */; };
 		1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */; };
+		1C8996FC238AE2AC0004057A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8996FB238AE2AC0004057A /* Location.swift */; };
+		1C8EA74E238C95C700BADB1A /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EA74D238C95C700BADB1A /* DatePickerViewController.swift */; };
+		1C8EA750238C9BFD00BADB1A /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EA74F238C9BFD00BADB1A /* UIAlertController.swift */; };
+		1C8EA752238C9DEA00BADB1A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EA751238C9DEA00BADB1A /* UIView.swift */; };
 		1CB6CAB12380B15800E790CC /* CollectionPointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */; };
 		1CB6CAB32380BC7300E790CC /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */; };
 		1CB6CAB52380BC7D00E790CC /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB42380BC7D00E790CC /* UICollectionView.swift */; };
+		1CBA92FF238F57EC00CF01D4 /* GeocoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */; };
 		1CC05479237E00C200268662 /* parseConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC05478237E00C200268662 /* parseConnectionTest.swift */; };
+		1CC84B8F2392FCDF00EDB794 /* GCSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC84B8E2392FCDF00EDB794 /* GCSearchBarView.swift */; };
 		1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3432023666A2C001B1790 /* GCExpandableButton.swift */; };
 		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
 		1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA2235CBE6B00664DE7 /* Installation.swift */; };
@@ -104,6 +122,16 @@
 		1C14E5BD235BACFE00E3CD94 /* ScheduledCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledCollectionCell.swift; sourceTree = "<group>"; };
 		1C14E5C0235BB48400E3CD94 /* NeighbourhoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodSelectorView.swift; sourceTree = "<group>"; };
 		1C14E5C3235BB96D00E3CD94 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		1C1799882389F39E0075F06C /* RubbishReportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishReportController.swift; sourceTree = "<group>"; };
+		1C17998A2389F3D90075F06C /* RubbishReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishReportViewModel.swift; sourceTree = "<group>"; };
+		1C17998D2389F54A0075F06C /* PictureSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureSelectionView.swift; sourceTree = "<group>"; };
+		1C17998F238A00150075F06C /* UITableViewCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellConfigurator.swift; sourceTree = "<group>"; };
+		1C179992238A027A0075F06C /* TextInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputController.swift; sourceTree = "<group>"; };
+		1C21B3CA23941E8B003E0090 /* RubbishReportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishReportManager.swift; sourceTree = "<group>"; };
+		1C21B3CC23941F8C003E0090 /* PFFileImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFFileImageHelper.swift; sourceTree = "<group>"; };
+		1C21B3CE2394206F003E0090 /* PFFileObject+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PFFileObject+Rx.swift"; sourceTree = "<group>"; };
+		1C23C960238DFD7C00100BA1 /* LocationSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionController.swift; sourceTree = "<group>"; };
+		1C23C962238DFDB700100BA1 /* LocationSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionViewModel.swift; sourceTree = "<group>"; };
 		1C26CE4923594307008BB2D2 /* garbageCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = garbageCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C26CE4C23594308008BB2D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,8 +144,8 @@
 		1C26CE6A2359430C008BB2D2 /* garbageCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = garbageCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C26CE6E2359430C008BB2D2 /* garbageCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = garbageCollectionUITests.swift; sourceTree = "<group>"; };
 		1C26CE702359430C008BB2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C26CE83235944D9008BB2D2 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		1C26CE86235944FC008BB2D2 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		1C309ED8238CA73200B2F063 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		1C31CBE8235B55D400653E19 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1C31CBEA235B564B00653E19 /* RootViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
 		1C31CBEC235B566A00653E19 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -141,6 +169,7 @@
 		1C696C4723660CA300632085 /* UserNotification+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserNotification+Rx.swift"; sourceTree = "<group>"; };
 		1C696C4B2366617C00632085 /* CollectionPointFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointFilterController.swift; sourceTree = "<group>"; };
 		1C696C4D2366619200632085 /* CollectionPointFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointFilterViewModel.swift; sourceTree = "<group>"; };
+		1C7489B32390AA4B00958A13 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointsManager.swift; sourceTree = "<group>"; };
 		1C7A43BE23725DCE005210B9 /* CollectionPointMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointMarker.swift; sourceTree = "<group>"; };
 		1C7A43C023725E97005210B9 /* PFGeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFGeoPoint.swift; sourceTree = "<group>"; };
@@ -159,18 +188,24 @@
 		1C835E1B235EA88000CC21EB /* PFAnonymousUtils+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFAnonymousUtils+Rx.swift"; sourceTree = "<group>"; };
 		1C835E1C235EA88000CC21EB /* PFCloud+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFCloud+Rx.swift"; sourceTree = "<group>"; };
 		1C835E1D235EA88000CC21EB /* ParseRxCallbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseRxCallbacks.swift; sourceTree = "<group>"; };
-		1C835E1E235EA88000CC21EB /* PFFileObject+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFFileObject+Rx.swift"; sourceTree = "<group>"; };
 		1C835E1F235EA88000CC21EB /* PFQuery+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFQuery+Rx.swift"; sourceTree = "<group>"; };
 		1C835E2A235FC73F00CC21EB /* GCError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCError.swift; sourceTree = "<group>"; };
 		1C835E2D23611DE200CC21EB /* NeighbourhoodSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodSelectionController.swift; sourceTree = "<group>"; };
 		1C835E2F23611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodSelectionViewModel.swift; sourceTree = "<group>"; };
 		1C835E3223611F1D00CC21EB /* NeighbourhoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodCell.swift; sourceTree = "<group>"; };
 		1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourhoodsManager.swift; sourceTree = "<group>"; };
+		1C8996FB238AE2AC0004057A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1C8EA74D238C95C700BADB1A /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		1C8EA74F238C9BFD00BADB1A /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		1C8EA751238C9DEA00BADB1A /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		1C9902DD2389CB520000A457 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		1CB6CAAE2380AF6900E790CC /* CGCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointCollectionViewCell.swift; sourceTree = "<group>"; };
 		1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		1CB6CAB42380BC7D00E790CC /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderManager.swift; sourceTree = "<group>"; };
 		1CC05478237E00C200268662 /* parseConnectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parseConnectionTest.swift; sourceTree = "<group>"; };
+		1CC84B8E2392FCDF00EDB794 /* GCSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSearchBarView.swift; sourceTree = "<group>"; };
 		1CE3432023666A2C001B1790 /* GCExpandableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCExpandableButton.swift; sourceTree = "<group>"; };
 		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
 		1CF15BA2235CBE6B00664DE7 /* Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installation.swift; sourceTree = "<group>"; };
@@ -252,6 +287,41 @@
 				1C14E5C0235BB48400E3CD94 /* NeighbourhoodSelectorView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1C1799872389F3650075F06C /* Rubbish Report */ = {
+			isa = PBXGroup;
+			children = (
+				1C1799882389F39E0075F06C /* RubbishReportController.swift */,
+				1C17998A2389F3D90075F06C /* RubbishReportViewModel.swift */,
+				1C17998C2389F50D0075F06C /* Subviews */,
+			);
+			path = "Rubbish Report";
+			sourceTree = "<group>";
+		};
+		1C17998C2389F50D0075F06C /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				1C17998D2389F54A0075F06C /* PictureSelectionView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		1C179991238A02570075F06C /* TextInputController */ = {
+			isa = PBXGroup;
+			children = (
+				1C179992238A027A0075F06C /* TextInputController.swift */,
+			);
+			path = TextInputController;
+			sourceTree = "<group>";
+		};
+		1C23C95F238DFD6200100BA1 /* LocationSelectionController */ = {
+			isa = PBXGroup;
+			children = (
+				1C23C960238DFD7C00100BA1 /* LocationSelectionController.swift */,
+				1C23C962238DFDB700100BA1 /* LocationSelectionViewModel.swift */,
+			);
+			path = LocationSelectionController;
 			sourceTree = "<group>";
 		};
 		1C26CE4023594307008BB2D2 = {
@@ -372,9 +442,9 @@
 		1C26CE82235944AD008BB2D2 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				1C31CBEE235B578100653E19 /* Environment.swift */,
-				1C26CE83235944D9008BB2D2 /* Development.xcconfig */,
+				1C9902DD2389CB520000A457 /* Development.xcconfig */,
 				1C26CE86235944FC008BB2D2 /* Production.xcconfig */,
+				1C31CBEE235B578100653E19 /* Environment.swift */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -382,6 +452,7 @@
 		1C31CBF6235B5B9900653E19 /* Map Flow */ = {
 			isa = PBXGroup;
 			children = (
+				1C1799872389F3650075F06C /* Rubbish Report */,
 				1C696C4A2366615600632085 /* Filter */,
 				1C696C4923665F5900632085 /* Map */,
 			);
@@ -397,6 +468,10 @@
 				1C31CC0B235B70CC00653E19 /* GCViewModelController.swift */,
 				1CE3432023666A2C001B1790 /* GCExpandableButton.swift */,
 				1CB6CAAE2380AF6900E790CC /* CGCollectionViewFlowLayout.swift */,
+				1C8EA74D238C95C700BADB1A /* DatePickerViewController.swift */,
+				1C309ED8238CA73200B2F063 /* BasicTableViewCell.swift */,
+				1C7489B32390AA4B00958A13 /* PaddingLabel.swift */,
+				1CC84B8E2392FCDF00EDB794 /* GCSearchBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -413,12 +488,14 @@
 		1C31CBFD235B5DC300653E19 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				1C8EA751238C9DEA00BADB1A /* UIView.swift */,
 				1C31CBFE235B5DD700653E19 /* UIColor.swift */,
 				1C14E5C3235BB96D00E3CD94 /* UIImage.swift */,
 				1C835E0E235EA27E00CC21EB /* UITableView.swift */,
 				1C835E10235EA2CB00CC21EB /* UITableViewCell.swift */,
 				1CB6CAB42380BC7D00E790CC /* UICollectionView.swift */,
 				1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */,
+				1C8EA74F238C9BFD00BADB1A /* UIAlertController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -428,8 +505,10 @@
 			children = (
 				1C26CE8023594462008BB2D2 /* Extensions */,
 				1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */,
+				1C21B3CC23941F8C003E0090 /* PFFileImageHelper.swift */,
 				1C835E0C235E9B9B00CC21EB /* GenericSection.swift */,
 				1C835E2A235FC73F00CC21EB /* GCError.swift */,
+				1C17998F238A00150075F06C /* UITableViewCellConfigurator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -470,6 +549,8 @@
 			isa = PBXGroup;
 			children = (
 				1C46181723594A6B0054B22B /* SplashController.swift */,
+				1C23C95F238DFD6200100BA1 /* LocationSelectionController */,
+				1C179991238A02570075F06C /* TextInputController */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -523,9 +604,11 @@
 			isa = PBXGroup;
 			children = (
 				1C835E13235EA61200CC21EB /* CollectionScheduleManager.swift */,
+				1C21B3CA23941E8B003E0090 /* RubbishReportManager.swift */,
 				1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */,
 				1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */,
 				1C696C422364C37500632085 /* NotificationsManager.swift */,
+				1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -537,8 +620,8 @@
 				1C835E1D235EA88000CC21EB /* ParseRxCallbacks.swift */,
 				1C835E1B235EA88000CC21EB /* PFAnonymousUtils+Rx.swift */,
 				1C835E1C235EA88000CC21EB /* PFCloud+Rx.swift */,
-				1C835E1E235EA88000CC21EB /* PFFileObject+Rx.swift */,
 				1C835E17235EA87F00CC21EB /* PFGeoPoint+Rx.swift */,
+				1C21B3CE2394206F003E0090 /* PFFileObject+Rx.swift */,
 				1C835E1A235EA88000CC21EB /* PFObject+Rx.swift */,
 				1C835E18235EA87F00CC21EB /* PFPush+Rx.swift */,
 				1C835E1F235EA88000CC21EB /* PFQuery+Rx.swift */,
@@ -579,6 +662,7 @@
 			children = (
 				1CF15B9F235CBB3800664DE7 /* Parse */,
 				1C835E09235E917200CC21EB /* WeekDayCollectionSchedule.swift */,
+				1C8996FB238AE2AC0004057A /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -869,20 +953,23 @@
 				1C835E2B235FC73F00CC21EB /* GCError.swift in Sources */,
 				1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */,
 				1C835E26235EA88000CC21EB /* PFCloud+Rx.swift in Sources */,
-				1C835E28235EA88000CC21EB /* PFFileObject+Rx.swift in Sources */,
 				1C835E14235EA61200CC21EB /* CollectionScheduleManager.swift in Sources */,
 				1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */,
+				1C23C961238DFD7C00100BA1 /* LocationSelectionController.swift in Sources */,
 				1C7A43BD23724F59005210B9 /* CollectionPointsManager.swift in Sources */,
 				1C31CBFB235B5D8000653E19 /* GCNavigationController.swift in Sources */,
 				1C31CBF1235B5B2C00653E19 /* MapCoordinator.swift in Sources */,
 				1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */,
 				1C31CC04235B6AA600653E19 /* CalendarController.swift in Sources */,
 				1C31CBF3235B5B7E00653E19 /* CalendarCoordinator.swift in Sources */,
+				1C21B3D02394232C003E0090 /* UIImage.swift in Sources */,
 				1C7A43BF23725DCE005210B9 /* CollectionPointMarker.swift in Sources */,
 				1C696C452365EB7500632085 /* Date.swift in Sources */,
 				1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */,
 				1C7A43C123725E97005210B9 /* PFGeoPoint.swift in Sources */,
 				1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */,
+				1C8EA752238C9DEA00BADB1A /* UIView.swift in Sources */,
+				1C8EA74E238C95C700BADB1A /* DatePickerViewController.swift in Sources */,
 				1C835E20235EA88000CC21EB /* PFUser+Rx.swift in Sources */,
 				1C696C4C2366617C00632085 /* CollectionPointFilterController.swift in Sources */,
 				1C26CE4D23594308008BB2D2 /* AppDelegate.swift in Sources */,
@@ -892,24 +979,34 @@
 				1C835E3323611F1D00CC21EB /* NeighbourhoodCell.swift in Sources */,
 				1C31CBF5235B5B8C00653E19 /* SettingsCoordinator.swift in Sources */,
 				1C835E27235EA88000CC21EB /* ParseRxCallbacks.swift in Sources */,
+				1C179993238A027A0075F06C /* TextInputController.swift in Sources */,
 				1CF15BA7235CC36E00664DE7 /* CollectionPoint.swift in Sources */,
 				1C835E21235EA88000CC21EB /* PFGeoPoint+Rx.swift in Sources */,
 				1C31CC08235B6AC100653E19 /* SettingsController.swift in Sources */,
 				1CF15BAB235CC39900664DE7 /* Feedback.swift in Sources */,
 				1CF15BA9235CC37F00664DE7 /* CollectionSchedule.swift in Sources */,
+				1C8EA750238C9BFD00BADB1A /* UIAlertController.swift in Sources */,
+				1C7489B42390AA4B00958A13 /* PaddingLabel.swift in Sources */,
 				1C31CC0A235B705400653E19 /* CalendarViewModel.swift in Sources */,
 				1C31CBEF235B578100653E19 /* Environment.swift in Sources */,
+				1C23C963238DFDB700100BA1 /* LocationSelectionViewModel.swift in Sources */,
 				1C835E0D235E9B9B00CC21EB /* GenericSection.swift in Sources */,
 				1C31CC0E235B72BC00653E19 /* MapViewModel.swift in Sources */,
 				1CF15BAD235CC3AF00664DE7 /* Neighbourhood.swift in Sources */,
+				1C21B3CB23941E8B003E0090 /* RubbishReportManager.swift in Sources */,
 				1C835E2E23611DE200CC21EB /* NeighbourhoodSelectionController.swift in Sources */,
+				1C8996FC238AE2AC0004057A /* Location.swift in Sources */,
 				1C7A43C72373C119005210B9 /* SelectableCell.swift in Sources */,
 				1C57CAF2235CE114004D0E0C /* String.swift in Sources */,
 				1CF15BAF235CC3C700664DE7 /* RubbishReport.swift in Sources */,
+				1C1799892389F39E0075F06C /* RubbishReportController.swift in Sources */,
+				1C179990238A00150075F06C /* UITableViewCellConfigurator.swift in Sources */,
 				1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */,
+				1C21B3CD23941F8C003E0090 /* PFFileImageHelper.swift in Sources */,
 				1CB6CAB12380B15800E790CC /* CollectionPointCollectionViewCell.swift in Sources */,
 				1C31CBFF235B5DD700653E19 /* UIColor.swift in Sources */,
 				1C835E23235EA88000CC21EB /* Observable+ParseCreate.swift in Sources */,
+				1C21B3CF2394206F003E0090 /* PFFileObject+Rx.swift in Sources */,
 				1C14E5C1235BB48400E3CD94 /* NeighbourhoodSelectorView.swift in Sources */,
 				1C835E22235EA88000CC21EB /* PFPush+Rx.swift in Sources */,
 				1C31CBEB235B564B00653E19 /* RootViewCoordinator.swift in Sources */,
@@ -923,12 +1020,17 @@
 				1CB6CAB52380BC7D00E790CC /* UICollectionView.swift in Sources */,
 				1C835E0A235E917200CC21EB /* WeekDayCollectionSchedule.swift in Sources */,
 				1C835E0F235EA27E00CC21EB /* UITableView.swift in Sources */,
+				1C309ED9238CA73200B2F063 /* BasicTableViewCell.swift in Sources */,
 				1C31CC0C235B70CC00653E19 /* GCViewModelController.swift in Sources */,
+				1CBA92FF238F57EC00CF01D4 /* GeocoderManager.swift in Sources */,
+				1C17998E2389F54A0075F06C /* PictureSelectionView.swift in Sources */,
 				1C31CBF9235B5D2B00653E19 /* GCNavigationBar.swift in Sources */,
+				1CC84B8F2392FCDF00EDB794 /* GCSearchBarView.swift in Sources */,
 				1C835E0B235E9AE100CC21EB /* ScheduledCollectionCell.swift in Sources */,
 				1C696C432364C37500632085 /* NotificationsManager.swift in Sources */,
 				1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */,
 				1C835E11235EA2CB00CC21EB /* UITableViewCell.swift in Sources */,
+				1C17998B2389F3D90075F06C /* RubbishReportViewModel.swift in Sources */,
 				1C835E29235EA88000CC21EB /* PFQuery+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -980,7 +1082,7 @@
 /* Begin XCBuildConfiguration section */
 		1C26CE712359430C008BB2D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C26CE83235944D9008BB2D2 /* Development.xcconfig */;
+			baseConfigurationReference = 1C9902DD2389CB520000A457 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1096,7 +1198,7 @@
 		};
 		1C26CE742359430C008BB2D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C26CE83235944D9008BB2D2 /* Development.xcconfig */;
+			baseConfigurationReference = 1C9902DD2389CB520000A457 /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

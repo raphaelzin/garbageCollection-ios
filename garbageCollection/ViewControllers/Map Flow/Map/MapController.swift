@@ -12,12 +12,15 @@ import RxSwift
 
 protocol MapControllerCoordinatorDelegate: class {
     func didRequestFilterSelection(from controller: MapController, with currentFilters: [CollectionPoint.PointType])
+    func didRequestRubbishReport(from controller: MapController)
 }
 
 class MapController: GCViewModelController<MapViewModelType> {
     
     weak var coordinatorDelegate: MapControllerCoordinatorDelegate?
     
+    private let locationManager = CLLocationManager()
+
     private let disposeBag = DisposeBag()
     
     // MARK: Subviews
@@ -25,6 +28,7 @@ class MapController: GCViewModelController<MapViewModelType> {
     private lazy var mapView: MKMapView = {
         let map = MKMapView()
         map.delegate = self
+        map.showsUserLocation = true
         return map
     }()
     
@@ -73,6 +77,8 @@ class MapController: GCViewModelController<MapViewModelType> {
         
         reportButton.setState(.expanded, afterInterval: 1)
         reportButton.setState(.collapsed, afterInterval: 3)
+        
+        locationManager.requestWhenInUseAuthorization()
     }
     
     override init(viewModel: MapViewModelType) {
@@ -203,7 +209,7 @@ extension MapController: GCExpandableButtonDelegate {
         if button == filterButton {
             coordinatorDelegate?.didRequestFilterSelection(from: self, with: viewModel.selectedFilters)
         } else {
-            
+            coordinatorDelegate?.didRequestRubbishReport(from: self)
         }
     }
     

@@ -35,7 +35,6 @@ class NeighbourhoodSelectionController: GCViewModelController<NeighbourhoodSelec
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = .clear
         tableView.keyboardDismissMode = .interactive
@@ -148,7 +147,7 @@ private extension NeighbourhoodSelectionController {
 private extension NeighbourhoodSelectionController {
     
     func configureView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
     }
     
     func configureLayout() {

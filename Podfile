@@ -15,6 +15,9 @@ target 'garbageCollection' do
 
   # Layout
   pod 'SnapKit', '~> 5.0.0'
+  
+  # UI
+  pod 'SVProgressHUD'
 
   target 'garbageCollectionTests' do
     inherit! :search_paths

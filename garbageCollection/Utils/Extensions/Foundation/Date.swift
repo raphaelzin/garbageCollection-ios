@@ -10,6 +10,16 @@ import Foundation
 
 extension Date {
     
+    enum Format: String {
+        case hourAndDate = "HH:mm - EEEE, d MMM"
+    }
+    
+    func formatted(as format: Format) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format.rawValue
+        return dateFormatter.string(from: self)
+    }
+    
     func next(_ weekday: WeekDay, at time: Time? = nil, direction: Calendar.SearchDirection = .forward, considerToday: Bool = false) -> Date {
         let calendar = Calendar(identifier: .gregorian)
         let components = DateComponents(hour: time?.hours, minute: time?.minutes, weekday: weekday.index)
