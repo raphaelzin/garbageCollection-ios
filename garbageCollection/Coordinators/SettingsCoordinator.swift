@@ -21,7 +21,8 @@ class SettingsCoordinator: RootViewCoordinator {
     }()
     
     func start() {
-        let controller = SettingsController()
+        let viewModel = SettingsViewModel()
+        let controller = SettingsController(viewModel: viewModel)
         
         navigationController.pushViewController(controller, animated: true)
     }
