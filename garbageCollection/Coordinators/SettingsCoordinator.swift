@@ -23,7 +23,35 @@ class SettingsCoordinator: RootViewCoordinator {
     func start() {
         let viewModel = SettingsViewModel()
         let controller = SettingsController(viewModel: viewModel)
-        
+        controller.coordinatorDelegate = self
         navigationController.pushViewController(controller, animated: true)
     }
+}
+
+extension SettingsCoordinator: SettingsControllerCoordinatorDelegate {
+    
+    func didRequestSourceCode(from controller: SettingsController) {
+        let webController = WebController(linkType: .sourceCode)
+        webController.coordinatorDelegate = self
+        let navigator = GCNavigationController(rootController: webController)
+        navigator.modalPresentationStyle = .fullScreen
+        controller.present(navigator, animated: true)
+    }
+    
+    func didRequestSuggestionForm(from controller: SettingsController) {
+        print("To do \(#function)")
+    }
+    
+    func didRequestNeighbourhoodSelection(from controller: SettingsController) {
+        print("To do \(#function)")
+    }
+    
+}
+
+extension SettingsCoordinator: WebControllerCoordinatorDelegate {
+    
+    func didRequestDismiss(controller: WebController) {
+        controller.dismiss(animated: true)
+    }
+    
 }

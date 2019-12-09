@@ -9,7 +9,9 @@
 import UIKit
 
 protocol SettingsControllerCoordinatorDelegate: class {
-    
+    func didRequestSourceCode(from controller: SettingsController)
+    func didRequestSuggestionForm(from controller: SettingsController)
+    func didRequestNeighbourhoodSelection(from controller: SettingsController)
 }
 
 class SettingsController: GCViewModelController<SettingsViewModelType> {
@@ -80,7 +82,7 @@ extension SettingsController {
         
         var title: String {
             switch self {
-            case .neighbourhood: return "Bairro"
+            case .neighbourhood: return "Seu bairro"
             case .hints: return "Dicas"
             case .reminders: return "Lembretes de coletas"
             case .sendSuggestions: return "Enviar sugestões ou críticas"
@@ -163,6 +165,13 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch SettingsSection.field(for: indexPath) {
+        case .sourceCode:
+            coordinatorDelegate?.didRequestSourceCode(from: self)
+        default:
+            print("To do")
+        }
     }
     
 }
