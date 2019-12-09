@@ -88,6 +88,7 @@ class MapController: GCViewModelController<MapViewModelType> {
         configureView()
         
         bindCollectionPoints()
+        bindHighlightedCollectionPoint()
     }
     
     required init?(coder: NSCoder) {
@@ -159,6 +160,29 @@ private extension MapController {
         }.disposed(by: disposeBag)
     }
     
+    func bindHighlightedCollectionPoint() {
+        viewModel
+            .highlightedCollectionPoint
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] (collectionPoint) in
+                guard let self = self else { return }
+                if let collectionPoint = collectionPoint {
+                    self.focus(on: collectionPoint)
+                    self.scroll(to: collectionPoint)
+                    UIView.animate(withDuration: 0.15, delay: 0, options: [.curveEaseIn], animations: {
+                        self.collectionView.alpha = 1
+                    })
+                } else {
+                    UIView.animate(withDuration: 0.15, delay: 0, options: [.curveEaseOut], animations: {
+                        self.collectionView.alpha = 0
+                    })
+                }
+                
+            }, onError: { [weak self] error in
+                self?.alert(error: error)
+            }).disposed(by: disposeBag)
+    }
+    
 }
 
 // MARK: Map management
@@ -182,21 +206,27 @@ extension MapController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        guard let annotation = view.annotation as? CollectionPointMarker,
-            let index = viewModel.indexPath(of: annotation.collectionPoint) else { return }
-        focus(on: annotation.collectionPoint)
-        collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+        guard let annotation = view.annotation as? CollectionPointMarker else { return }
+        viewModel.highlight(annotation.collectionPoint)
     }
     
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        viewModel.highlight(nil)
+    }
+    
+    // Focus on map
     func focus(on collectionPoint: CollectionPoint) {
         guard let annotation = (mapView.annotations.filter { ($0 as? CollectionPointMarker)?.collectionPoint == collectionPoint }.first) else { return }
         
         let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 600, longitudinalMeters: 600)
         mapView.setRegion(region, animated: true)
+        
+        mapView.selectAnnotation(annotation, animated: true)
     }
     
-    func select(collectionPoint: CollectionPoint) {
-        
+    func scroll(to collectionPoint: CollectionPoint) {
+        guard let index = viewModel.indexPath(of: collectionPoint) else { return }
+        collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
     }
     
  }
@@ -232,7 +262,10 @@ extension MapController: UICollectionViewDelegate {
         guard let indexPath = collectionView.indexPathForItem(at: CGPoint(x: offset, y: 0)) else { return }
         
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-//        mapView.selectAnnotation(mapView.annotations[indexPath.row], animated: true)
+        
+        if let item = collectionView.cellForItem(at: indexPath) as? CollectionPointCollectionViewCell {
+            viewModel.highlight(item.collectionPoint)
+        }
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

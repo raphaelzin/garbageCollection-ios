@@ -13,8 +13,10 @@ import RxSwift
 protocol MapViewModelType: class {
     var collectionPoints: Observable<[CollectionPoint]> { get }
     var selectedFilters: [CollectionPoint.PointType] { get }
+    var highlightedCollectionPoint: Observable<CollectionPoint?> { get }
     
     func indexPath(of collectionPoint: CollectionPoint) -> IndexPath?
+    func highlight(_ collectionPoint: CollectionPoint?)
     func updateSelected(filters: [CollectionPoint.PointType])
 }
 
@@ -24,6 +26,8 @@ class MapViewModel: MapViewModelType {
     
     private let collectionPointsManager = CollectionPointsManager()
     
+    private let highlighedCollectionPointRelay = BehaviorRelay<CollectionPoint?>(value: nil)
+    
     private let collectionPointsRelay = BehaviorRelay<[CollectionPoint]>(value: [])
     
     private let selectedFiltersRelay = BehaviorRelay<[CollectionPoint.PointType]>(value: CollectionPoint.PointType.allCases)
@@ -31,6 +35,10 @@ class MapViewModel: MapViewModelType {
     private let disposeBag = DisposeBag()
     
     // MARK: Public attributes
+    
+    var highlightedCollectionPoint: Observable<CollectionPoint?> {
+        highlighedCollectionPointRelay.asObservable()
+    }
     
     var collectionPoints: Observable<[CollectionPoint]> {
         Observable
@@ -58,7 +66,14 @@ class MapViewModel: MapViewModelType {
 extension MapViewModel {
     
     func updateSelected(filters: [CollectionPoint.PointType]) {
+        highlighedCollectionPointRelay.accept(nil)
         selectedFiltersRelay.accept(filters)
+        
+    }
+    
+    func highlight(_ collectionPoint: CollectionPoint?) {
+        guard collectionPoint != highlighedCollectionPointRelay.value else { return }
+        highlighedCollectionPointRelay.accept(collectionPoint)
     }
     
     func indexPath(of collectionPoint: CollectionPoint) -> IndexPath? {

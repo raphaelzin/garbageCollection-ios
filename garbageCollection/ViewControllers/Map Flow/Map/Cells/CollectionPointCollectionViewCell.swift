@@ -18,7 +18,7 @@ class CollectionPointCollectionViewCell: UICollectionViewCell {
     
     weak var delegate: CollectionPointCollectionViewCellDelegate?
     
-    private var collectionPoint: CollectionPoint! {
+    private(set) var collectionPoint: CollectionPoint! {
         didSet {
             titleLabel.text = collectionPoint.name ?? "Nome indisponível"
             detailsLabel.text = collectionPoint.address ?? "Endereço indisponível"
