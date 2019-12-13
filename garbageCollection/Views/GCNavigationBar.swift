@@ -27,5 +27,17 @@ class GCNavigationBar: UINavigationBar {
         
         shadowImage = UIImage()
         isTranslucent = false
+        
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .defaultBlue
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            
+            scrollEdgeAppearance = appearance
+            standardAppearance = appearance
+            compactAppearance = appearance
+        }
+        
     }
 }
