@@ -24,6 +24,7 @@ struct GCError {
     
     enum Misc: Error {
         case invalidquery
+        case invalidUser
     }
     
     enum Geocoder: Error {
@@ -69,6 +70,7 @@ extension GCError.Misc: LocalizedError {
     
     var errorDescription: String? {
         switch self {
+        case .invalidUser: return "Houve um erro com o seu usuário. Tente novamente mais tarde."
         case .invalidquery: return "Busca inválida, por favor tente novamente mais tarde."
         }
     }

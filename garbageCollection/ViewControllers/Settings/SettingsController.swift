@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import StoreKit
 
 protocol SettingsControllerCoordinatorDelegate: class {
@@ -20,6 +22,8 @@ class SettingsController: GCViewModelController<SettingsViewModelType> {
     // MARK: Attributes
     
     weak var coordinatorDelegate: SettingsControllerCoordinatorDelegate?
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: Subviews
     
@@ -162,6 +166,15 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
         let field = SettingsSection.field(for: indexPath)
         let cell = tableView.dequeue(cellClass: BasicTableViewCell.self, indexPath: indexPath)
         cell.configure(with: field)
+        
+        if field == .hints || field == .reminders {
+            let relay = field == .hints ? viewModel.hintsNotifications : viewModel.reminderNotifications
+            let switchControl = UISwitch()
+            switchControl.isOn = relay.value
+            switchControl.rx.isOn.bind(to: relay).disposed(by: disposeBag)
+            cell.accessoryView = switchControl
+        }
+        
         return cell
     }
     
