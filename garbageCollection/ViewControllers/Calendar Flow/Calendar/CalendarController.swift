@@ -90,7 +90,7 @@ private extension CalendarController {
         })
         
         viewModel.selectedCollectionSchedule.map { (fullSchedule) -> [GenericSection<WeekDayCollectionSchedule>] in
-            return [GenericSection(items: fullSchedule?.weeklyCollection ?? [], header: "")]
+            [GenericSection(items: fullSchedule?.weeklyCollection ?? [], header: "")]
         }
         .bind(to: tableView.rx.items(dataSource: dataSource))
         .disposed(by: disposeBag)

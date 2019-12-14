@@ -44,7 +44,21 @@ extension SettingsCoordinator: SettingsControllerCoordinatorDelegate {
     }
     
     func didRequestNeighbourhoodSelection(from controller: SettingsController) {
-        print("To do \(#function)")
+        let viewModel = NeighbourhoodSelectionViewModel()
+        let selectionController = NeighbourhoodSelectionController(viewModel: viewModel)
+        selectionController.coordinatorDelegate = self
+        selectionController.delegate = controller
+        selectionController.hidesBottomBarWhenPushed = true
+        
+        navigationController.pushViewController(selectionController, animated: true)
+    }
+    
+}
+
+extension SettingsCoordinator: NeighbourhoodSelectionCoordenatorDelegate {
+    
+    func didRequestDismiss(from controller: NeighbourhoodSelectionController) {
+        navigationController.popViewController(animated: true)
     }
     
 }

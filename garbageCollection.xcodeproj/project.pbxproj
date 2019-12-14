@@ -88,6 +88,7 @@
 		1CC84B8F2392FCDF00EDB794 /* GCSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC84B8E2392FCDF00EDB794 /* GCSearchBarView.swift */; };
 		1CCBF429239DCBD600F70E70 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCBF428239DCBD600F70E70 /* SettingsViewModel.swift */; };
 		1CCBF42B239DD92D00F70E70 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCBF42A239DD92D00F70E70 /* WebController.swift */; };
+		1CE2E37123A58DCA00AD607A /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE2E37023A58DCA00AD607A /* FeedbackController.swift */; };
 		1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3432023666A2C001B1790 /* GCExpandableButton.swift */; };
 		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
 		1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA2235CBE6B00664DE7 /* Installation.swift */; };
@@ -212,6 +213,7 @@
 		1CC84B8E2392FCDF00EDB794 /* GCSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSearchBarView.swift; sourceTree = "<group>"; };
 		1CCBF428239DCBD600F70E70 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		1CCBF42A239DD92D00F70E70 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
+		1CE2E37023A58DCA00AD607A /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
 		1CE3432023666A2C001B1790 /* GCExpandableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCExpandableButton.swift; sourceTree = "<group>"; };
 		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
 		1CF15BA2235CBE6B00664DE7 /* Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installation.swift; sourceTree = "<group>"; };
@@ -536,6 +538,7 @@
 			children = (
 				1C31CC07235B6AC100653E19 /* SettingsController.swift */,
 				1CCBF428239DCBD600F70E70 /* SettingsViewModel.swift */,
+				1CE2E36F23A58DAA00AD607A /* Feedback */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -664,6 +667,14 @@
 				1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		1CE2E36F23A58DAA00AD607A /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				1CE2E37023A58DCA00AD607A /* FeedbackController.swift */,
+			);
+			path = Feedback;
 			sourceTree = "<group>";
 		};
 		1CF15B9E235CBB2500664DE7 /* Models */ = {
@@ -1035,6 +1046,7 @@
 				1C31CC0C235B70CC00653E19 /* GCViewModelController.swift in Sources */,
 				1CBA92FF238F57EC00CF01D4 /* GeocoderManager.swift in Sources */,
 				1C17998E2389F54A0075F06C /* PictureSelectionView.swift in Sources */,
+				1CE2E37123A58DCA00AD607A /* FeedbackController.swift in Sources */,
 				1C31CBF9235B5D2B00653E19 /* GCNavigationBar.swift in Sources */,
 				1CC84B8F2392FCDF00EDB794 /* GCSearchBarView.swift in Sources */,
 				1C835E0B235E9AE100CC21EB /* ScheduledCollectionCell.swift in Sources */,

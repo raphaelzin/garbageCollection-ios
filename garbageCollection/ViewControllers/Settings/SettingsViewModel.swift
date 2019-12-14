@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 protocol SettingsViewModelType: class {
+    var selectedNeighbourhood: BehaviorRelay<Neighbourhood?> { get }
     var reminderNotifications: BehaviorRelay<Bool> { get }
     var hintsNotifications: BehaviorRelay<Bool> { get }
 }
@@ -18,6 +19,8 @@ protocol SettingsViewModelType: class {
 class SettingsViewModel: SettingsViewModelType {
     
     // MARK: Attributes
+    
+    let selectedNeighbourhood: BehaviorRelay<Neighbourhood?>
     
     let reminderNotifications: BehaviorRelay<Bool>
     
@@ -29,6 +32,7 @@ class SettingsViewModel: SettingsViewModelType {
     
     init() {
         let installation = Installation.current()
+        selectedNeighbourhood = BehaviorRelay(value: installation?.neighbourhood)
         reminderNotifications = BehaviorRelay(value: installation?.notificationsEnabled ?? false)
         hintsNotifications = BehaviorRelay(value: installation?.hintsEnabled ?? false)
         
@@ -37,17 +41,23 @@ class SettingsViewModel: SettingsViewModelType {
     
 }
 
+// MARK: Private methods
+
 private extension SettingsViewModel {
     
     func updateUserPreferences() {
         Observable
-            .combineLatest(reminderNotifications.asObservable(), hintsNotifications.asObservable())
+            .combineLatest(reminderNotifications.asObservable(),
+                           hintsNotifications.asObservable(),
+                           selectedNeighbourhood.asObservable())
+            .skip(1)
             .throttle(.seconds(4), scheduler: MainScheduler.asyncInstance)
-            .flatMapLatest({ reminders, hints -> Single<Bool> in
+            .flatMapLatest({ reminders, hints, neighbourhood -> Single<Bool> in
                 guard let installation = Installation.current() else {
                     throw GCError.Misc.invalidUser
                 }
                 
+                installation.neighbourhood = neighbourhood
                 installation.notificationsEnabled = reminders
                 installation.hintsEnabled = hints
                 return installation.rx.save().asSingle()

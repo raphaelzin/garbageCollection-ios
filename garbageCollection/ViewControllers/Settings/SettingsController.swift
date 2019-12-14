@@ -71,6 +71,18 @@ private extension SettingsController {
     
 }
 
+// MARK: Private methods
+
+private extension SettingsController {
+    
+    func shareApp() {
+        let items = ["Estou usando esse app pra coleta de lixo e pontos de coleta, da uma olhada ;)"]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
+    }
+    
+}
+
 // MARK: Custom types
 
 extension SettingsController {
@@ -173,6 +185,13 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
             switchControl.isOn = relay.value
             switchControl.rx.isOn.bind(to: relay).disposed(by: disposeBag)
             cell.accessoryView = switchControl
+        } else if field == .neighbourhood, let label = cell.detailTextLabel {
+            viewModel
+                .selectedNeighbourhood
+                .map { $0?.name ?? "Selecionar" }
+                .asDriver(onErrorJustReturn: nil)
+                .drive(label.rx.text)
+                .disposed(by: disposeBag)
         }
         
         return cell
@@ -184,11 +203,23 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
         switch SettingsSection.field(for: indexPath) {
         case .sourceCode:
             coordinatorDelegate?.didRequestSourceCode(from: self)
+        case .shareApp:
+            shareApp()
+        case .neighbourhood:
+            coordinatorDelegate?.didRequestNeighbourhoodSelection(from: self)
         case .review:
             SKStoreReviewController.requestReview()
         default:
             print("To do")
         }
+    }
+    
+}
+
+extension SettingsController: NeighbourhoodSelectorDelegate {
+    
+    func didSelect(neighbourhood: Neighbourhood) {
+        viewModel.selectedNeighbourhood.accept(neighbourhood)
     }
     
 }
