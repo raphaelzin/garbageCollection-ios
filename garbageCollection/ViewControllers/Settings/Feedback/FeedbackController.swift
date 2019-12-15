@@ -37,7 +37,7 @@ class FeedbackController: GCViewModelController<FeedbackViewModelType> {
     private lazy var nameTextField: GCPaddingTextField = {
         let tf = GCPaddingTextField()
         tf.layer.cornerRadius = 10
-        tf.backgroundColor = .white
+        tf.backgroundColor = .secondarySystemGroupedBackground
         tf.placeholder = "Raphael Souza"
         return tf
     }()
@@ -45,7 +45,7 @@ class FeedbackController: GCViewModelController<FeedbackViewModelType> {
     private lazy var emailTextField: GCPaddingTextField = {
         let tf = GCPaddingTextField()
         tf.layer.cornerRadius = 10
-        tf.backgroundColor = .white
+        tf.backgroundColor = .secondarySystemGroupedBackground
         tf.placeholder = "seu@email.com"
         return tf
     }()
@@ -58,7 +58,7 @@ class FeedbackController: GCViewModelController<FeedbackViewModelType> {
         tv.textContainerInset = .init(top: 12, left: 12, bottom: 12, right: 12)
         tv.delegate = self
         tv.text = placeholder
-        tv.textColor = .lightGray
+        tv.textColor = .placeholderText
         return tv
     }()
     
@@ -92,6 +92,7 @@ class FeedbackController: GCViewModelController<FeedbackViewModelType> {
 private extension FeedbackController {
     
     func configureView() {
+        addKeyboardListeners()
         view.backgroundColor = .systemGroupedBackground
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onViewTap)))
     }
@@ -108,14 +109,14 @@ private extension FeedbackController {
         
         scrollView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { (make) in
-            make.leading.trailing.top.equalTo(scrollView.contentLayoutGuide).inset(UIEdgeInsets(top: 16, left: 22, bottom: 0, right: 16))
+            make.leading.trailing.top.equalTo(scrollView.contentLayoutGuide).inset(UIEdgeInsets(top: 24, left: 22, bottom: 0, right: 16))
         }
         
         scrollView.addSubview(nameTextField)
         nameTextField.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(scrollView.contentLayoutGuide).inset(16)
             make.top.equalTo(nameLabel.snp.bottom).offset(8)
-            make.height.equalTo(50)
+            make.height.equalTo(44)
         }
 
         scrollView.addSubview(emailLabel)
@@ -128,7 +129,7 @@ private extension FeedbackController {
         emailTextField.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(scrollView.contentLayoutGuide).inset(16)
             make.top.equalTo(emailLabel.snp.bottom).offset(8)
-            make.height.equalTo(50)
+            make.height.equalTo(44)
         }
         
         scrollView.addSubview(feedbackLabel)
@@ -140,6 +141,7 @@ private extension FeedbackController {
         scrollView.addSubview(textView)
         textView.snp.makeConstraints { (make) in
             make.top.equalTo(feedbackLabel.snp.bottom).offset(8)
+            make.bottom.equalTo(scrollView.contentLayoutGuide).offset(-16)
             make.leading.trailing.equalTo(scrollView.contentLayoutGuide).inset(16)
             make.height.equalTo(220)
         }
@@ -191,12 +193,12 @@ extension FeedbackController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = placeholder
-            textView.textColor = .lightGray
+            textView.textColor = .placeholderText
         }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == placeholder && textView.textColor == .lightGray {
+        if textView.text == placeholder && textView.textColor == .placeholderText {
             textView.text = ""
             textView.textColor = .label
         }
