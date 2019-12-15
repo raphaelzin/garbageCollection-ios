@@ -203,6 +203,8 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
         switch SettingsSection.field(for: indexPath) {
         case .sourceCode:
             coordinatorDelegate?.didRequestSourceCode(from: self)
+        case .sendSuggestions:
+            coordinatorDelegate?.didRequestSuggestionForm(from: self)
         case .shareApp:
             shareApp()
         case .neighbourhood:

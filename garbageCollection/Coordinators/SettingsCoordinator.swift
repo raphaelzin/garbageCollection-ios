@@ -40,7 +40,10 @@ extension SettingsCoordinator: SettingsControllerCoordinatorDelegate {
     }
     
     func didRequestSuggestionForm(from controller: SettingsController) {
-        print("To do \(#function)")
+        let viewModel = FeedbackViewModel()
+        let feedbackController = FeedbackController(viewModel: viewModel)
+        feedbackController.hidesBottomBarWhenPushed = true
+        navigationController.pushViewController(feedbackController, animated: true)
     }
     
     func didRequestNeighbourhoodSelection(from controller: SettingsController) {
