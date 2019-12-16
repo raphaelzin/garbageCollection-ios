@@ -42,6 +42,7 @@ extension SettingsCoordinator: SettingsControllerCoordinatorDelegate {
     func didRequestSuggestionForm(from controller: SettingsController) {
         let viewModel = FeedbackViewModel()
         let feedbackController = FeedbackController(viewModel: viewModel)
+        feedbackController.coordinatorDelegate = self
         feedbackController.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(feedbackController, animated: true)
     }
@@ -54,6 +55,14 @@ extension SettingsCoordinator: SettingsControllerCoordinatorDelegate {
         selectionController.hidesBottomBarWhenPushed = true
         
         navigationController.pushViewController(selectionController, animated: true)
+    }
+    
+}
+
+extension SettingsCoordinator: FeedbackControllerCoordinatorDelegate {
+    
+    func didRequestDismiss(from controller: FeedbackController) {
+        navigationController.popViewController(animated: true)
     }
     
 }

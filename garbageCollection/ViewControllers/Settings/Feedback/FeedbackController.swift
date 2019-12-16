@@ -9,14 +9,17 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import NotificationBannerSwift
 
 protocol FeedbackControllerCoordinatorDelegate: class {
-    func didRequestDismiss()
+    func didRequestDismiss(from controller: FeedbackController)
 }
 
 class FeedbackController: GCViewModelController<FeedbackViewModelType> {
     
     // MARK: Attributes
+    
+    weak var coordinatorDelegate: FeedbackControllerCoordinatorDelegate?
     
     private let placeholder: String = "Conta pra gente sobre sua experiencia com o app ;)"
     
@@ -79,7 +82,7 @@ class FeedbackController: GCViewModelController<FeedbackViewModelType> {
         tv.rx.text
             .filter { $0 != self.placeholder }
             .asDriver(onErrorJustReturn: nil)
-            .drive(viewModel.feedbackContentRelay)
+            .drive(viewModel.contentRelay)
             .disposed(by: disposeBag)
         return tv
     }()
@@ -207,7 +210,16 @@ private extension FeedbackController {
 private extension FeedbackController {
     
     @objc func onSendTap() {
-        
+        viewModel
+            .sendFeedback()
+            .subscribe(onCompleted: {
+                let banner = NotificationBanner(title: "Tudo certo!", subtitle: "Mensagem enviada com sucesso!", style: .success)
+                banner.show()
+                self.coordinatorDelegate?.didRequestDismiss(from: self)
+            }, onError: { error in
+                self.alert(error: error)
+            })
+            .disposed(by: disposeBag)
     }
     
 }

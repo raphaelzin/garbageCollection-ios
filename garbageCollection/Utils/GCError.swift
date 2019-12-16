@@ -14,6 +14,7 @@ struct GCError {
     
     enum UserInteraction: Error {
         case invalidReportInput
+        case invalidFeedbackInput
     }
     
     enum Server: Error {
@@ -40,6 +41,7 @@ extension GCError.UserInteraction {
     var errorDescription: String? {
         switch self {
         case .invalidReportInput: return "Houve um problema ao criar o reporte. Verifique se há uma foto, localização e data válida ou tente novamente mais tarde"
+        case .invalidFeedbackInput: return "Houve um erro ao enviar seu comentário. Verifique se o campo de comentário não está vazio e tente novamente."
         }
     }
     

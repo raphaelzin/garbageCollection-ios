@@ -14,7 +14,7 @@ protocol FeedbackViewModelType: class {
     var validInput: Observable<Bool> { get }
     var nameRelay: BehaviorRelay<String?> { get }
     var emailRelay: BehaviorRelay<String?> { get }
-    var feedbackContentRelay: BehaviorRelay<String?> { get }
+    var contentRelay: BehaviorRelay<String?> { get }
     
     func sendFeedback() -> Completable
 }
@@ -27,10 +27,12 @@ class FeedbackViewModel: FeedbackViewModelType {
     
     let emailRelay: BehaviorRelay<String?>
     
-    let feedbackContentRelay: BehaviorRelay<String?>
+    let contentRelay: BehaviorRelay<String?>
+    
+    private lazy var feedbackManager = FeedbackManager()
     
     var validInput: Observable<Bool> {
-        feedbackContentRelay
+        contentRelay
             .asObservable()
             .map { !($0 ?? "" ).isEmpty }
     }
@@ -40,7 +42,7 @@ class FeedbackViewModel: FeedbackViewModelType {
     init() {
         nameRelay = BehaviorRelay<String?>(value: nil)
         emailRelay = BehaviorRelay<String?>(value: nil)
-        feedbackContentRelay = BehaviorRelay<String?>(value: nil)
+        contentRelay = BehaviorRelay<String?>(value: nil)
     }
     
 }
@@ -48,7 +50,13 @@ class FeedbackViewModel: FeedbackViewModelType {
 extension FeedbackViewModel {
     
     func sendFeedback() -> Completable {
-        return .empty()
+        guard let content = contentRelay.value, !content.isEmpty else {
+            return .error(GCError.UserInteraction.invalidFeedbackInput)
+        }
+        
+        return feedbackManager.sendFeedback(name: nameRelay.value,
+                                            email: emailRelay.value,
+                                            content: content)
     }
     
 }
