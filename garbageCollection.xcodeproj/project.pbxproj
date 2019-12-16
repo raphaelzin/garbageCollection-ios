@@ -45,6 +45,7 @@
 		1C46181823594A6B0054B22B /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C46181723594A6B0054B22B /* SplashController.swift */; };
 		1C4979D423A6900500A381A8 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4979D323A6900500A381A8 /* FeedbackViewModel.swift */; };
 		1C4979D623A6C7CB00A381A8 /* GCPaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4979D523A6C7CB00A381A8 /* GCPaddingTextField.swift */; };
+		1C4979D823A7017200A381A8 /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4979D723A7017200A381A8 /* FeedbackManager.swift */; };
 		1C57CAF2235CE114004D0E0C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C57CAF1235CE114004D0E0C /* String.swift */; };
 		1C696C432364C37500632085 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C422364C37500632085 /* NotificationsManager.swift */; };
 		1C696C452365EB7500632085 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C442365EB7500632085 /* Date.swift */; };
@@ -171,6 +172,7 @@
 		1C46181723594A6B0054B22B /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		1C4979D323A6900500A381A8 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		1C4979D523A6C7CB00A381A8 /* GCPaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCPaddingTextField.swift; sourceTree = "<group>"; };
+		1C4979D723A7017200A381A8 /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		1C57CAF1235CE114004D0E0C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		1C696C422364C37500632085 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		1C696C442365EB7500632085 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -626,6 +628,7 @@
 				1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */,
 				1C696C422364C37500632085 /* NotificationsManager.swift */,
 				1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */,
+				1C4979D723A7017200A381A8 /* FeedbackManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1040,6 +1043,7 @@
 				1C31CBEB235B564B00653E19 /* RootViewCoordinator.swift in Sources */,
 				1C835E24235EA88000CC21EB /* PFObject+Rx.swift in Sources */,
 				1C7A43C423727B29005210B9 /* CollectionPointAnnotationView.swift in Sources */,
+				1C4979D823A7017200A381A8 /* FeedbackManager.swift in Sources */,
 				1C696C4E2366619200632085 /* CollectionPointFilterViewModel.swift in Sources */,
 				1CB6CAB32380BC7300E790CC /* UICollectionViewCell.swift in Sources */,
 				1C46181823594A6B0054B22B /* SplashController.swift in Sources */,

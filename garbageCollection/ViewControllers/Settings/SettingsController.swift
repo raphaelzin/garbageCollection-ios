@@ -56,6 +56,7 @@ private extension SettingsController {
     func configureView() {
         navigationItem.title = "Configurações"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         if #available(iOS 13.0, *) {
             tabBarItem = UITabBarItem(title: "Configurações", image: UIImage(systemName: "gear"), tag: 0)

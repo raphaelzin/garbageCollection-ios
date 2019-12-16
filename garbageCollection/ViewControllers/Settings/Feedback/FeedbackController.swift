@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol FeedbackControllerCoordinatorDelegate: class {
     func didRequestDismiss()
@@ -17,6 +19,8 @@ class FeedbackController: GCViewModelController<FeedbackViewModelType> {
     // MARK: Attributes
     
     private let placeholder: String = "Conta pra gente sobre sua experiencia com o app ;)"
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: Subviews
     
@@ -31,22 +35,35 @@ class FeedbackController: GCViewModelController<FeedbackViewModelType> {
     }()
     
     private lazy var feedbackLabel: UILabel = {
-        getTitleLabel(withTitle: "Seu comentário/suggestão")
+        getTitleLabel(withTitle: "Seu comentário/sugestão")
     }()
     
     private lazy var nameTextField: GCPaddingTextField = {
         let tf = GCPaddingTextField()
         tf.layer.cornerRadius = 10
+        tf.returnKeyType = .next
         tf.backgroundColor = .secondarySystemGroupedBackground
         tf.placeholder = "Raphael Souza"
+        tf.delegate = self
+        tf.rx.text
+            .asDriver(onErrorJustReturn: nil)
+            .drive(viewModel.nameRelay)
+            .disposed(by: disposeBag)
         return tf
     }()
     
     private lazy var emailTextField: GCPaddingTextField = {
         let tf = GCPaddingTextField()
         tf.layer.cornerRadius = 10
+        tf.returnKeyType = .next
         tf.backgroundColor = .secondarySystemGroupedBackground
         tf.placeholder = "seu@email.com"
+        tf.delegate = self
+        
+        tf.rx.text
+            .asDriver(onErrorJustReturn: nil)
+            .drive(viewModel.emailRelay)
+            .disposed(by: disposeBag)
         return tf
     }()
     
@@ -59,6 +76,11 @@ class FeedbackController: GCViewModelController<FeedbackViewModelType> {
         tv.delegate = self
         tv.text = placeholder
         tv.textColor = .placeholderText
+        tv.rx.text
+            .filter { $0 != self.placeholder }
+            .asDriver(onErrorJustReturn: nil)
+            .drive(viewModel.feedbackContentRelay)
+            .disposed(by: disposeBag)
         return tv
     }()
     
@@ -93,8 +115,17 @@ private extension FeedbackController {
     
     func configureView() {
         addKeyboardListeners()
+        navigationItem.title = "Contato"
         view.backgroundColor = .systemGroupedBackground
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onViewTap)))
+        
+        let sendBtn = UIBarButtonItem(title: "Enviar", style: .done, target: self, action: #selector(onSendTap))
+        navigationItem.rightBarButtonItem = sendBtn
+        
+        viewModel
+            .validInput
+            .asDriver(onErrorJustReturn: false)
+            .drive(sendBtn.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
     
     func configureLayout() {
@@ -175,18 +206,27 @@ private extension FeedbackController {
 
 private extension FeedbackController {
     
-    @objc func onSaveTap() {
-//        delegate?.didEnter(text: textView.text)
-//        coordinatorDelegate?.didRequestDismiss(from: self)
-    }
-    
-    @objc func onViewTap() {
+    @objc func onSendTap() {
         
     }
     
 }
 
-// MARK: TextView management
+// MARK: TextView/TextField management
+
+extension FeedbackController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            emailTextField.becomeFirstResponder()
+        } else {
+            textView.becomeFirstResponder()
+        }
+        
+        return true
+    }
+    
+}
 
 extension FeedbackController: UITextViewDelegate {
     
