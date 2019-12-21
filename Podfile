@@ -4,7 +4,6 @@
 inhibit_all_warnings!
 
 target 'garbageCollection' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Core
@@ -18,6 +17,7 @@ target 'garbageCollection' do
   
   # UI
   pod 'SVProgressHUD'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
 
   target 'garbageCollectionTests' do
     inherit! :search_paths

@@ -43,6 +43,9 @@
 		1C31CC0C235B70CC00653E19 /* GCViewModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CC0B235B70CC00653E19 /* GCViewModelController.swift */; };
 		1C31CC0E235B72BC00653E19 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CC0D235B72BC00653E19 /* MapViewModel.swift */; };
 		1C46181823594A6B0054B22B /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C46181723594A6B0054B22B /* SplashController.swift */; };
+		1C4979D423A6900500A381A8 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4979D323A6900500A381A8 /* FeedbackViewModel.swift */; };
+		1C4979D623A6C7CB00A381A8 /* GCPaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4979D523A6C7CB00A381A8 /* GCPaddingTextField.swift */; };
+		1C4979D823A7017200A381A8 /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4979D723A7017200A381A8 /* FeedbackManager.swift */; };
 		1C57CAF2235CE114004D0E0C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C57CAF1235CE114004D0E0C /* String.swift */; };
 		1C696C432364C37500632085 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C422364C37500632085 /* NotificationsManager.swift */; };
 		1C696C452365EB7500632085 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C442365EB7500632085 /* Date.swift */; };
@@ -83,8 +86,12 @@
 		1CB6CAB32380BC7300E790CC /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */; };
 		1CB6CAB52380BC7D00E790CC /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB42380BC7D00E790CC /* UICollectionView.swift */; };
 		1CBA92FF238F57EC00CF01D4 /* GeocoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */; };
+		1CBD646523A3251700D2FB02 /* BasicFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBD646423A3251700D2FB02 /* BasicFooterView.swift */; };
 		1CC05479237E00C200268662 /* parseConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC05478237E00C200268662 /* parseConnectionTest.swift */; };
 		1CC84B8F2392FCDF00EDB794 /* GCSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC84B8E2392FCDF00EDB794 /* GCSearchBarView.swift */; };
+		1CCBF429239DCBD600F70E70 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCBF428239DCBD600F70E70 /* SettingsViewModel.swift */; };
+		1CCBF42B239DD92D00F70E70 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCBF42A239DD92D00F70E70 /* WebController.swift */; };
+		1CE2E37123A58DCA00AD607A /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE2E37023A58DCA00AD607A /* FeedbackController.swift */; };
 		1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3432023666A2C001B1790 /* GCExpandableButton.swift */; };
 		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
 		1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA2235CBE6B00664DE7 /* Installation.swift */; };
@@ -163,6 +170,9 @@
 		1C31CC0B235B70CC00653E19 /* GCViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCViewModelController.swift; sourceTree = "<group>"; };
 		1C31CC0D235B72BC00653E19 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		1C46181723594A6B0054B22B /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		1C4979D323A6900500A381A8 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
+		1C4979D523A6C7CB00A381A8 /* GCPaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCPaddingTextField.swift; sourceTree = "<group>"; };
+		1C4979D723A7017200A381A8 /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		1C57CAF1235CE114004D0E0C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		1C696C422364C37500632085 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		1C696C442365EB7500632085 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -204,8 +214,12 @@
 		1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		1CB6CAB42380BC7D00E790CC /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderManager.swift; sourceTree = "<group>"; };
+		1CBD646423A3251700D2FB02 /* BasicFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicFooterView.swift; sourceTree = "<group>"; };
 		1CC05478237E00C200268662 /* parseConnectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parseConnectionTest.swift; sourceTree = "<group>"; };
 		1CC84B8E2392FCDF00EDB794 /* GCSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSearchBarView.swift; sourceTree = "<group>"; };
+		1CCBF428239DCBD600F70E70 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		1CCBF42A239DD92D00F70E70 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
+		1CE2E37023A58DCA00AD607A /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
 		1CE3432023666A2C001B1790 /* GCExpandableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCExpandableButton.swift; sourceTree = "<group>"; };
 		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
 		1CF15BA2235CBE6B00664DE7 /* Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installation.swift; sourceTree = "<group>"; };
@@ -285,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				1C14E5C0235BB48400E3CD94 /* NeighbourhoodSelectorView.swift */,
+				1CBD646423A3251700D2FB02 /* BasicFooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -467,6 +482,7 @@
 				1C31CBFA235B5D8000653E19 /* GCNavigationController.swift */,
 				1C31CC0B235B70CC00653E19 /* GCViewModelController.swift */,
 				1CE3432023666A2C001B1790 /* GCExpandableButton.swift */,
+				1C4979D523A6C7CB00A381A8 /* GCPaddingTextField.swift */,
 				1CB6CAAE2380AF6900E790CC /* CGCollectionViewFlowLayout.swift */,
 				1C8EA74D238C95C700BADB1A /* DatePickerViewController.swift */,
 				1C309ED8238CA73200B2F063 /* BasicTableViewCell.swift */,
@@ -528,6 +544,8 @@
 			isa = PBXGroup;
 			children = (
 				1C31CC07235B6AC100653E19 /* SettingsController.swift */,
+				1CCBF428239DCBD600F70E70 /* SettingsViewModel.swift */,
+				1CE2E36F23A58DAA00AD607A /* Feedback */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -549,6 +567,7 @@
 			isa = PBXGroup;
 			children = (
 				1C46181723594A6B0054B22B /* SplashController.swift */,
+				1CCBF42A239DD92D00F70E70 /* WebController.swift */,
 				1C23C95F238DFD6200100BA1 /* LocationSelectionController */,
 				1C179991238A02570075F06C /* TextInputController */,
 			);
@@ -609,6 +628,7 @@
 				1C835E342361212900CC21EB /* NeighbourhoodsManager.swift */,
 				1C696C422364C37500632085 /* NotificationsManager.swift */,
 				1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */,
+				1C4979D723A7017200A381A8 /* FeedbackManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -655,6 +675,15 @@
 				1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		1CE2E36F23A58DAA00AD607A /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				1CE2E37023A58DCA00AD607A /* FeedbackController.swift */,
+				1C4979D323A6900500A381A8 /* FeedbackViewModel.swift */,
+			);
+			path = Feedback;
 			sourceTree = "<group>";
 		};
 		1CF15B9E235CBB2500664DE7 /* Models */ = {
@@ -976,6 +1005,7 @@
 				1C835E25235EA88000CC21EB /* PFAnonymousUtils+Rx.swift in Sources */,
 				1C31CBED235B566A00653E19 /* Coordinator.swift in Sources */,
 				1C835E3023611DF400CC21EB /* NeighbourhoodSelectionViewModel.swift in Sources */,
+				1C4979D423A6900500A381A8 /* FeedbackViewModel.swift in Sources */,
 				1C835E3323611F1D00CC21EB /* NeighbourhoodCell.swift in Sources */,
 				1C31CBF5235B5B8C00653E19 /* SettingsCoordinator.swift in Sources */,
 				1C835E27235EA88000CC21EB /* ParseRxCallbacks.swift in Sources */,
@@ -989,6 +1019,7 @@
 				1C7489B42390AA4B00958A13 /* PaddingLabel.swift in Sources */,
 				1C31CC0A235B705400653E19 /* CalendarViewModel.swift in Sources */,
 				1C31CBEF235B578100653E19 /* Environment.swift in Sources */,
+				1CCBF429239DCBD600F70E70 /* SettingsViewModel.swift in Sources */,
 				1C23C963238DFDB700100BA1 /* LocationSelectionViewModel.swift in Sources */,
 				1C835E0D235E9B9B00CC21EB /* GenericSection.swift in Sources */,
 				1C31CC0E235B72BC00653E19 /* MapViewModel.swift in Sources */,
@@ -1012,23 +1043,28 @@
 				1C31CBEB235B564B00653E19 /* RootViewCoordinator.swift in Sources */,
 				1C835E24235EA88000CC21EB /* PFObject+Rx.swift in Sources */,
 				1C7A43C423727B29005210B9 /* CollectionPointAnnotationView.swift in Sources */,
+				1C4979D823A7017200A381A8 /* FeedbackManager.swift in Sources */,
 				1C696C4E2366619200632085 /* CollectionPointFilterViewModel.swift in Sources */,
 				1CB6CAB32380BC7300E790CC /* UICollectionViewCell.swift in Sources */,
 				1C46181823594A6B0054B22B /* SplashController.swift in Sources */,
 				1CF15BA5235CC35C00664DE7 /* City.swift in Sources */,
 				1C31CC06235B6AB300653E19 /* MapController.swift in Sources */,
+				1C4979D623A6C7CB00A381A8 /* GCPaddingTextField.swift in Sources */,
 				1CB6CAB52380BC7D00E790CC /* UICollectionView.swift in Sources */,
+				1CBD646523A3251700D2FB02 /* BasicFooterView.swift in Sources */,
 				1C835E0A235E917200CC21EB /* WeekDayCollectionSchedule.swift in Sources */,
 				1C835E0F235EA27E00CC21EB /* UITableView.swift in Sources */,
 				1C309ED9238CA73200B2F063 /* BasicTableViewCell.swift in Sources */,
 				1C31CC0C235B70CC00653E19 /* GCViewModelController.swift in Sources */,
 				1CBA92FF238F57EC00CF01D4 /* GeocoderManager.swift in Sources */,
 				1C17998E2389F54A0075F06C /* PictureSelectionView.swift in Sources */,
+				1CE2E37123A58DCA00AD607A /* FeedbackController.swift in Sources */,
 				1C31CBF9235B5D2B00653E19 /* GCNavigationBar.swift in Sources */,
 				1CC84B8F2392FCDF00EDB794 /* GCSearchBarView.swift in Sources */,
 				1C835E0B235E9AE100CC21EB /* ScheduledCollectionCell.swift in Sources */,
 				1C696C432364C37500632085 /* NotificationsManager.swift in Sources */,
 				1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */,
+				1CCBF42B239DD92D00F70E70 /* WebController.swift in Sources */,
 				1C835E11235EA2CB00CC21EB /* UITableViewCell.swift in Sources */,
 				1C17998B2389F3D90075F06C /* RubbishReportViewModel.swift in Sources */,
 				1C835E29235EA88000CC21EB /* PFQuery+Rx.swift in Sources */,
