@@ -41,9 +41,18 @@ class AppCoordinator: RootViewCoordinator {
     
     /// Starts the coordinator
     public func start() {
-        _ = try? Installation.current()?.neighbourhood?.fetch()
+        (rootViewController as? SplashController)?.delegate = self
+    }
+}
+
+// MARK: Delegates
+
+extension AppCoordinator: SplashControllerDelegate {
+    
+    func didFinishLoading() {
         setupTabBar()
     }
+    
 }
 
 // MARK: Private methods
