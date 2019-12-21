@@ -58,6 +58,7 @@
 		1C7A43C123725E97005210B9 /* PFGeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43C023725E97005210B9 /* PFGeoPoint.swift */; };
 		1C7A43C423727B29005210B9 /* CollectionPointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43C323727B28005210B9 /* CollectionPointAnnotationView.swift */; };
 		1C7A43C72373C119005210B9 /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43C62373C119005210B9 /* SelectableCell.swift */; };
+		1C7B207023AE4EF800240154 /* InstallationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B206F23AE4EF800240154 /* InstallationManager.swift */; };
 		1C835E0A235E917200CC21EB /* WeekDayCollectionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E09235E917200CC21EB /* WeekDayCollectionSchedule.swift */; };
 		1C835E0B235E9AE100CC21EB /* ScheduledCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14E5BD235BACFE00E3CD94 /* ScheduledCollectionCell.swift */; };
 		1C835E0D235E9B9B00CC21EB /* GenericSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C835E0C235E9B9B00CC21EB /* GenericSection.swift */; };
@@ -185,6 +186,8 @@
 		1C7A43C023725E97005210B9 /* PFGeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFGeoPoint.swift; sourceTree = "<group>"; };
 		1C7A43C323727B28005210B9 /* CollectionPointAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointAnnotationView.swift; sourceTree = "<group>"; };
 		1C7A43C62373C119005210B9 /* SelectableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
+		1C7B206F23AE4EF800240154 /* InstallationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstallationManager.swift; path = garbageCollection/Managers/InstallationManager.swift; sourceTree = "<group>"; };
+		1C7B207123AE5B7800240154 /* garbageCollection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = garbageCollection.entitlements; sourceTree = "<group>"; };
 		1C835E09235E917200CC21EB /* WeekDayCollectionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayCollectionSchedule.swift; sourceTree = "<group>"; };
 		1C835E0C235E9B9B00CC21EB /* GenericSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericSection.swift; sourceTree = "<group>"; };
 		1C835E0E235EA27E00CC21EB /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
@@ -342,6 +345,7 @@
 		1C26CE4023594307008BB2D2 = {
 			isa = PBXGroup;
 			children = (
+				1C7B206F23AE4EF800240154 /* InstallationManager.swift */,
 				1C26CE4B23594307008BB2D2 /* garbageCollection */,
 				1C26CE622359430C008BB2D2 /* garbageCollectionTests */,
 				1C26CE6D2359430C008BB2D2 /* garbageCollectionUITests */,
@@ -364,6 +368,7 @@
 		1C26CE4B23594307008BB2D2 /* garbageCollection */ = {
 			isa = PBXGroup;
 			children = (
+				1C7B207123AE5B7800240154 /* garbageCollection.entitlements */,
 				1C26CE7C235943D7008BB2D2 /* Core */,
 				1CF15B9E235CBB2500664DE7 /* Models */,
 				1C31CBF7235B5D0E00653E19 /* Views */,
@@ -979,6 +984,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C7B207023AE4EF800240154 /* InstallationManager.swift in Sources */,
 				1C835E2B235FC73F00CC21EB /* GCError.swift in Sources */,
 				1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */,
 				1C835E26235EA88000CC21EB /* PFCloud+Rx.swift in Sources */,
@@ -1237,16 +1243,19 @@
 			baseConfigurationReference = 1C9902DD2389CB520000A457 /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PV4FQV4SXL;
+				CODE_SIGN_ENTITLEMENTS = garbageCollection/garbageCollection.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = G6C8VR926S;
 				INFOPLIST_FILE = garbageCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raphael.garbageCollection;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelsouza.garbageCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "garbageCollection-dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1257,16 +1266,19 @@
 			baseConfigurationReference = 1C26CE86235944FC008BB2D2 /* Production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PV4FQV4SXL;
+				CODE_SIGN_ENTITLEMENTS = garbageCollection/garbageCollection.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = G6C8VR926S;
 				INFOPLIST_FILE = garbageCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raphael.garbageCollection;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelsouza.garbageCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "garbageCollection-prod";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
