@@ -95,7 +95,6 @@ private extension SplashController {
     }
     
     @objc func updateMessage() {
-        print("index => \(currentMessageIndex)")
         if currentMessageIndex >= messages.count {
             timer?.invalidate()
         } else {
