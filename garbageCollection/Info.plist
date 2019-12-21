@@ -20,35 +20,33 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Necessário para que você possa tirar uma foto ao reportar um ponto de descarte impróprio</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Necessário para mostrar onde você está no mapa</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Necessário para que você possa escolhar uma foto da biblioteca ao reportar um ponto de descarte impróprio</string>
+	<key>PARSE_APP_ID</key>
+	<string>$(PARSE_APP_ID)</string>
+	<key>PARSE_SERVER_URL</key>
+	<string>$(PARSE_SERVER_URL)</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>PARSE_APP_ID</key>
-	<string>$(PARSE_APP_ID)</string>
-	<key>PARSE_SERVER_URL</key>
-	<string>$(PARSE_SERVER_URL)</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Necessário para que você possa escolhar uma foto da biblioteca ao reportar um ponto de descarte impróprio</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Necessário para que você possa tirar uma foto ao reportar um ponto de descarte impróprio</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Necessário para mostrar onde você está no mapa</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -56,5 +54,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

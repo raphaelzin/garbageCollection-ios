@@ -20,6 +20,10 @@ extension Reactive where Base: UNUserNotificationCenter {
                     single(.error(error))
                 }
                 
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+                
                 single(.success(granted))
             }
             
