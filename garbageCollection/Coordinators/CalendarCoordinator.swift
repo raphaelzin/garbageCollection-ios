@@ -17,6 +17,7 @@ class CalendarCoordinator: RootViewCoordinator {
     
     private lazy var navigationController: UINavigationController = {
         let navigationController = GCNavigationController()
+        navigationController.navigationBar.prefersLargeTitles = true
         return navigationController
     }()
     

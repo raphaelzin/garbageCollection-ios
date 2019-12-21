@@ -13,6 +13,8 @@ class Feedback: PFObject, PFSubclassing {
     
     @NSManaged var author: Installation?
     @NSManaged var comment: String?
+    @NSManaged var name: String?
+    @NSManaged var email: String?
     
     static func parseClassName() -> String { return "Feedback" }
     
@@ -25,6 +27,8 @@ extension Feedback {
     struct Properties {
         static let author = "author"
         static let comment = "comment"
+        static let name = "name"
+        static let email = "email"
     }
     
 }

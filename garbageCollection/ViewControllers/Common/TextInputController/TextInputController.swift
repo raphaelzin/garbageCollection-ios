@@ -44,11 +44,16 @@ class TextInputController: UIViewController {
     
     init(configurator: Configurator) {
         placeholder = configurator.placeholder
-        
+    
         super.init(nibName: nil, bundle: nil)
-        
+    
         navigationItem.title = configurator.title
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: configurator.actionButtonTitle, style: .done, target: self, action: #selector(onSaveTap))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: configurator.actionButtonTitle,
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(onSaveTap))
+        
         
         configureView()
         configureLayout()

@@ -10,6 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxDataSources
+import SnapKit
 
 protocol CalendarControllerCoordinatorDelegate: class {
     func didRequestNeighbourhoodSelection(from controller: CalendarController)
@@ -23,7 +24,11 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
     
     private var dataSource: RxTableViewSectionedAnimatedDataSource<GenericSection<WeekDayCollectionSchedule>>!
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
+    
+    private var headerTopConstraint: Constraint?
+    
+    private let kHeaderHeight: CGFloat = 40
     
     // Subviews
 
@@ -33,7 +38,7 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
         tv.separatorStyle = .none
         tv.showsVerticalScrollIndicator = false
         tv.keyboardDismissMode = .interactive
-        tv.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
+        tv.contentInset = UIEdgeInsets(top: 8 + kHeaderHeight, left: 0, bottom: 0, right: 0)
         tv.registerCell(cellClass: ScheduledCollectionCell.self)
         return tv
     }()
@@ -52,7 +57,7 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
         return ai
     }()
     
-    // Init
+    // MARK: Lifecycle
 
     override init(viewModel: CalendarViewModelType) {
         super.init(viewModel: viewModel)
@@ -85,7 +90,7 @@ private extension CalendarController {
         })
         
         viewModel.selectedCollectionSchedule.map { (fullSchedule) -> [GenericSection<WeekDayCollectionSchedule>] in
-            return [GenericSection(items: fullSchedule?.weeklyCollection ?? [], header: "")]
+            [GenericSection(items: fullSchedule?.weeklyCollection ?? [], header: "")]
         }
         .bind(to: tableView.rx.items(dataSource: dataSource))
         .disposed(by: disposeBag)
@@ -93,6 +98,8 @@ private extension CalendarController {
         tableView.rx.itemSelected.bind { [weak tableView] (indexPath) in
             tableView?.deselectRow(at: indexPath, animated: true)
         }.disposed(by: disposeBag)
+        
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
     }
     
     func bindSelectedNeighbourhood() {
@@ -121,6 +128,30 @@ private extension CalendarController {
             }).disposed(by: disposeBag)
     }
 
+}
+
+// MARK: TableView delegate
+
+extension CalendarController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let disclaimer = "Este calendário é referente a coleta municipal do bairro selecionado. Caso você more em um condominio ou prédio talvez as datas sejam diferentes."
+        
+        let header = BasicFooterView()
+        header.titleLabel.text = disclaimer
+        return header
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yOffset = scrollView.contentOffset.y + scrollView.contentInset.top
+        
+        if yOffset < 0 {
+            headerTopConstraint?.update(offset: abs(yOffset))
+        } else if yOffset >= 0 {
+            headerTopConstraint?.update(offset: 0)
+        }
+    }
+    
 }
 
 // MARK: Private methods
@@ -194,16 +225,16 @@ private extension CalendarController {
     
     func configureLayout() {
         
+        view.addSubview(tableView)
         view.addSubview(neighbourhoodSelector)
         neighbourhoodSelector.snp.makeConstraints { (make) in
-            make.leading.top.trailing.equalTo(view)
-            make.height.equalTo(40)
+            self.headerTopConstraint = make.top.equalTo(view.safeAreaLayoutGuide).constraint
+            make.leading.trailing.equalTo(view)
+            make.height.equalTo(kHeaderHeight)
         }
         
-        view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
-            make.leading.bottom.trailing.equalTo(view)
-            make.top.equalTo(neighbourhoodSelector.snp.bottom)
+            make.edges.equalTo(view)
         }
         
         view.addSubview(activityIndicator)
