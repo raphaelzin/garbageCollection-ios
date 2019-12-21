@@ -118,7 +118,6 @@ private extension SplashController {
         
         installation.rx
             .fetch()
-            .delay(.seconds(10), scheduler: MainScheduler.asyncInstance)
             .flatMapCompletable { (installation) -> Completable in
                 guard let installation = installation as? Installation,
                     let neighbourhood = installation.neighbourhood else { return .empty() }
