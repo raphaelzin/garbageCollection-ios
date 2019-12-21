@@ -41,7 +41,9 @@ class AppCoordinator: RootViewCoordinator {
     
     /// Starts the coordinator
     public func start() {
-        (rootViewController as? SplashController)?.delegate = self
+        let splashController = rootViewController as? SplashController
+        splashController?.delegate = self
+        splashController?.updateData()
     }
 }
 

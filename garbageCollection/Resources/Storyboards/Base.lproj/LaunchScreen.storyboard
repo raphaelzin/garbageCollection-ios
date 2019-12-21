@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.21568627450980393" green="0.44313725490196076" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.21568627450980393" green="0.44313725490196076" blue="0.78823529411764703" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Gug-M0-lCH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dpk-Q3-dq2"/>
                             <constraint firstItem="5XN-lq-vhg" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-60" id="dpl-4k-Var"/>

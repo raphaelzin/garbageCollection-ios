@@ -90,7 +90,8 @@ private extension CalendarController {
         })
         
         viewModel.selectedCollectionSchedule.map { (fullSchedule) -> [GenericSection<WeekDayCollectionSchedule>] in
-            [GenericSection(items: fullSchedule?.weeklyCollection ?? [], header: "")]
+            let weekyCollection = fullSchedule?.weeklyCollection ?? []
+            return weekyCollection.isEmpty ? [] : [GenericSection(items: weekyCollection, header: "")]
         }
         .bind(to: tableView.rx.items(dataSource: dataSource))
         .disposed(by: disposeBag)
@@ -145,9 +146,9 @@ extension CalendarController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let disclaimer = "Este calendário é referente a coleta municipal do bairro selecionado. Caso você more em um condominio ou prédio talvez as datas sejam diferentes."
         
-        let header = BasicFooterView()
-        header.titleLabel.text = disclaimer
-        return header
+        let footerView = BasicFooterView()
+        footerView.titleLabel.text = disclaimer
+        return footerView
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

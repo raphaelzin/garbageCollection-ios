@@ -27,7 +27,7 @@ class SplashController: UIViewController {
     
     private let messages = ["Carregando...",
                             "Levando o lixo pra fora",
-                            "Ponto o lixo no canto",
+                            "Pondo o lixo no canto",
                             "Esperando o caminhão passar",
                             "hmm, tá demorando pra carregar, né?",
                             "Relaxa, já que termina ;)"]
@@ -71,7 +71,6 @@ class SplashController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         setupTimer()
-        loadInstallation()
         configureView()
         configureLayout()
     }
@@ -108,9 +107,9 @@ private extension SplashController {
 
 // MARK: Perform loadings
 
-private extension SplashController {
+extension SplashController {
     
-    func loadInstallation() {
+    func updateData() {
         guard let installation = Installation.current(), installation.objectId != nil else {
             delegate?.didFinishLoading()
             return
