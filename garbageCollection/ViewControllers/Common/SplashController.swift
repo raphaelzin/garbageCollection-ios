@@ -111,7 +111,7 @@ private extension SplashController {
 private extension SplashController {
     
     func loadInstallation() {
-        guard let installation = Installation.current() else {
+        guard let installation = Installation.current(), installation.objectId != nil else {
             delegate?.didFinishLoading()
             return
         }
@@ -125,8 +125,9 @@ private extension SplashController {
                 return neighbourhood.rx.fetch().asCompletable()
             }.subscribe(onCompleted: { [weak self] in
                 self?.delegate?.didFinishLoading()
-            }, onError: { error in
+            }, onError: { [weak self] error in
                 print("Error: \(error)")
+                self?.delegate?.didFinishLoading()
             }).disposed(by: disposeBag)
     }
     

@@ -119,6 +119,14 @@ private extension CalendarController {
     }
     
     func bindBellState() {
+        
+        viewModel
+            .selectedNeighbourhoodObservable
+            .map { $0 != nil }
+            .subscribe(onNext: { [weak self] (hasNeighbourhoodSelected) in
+                self?.navigationItem.rightBarButtonItem?.isEnabled = hasNeighbourhoodSelected
+            }).disposed(by: disposeBag)
+        
         viewModel
             .notificationsActiveRelay
             .map { UIImage(systemName: $0 ? "bell.slash" : "bell" ) }

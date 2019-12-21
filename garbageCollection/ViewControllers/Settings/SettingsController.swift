@@ -222,7 +222,7 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
 extension SettingsController: NeighbourhoodSelectorDelegate {
     
     func didSelect(neighbourhood: Neighbourhood) {
-        viewModel.selectedNeighbourhood.accept(neighbourhood)
+        InstallationManager.shared.updateNeighbourhood(to: neighbourhood)
     }
     
 }

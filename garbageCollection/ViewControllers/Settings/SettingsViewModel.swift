@@ -36,6 +36,7 @@ class SettingsViewModel: SettingsViewModelType {
         reminderNotifications = BehaviorRelay(value: installation?.notificationsEnabled ?? false)
         hintsNotifications = BehaviorRelay(value: installation?.hintsEnabled ?? false)
         
+        sharedManagerBinding()
         updateUserPreferences()
     }
     
@@ -44,6 +45,14 @@ class SettingsViewModel: SettingsViewModelType {
 // MARK: Private methods
 
 private extension SettingsViewModel {
+    
+    func sharedManagerBinding() {
+        InstallationManager
+            .shared
+            .selectedNeighbourhood
+            .bind(to: selectedNeighbourhood)
+            .disposed(by: disposeBag)
+    }
     
     func updateUserPreferences() {
         Observable

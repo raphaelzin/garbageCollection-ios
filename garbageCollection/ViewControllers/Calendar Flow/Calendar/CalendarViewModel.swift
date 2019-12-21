@@ -68,6 +68,7 @@ class CalendarViewModel: CalendarViewModelType {
     
     init() {
         bindCollectionScheduleToNeighbourhood()
+        sharedManagerBinding()
     }
 
 }
@@ -91,8 +92,7 @@ extension CalendarViewModel {
             Installation.current()?.notificationsEnabled = false
         } else if let collectionSchedule = fullCollectionSchedule.value {
             notificationsManager.setupNotifications(for: collectionSchedule)
-            Installation.current()?.neighbourhood = selectedNeighbourhoodRelay.value
-            Installation.current()?.notificationsEnabled = true
+            InstallationManager.shared.updateNeighbourhood(to: selectedNeighbourhoodRelay.value)
         }
         
         Installation.current()?.saveEventually()
@@ -104,6 +104,15 @@ extension CalendarViewModel {
 // MARK: Private methods
 
 private extension CalendarViewModel {
+    
+    func sharedManagerBinding() {
+        InstallationManager
+            .shared
+            .selectedNeighbourhood
+            .filter { $0 != self.selectedNeighbourhoodRelay.value }
+            .bind(to: selectedNeighbourhoodRelay)
+            .disposed(by: disposeBag)
+    }
     
     /// Make sure the collection schedule is up to date with the selected neighbourhood
     func bindCollectionScheduleToNeighbourhood() {
