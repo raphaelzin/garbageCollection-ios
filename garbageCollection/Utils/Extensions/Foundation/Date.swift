@@ -80,3 +80,15 @@ extension Date {
     }
 
 }
+
+extension Date.WeekDay {
+    
+    static func - (lhs: Date.WeekDay, rhs: Int) -> Date.WeekDay {
+        let offset = rhs%7
+        let currentIndex = lhs.index - 1
+        
+        let index = (currentIndex - offset) < 0 ? (Date.WeekDay.allCases.count - abs((currentIndex - offset))) : (currentIndex - offset)
+        return Date.WeekDay.allCases[index]
+    }
+    
+}
