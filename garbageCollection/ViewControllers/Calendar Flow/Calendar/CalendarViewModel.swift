@@ -14,12 +14,9 @@ protocol CalendarViewModelType: class {
     // Bindable attributes
     var selectedNeighbourhoodObservable: Observable<Neighbourhood?> { get }
     var selectedCollectionSchedule: Observable<CollectionSchedule?> { get }
-    var notificationsActiveRelay: BehaviorRelay<Bool> { get }
     var state: Observable<CalendarViewModel.State> { get }
     
     var areNotificationsActive: Bool { get }
-    
-    var notificationActive: Observable<Bool> { get }
     
     // Functions
     func select(neighbourhood: Neighbourhood)
@@ -35,7 +32,9 @@ class CalendarViewModel: CalendarViewModelType {
     private let disposeBag = DisposeBag()
     
     var areNotificationsActive: Bool {
-        return notificationsActiveRelay.value
+        selectedNeighbourhoodRelay.value != nil &&
+            InstallationManager.shared.notificationsEnabled.value &&
+            (InstallationManager.shared.selectedNeighbourhood.value == selectedNeighbourhoodRelay.value)
     }
     
     // Relays
@@ -45,8 +44,6 @@ class CalendarViewModel: CalendarViewModelType {
     private let fullCollectionSchedule = BehaviorRelay<CollectionSchedule?>(value: nil)
     
     private let stateRelay = BehaviorRelay<State>(value: .idle)
-    
-    let notificationsActiveRelay = BehaviorRelay<Bool>(value: false)
     
     // Observables
     
@@ -60,10 +57,6 @@ class CalendarViewModel: CalendarViewModelType {
     
     var state: Observable<State> {
         stateRelay.asObservable()
-    }
-    
-    var notificationActive: Observable<Bool> {
-        notificationsActiveRelay.asObservable()
     }
     
     init() {
@@ -88,15 +81,12 @@ extension CalendarViewModel {
     }
     
     func bellTapped() {
-        if notificationsActiveRelay.value {
-            Installation.current()?.notificationsEnabled = false
+        if InstallationManager.shared.notificationsEnabled.value {
+            InstallationManager.shared.updateNeighbourhood(to: nil)
         } else if let collectionSchedule = fullCollectionSchedule.value {
             notificationsManager.setupNotifications(for: collectionSchedule)
             InstallationManager.shared.updateNeighbourhood(to: selectedNeighbourhoodRelay.value)
         }
-        
-        Installation.current()?.saveEventually()
-        notificationsActiveRelay.accept(!notificationsActiveRelay.value)
     }
     
 }
@@ -109,7 +99,7 @@ private extension CalendarViewModel {
         InstallationManager
             .shared
             .selectedNeighbourhood
-            .filter { $0 != self.selectedNeighbourhoodRelay.value }
+            .filter { $0 != self.selectedNeighbourhoodRelay.value && $0 != nil }
             .bind(to: selectedNeighbourhoodRelay)
             .disposed(by: disposeBag)
     }
@@ -124,7 +114,7 @@ private extension CalendarViewModel {
                 
                 if let installation = Installation.current() {
                     let notificationsEnabled = (installation.neighbourhood == .some(neighbourhood)) && installation.notificationsEnabled
-                    self?.notificationsActiveRelay.accept(notificationsEnabled)
+                    InstallationManager.shared.notificationsEnabled.accept(notificationsEnabled)
                 }
             })
             .flatMap { [unowned self] (neighbourhood) -> Single<CollectionSchedule> in

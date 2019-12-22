@@ -20,62 +20,16 @@ class SettingsViewModel: SettingsViewModelType {
     
     // MARK: Attributes
     
-    let selectedNeighbourhood: BehaviorRelay<Neighbourhood?>
-    
-    let reminderNotifications: BehaviorRelay<Bool>
-    
-    let hintsNotifications: BehaviorRelay<Bool>
-    
-    private let disposeBag = DisposeBag()
-    
-    // MARK: Lifecycle
-    
-    init() {
-        let installation = Installation.current()
-        selectedNeighbourhood = BehaviorRelay(value: installation?.neighbourhood)
-        reminderNotifications = BehaviorRelay(value: installation?.notificationsEnabled ?? false)
-        hintsNotifications = BehaviorRelay(value: installation?.hintsEnabled ?? false)
-        
-        sharedManagerBinding()
-        updateUserPreferences()
+    var selectedNeighbourhood: BehaviorRelay<Neighbourhood?> {
+        InstallationManager.shared.selectedNeighbourhood
     }
     
-}
-
-// MARK: Private methods
-
-private extension SettingsViewModel {
-    
-    func sharedManagerBinding() {
-        InstallationManager
-            .shared
-            .selectedNeighbourhood
-            .bind(to: selectedNeighbourhood)
-            .disposed(by: disposeBag)
+    var reminderNotifications: BehaviorRelay<Bool> {
+        InstallationManager.shared.notificationsEnabled
     }
     
-    func updateUserPreferences() {
-        Observable
-            .combineLatest(reminderNotifications.asObservable(),
-                           hintsNotifications.asObservable(),
-                           selectedNeighbourhood.asObservable())
-            .skip(1)
-            .throttle(.seconds(4), scheduler: MainScheduler.asyncInstance)
-            .flatMapLatest({ reminders, hints, neighbourhood -> Single<Bool> in
-                guard let installation = Installation.current() else {
-                    throw GCError.Misc.invalidUser
-                }
-                
-                installation.neighbourhood = neighbourhood
-                installation.notificationsEnabled = reminders
-                installation.hintsEnabled = hints
-                return installation.rx.save().asSingle()
-            })
-            .subscribe(onNext: { success in
-                print("Saved successfully: \(success)")
-            }, onError: { error in
-                print(error.localizedDescription)
-            }).disposed(by: disposeBag)
+    var hintsNotifications: BehaviorRelay<Bool> {
+        InstallationManager.shared.hintsEnabled
     }
     
 }

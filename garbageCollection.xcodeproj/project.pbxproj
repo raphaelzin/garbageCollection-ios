@@ -186,7 +186,7 @@
 		1C7A43C023725E97005210B9 /* PFGeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFGeoPoint.swift; sourceTree = "<group>"; };
 		1C7A43C323727B28005210B9 /* CollectionPointAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointAnnotationView.swift; sourceTree = "<group>"; };
 		1C7A43C62373C119005210B9 /* SelectableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
-		1C7B206F23AE4EF800240154 /* InstallationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstallationManager.swift; path = garbageCollection/Managers/InstallationManager.swift; sourceTree = "<group>"; };
+		1C7B206F23AE4EF800240154 /* InstallationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallationManager.swift; sourceTree = "<group>"; };
 		1C7B207123AE5B7800240154 /* garbageCollection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = garbageCollection.entitlements; sourceTree = "<group>"; };
 		1C835E09235E917200CC21EB /* WeekDayCollectionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayCollectionSchedule.swift; sourceTree = "<group>"; };
 		1C835E0C235E9B9B00CC21EB /* GenericSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericSection.swift; sourceTree = "<group>"; };
@@ -345,7 +345,6 @@
 		1C26CE4023594307008BB2D2 = {
 			isa = PBXGroup;
 			children = (
-				1C7B206F23AE4EF800240154 /* InstallationManager.swift */,
 				1C26CE4B23594307008BB2D2 /* garbageCollection */,
 				1C26CE622359430C008BB2D2 /* garbageCollectionTests */,
 				1C26CE6D2359430C008BB2D2 /* garbageCollectionUITests */,
@@ -627,6 +626,7 @@
 		1C835E12235EA5FB00CC21EB /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				1C7B206F23AE4EF800240154 /* InstallationManager.swift */,
 				1C835E13235EA61200CC21EB /* CollectionScheduleManager.swift */,
 				1C21B3CA23941E8B003E0090 /* RubbishReportManager.swift */,
 				1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */,

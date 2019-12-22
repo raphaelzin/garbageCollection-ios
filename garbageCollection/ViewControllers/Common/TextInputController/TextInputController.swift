@@ -54,7 +54,6 @@ class TextInputController: UIViewController {
                                                             target: self,
                                                             action: #selector(onSaveTap))
         
-        
         configureView()
         configureLayout()
     }

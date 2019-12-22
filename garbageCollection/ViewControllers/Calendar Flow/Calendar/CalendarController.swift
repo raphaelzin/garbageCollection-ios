@@ -128,8 +128,8 @@ private extension CalendarController {
                 self?.navigationItem.rightBarButtonItem?.isEnabled = hasNeighbourhoodSelected
             }).disposed(by: disposeBag)
         
-        viewModel
-            .notificationsActiveRelay
+        InstallationManager.shared
+            .notificationsEnabled
             .map { UIImage(systemName: $0 ? "bell.slash" : "bell" ) }
             .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] (image) in

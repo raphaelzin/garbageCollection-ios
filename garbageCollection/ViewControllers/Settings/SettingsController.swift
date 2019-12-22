@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import StoreKit
+import RxBiBinding
 
 protocol SettingsControllerCoordinatorDelegate: class {
     func didRequestSourceCode(from controller: SettingsController)
@@ -180,11 +181,15 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeue(cellClass: BasicTableViewCell.self, indexPath: indexPath)
         cell.configure(with: field)
         
-        if field == .hints || field == .reminders {
-            let relay = field == .hints ? viewModel.hintsNotifications : viewModel.reminderNotifications
+        if field == .reminders {
             let switchControl = UISwitch()
-            switchControl.isOn = relay.value
-            switchControl.rx.isOn.bind(to: relay).disposed(by: disposeBag)
+            switchControl.isOn = InstallationManager.shared.notificationsEnabled.value
+            (switchControl.rx.isOn <-> InstallationManager.shared.notificationsEnabled).disposed(by: disposeBag)
+            cell.accessoryView = switchControl
+        } else if field == .hints {
+            let switchControl = UISwitch()
+            switchControl.isOn = viewModel.hintsNotifications.value
+            switchControl.rx.isOn.bind(to: viewModel.hintsNotifications).disposed(by: disposeBag)
             cell.accessoryView = switchControl
         } else if field == .neighbourhood, let label = cell.detailTextLabel {
             viewModel
