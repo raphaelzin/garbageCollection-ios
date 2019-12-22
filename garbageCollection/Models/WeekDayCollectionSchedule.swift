@@ -25,6 +25,6 @@ extension WeekDayCollectionSchedule: IdentifiableType {
 
 extension WeekDayCollectionSchedule: Equatable {
     static func == (lhs: WeekDayCollectionSchedule, rhs: WeekDayCollectionSchedule) -> Bool {
-        return lhs.identity == rhs.identity
+        lhs.identity == rhs.identity
     }
 }

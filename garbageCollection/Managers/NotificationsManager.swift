@@ -29,10 +29,10 @@ class NotificationsManager {
         
         switch schedule.schedule {
         case .specificTime(let time):
-            collectionDate = Date().next(schedule.weekday, at: time)
+            collectionDate = Date().next(schedule.weekday-1, at: Date.Time("19:00"))
             body = "Só pra te lembrar da coleta de lixo às \(time)"
         case .timeWindow(let start, let end):
-            collectionDate = Date().next(schedule.weekday, at: start)
+            collectionDate = Date().next(schedule.weekday-1, at: start)
             body = "Só pra te lembrar da coleta de lixo entre \(start) e \(end)"
         }
         

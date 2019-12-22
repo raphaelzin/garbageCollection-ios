@@ -66,4 +66,18 @@ func test_collection_schedule_shift() {
         
         XCTAssertNil(CollectionSchedule.Schedule(raw: invalidWindowSchedule2), "\(invalidWindowSchedule2) was parsed as a valid window schedule.")
     }
+    
+    func test_week_day_arithmetics() {
+        let sun = Date.WeekDay.sun
+        let sat = Date.WeekDay.sat
+        let wed = Date.WeekDay.wed
+        
+        let resultSat = sun-1
+        let resultSun = sat-6
+        let resultThu = wed-6
+
+        XCTAssert(resultSat == .sat, "Value that should be \"Sat\" is actually \(resultSat)")
+        XCTAssert(resultSun == .sun, "Value that should be \"sun\" is actually \(resultSun)")
+        XCTAssert(resultThu == .thu, "Value that should be \"thu\" is actually \(resultThu)")
+    }
 }
