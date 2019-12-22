@@ -72,15 +72,18 @@ func test_collection_schedule_shift() {
         let sat = Date.WeekDay.sat
         let wed = Date.WeekDay.wed
         let mon = Date.WeekDay.mon
+        let tue = Date.WeekDay.tue
         
         let resultSat = sun-1
         let resultSun = sat-6
         let resultThu = wed-6
         let resultFri = mon-3
+        let resultMon = tue-1
 
         XCTAssert(resultSat == .sat, "Value that should be \"Sat\" is actually \(resultSat)")
         XCTAssert(resultSun == .sun, "Value that should be \"sun\" is actually \(resultSun)")
         XCTAssert(resultThu == .thu, "Value that should be \"thu\" is actually \(resultThu)")
         XCTAssert(resultFri == .fri, "Value that should be \"thu\" is actually \(resultFri)")
+        XCTAssert(resultMon == .mon, "Value that should be \"thu\" is actually \(resultMon)")
     }
 }
