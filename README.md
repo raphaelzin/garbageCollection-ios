@@ -1,3 +1,3 @@
 # Coleta fortaleza iOS
 
-Aplicação de coleta de Fortaleza
+Aplicação iOS de coleta de Fortaleza
