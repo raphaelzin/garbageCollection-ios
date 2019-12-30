@@ -31,7 +31,12 @@ class MapCoordinator: RootViewCoordinator {
 }
 
 extension MapCoordinator: MapControllerCoordinatorDelegate {
-
+    
+    func didRequestMoreInfo(from controller: MapController) {
+        let moreInfoController = MoreInfoController()
+        navigationController.pushViewController(moreInfoController, animated: true)
+    }
+    
     func didRequestFilterSelection(from controller: MapController, with currentSelection: [CollectionPoint.PointType]) {
         let viewModel = CollectionPointFilterViewModel(currentSelectedFilters: currentSelection)
         let filtersController = CollectionPointFilterController(viewModel: viewModel)

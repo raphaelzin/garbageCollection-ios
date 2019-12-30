@@ -221,7 +221,6 @@ private extension CalendarController {
     
     func configureView() {
         navigationItem.title = "Calendário de coleta"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell"),
                                                             style: .plain,
                                                             target: self,

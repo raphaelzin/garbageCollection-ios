@@ -13,6 +13,7 @@ import RxSwift
 protocol MapControllerCoordinatorDelegate: class {
     func didRequestFilterSelection(from controller: MapController, with currentFilters: [CollectionPoint.PointType])
     func didRequestRubbishReport(from controller: MapController)
+    func didRequestMoreInfo(from controller: MapController)
 }
 
 class MapController: GCViewModelController<MapViewModelType> {
@@ -107,6 +108,11 @@ private extension MapController {
         if #available(iOS 13.0, *) {
             tabBarItem = UITabBarItem(title: "Mapa", image: UIImage(systemName: "map"), tag: 0)
         }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(onMoreInfoTab))
     }
     
     func configureLayout() {
@@ -137,6 +143,16 @@ private extension MapController {
             make.leading.trailing.equalTo(view)
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-12)
         }
+    }
+    
+}
+
+// MARK: Private selectors
+
+private extension MapController {
+    
+    @objc func onMoreInfoTab() {
+        coordinatorDelegate?.didRequestMoreInfo(from: self)
     }
     
 }
