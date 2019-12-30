@@ -62,11 +62,11 @@ extension CollectionPoint {
         
         var icon: UIImage {
             switch self {
-            case .ecopoint: return UIImage(systemName: "arrow.3.trianglepath")!
-            case .association: return UIImage(systemName: "arrow.3.trianglepath")!
-            case .pcee: return UIImage(systemName: "arrow.3.trianglepath")!
-            case .pev: return UIImage(systemName: "arrow.3.trianglepath")!
-            case .ogr: return UIImage(systemName: "arrow.3.trianglepath")!
+            case .ecopoint: return #imageLiteral(resourceName: "ecoponto-icon")
+            case .association: return #imageLiteral(resourceName: "association-icon")
+            case .pcee: return #imageLiteral(resourceName: "eletronic-icon")
+            case .pev: return #imageLiteral(resourceName: "voluntary-icon")
+            case .ogr: return #imageLiteral(resourceName: "oil-icon")
             }
         }
         
