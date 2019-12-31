@@ -38,6 +38,7 @@ class NeighbourhoodSelectionController: GCViewModelController<NeighbourhoodSelec
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = .clear
         tableView.keyboardDismissMode = .interactive
+        tableView.tableFooterView = UIView()
         tableView.registerCell(cellClass: NeighbourhoodCell.self)
         return tableView
     }()
@@ -96,11 +97,11 @@ private extension NeighbourhoodSelectionController {
     
     func bindSearchResults() {
         searchController.searchBar.rx.text.orEmpty
-            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe { [weak viewModel] (event) in
                 guard let term = event.element else { return }
-                viewModel?.fetchNeighbourhoods(with: term)
+                viewModel?.filter(with: term)
             }.disposed(by: disposeBag)
     }
     

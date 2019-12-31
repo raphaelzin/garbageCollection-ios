@@ -15,12 +15,14 @@ protocol NeighbourhoodSelectionViewModelType: class {
     var neighbourhoods: Observable<[Neighbourhood]> { get }
     var state: Observable<NeighbourhoodSelectionViewModel.State> { get }
     
-    func fetchNeighbourhoods(with term: String)
+    func filter(with term: String)
 }
 
 class NeighbourhoodSelectionViewModel: NeighbourhoodSelectionViewModelType {
     
     // Attributes
+    
+    private var allNeighbourhoods: [Neighbourhood] = []
     
     private let disposeBag = DisposeBag()
     
@@ -60,15 +62,26 @@ extension NeighbourhoodSelectionViewModel {
 
 extension NeighbourhoodSelectionViewModel {
     
-    func fetchNeighbourhoods(with term: String = "") {
+    func fetchNeighbourhoods() {
         neighbourhoodsManager
-            .fetchNeighbourhoods(with: term)
+            .fetchNeighbourhoods()
             .do(onSuccess: { [weak self] _ in self?.stateRelay.accept(.loading) })
             .subscribe(onSuccess: { [weak self] (neighbourhoods) in
                 self?.stateRelay.accept(.idle)
+                self?.allNeighbourhoods = neighbourhoods
                 self?.neighbourhoodsRelay.accept(neighbourhoods)
             })
             .disposed(by: disposeBag)
+    }
+    
+    func filter(with term: String) {
+        if term.isEmpty {
+            neighbourhoodsRelay.accept(allNeighbourhoods)
+            return
+        }
+        
+        let filteredNeighbourhoods = allNeighbourhoods.filter { ($0.name ?? "").lowercased().contains(term.lowercased()) }
+        neighbourhoodsRelay.accept(filteredNeighbourhoods)
     }
     
 }

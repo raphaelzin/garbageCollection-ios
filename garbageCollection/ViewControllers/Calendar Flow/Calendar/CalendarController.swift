@@ -33,7 +33,7 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
     // Subviews
 
     private lazy var tableView: UITableView = {
-        let tv = UITableView(frame: .zero, style: .plain)
+        let tv = UITableView(frame: .zero, style: .grouped)
         tv.tableFooterView = UIView()
         tv.separatorStyle = .none
         tv.showsVerticalScrollIndicator = false
