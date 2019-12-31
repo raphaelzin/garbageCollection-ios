@@ -92,6 +92,7 @@
 		1CBA92FF238F57EC00CF01D4 /* GeocoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */; };
 		1CBC594E23BBAF430034B0C9 /* CollectionPointDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC594D23BBAF430034B0C9 /* CollectionPointDescription.swift */; };
 		1CBC595023BBB51F0034B0C9 /* CollectionPointMoreInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC594F23BBB51F0034B0C9 /* CollectionPointMoreInfoViewModel.swift */; };
+		1CBC595223BBF4840034B0C9 /* TableViewPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC595123BBF4840034B0C9 /* TableViewPlaceholderView.swift */; };
 		1CBD646523A3251700D2FB02 /* BasicFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBD646423A3251700D2FB02 /* BasicFooterView.swift */; };
 		1CC05479237E00C200268662 /* parseConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC05478237E00C200268662 /* parseConnectionTest.swift */; };
 		1CC84B8F2392FCDF00EDB794 /* GCSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC84B8E2392FCDF00EDB794 /* GCSearchBarView.swift */; };
@@ -227,6 +228,7 @@
 		1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderManager.swift; sourceTree = "<group>"; };
 		1CBC594D23BBAF430034B0C9 /* CollectionPointDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointDescription.swift; sourceTree = "<group>"; };
 		1CBC594F23BBB51F0034B0C9 /* CollectionPointMoreInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointMoreInfoViewModel.swift; sourceTree = "<group>"; };
+		1CBC595123BBF4840034B0C9 /* TableViewPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPlaceholderView.swift; sourceTree = "<group>"; };
 		1CBD646423A3251700D2FB02 /* BasicFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicFooterView.swift; sourceTree = "<group>"; };
 		1CC05478237E00C200268662 /* parseConnectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parseConnectionTest.swift; sourceTree = "<group>"; };
 		1CC84B8E2392FCDF00EDB794 /* GCSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSearchBarView.swift; sourceTree = "<group>"; };
@@ -530,6 +532,7 @@
 				1C309ED8238CA73200B2F063 /* BasicTableViewCell.swift */,
 				1C7489B32390AA4B00958A13 /* PaddingLabel.swift */,
 				1CC84B8E2392FCDF00EDB794 /* GCSearchBarView.swift */,
+				1CBC595123BBF4840034B0C9 /* TableViewPlaceholderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1113,6 +1116,7 @@
 				1CC84B8F2392FCDF00EDB794 /* GCSearchBarView.swift in Sources */,
 				1C835E0B235E9AE100CC21EB /* ScheduledCollectionCell.swift in Sources */,
 				1C696C432364C37500632085 /* NotificationsManager.swift in Sources */,
+				1CBC595223BBF4840034B0C9 /* TableViewPlaceholderView.swift in Sources */,
 				1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */,
 				1CCBF42B239DD92D00F70E70 /* WebController.swift in Sources */,
 				1C835E11235EA2CB00CC21EB /* UITableViewCell.swift in Sources */,

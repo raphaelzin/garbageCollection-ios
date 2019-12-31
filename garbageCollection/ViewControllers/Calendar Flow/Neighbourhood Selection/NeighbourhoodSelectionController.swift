@@ -107,7 +107,6 @@ private extension NeighbourhoodSelectionController {
     
     func bindTableView() {
         
-        // Configure each cell according to the item RxDataSources
         dataSource = RxTableViewSectionedAnimatedDataSource<GenericSection<Neighbourhood>>(
             configureCell: { _, tableView, indexPath, item in
                 let cell = tableView.dequeue(cellClass: NeighbourhoodCell.self, indexPath: indexPath)
@@ -115,7 +114,6 @@ private extension NeighbourhoodSelectionController {
                 return cell
         })
         
-        // Binds the countrys to the tableView
         Observable
             .combineLatest(viewModel.neighbourhoods, viewModel.state)
             .map { [weak self] (items, state) -> [GenericSection<Neighbourhood>] in
@@ -123,7 +121,6 @@ private extension NeighbourhoodSelectionController {
                 return [GenericSection(items: items, header: "")]
         }.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
 
-        // Bind the events itemSelected and modelSelected so we can tell the delegates that we selected the country and should dismiss the vc
         Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Neighbourhood.self)).bind { [weak self] indexPath, neighbourhood in
             self?.tableView.deselectRow(at: indexPath, animated: true)
             self?.searchController.searchBar.resignFirstResponder()
@@ -134,11 +131,11 @@ private extension NeighbourhoodSelectionController {
     
     func stateBinding() {
         viewModel
-        .state
-        .map { $0 == .idle }
-        .asDriver(onErrorJustReturn: false)
-        .drive(self.activityIndicator.rx.isHidden)
-        .disposed(by: disposeBag)
+            .state
+            .map { $0 == .idle }
+            .asDriver(onErrorJustReturn: false)
+            .drive(self.activityIndicator.rx.isHidden)
+            .disposed(by: disposeBag)
     }
     
 }

@@ -104,8 +104,11 @@ private extension CalendarController {
     }
     
     func bindSelectedNeighbourhood() {
-        viewModel.selectedNeighbourhoodObservable.subscribe(onNext: { [weak neighbourhoodSelector] (neighbourhood) in
-            neighbourhoodSelector?.configure(with: neighbourhood?.name ?? "Selecionar")
+        viewModel
+            .selectedNeighbourhoodObservable
+            .subscribe(onNext: { [weak self] (neighbourhood) in
+                self?.updateTableViewBackgroud(showPlaceholder: neighbourhood == nil)
+                self?.neighbourhoodSelector.configure(with: neighbourhood?.name ?? "Selecionar")
             }).disposed(by: disposeBag)
     }
     
@@ -166,6 +169,17 @@ extension CalendarController: UITableViewDelegate {
 // MARK: Private methods
 
 private extension CalendarController {
+    
+    func updateTableViewBackgroud(showPlaceholder: Bool) {
+        if !showPlaceholder {
+            tableView.backgroundView = nil
+            return
+        }
+        let text = "Selecione um bairro para ver seu calendário de coleta."
+        let view = TableViewPlaceholderView(configuration: .init(image: #imageLiteral(resourceName: "neighbourhoods"), text: text))
+        view.frame = tableView.bounds
+        tableView.backgroundView = view
+    }
     
     func promptWillRemoveDefaultNeighbourhood() {
         let alert = UIAlertController(title: "Atenção",
