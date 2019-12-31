@@ -22,7 +22,8 @@ class CollectionPointInfoController: UIViewController {
     
     private lazy var bodyLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Test!"
+        lbl.numberOfLines = 0
+        lbl.attributedText = collectionPointType.longDescription
         return lbl
     }()
     
