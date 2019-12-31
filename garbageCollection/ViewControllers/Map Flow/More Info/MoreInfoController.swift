@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol MoreInfoControllerCoordinatorDelegate: class {
+    func didRequestDetails(for type: CollectionPoint.PointType)
+}
+
 class MoreInfoController: UIViewController {
     
     // MARK: Attributes
     
     private let types = CollectionPoint.PointType.allCases
+    
+    weak var coordinatorDelegate: MoreInfoControllerCoordinatorDelegate?
     
     // MARK: Subviews
     
@@ -42,6 +48,7 @@ private extension MoreInfoController {
     
     func configureView() {
         navigationItem.title = "Mais informações"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     func configureLayout() {
@@ -59,6 +66,7 @@ extension MoreInfoController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        coordinatorDelegate?.didRequestDetails(for: types[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,7 +84,6 @@ extension MoreInfoController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: CollectionPointTypeCell.self, indexPath: indexPath)
         cell.configure(with: types[indexPath.row])
-        cell.layoutIfNeeded()
         return cell
     }
     

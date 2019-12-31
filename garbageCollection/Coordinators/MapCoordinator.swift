@@ -34,6 +34,8 @@ extension MapCoordinator: MapControllerCoordinatorDelegate {
     
     func didRequestMoreInfo(from controller: MapController) {
         let moreInfoController = MoreInfoController()
+        moreInfoController.coordinatorDelegate = self
+        moreInfoController.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(moreInfoController, animated: true)
     }
     
@@ -57,6 +59,15 @@ extension MapCoordinator: MapControllerCoordinatorDelegate {
         navigator.modalPresentationStyle = .fullScreen
         
         controller.present(navigator, animated: true)
+    }
+    
+}
+
+extension MapCoordinator: MoreInfoControllerCoordinatorDelegate {
+    
+    func didRequestDetails(for type: CollectionPoint.PointType) {
+        let detailsController = CollectionPointInfoController(type: type)
+        navigationController.pushViewController(detailsController, animated: true)
     }
     
 }
