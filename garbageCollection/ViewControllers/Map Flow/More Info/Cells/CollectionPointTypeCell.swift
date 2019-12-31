@@ -82,8 +82,8 @@ private extension CollectionPointTypeCell {
         nameLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(imageViewContainer.snp.trailing).offset(12)
             make.trailing.equalTo(self)
-            make.top.bottom.equalTo(self).inset(2)
-            make.height.greaterThanOrEqualTo(52)
+            make.top.bottom.equalTo(self).inset(6)
+            make.height.greaterThanOrEqualTo(38)
         }
     }
     
