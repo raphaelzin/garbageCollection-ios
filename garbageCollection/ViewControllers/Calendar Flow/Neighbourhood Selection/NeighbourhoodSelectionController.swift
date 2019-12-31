@@ -46,7 +46,7 @@ class NeighbourhoodSelectionController: GCViewModelController<NeighbourhoodSelec
     private lazy var searchController: UISearchController = {
         let sc = UISearchController(searchResultsController: nil)
         sc.searchBar.placeholder = "Buscar bairro"
-        sc.searchBar.searchTextField.backgroundColor = .white
+        sc.searchBar.searchTextField.backgroundColor = .secondarySystemGroupedBackground
         sc.obscuresBackgroundDuringPresentation = false
         return sc
     }()
