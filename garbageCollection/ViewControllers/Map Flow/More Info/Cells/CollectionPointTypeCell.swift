@@ -27,6 +27,8 @@ class CollectionPointTypeCell: UITableViewCell {
     private lazy var nameLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .systemFont(ofSize: 16, weight: .medium)
+        lbl.textColor = .gray
+        lbl.numberOfLines = 0
         return lbl
     }()
     
@@ -35,6 +37,7 @@ class CollectionPointTypeCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureLayout()
+        configureView()
     }
     
     required init?(coder: NSCoder) {
@@ -57,11 +60,14 @@ extension CollectionPointTypeCell {
 
 private extension CollectionPointTypeCell {
     
+    func configureView() {
+        accessoryType = .disclosureIndicator
+    }
+    
     func configureLayout() {
         addSubview(nameLabel)
         addSubview(imageViewContainer)
         imageViewContainer.addSubview(iconImageView)
-        
         
         imageViewContainer.snp.makeConstraints { (make) in
             make.size.equalTo(CGSize(width: 32, height: 32))
@@ -75,7 +81,9 @@ private extension CollectionPointTypeCell {
         
         nameLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(imageViewContainer.snp.trailing).offset(12)
-            make.trailing.centerY.equalTo(contentView)
+            make.trailing.equalTo(self)
+            make.top.bottom.equalTo(self).inset(2)
+            make.height.greaterThanOrEqualTo(52)
         }
     }
     

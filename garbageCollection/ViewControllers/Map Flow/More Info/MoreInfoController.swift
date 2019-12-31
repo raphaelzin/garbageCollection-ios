@@ -27,6 +27,7 @@ class MoreInfoController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         configureLayout()
+        configureView()
     }
     
     required init?(coder: NSCoder) {
@@ -38,6 +39,10 @@ class MoreInfoController: UIViewController {
 // MARK: Private layout methods
 
 private extension MoreInfoController {
+    
+    func configureView() {
+        navigationItem.title = "Mais informações"
+    }
     
     func configureLayout() {
         view.addSubview(tableView)
@@ -51,6 +56,10 @@ private extension MoreInfoController {
 // MARK: TableView management
 
 extension MoreInfoController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         types.count
@@ -67,6 +76,7 @@ extension MoreInfoController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: CollectionPointTypeCell.self, indexPath: indexPath)
         cell.configure(with: types[indexPath.row])
+        cell.layoutIfNeeded()
         return cell
     }
     

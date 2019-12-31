@@ -15,6 +15,7 @@
 		1C179993238A027A0075F06C /* TextInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C179992238A027A0075F06C /* TextInputController.swift */; };
 		1C1E6F4523BA9D0100498049 /* MoreInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E6F4423BA9D0100498049 /* MoreInfoController.swift */; };
 		1C1E6F4823BA9DA800498049 /* CollectionPointTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E6F4723BA9DA800498049 /* CollectionPointTypeCell.swift */; };
+		1C1E6F4B23BAD00000498049 /* CollectionPointInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E6F4A23BAD00000498049 /* CollectionPointInfoController.swift */; };
 		1C21B3CB23941E8B003E0090 /* RubbishReportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B3CA23941E8B003E0090 /* RubbishReportManager.swift */; };
 		1C21B3CD23941F8C003E0090 /* PFFileImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B3CC23941F8C003E0090 /* PFFileImageHelper.swift */; };
 		1C21B3CF2394206F003E0090 /* PFFileObject+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B3CE2394206F003E0090 /* PFFileObject+Rx.swift */; };
@@ -139,6 +140,7 @@
 		1C179992238A027A0075F06C /* TextInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputController.swift; sourceTree = "<group>"; };
 		1C1E6F4423BA9D0100498049 /* MoreInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoController.swift; sourceTree = "<group>"; };
 		1C1E6F4723BA9DA800498049 /* CollectionPointTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointTypeCell.swift; sourceTree = "<group>"; };
+		1C1E6F4A23BAD00000498049 /* CollectionPointInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointInfoController.swift; sourceTree = "<group>"; };
 		1C21B3CA23941E8B003E0090 /* RubbishReportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishReportManager.swift; sourceTree = "<group>"; };
 		1C21B3CC23941F8C003E0090 /* PFFileImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFFileImageHelper.swift; sourceTree = "<group>"; };
 		1C21B3CE2394206F003E0090 /* PFFileObject+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PFFileObject+Rx.swift"; sourceTree = "<group>"; };
@@ -354,6 +356,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		1C1E6F4923BACFD200498049 /* Collection Point Info */ = {
+			isa = PBXGroup;
+			children = (
+				1C1E6F4A23BAD00000498049 /* CollectionPointInfoController.swift */,
+			);
+			path = "Collection Point Info";
+			sourceTree = "<group>";
+		};
 		1C23C95F238DFD6200100BA1 /* LocationSelectionController */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +502,7 @@
 		1C31CBF6235B5B9900653E19 /* Map Flow */ = {
 			isa = PBXGroup;
 			children = (
+				1C1E6F4923BACFD200498049 /* Collection Point Info */,
 				1C1E6F4323BA9CED00498049 /* More Info */,
 				1C1799872389F3650075F06C /* Rubbish Report */,
 				1C696C4A2366615600632085 /* Filter */,
@@ -1047,6 +1058,7 @@
 				1C8EA750238C9BFD00BADB1A /* UIAlertController.swift in Sources */,
 				1C7489B42390AA4B00958A13 /* PaddingLabel.swift in Sources */,
 				1C31CC0A235B705400653E19 /* CalendarViewModel.swift in Sources */,
+				1C1E6F4B23BAD00000498049 /* CollectionPointInfoController.swift in Sources */,
 				1C31CBEF235B578100653E19 /* Environment.swift in Sources */,
 				1CCBF429239DCBD600F70E70 /* SettingsViewModel.swift in Sources */,
 				1C23C963238DFDB700100BA1 /* LocationSelectionViewModel.swift in Sources */,
