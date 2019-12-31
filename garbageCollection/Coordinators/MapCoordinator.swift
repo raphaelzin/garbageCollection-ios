@@ -66,7 +66,8 @@ extension MapCoordinator: MapControllerCoordinatorDelegate {
 extension MapCoordinator: MoreInfoControllerCoordinatorDelegate {
     
     func didRequestDetails(for type: CollectionPoint.PointType) {
-        let detailsController = CollectionPointInfoController(type: type)
+        let viewModel = CollectionPointMoreInfoViewModel(type: type)
+        let detailsController = CollectionPointInfoController(viewModel: viewModel)
         navigationController.pushViewController(detailsController, animated: true)
     }
     

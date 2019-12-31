@@ -49,7 +49,7 @@ extension CollectionPoint {
             case .pev, .pcee, .ogr: return self.rawValue
             }
         }
-            
+
         var fullName: String {
             switch self {
             case .ecopoint: return "Ecoponto"

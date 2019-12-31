@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import RxSwift
 
-class CollectionPointInfoController: UIViewController {
+class CollectionPointInfoController: GCViewModelController<CollectionPointMoreInfoViewModelType> {
     
     // MARK: Attributes
     
-    private let collectionPointType: CollectionPoint.PointType
+    private let disposeBag = DisposeBag()
     
     // MARK: Subviews
     
@@ -23,19 +24,18 @@ class CollectionPointInfoController: UIViewController {
     private lazy var bodyLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
-        lbl.attributedText = collectionPointType.longDescription
         return lbl
     }()
     
     private lazy var iconContainer: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 12
-        view.backgroundColor = collectionPointType.tintColor
+        view.backgroundColor = viewModel.collectionPointType.tintColor
         return view
     }()
     
     private lazy var iconImageView: UIImageView = {
-        let iv = UIImageView(image: collectionPointType.icon)
+        let iv = UIImageView(image: viewModel.collectionPointType.icon)
         iv.contentMode = .scaleAspectFit
         return iv
     }()
@@ -44,21 +44,35 @@ class CollectionPointInfoController: UIViewController {
         let lbl = UILabel()
         lbl.font = .systemFont(ofSize: 21, weight: .bold)
         lbl.numberOfLines = 0
-        lbl.text = collectionPointType.fullName
+        lbl.text = viewModel.collectionPointType.fullName
         return lbl
     }()
     
     // MARK: Lifecycle
     
-    init(type: CollectionPoint.PointType) {
-        self.collectionPointType = type
-        super.init(nibName: nil, bundle: nil)
+    override init(viewModel: CollectionPointMoreInfoViewModelType) {
+        super.init(viewModel: viewModel)
         configureView()
         configureLayout()
+        bindContent()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+// MARK: Bindings
+
+private extension CollectionPointInfoController {
+    
+    func bindContent() {
+        viewModel
+            .descriptionContent
+            .bind(to: bodyLabel.rx.attributedText)
+            .disposed(by: disposeBag)
+        
     }
     
 }
@@ -68,7 +82,7 @@ class CollectionPointInfoController: UIViewController {
 private extension CollectionPointInfoController {
     
     func configureView() {
-        navigationItem.title = collectionPointType.shortName
+        navigationItem.title = viewModel.collectionPointType.shortName
         view.backgroundColor = .systemBackground
     }
     

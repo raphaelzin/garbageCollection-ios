@@ -16,7 +16,6 @@
 		1C1E6F4523BA9D0100498049 /* MoreInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E6F4423BA9D0100498049 /* MoreInfoController.swift */; };
 		1C1E6F4823BA9DA800498049 /* CollectionPointTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E6F4723BA9DA800498049 /* CollectionPointTypeCell.swift */; };
 		1C1E6F4B23BAD00000498049 /* CollectionPointInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E6F4A23BAD00000498049 /* CollectionPointInfoController.swift */; };
-		1C1E6F5323BAE99700498049 /* CollectionPointDescriptionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E6F5223BAE99700498049 /* CollectionPointDescriptionProvider.swift */; };
 		1C21B3CB23941E8B003E0090 /* RubbishReportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B3CA23941E8B003E0090 /* RubbishReportManager.swift */; };
 		1C21B3CD23941F8C003E0090 /* PFFileImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B3CC23941F8C003E0090 /* PFFileImageHelper.swift */; };
 		1C21B3CF2394206F003E0090 /* PFFileObject+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B3CE2394206F003E0090 /* PFFileObject+Rx.swift */; };
@@ -91,6 +90,8 @@
 		1CB6CAB32380BC7300E790CC /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */; };
 		1CB6CAB52380BC7D00E790CC /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB42380BC7D00E790CC /* UICollectionView.swift */; };
 		1CBA92FF238F57EC00CF01D4 /* GeocoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */; };
+		1CBC594E23BBAF430034B0C9 /* CollectionPointDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC594D23BBAF430034B0C9 /* CollectionPointDescription.swift */; };
+		1CBC595023BBB51F0034B0C9 /* CollectionPointMoreInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC594F23BBB51F0034B0C9 /* CollectionPointMoreInfoViewModel.swift */; };
 		1CBD646523A3251700D2FB02 /* BasicFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBD646423A3251700D2FB02 /* BasicFooterView.swift */; };
 		1CC05479237E00C200268662 /* parseConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC05478237E00C200268662 /* parseConnectionTest.swift */; };
 		1CC84B8F2392FCDF00EDB794 /* GCSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC84B8E2392FCDF00EDB794 /* GCSearchBarView.swift */; };
@@ -142,7 +143,6 @@
 		1C1E6F4423BA9D0100498049 /* MoreInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoController.swift; sourceTree = "<group>"; };
 		1C1E6F4723BA9DA800498049 /* CollectionPointTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointTypeCell.swift; sourceTree = "<group>"; };
 		1C1E6F4A23BAD00000498049 /* CollectionPointInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointInfoController.swift; sourceTree = "<group>"; };
-		1C1E6F5223BAE99700498049 /* CollectionPointDescriptionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointDescriptionProvider.swift; sourceTree = "<group>"; };
 		1C21B3CA23941E8B003E0090 /* RubbishReportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishReportManager.swift; sourceTree = "<group>"; };
 		1C21B3CC23941F8C003E0090 /* PFFileImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFFileImageHelper.swift; sourceTree = "<group>"; };
 		1C21B3CE2394206F003E0090 /* PFFileObject+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PFFileObject+Rx.swift"; sourceTree = "<group>"; };
@@ -225,6 +225,8 @@
 		1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		1CB6CAB42380BC7D00E790CC /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		1CBA92FE238F57EC00CF01D4 /* GeocoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderManager.swift; sourceTree = "<group>"; };
+		1CBC594D23BBAF430034B0C9 /* CollectionPointDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointDescription.swift; sourceTree = "<group>"; };
+		1CBC594F23BBB51F0034B0C9 /* CollectionPointMoreInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointMoreInfoViewModel.swift; sourceTree = "<group>"; };
 		1CBD646423A3251700D2FB02 /* BasicFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicFooterView.swift; sourceTree = "<group>"; };
 		1CC05478237E00C200268662 /* parseConnectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parseConnectionTest.swift; sourceTree = "<group>"; };
 		1CC84B8E2392FCDF00EDB794 /* GCSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSearchBarView.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				1C1E6F4A23BAD00000498049 /* CollectionPointInfoController.swift */,
+				1CBC594F23BBB51F0034B0C9 /* CollectionPointMoreInfoViewModel.swift */,
 			);
 			path = "Collection Point Info";
 			sourceTree = "<group>";
@@ -564,7 +567,6 @@
 				1C835E0C235E9B9B00CC21EB /* GenericSection.swift */,
 				1C835E2A235FC73F00CC21EB /* GCError.swift */,
 				1C17998F238A00150075F06C /* UITableViewCellConfigurator.swift */,
-				1C1E6F5223BAE99700498049 /* CollectionPointDescriptionProvider.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -732,6 +734,7 @@
 			children = (
 				1CF15B9F235CBB3800664DE7 /* Parse */,
 				1C835E09235E917200CC21EB /* WeekDayCollectionSchedule.swift */,
+				1CBC594D23BBAF430034B0C9 /* CollectionPointDescription.swift */,
 				1C8996FB238AE2AC0004057A /* Location.swift */,
 			);
 			path = Models;
@@ -1022,6 +1025,7 @@
 			files = (
 				1C7B207023AE4EF800240154 /* InstallationManager.swift in Sources */,
 				1C835E2B235FC73F00CC21EB /* GCError.swift in Sources */,
+				1CBC595023BBB51F0034B0C9 /* CollectionPointMoreInfoViewModel.swift in Sources */,
 				1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */,
 				1C835E26235EA88000CC21EB /* PFCloud+Rx.swift in Sources */,
 				1C835E14235EA61200CC21EB /* CollectionScheduleManager.swift in Sources */,
@@ -1070,6 +1074,7 @@
 				1CF15BAD235CC3AF00664DE7 /* Neighbourhood.swift in Sources */,
 				1C21B3CB23941E8B003E0090 /* RubbishReportManager.swift in Sources */,
 				1C835E2E23611DE200CC21EB /* NeighbourhoodSelectionController.swift in Sources */,
+				1CBC594E23BBAF430034B0C9 /* CollectionPointDescription.swift in Sources */,
 				1C8996FC238AE2AC0004057A /* Location.swift in Sources */,
 				1C7A43C72373C119005210B9 /* SelectableCell.swift in Sources */,
 				1C57CAF2235CE114004D0E0C /* String.swift in Sources */,
@@ -1088,7 +1093,6 @@
 				1C835E24235EA88000CC21EB /* PFObject+Rx.swift in Sources */,
 				1C7A43C423727B29005210B9 /* CollectionPointAnnotationView.swift in Sources */,
 				1C4979D823A7017200A381A8 /* FeedbackManager.swift in Sources */,
-				1C1E6F5323BAE99700498049 /* CollectionPointDescriptionProvider.swift in Sources */,
 				1C696C4E2366619200632085 /* CollectionPointFilterViewModel.swift in Sources */,
 				1CB6CAB32380BC7300E790CC /* UICollectionViewCell.swift in Sources */,
 				1C46181823594A6B0054B22B /* SplashController.swift in Sources */,
