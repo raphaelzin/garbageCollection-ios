@@ -121,7 +121,6 @@ private extension RubbishReportController {
     
     func configureNavigationBar() {
         navigationItem.title = "Reportar entulho"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Fechar", style: .plain, target: self, action: #selector(onCloseTap))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .done, target: self, action: #selector(onSaveTap))

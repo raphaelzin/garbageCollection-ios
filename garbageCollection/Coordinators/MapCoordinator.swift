@@ -69,7 +69,6 @@ extension MapCoordinator: MapControllerCoordinatorDelegate {
     }
     
 }
-
 extension MapCoordinator: CollectionPointDetailsControllerCoordinatorDelegate { }
 
 extension MapCoordinator: MoreInfoControllerCoordinatorDelegate {

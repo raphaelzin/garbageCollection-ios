@@ -43,7 +43,7 @@ class ScheduledCollectionCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        configureView()
         configureLayout()
     }
     
@@ -77,6 +77,10 @@ extension ScheduledCollectionCell {
 // MARK: Private layout methods
 
 private extension ScheduledCollectionCell {
+    
+    func configureView() {
+        backgroundColor = .clear
+    }
     
     func configureLayout() {
         addSubview(containerView)

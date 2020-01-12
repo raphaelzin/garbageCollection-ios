@@ -38,6 +38,7 @@ class NeighbourhoodSelectionController: GCViewModelController<NeighbourhoodSelec
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = .clear
         tableView.keyboardDismissMode = .interactive
+        tableView.tableFooterView = UIView()
         tableView.registerCell(cellClass: NeighbourhoodCell.self)
         return tableView
     }()
@@ -45,7 +46,7 @@ class NeighbourhoodSelectionController: GCViewModelController<NeighbourhoodSelec
     private lazy var searchController: UISearchController = {
         let sc = UISearchController(searchResultsController: nil)
         sc.searchBar.placeholder = "Buscar bairro"
-        sc.searchBar.searchTextField.backgroundColor = .white
+        sc.searchBar.searchTextField.backgroundColor = .secondarySystemGroupedBackground
         sc.obscuresBackgroundDuringPresentation = false
         return sc
     }()
@@ -96,17 +97,16 @@ private extension NeighbourhoodSelectionController {
     
     func bindSearchResults() {
         searchController.searchBar.rx.text.orEmpty
-            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe { [weak viewModel] (event) in
                 guard let term = event.element else { return }
-                viewModel?.fetchNeighbourhoods(with: term)
+                viewModel?.filter(with: term)
             }.disposed(by: disposeBag)
     }
     
     func bindTableView() {
         
-        // Configure each cell according to the item RxDataSources
         dataSource = RxTableViewSectionedAnimatedDataSource<GenericSection<Neighbourhood>>(
             configureCell: { _, tableView, indexPath, item in
                 let cell = tableView.dequeue(cellClass: NeighbourhoodCell.self, indexPath: indexPath)
@@ -114,7 +114,6 @@ private extension NeighbourhoodSelectionController {
                 return cell
         })
         
-        // Binds the countrys to the tableView
         Observable
             .combineLatest(viewModel.neighbourhoods, viewModel.state)
             .map { [weak self] (items, state) -> [GenericSection<Neighbourhood>] in
@@ -122,7 +121,6 @@ private extension NeighbourhoodSelectionController {
                 return [GenericSection(items: items, header: "")]
         }.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
 
-        // Bind the events itemSelected and modelSelected so we can tell the delegates that we selected the country and should dismiss the vc
         Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Neighbourhood.self)).bind { [weak self] indexPath, neighbourhood in
             self?.tableView.deselectRow(at: indexPath, animated: true)
             self?.searchController.searchBar.resignFirstResponder()
@@ -133,11 +131,11 @@ private extension NeighbourhoodSelectionController {
     
     func stateBinding() {
         viewModel
-        .state
-        .map { $0 == .idle }
-        .asDriver(onErrorJustReturn: false)
-        .drive(self.activityIndicator.rx.isHidden)
-        .disposed(by: disposeBag)
+            .state
+            .map { $0 == .idle }
+            .asDriver(onErrorJustReturn: false)
+            .drive(self.activityIndicator.rx.isHidden)
+            .disposed(by: disposeBag)
     }
     
 }

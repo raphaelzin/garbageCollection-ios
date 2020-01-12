@@ -29,6 +29,7 @@ extension Environment {
         case bundleId
         case parseAppId = "PARSE_APP_ID"
         case parseServerURL = "PARSE_SERVER_URL"
+        case serverBaseURL = "SERVER_BASE_URL"
     }
     
 }
