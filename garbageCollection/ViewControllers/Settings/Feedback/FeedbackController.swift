@@ -193,7 +193,6 @@ private extension FeedbackController {
         view.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
         view.layer.shadowOffset = CGSize(width: 0, height: 3)
         view.layer.shadowOpacity = 0.2
-
     }
     
     func getTitleLabel(withTitle title: String) -> UILabel {

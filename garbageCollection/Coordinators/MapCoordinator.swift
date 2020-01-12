@@ -32,6 +32,20 @@ class MapCoordinator: RootViewCoordinator {
 
 extension MapCoordinator: MapControllerCoordinatorDelegate {
 
+    func didRequestMoreInfo(from controller: MapController) {
+        let moreInfoController = MoreInfoController()
+        moreInfoController.coordinatorDelegate = self
+        moreInfoController.hidesBottomBarWhenPushed = true
+        navigationController.pushViewController(moreInfoController, animated: true)
+    }
+    
+    func didRequestDetails(for collectionPoint: CollectionPoint, from controller: UIViewController) {
+        let detailsController = CollectionPointDetailsController()
+        detailsController.coordinatorDelegate = self
+        let navigator = GCNavigationController(rootController: detailsController)
+        controller.present(navigator, animated: true)
+    }
+    
     func didRequestFilterSelection(from controller: MapController, with currentSelection: [CollectionPoint.PointType]) {
         let viewModel = CollectionPointFilterViewModel(currentSelectedFilters: currentSelection)
         let filtersController = CollectionPointFilterController(viewModel: viewModel)
@@ -52,6 +66,18 @@ extension MapCoordinator: MapControllerCoordinatorDelegate {
         navigator.modalPresentationStyle = .fullScreen
         
         controller.present(navigator, animated: true)
+    }
+    
+}
+
+extension MapCoordinator: CollectionPointDetailsControllerCoordinatorDelegate { }
+
+extension MapCoordinator: MoreInfoControllerCoordinatorDelegate {
+    
+    func didRequestDetails(for type: CollectionPoint.PointType) {
+        let viewModel = CollectionPointMoreInfoViewModel(type: type)
+        let detailsController = CollectionPointInfoController(viewModel: viewModel)
+        navigationController.pushViewController(detailsController, animated: true)
     }
     
 }
@@ -87,14 +113,6 @@ extension MapCoordinator: RubbishReportControllerDelegate {
         textInputController.coordinatorDelegate = self
         
         controller.navigationController?.pushViewController(textInputController, animated: true)
-    }
-
-    func didRequestImagePick(from controller: RubbishReportController) {
-        PHPhotoLibrary.requestAuthorization { auth in
-            if auth == .authorized {
-                
-            }
-        }
     }
     
     func didRequestLocation(from controller: UIViewController) {

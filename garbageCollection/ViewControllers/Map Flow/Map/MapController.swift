@@ -12,6 +12,7 @@ import RxSwift
 
 protocol MapControllerCoordinatorDelegate: class {
     func didRequestFilterSelection(from controller: MapController, with currentFilters: [CollectionPoint.PointType])
+    func didRequestDetails(for collectionPoint: CollectionPoint, from controller: UIViewController)
     func didRequestRubbishReport(from controller: MapController)
 }
 
@@ -157,6 +158,7 @@ private extension MapController {
             .bind(to: collectionView.rx.items(cellIdentifier: CollectionPointCollectionViewCell.defaultIdentifier,
                                               cellType: CollectionPointCollectionViewCell.self)) { _, model, cell in
                                                 cell.configure(with: model)
+                                                cell.delegate = self
         }.disposed(by: disposeBag)
     }
     
@@ -232,6 +234,14 @@ extension MapController: MKMapViewDelegate {
  }
 
 // MARK: Delegate conformances
+
+extension MapController: CollectionPointCollectionViewCellDelegate {
+    
+    func didRequestMoreDetails(from collectionPoint: CollectionPoint) {
+        coordinatorDelegate?.didRequestDetails(for: collectionPoint, from: self)
+    }
+    
+}
 
 extension MapController: GCExpandableButtonDelegate {
     
