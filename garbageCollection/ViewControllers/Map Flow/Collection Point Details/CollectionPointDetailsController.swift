@@ -112,7 +112,7 @@ private extension CollectionPointDetailsController {
         addDefaultShadow(to: detailsStackContainer)
         
         view.backgroundColor = .systemGroupedBackground
-        navigationItem.title = "Ecoponto"
+        navigationItem.title = viewModel.collectionPoint.safeType?.shortName
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Fechar",
                                                            style: .plain,
                                                            target: self,
