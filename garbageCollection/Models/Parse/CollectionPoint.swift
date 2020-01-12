@@ -27,7 +27,67 @@ class CollectionPoint: PFObject, PFSubclassing {
         set { type = newValue?.rawValue }
     }
     
+    var listedDetails: [DetailsListingType] {
+        var details = [DetailsListingType]()
+        
+        if let address = address {
+            details.append(.address(address))
+        }
+        
+        details.append(.phone(""))
+        details.append(.hours(""))
+        
+        return details
+    }
+    
     static func parseClassName() -> String { return "CollectionPoint" }
+    
+}
+
+// MARK: Helper methods
+
+extension CollectionPoint {
+    
+    enum DetailsListingType {
+        case address(String)
+        case phone(String)
+        case hours(String)
+        
+        var title: String {
+            switch self {
+            case .address: return "Endereço"
+            case .hours: return "Horário"
+            case .phone: return "Telefone"
+            }
+        }
+        
+        var details: String {
+            switch self {
+            case .address(let address): return address
+            case .hours(let _): return "Segunda-feira a sábado de 8 às 12 horas e de 14 às 17 horas."
+            case .phone(let _): return "(85) 3222-3333"
+            }
+        }
+        
+        var action: DetailsAction? {
+            switch self {
+            case .phone: return .call
+            case .address: return .route
+            default: return nil
+            }
+        }
+        
+        enum DetailsAction {
+            case call, route
+            
+            var icon: UIImage? {
+                switch self {
+                case .call: return #imageLiteral(resourceName: "phone-icon")
+                case .route: return #imageLiteral(resourceName: "map-icon")
+                }
+            }
+        }
+    }
     
 }
 

@@ -8,7 +8,17 @@
 
 import UIKit
 
+protocol InformationStackDelegate: class {
+    func didRequestAction(for detailsType: CollectionPoint.DetailsListingType)
+}
+
 class InformationStackView: UIStackView {
+    
+    // MARK: Attributes
+    
+    var type: CollectionPoint.DetailsListingType!
+    
+    weak var delegate: InformationStackDelegate?
     
     // MARK: Subviews
     
@@ -19,7 +29,11 @@ class InformationStackView: UIStackView {
     }()
     
     private lazy var actionButton: UIButton = {
-        return UIButton()
+        let btn = UIButton()
+        btn.imageView?.contentMode = .scaleAspectFit
+        btn.tintColor = .positiveBlue
+        btn.addTarget(self, action: #selector(onActionTap), for: .touchUpInside)
+        return btn
     }()
     
     private lazy var titleLabel: UILabel = {
@@ -51,16 +65,27 @@ class InformationStackView: UIStackView {
     
 }
 
+// MARK: Private selectors
+
+private extension InformationStackView {
+    
+    @objc func onActionTap() {
+        delegate?.didRequestAction(for: type)
+    }
+    
+}
+
 // MARK: Configuration methods
 
 extension InformationStackView {
     
-    func configure(withTitle title: String, details: String, icon: UIImage? = nil) {
-        titleLabel.text = title
-        detailsLabel.text = details
+    func configure(with type: CollectionPoint.DetailsListingType) {
+        self.type = type
+        titleLabel.text = type.title
+        detailsLabel.text = type.details
         
-        if let icon = icon {
-            actionButton.setImage(icon, for: .normal)
+        if let icon = type.action?.icon {
+            actionButton.setImage(icon.withRenderingMode(.alwaysTemplate), for: .normal)
             actionButton.isHidden = false
         } else {
             actionButton.isHidden = true
@@ -75,6 +100,7 @@ private extension InformationStackView {
     
     func configureView() {
         axis = .horizontal
+        spacing = 2
     }
     
     func configureLayout() {

@@ -18,6 +18,8 @@ class CollectionPointDetailsHeaderView: UIView {
     
     let type: CollectionPoint.PointType
     
+    let title: String
+    
     weak var delegate: CollectionPointDetailsHeaderViewDelegate?
     
     // MARK: Subviews
@@ -62,8 +64,9 @@ class CollectionPointDetailsHeaderView: UIView {
     
     // MARK: Lifecycle
     
-    init(type: CollectionPoint.PointType) {
+    init(title: String, type: CollectionPoint.PointType) {
         self.type = type
+        self.title = title
         super.init(frame: .zero)
         configureLayout()
         configureView()

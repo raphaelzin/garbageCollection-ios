@@ -40,7 +40,8 @@ extension MapCoordinator: MapControllerCoordinatorDelegate {
     }
     
     func didRequestDetails(for collectionPoint: CollectionPoint, from controller: UIViewController) {
-        let detailsController = CollectionPointDetailsController()
+        let viewModel = CollectionPointDetailsViewModel(collectionPoint: collectionPoint)
+        let detailsController = CollectionPointDetailsController(viewModel: viewModel)
         detailsController.coordinatorDelegate = self
         let navigator = GCNavigationController(rootController: detailsController)
         navigator.modalPresentationStyle = .fullScreen

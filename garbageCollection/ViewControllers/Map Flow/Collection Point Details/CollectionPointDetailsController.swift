@@ -13,7 +13,7 @@ protocol CollectionPointDetailsCoordinatorDelegate: class {
     func didRequestMoreInfo(about type: CollectionPoint.PointType, from controller: UIViewController)
 }
 
-class CollectionPointDetailsController: UIViewController {
+class CollectionPointDetailsController: GCViewModelController<CollectionPointDetailsViewModelType> {
     
     // MARK: Attributes
     
@@ -24,7 +24,8 @@ class CollectionPointDetailsController: UIViewController {
     private lazy var scrollView = UIScrollView()
     
     private lazy var headerView: CollectionPointDetailsHeaderView = {
-        let view = CollectionPointDetailsHeaderView(type: .ecopoint)
+        let view = CollectionPointDetailsHeaderView(title: viewModel.collectionPoint.name ?? "",
+                                                    type: viewModel.collectionPoint.safeType ?? .ecopoint)
         view.delegate = self
         return view
     }()
@@ -45,11 +46,11 @@ class CollectionPointDetailsController: UIViewController {
     
     // MARK: Lifecycle
     
-    init() {
-        super.init(nibName: nil, bundle: nil)
+    override init(viewModel: CollectionPointDetailsViewModelType) {
+        super.init(viewModel: viewModel)
         configureLayout()
         configureView()
-        addFakeData()
+        createDetails()
     }
     
     required init?(coder: NSCoder) {
@@ -62,15 +63,14 @@ class CollectionPointDetailsController: UIViewController {
 
 private extension CollectionPointDetailsController {
     
-    func addFakeData() {
-        let titles = ["Endereço", "Horário", "Telefone"]
-        let bodies = ["Rua Júlio César, 1532 - Entre a Rua Macedo e a Rua Afrodísio Godim",
-                      "Segunda-feira a sábado de 8 às 12 horas e de 14 às 17 horas.",
-                      "(85) 3222-9999"]
+    func createDetails() {
         
-        for (title, body) in zip(titles, bodies) {
+        let detailsList = viewModel.collectionPoint.listedDetails
+        
+        for details in detailsList {
             let stack = InformationStackView()
-            stack.configure(withTitle: title, details: body)
+            stack.delegate = self
+            stack.configure(with: details)
             detailsStack.addArrangedSubview(stack)
         }
     }
@@ -127,6 +127,20 @@ private extension CollectionPointDetailsController {
     
 }
 
+// MARK: Private methods
+
+private extension CollectionPointDetailsController {
+    
+    func requestRoute() {
+        
+    }
+    
+    func requestCall() {
+        
+    }
+    
+}
+
 // MARK: Private selectors
 
 private extension CollectionPointDetailsController {
@@ -143,6 +157,19 @@ extension CollectionPointDetailsController: CollectionPointDetailsHeaderViewDele
     
     func didAskMoreInfo(on collectionPointType: CollectionPoint.PointType) {
         coordinatorDelegate?.didRequestMoreInfo(about: collectionPointType, from: self)
+    }
+    
+}
+
+extension CollectionPointDetailsController: InformationStackDelegate {
+    
+    func didRequestAction(for detailsType: CollectionPoint.DetailsListingType) {
+        switch detailsType.action {
+        case .call: requestCall()
+        case .route: requestRoute()
+        default:
+            print("Action unavailable")
+        }
     }
     
 }

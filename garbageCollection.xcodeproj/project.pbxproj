@@ -45,6 +45,7 @@
 		1C31CC0A235B705400653E19 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CC09235B705400653E19 /* CalendarViewModel.swift */; };
 		1C31CC0C235B70CC00653E19 /* GCViewModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CC0B235B70CC00653E19 /* GCViewModelController.swift */; };
 		1C31CC0E235B72BC00653E19 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CC0D235B72BC00653E19 /* MapViewModel.swift */; };
+		1C362BE023CB6F6800EB9851 /* CollectionPointDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C362BDF23CB6F6800EB9851 /* CollectionPointDetailsViewModel.swift */; };
 		1C46181823594A6B0054B22B /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C46181723594A6B0054B22B /* SplashController.swift */; };
 		1C4979D423A6900500A381A8 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4979D323A6900500A381A8 /* FeedbackViewModel.swift */; };
 		1C4979D623A6C7CB00A381A8 /* GCPaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4979D523A6C7CB00A381A8 /* GCPaddingTextField.swift */; };
@@ -182,6 +183,7 @@
 		1C31CC09235B705400653E19 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		1C31CC0B235B70CC00653E19 /* GCViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCViewModelController.swift; sourceTree = "<group>"; };
 		1C31CC0D235B72BC00653E19 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		1C362BDF23CB6F6800EB9851 /* CollectionPointDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointDetailsViewModel.swift; sourceTree = "<group>"; };
 		1C46181723594A6B0054B22B /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		1C4979D323A6900500A381A8 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		1C4979D523A6C7CB00A381A8 /* GCPaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCPaddingTextField.swift; sourceTree = "<group>"; };
@@ -630,6 +632,7 @@
 			isa = PBXGroup;
 			children = (
 				1C631EA823CA98570083479C /* CollectionPointDetailsController.swift */,
+				1C362BDF23CB6F6800EB9851 /* CollectionPointDetailsViewModel.swift */,
 				1C631EAA23CA98720083479C /* Views */,
 			);
 			path = "Collection Point Details";
@@ -1107,6 +1110,7 @@
 				1C8996FC238AE2AC0004057A /* Location.swift in Sources */,
 				1C7A43C72373C119005210B9 /* SelectableCell.swift in Sources */,
 				1C57CAF2235CE114004D0E0C /* String.swift in Sources */,
+				1C362BE023CB6F6800EB9851 /* CollectionPointDetailsViewModel.swift in Sources */,
 				1CF15BAF235CC3C700664DE7 /* RubbishReport.swift in Sources */,
 				1C1799892389F39E0075F06C /* RubbishReportController.swift in Sources */,
 				1C179990238A00150075F06C /* UITableViewCellConfigurator.swift in Sources */,
