@@ -49,6 +49,7 @@ class CollectionPointDetailsHeaderView: UIView {
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         btn.setTitleColor(.positiveBlue, for: .normal)
         btn.setTitleColor(UIColor.positiveBlue.withAlphaComponent(0.6), for: .highlighted)
+        btn.addTarget(self, action: #selector(onMoreInfoTap), for: .touchUpInside)
         return btn
     }()
     
@@ -104,6 +105,16 @@ extension CollectionPointDetailsHeaderView {
             make.centerY.equalTo(self)
         }
 
+    }
+    
+}
+
+// MARK: Private selectors
+
+private extension CollectionPointDetailsHeaderView {
+    
+    @objc func onMoreInfoTap() {
+        delegate?.didAskMoreInfo(on: type)
     }
     
 }

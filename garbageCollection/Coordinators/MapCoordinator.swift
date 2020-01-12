@@ -43,6 +43,7 @@ extension MapCoordinator: MapControllerCoordinatorDelegate {
         let detailsController = CollectionPointDetailsController()
         detailsController.coordinatorDelegate = self
         let navigator = GCNavigationController(rootController: detailsController)
+        navigator.modalPresentationStyle = .fullScreen
         controller.present(navigator, animated: true)
     }
     
@@ -69,7 +70,19 @@ extension MapCoordinator: MapControllerCoordinatorDelegate {
     }
     
 }
-extension MapCoordinator: CollectionPointDetailsControllerCoordinatorDelegate { }
+extension MapCoordinator: CollectionPointDetailsCoordinatorDelegate {
+    
+    func didRequestDismiss(from controller: CollectionPointDetailsController) {
+        controller.dismiss(animated: true)
+    }
+    
+    func didRequestMoreInfo(about type: CollectionPoint.PointType, from controller: UIViewController) {
+        let viewModel = CollectionPointMoreInfoViewModel(type: type)
+        let detailsController = CollectionPointInfoController(viewModel: viewModel)
+        controller.present(detailsController, animated: true)
+    }
+    
+}
 
 extension MapCoordinator: MoreInfoControllerCoordinatorDelegate {
     

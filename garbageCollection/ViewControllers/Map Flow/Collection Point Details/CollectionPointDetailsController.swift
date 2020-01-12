@@ -8,15 +8,16 @@
 
 import UIKit
 
-protocol CollectionPointDetailsControllerCoordinatorDelegate: class {
-    func didRequestDismiss(from controller: UIViewController)
+protocol CollectionPointDetailsCoordinatorDelegate: class {
+    func didRequestDismiss(from controller: CollectionPointDetailsController)
+    func didRequestMoreInfo(about type: CollectionPoint.PointType, from controller: UIViewController)
 }
 
 class CollectionPointDetailsController: UIViewController {
     
     // MARK: Attributes
     
-    weak var coordinatorDelegate: CollectionPointDetailsControllerCoordinatorDelegate?
+    weak var coordinatorDelegate: CollectionPointDetailsCoordinatorDelegate?
     
     // MARK: Subviews
     
@@ -141,7 +142,7 @@ private extension CollectionPointDetailsController {
 extension CollectionPointDetailsController: CollectionPointDetailsHeaderViewDelegate {
     
     func didAskMoreInfo(on collectionPointType: CollectionPoint.PointType) {
-        print(collectionPointType)
+        coordinatorDelegate?.didRequestMoreInfo(about: collectionPointType, from: self)
     }
     
 }
