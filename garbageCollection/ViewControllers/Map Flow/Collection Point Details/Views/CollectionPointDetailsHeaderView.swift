@@ -40,8 +40,10 @@ class CollectionPointDetailsHeaderView: UIView {
     private lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .systemFont(ofSize: 21, weight: .bold)
-        lbl.numberOfLines = 0
-        lbl.text = "\(type.shortName)"
+        lbl.numberOfLines = 2
+        lbl.minimumScaleFactor = 0.4
+        lbl.adjustsFontSizeToFitWidth = true
+        lbl.text = title
         return lbl
     }()
     
@@ -59,6 +61,7 @@ class CollectionPointDetailsHeaderView: UIView {
         let stv = UIStackView()
         stv.axis = .vertical
         stv.alignment = .leading
+        stv.spacing = 0
         return stv
     }()
     
@@ -106,6 +109,7 @@ extension CollectionPointDetailsHeaderView {
             make.leading.equalTo(iconContainer.snp.trailing).offset(12)
             make.trailing.equalTo(snp.trailing).offset(-12)
             make.centerY.equalTo(self)
+            make.top.bottom.equalTo(self).inset(18)
         }
 
     }

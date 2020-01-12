@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 protocol CollectionPointDetailsCoordinatorDelegate: class {
     func didRequestDismiss(from controller: CollectionPointDetailsController)
@@ -88,7 +89,7 @@ private extension CollectionPointDetailsController {
         
         scrollView.addSubview(headerView)
         headerView.snp.makeConstraints { (make) in
-            make.height.equalTo(80)
+            make.height.greaterThanOrEqualTo(80)
             make.leading.top.trailing.equalTo(scrollView.contentLayoutGuide).inset(16)
         }
         
@@ -132,11 +133,38 @@ private extension CollectionPointDetailsController {
 private extension CollectionPointDetailsController {
     
     func requestRoute() {
+        guard let location = viewModel.collectionPoint.location else {
+            alert(error: GCError.ServerData.invalidCoordinates)
+            return
+        }
         
+        let alert = UIAlertController(title: "Mostrar Rota", message: "Abrir em:", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Mapa", style: .default, handler: { _ in
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: location.CLCoordinates, addressDictionary: nil))
+            mapItem.name = self.viewModel.collectionPoint.name
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+        }))
+        
+        if let googleURL = URL(string: "comgooglemaps://"), UIApplication.shared.canOpenURL(googleURL) {
+            let url = URL(string: "comgooglemaps://?daddr=\(location.latitude),\(location.longitude)&mapmode=standard&directionsmode=driving")!
+            alert.addAction(UIAlertAction(title: "Google Maps", style: .default, handler: { _ in
+                UIApplication.shared.open(url, options: [:])
+            }))
+            
+        }
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+
+        present(alert, animated: true)
     }
     
     func requestCall() {
-        
+        if let phoneCallURL = URL(string: "tel://\(viewModel.collectionPoint.phone ?? "")"), UIApplication.shared.canOpenURL(phoneCallURL) {
+            UIApplication.shared.open(phoneCallURL, options: [:], completionHandler: nil)
+        } else {
+            alert(error: GCError.ServerData.invalidPhoneNumber)
+        }
     }
     
 }

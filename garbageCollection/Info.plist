@@ -56,6 +56,10 @@
 	</array>
 	<key>SERVER_BASE_URL</key>
 	<string>$(SERVER_BASE_URL)</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>comgooglemaps</string>
+	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

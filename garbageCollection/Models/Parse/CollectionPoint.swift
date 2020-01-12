@@ -18,6 +18,8 @@ class CollectionPoint: PFObject, PFSubclassing {
     @NSManaged var yearRef: String?
     @NSManaged var source: String?
     @NSManaged var regional: String?
+    @NSManaged var phone: String?
+    @NSManaged var hours: String?
     @NSManaged var location: PFGeoPoint?
     
     @NSManaged private var type: String?
@@ -34,8 +36,13 @@ class CollectionPoint: PFObject, PFSubclassing {
             details.append(.address(address))
         }
         
-        details.append(.phone(""))
-        details.append(.hours(""))
+        if let phone = phone {
+            details.append(.phone(phone))
+        }
+        
+        if let hours = hours {
+            details.append(.hours(hours))
+        }
         
         return details
     }

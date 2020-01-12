@@ -23,6 +23,11 @@ struct GCError {
         case noDataFound
     }
     
+    enum ServerData: Error {
+        case invalidCoordinates
+        case invalidPhoneNumber
+    }
+    
     enum Misc: Error {
         case invalidquery
         case invalidUser
@@ -56,6 +61,17 @@ extension GCError.Server: LocalizedError {
         case .serverUnreachable: return "Não foi possível se conectar com o servidor. Tente novamente mais tarde."
         }
     }
+}
+
+extension GCError.ServerData {
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidCoordinates: return "Coordenadas invalidas, por favor, tente mais tarde."
+        case .invalidPhoneNumber: return "Número de telefone inválido, tente novamente mais tarde."
+        }
+    }
+    
 }
 
 extension GCError.Geocoder: LocalizedError {
