@@ -71,8 +71,8 @@ extension CollectionPoint {
         var details: String {
             switch self {
             case .address(let address): return address
-            case .hours(let _): return "Segunda-feira a sábado de 8 às 12 horas e de 14 às 17 horas."
-            case .phone(let _): return "(85) 3222-3333"
+            case .hours(let hours): return hours
+            case .phone(let phoneNumber): return phoneNumber
             }
         }
         

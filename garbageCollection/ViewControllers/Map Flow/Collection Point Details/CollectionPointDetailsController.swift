@@ -160,7 +160,9 @@ private extension CollectionPointDetailsController {
     }
     
     func requestCall() {
-        if let phoneCallURL = URL(string: "tel://\(viewModel.collectionPoint.phone ?? "")"), UIApplication.shared.canOpenURL(phoneCallURL) {
+        let cleanPhoneNumber = viewModel.collectionPoint.phone?.replacingOccurrences(of: " ", with: "")
+        
+        if let phoneCallURL = URL(string: "tel://\(cleanPhoneNumber ?? "")"), UIApplication.shared.canOpenURL(phoneCallURL) {
             UIApplication.shared.open(phoneCallURL, options: [:], completionHandler: nil)
         } else {
             alert(error: GCError.ServerData.invalidPhoneNumber)
