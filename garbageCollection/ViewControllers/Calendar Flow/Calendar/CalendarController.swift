@@ -276,7 +276,9 @@ private extension CalendarController {
             .rx
             .getAuthorizationStatus()
             .flatMap { (status) -> Single<Bool> in
-                guard status != .authorized else { return .just(true) }
+                guard status != .authorized || Installation.current()?.deviceToken == nil else {
+                    return .just(true)
+                }
                 return UNUserNotificationCenter.current().rx.requestAuthorization(options: [.badge, .alert, .sound])
             }
             .observeOn(MainScheduler.instance)

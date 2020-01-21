@@ -77,7 +77,7 @@ extension MapViewModel {
     }
     
     func indexPath(of collectionPoint: CollectionPoint) -> IndexPath? {
-        guard let row = collectionPointsRelay.value.firstIndex(of: collectionPoint) else { return nil }
+        guard let row = collectionPointsRelay.value.filter({ ($0.safeType != nil && selectedFilters.contains($0.safeType!)) }).firstIndex(of: collectionPoint) else { return nil }
         return IndexPath(row: row, section: 0)
     }
     
