@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import Firebase
 
 protocol NeighbourhoodSelectionCoordenatorDelegate: class {
     func didRequestDismiss(from controller: NeighbourhoodSelectionController)
@@ -124,6 +125,8 @@ private extension NeighbourhoodSelectionController {
         Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Neighbourhood.self)).bind { [weak self] indexPath, neighbourhood in
             self?.tableView.deselectRow(at: indexPath, animated: true)
             self?.searchController.searchBar.resignFirstResponder()
+            
+            Analytics.logTrackedEvent(.neighbourhoodSelection, parameters: ["selected": neighbourhood.name ?? ""])
             self?.delegate?.didSelect(neighbourhood: neighbourhood)
             self?.coordinatorDelegate?.didRequestDismiss(from: self!)
             }.disposed(by: disposeBag)

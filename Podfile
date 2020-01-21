@@ -12,6 +12,9 @@ target 'garbageCollection' do
   pod 'RxDataSources', '~> 4.0'
   pod 'RxBiBinding'
   pod 'Parse'
+  
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
 
   # Layout
   pod 'SnapKit', '~> 5.0.0'
