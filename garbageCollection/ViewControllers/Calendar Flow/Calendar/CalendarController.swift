@@ -131,9 +131,15 @@ private extension CalendarController {
                 self?.navigationItem.rightBarButtonItem?.isEnabled = hasNeighbourhoodSelected
             }).disposed(by: disposeBag)
         
-        InstallationManager.shared
-            .notificationsEnabled
-            .map { UIImage(systemName: $0 ? "bell.slash" : "bell" ) }
+        Observable
+            .combineLatest(InstallationManager.shared.notificationsEnabled,
+                           viewModel.selectedNeighbourhoodObservable)
+            .filter({ (_, currentNeighbourhood) -> Bool in
+                currentNeighbourhood == InstallationManager.shared.selectedNeighbourhood.value
+            })
+            .map({ (isNotificationsEnabled, _) in
+                UIImage(systemName: isNotificationsEnabled ? "bell.slash" : "bell" )
+            })
             .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] (image) in
                 self?.navigationItem.rightBarButtonItem?.image = image
