@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import RxSwift
+import Firebase
 
 protocol MapControllerCoordinatorDelegate: class {
     func didRequestFilterSelection(from controller: MapController, with currentFilters: [CollectionPoint.PointType])
@@ -254,6 +255,8 @@ extension MapController: MKMapViewDelegate {
 extension MapController: CollectionPointCollectionViewCellDelegate {
     
     func didRequestMoreDetails(from collectionPoint: CollectionPoint) {
+        Analytics.logTrackedEvent(.collectionPointDetails, parameters: ["name": collectionPoint.name ?? "no-name",
+                                                                        "type": collectionPoint.safeType?.shortName ?? "no-type"])
         coordinatorDelegate?.didRequestDetails(for: collectionPoint, from: self)
     }
     

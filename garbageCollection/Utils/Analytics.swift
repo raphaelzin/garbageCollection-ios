@@ -11,6 +11,7 @@ import Firebase
 
 enum TrackedEvent: String {
     case neighbourhoodSelection
+    case collectionPointDetails
     
 }
 //Analytics.logEvent(TrackedEvent.neighbourhoodSelection.raw, parameters: ["selected": neighbourhood.name ?? ""])
