@@ -134,9 +134,9 @@ private extension CalendarController {
         Observable
             .combineLatest(InstallationManager.shared.notificationsEnabled,
                            viewModel.selectedNeighbourhoodObservable)
-            .map({ _, _ in
+            .map { _, _ in
                 UIImage(systemName: self.viewModel.areNotificationsActive ? "bell.slash" : "bell" )
-            })
+            }
             .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] (image) in
                 self?.navigationItem.rightBarButtonItem?.image = image

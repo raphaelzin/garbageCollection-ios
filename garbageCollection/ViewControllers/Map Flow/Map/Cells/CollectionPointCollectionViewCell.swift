@@ -66,7 +66,7 @@ class CollectionPointCollectionViewCell: UICollectionViewCell {
     
     private lazy var containerView: UIView = {
         let v = UIView()
-        v.backgroundColor = .systemBackground
+        v.backgroundColor = .secondarySystemGroupedBackground
         v.layer.cornerRadius = 10
         return v
     }()

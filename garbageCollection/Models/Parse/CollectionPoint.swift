@@ -141,7 +141,7 @@ extension CollectionPoint {
             switch self {
             case .association: return .skyBlue
             case .ecopoint: return .coolGreen
-            case .pcee: return .coolGreen
+            case .pcee: return .eletronicCyan
             case .pev: return .orangeyRed
             case .ogr: return .marigold
             }

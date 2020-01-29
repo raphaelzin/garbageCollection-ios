@@ -81,7 +81,7 @@ extension CalendarViewModel {
     }
     
     func bellTapped() {
-        if InstallationManager.shared.notificationsEnabled.value {
+        if areNotificationsActive {
             InstallationManager.shared.notificationsEnabled.accept(false)
         } else if let collectionSchedule = fullCollectionSchedule.value {
             notificationsManager.setupNotifications(for: collectionSchedule)
