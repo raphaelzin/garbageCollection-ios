@@ -41,7 +41,7 @@ struct GCError {
 
 // Error descriptions
 
-extension GCError.UserInteraction {
+extension GCError.UserInteraction: LocalizedError {
     
     var errorDescription: String? {
         switch self {
@@ -63,7 +63,7 @@ extension GCError.Server: LocalizedError {
     }
 }
 
-extension GCError.ServerData {
+extension GCError.ServerData: LocalizedError {
     
     var errorDescription: String? {
         switch self {
