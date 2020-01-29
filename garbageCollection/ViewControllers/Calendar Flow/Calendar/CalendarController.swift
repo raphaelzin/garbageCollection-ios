@@ -134,11 +134,8 @@ private extension CalendarController {
         Observable
             .combineLatest(InstallationManager.shared.notificationsEnabled,
                            viewModel.selectedNeighbourhoodObservable)
-            .filter({ (_, currentNeighbourhood) -> Bool in
-                currentNeighbourhood == InstallationManager.shared.selectedNeighbourhood.value
-            })
-            .map({ (isNotificationsEnabled, _) in
-                UIImage(systemName: isNotificationsEnabled ? "bell.slash" : "bell" )
+            .map({ _, _ in
+                UIImage(systemName: self.viewModel.areNotificationsActive ? "bell.slash" : "bell" )
             })
             .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] (image) in

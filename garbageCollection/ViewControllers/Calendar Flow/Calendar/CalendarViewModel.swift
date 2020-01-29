@@ -108,14 +108,9 @@ private extension CalendarViewModel {
     func bindCollectionScheduleToNeighbourhood() {
         selectedNeighbourhoodObservable
             .compactMap { $0 }
-            .do(onNext: { [weak self] neighbourhood in
+            .do(onNext: { [weak self] _ in
                 self?.fullCollectionSchedule.accept(nil)
                 self?.stateRelay.accept(.loading)
-                
-                if let installation = Installation.current() {
-                    let notificationsEnabled = (installation.neighbourhood == .some(neighbourhood)) && installation.notificationsEnabled
-                    InstallationManager.shared.notificationsEnabled.accept(notificationsEnabled)
-                }
             })
             .flatMap { [unowned self] (neighbourhood) -> Single<CollectionSchedule> in
                 self.collectionPointsManager.collectionSchedule(for: neighbourhood)
