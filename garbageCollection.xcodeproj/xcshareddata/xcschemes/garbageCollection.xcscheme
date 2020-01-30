@@ -48,6 +48,16 @@
                ReferencedContainer = "container:garbageCollection.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1C63A8DE23E2537F007A3163"
+               BuildableName = "ColetaUISnapshot.xctest"
+               BlueprintName = "ColetaUISnapshot"
+               ReferencedContainer = "container:garbageCollection.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

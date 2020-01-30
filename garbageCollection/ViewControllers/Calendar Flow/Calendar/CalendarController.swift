@@ -96,9 +96,12 @@ private extension CalendarController {
         .bind(to: tableView.rx.items(dataSource: dataSource))
         .disposed(by: disposeBag)
         
-        tableView.rx.itemSelected.bind { [weak tableView] (indexPath) in
-            tableView?.deselectRow(at: indexPath, animated: true)
-        }.disposed(by: disposeBag)
+        Observable
+            .zip(tableView.rx.itemSelected, tableView.rx.modelSelected(WeekDayCollectionSchedule.self))
+            .subscribe(onNext: { [weak self] (indexPath, collectionSchedule) in
+                self?.tableView.deselectRow(at: indexPath, animated: true)
+                self?.alert(for: collectionSchedule)
+            }).disposed(by: disposeBag)
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
     }
@@ -182,6 +185,16 @@ private extension CalendarController {
         let view = TableViewPlaceholderView(configuration: .init(image: #imageLiteral(resourceName: "neighbourhoods"), text: text))
         view.frame = tableView.bounds
         tableView.backgroundView = view
+    }
+    
+    func alert(for collectionSchedule: WeekDayCollectionSchedule) {
+        let date = collectionSchedule.nextCollectionDate()
+        let time = collectionSchedule.schedule.description.lowercased()
+        let message = "A próxima coleta \(date.weekDay.fullname) será \(time), no dia \(date.formatted(as: .day)) de \(date.formatted(as: .month))"
+        
+        simpleAlert(withTitle: "Próxima coleta \(date.weekDay.fullname)",
+                    message: message,
+                    btnTitle: "Entendi")
     }
     
     func promptWillRemoveDefaultNeighbourhood() {

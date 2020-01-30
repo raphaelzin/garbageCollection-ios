@@ -39,12 +39,22 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1C26CE692359430C008BB2D2"
                BuildableName = "garbageCollectionUITests.xctest"
                BlueprintName = "garbageCollectionUITests"
+               ReferencedContainer = "container:garbageCollection.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1C63A8DE23E2537F007A3163"
+               BuildableName = "ColetaUISnapshot.xctest"
+               BlueprintName = "ColetaUISnapshot"
                ReferencedContainer = "container:garbageCollection.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -54,8 +64,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = "pt-BR"
-      region = "BR"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -75,7 +83,7 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "-FIRDebugEnabled"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>

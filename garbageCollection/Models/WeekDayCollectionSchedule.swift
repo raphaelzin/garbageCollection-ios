@@ -17,6 +17,23 @@ struct WeekDayCollectionSchedule {
     let neighbourhoodId: String
 }
 
+extension WeekDayCollectionSchedule {
+    
+    func nextCollectionDate() -> Date {
+        let time: Date.Time
+        
+        switch schedule {
+        case .specificTime(let begin):
+            time = begin
+        case .timeWindow(_, let end):
+            time = end
+        }
+        
+        return Date().next(weekday, at: time, direction: .forward, considerToday: true)
+    }
+    
+}
+
 extension WeekDayCollectionSchedule: IdentifiableType {
     
     var identity: Int { "\(weekday.fullname) \(neighbourhoodId)".hash }
