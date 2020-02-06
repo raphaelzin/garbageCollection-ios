@@ -70,4 +70,9 @@ extension UIColor {
         return UIColor(red: 53 / 255.0, green: 63 / 255.0, blue: 65 / 255.0, alpha: 1.0)
     }
     
+    /// HEX: #00C0E1
+    @nonobjc class var eletronicCyan: UIColor {
+        return UIColor(red: 0 / 255.0, green: 192 / 255.0, blue: 255 / 255.0, alpha: 1.0)
+    }
+    
 }

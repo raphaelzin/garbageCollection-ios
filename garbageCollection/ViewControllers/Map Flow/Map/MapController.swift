@@ -68,6 +68,7 @@ class MapController: GCViewModelController<MapViewModelType> {
         cv.clipsToBounds = false
         cv.backgroundColor = .clear
         cv.showsHorizontalScrollIndicator = false
+        cv.decelerationRate = .fast
         cv.contentInset = UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
         cv.rx.setDelegate(self).disposed(by: disposeBag)
         return cv

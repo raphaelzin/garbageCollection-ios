@@ -149,6 +149,7 @@ private extension NeighbourhoodSelectionController {
     
     func configureView() {
         view.backgroundColor = .systemBackground
+        extendedLayoutIncludesOpaqueBars = true
     }
     
     func configureLayout() {

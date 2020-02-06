@@ -36,6 +36,7 @@ class ScheduledCollectionCell: UITableViewCell {
     private lazy var containerView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
+        view.layer.borderColor = UIColor.white.cgColor
         return view
     }()
     
@@ -57,6 +58,21 @@ class ScheduledCollectionCell: UITableViewCell {
         super.layoutSubviews()
         dropShadow()
     }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        let fromWidth: CGFloat = !highlighted ? 2 : 0
+        let toWidth: CGFloat =  highlighted ? 2 : 0
+        let animation: CABasicAnimation = CABasicAnimation(keyPath: "borderWidth")
+        
+        animation.fromValue = fromWidth
+        animation.toValue = toWidth
+        animation.duration = 0.25
+        containerView.layer.add(animation, forKey: "Width")
+        containerView.layer.borderWidth = toWidth
+
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) { }
     
 }
 

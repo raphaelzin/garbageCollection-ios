@@ -28,6 +28,11 @@ target 'garbageCollection' do
   end
 
   target 'garbageCollectionUITests' do
+    inherit! :search_paths
+  end
+  
+  target 'ColetaUISnapshot' do
+    inherit! :search_paths
   end
 
 end

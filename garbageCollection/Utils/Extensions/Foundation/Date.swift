@@ -12,10 +12,14 @@ extension Date {
     
     enum Format: String {
         case hourAndDate = "HH:mm - EEEE, d MMM"
+        case hours = "HH:mm"
+        case day = "d"
+        case month = "MMMM"
     }
     
     func formatted(as format: Format) -> String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.init(identifier: "pt_BR")
         dateFormatter.dateFormat = format.rawValue
         return dateFormatter.string(from: self)
     }
@@ -32,6 +36,10 @@ extension Date {
                                  matching: components,
                                  matchingPolicy: .nextTime,
                                  direction: direction)!
+    }
+    
+    var weekDay: WeekDay {
+        WeekDay.from(self)
     }
     
     enum WeekDay: String, CaseIterable {
@@ -58,6 +66,11 @@ extension Date {
         var index: Int {
             WeekDay.allCases.firstIndex(of: self)! + 1
         }
+        
+        static func from(_ date: Date) -> WeekDay {
+            WeekDay.allCases[Calendar.current.component(.weekday, from: date) - 1]
+        }
+
     }
     
     struct Time: CustomStringConvertible {

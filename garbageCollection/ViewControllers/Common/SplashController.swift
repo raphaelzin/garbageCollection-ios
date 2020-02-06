@@ -28,9 +28,7 @@ class SplashController: UIViewController {
     private let messages = ["Carregando...",
                             "Levando o lixo pra fora",
                             "Pondo o lixo no canto",
-                            "Esperando o caminhão passar",
-                            "hmm, tá demorando pra carregar, né?",
-                            "Relaxa, já que termina ;)"]
+                            "Esperando o caminhão passar"]
     
     // MARK: Subviews
     
@@ -86,7 +84,7 @@ class SplashController: UIViewController {
 private extension SplashController {
     
     func setupTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1.5,
+        timer = Timer.scheduledTimer(timeInterval: 2.5,
                                      target: self,
                                      selector: #selector(updateMessage),
                                      userInfo: nil,
