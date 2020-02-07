@@ -151,6 +151,7 @@ private extension RubbishReportController {
                 banner.show()
                 self.coordinatorDelegate?.didRequestDismiss(from: self)
             }, onError: { error in
+                SVProgressHUD.dismiss()
                 self.alert(error: error)
             })
             .disposed(by: disposeBag)
