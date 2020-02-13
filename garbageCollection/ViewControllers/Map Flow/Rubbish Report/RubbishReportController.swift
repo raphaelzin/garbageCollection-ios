@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import SVProgressHUD
+import NotificationBannerSwift
 
 protocol RubbishReportControllerDelegate: class {
     func didRequestDismiss(from controller: RubbishReportController)
@@ -146,8 +147,11 @@ private extension RubbishReportController {
             .reportRubbish()
             .subscribe(onCompleted: {
                 SVProgressHUD.dismiss()
+                let banner = NotificationBanner(title: "Obrigado!", subtitle: "Denûncia enviada com sucesso!", style: .success)
+                banner.show()
                 self.coordinatorDelegate?.didRequestDismiss(from: self)
             }, onError: { error in
+                SVProgressHUD.dismiss()
                 self.alert(error: error)
             })
             .disposed(by: disposeBag)

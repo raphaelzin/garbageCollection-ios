@@ -11,7 +11,7 @@ import RxSwift
 
 class RubbishReportManager {
     
-    func reportRubbish(location: Location, date: Date, details: String?, picture: UIImage) -> Completable {
+    func reportRubbish(location: Location, date: Date, details: String?, picture: UIImage?) -> Completable {
         let report = RubbishReport(location: location)
         report.seenTimestamp = date
         report.comment = details

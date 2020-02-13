@@ -39,7 +39,7 @@ class RubbishReportViewModel: RubbishReportViewModelType {
     let locationRelay: BehaviorRelay<Location?> = .init(value: nil)
     
     var isValidInput: Bool {
-        ([locationRelay.value, whenRelay.value, pictureRelay.value] as [Any?]).allSatisfy { $0 != nil }
+        ([locationRelay.value, whenRelay.value] as [Any?]).allSatisfy { $0 != nil }
     }
     
 }
@@ -49,14 +49,14 @@ class RubbishReportViewModel: RubbishReportViewModelType {
 extension RubbishReportViewModel {
     
     func reportRubbish() -> Completable {
-        guard let location = locationRelay.value, let picture = pictureRelay.value else {
+        guard let location = locationRelay.value else {
             return .error(GCError.UserInteraction.invalidReportInput)
         }
         
         return reportManager.reportRubbish(location: location,
                                            date: whenRelay.value,
                                            details: detailsRelay.value,
-                                           picture: picture)
+                                           picture: pictureRelay.value)
     }
     
 }
