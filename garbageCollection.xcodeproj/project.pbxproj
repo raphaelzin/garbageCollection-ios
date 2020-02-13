@@ -117,8 +117,8 @@
 		1CF15BAF235CC3C700664DE7 /* RubbishReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BAE235CC3C700664DE7 /* RubbishReport.swift */; };
 		1CF15BB1235CCBE600664DE7 /* garbageCollectionModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BB0235CCBE600664DE7 /* garbageCollectionModelTests.swift */; };
 		1CF6696023D7BA0600E75E11 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6695F23D7BA0600E75E11 /* Analytics.swift */; };
-		8235E360AFAAED9D84D1CE76 /* Pods_ColetaUISnapshot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0C30C21AEACC2B6C09B7A5 /* Pods_ColetaUISnapshot.framework */; };
-		8AFFBF2CB4D1F8BD13F2E1FC /* Pods_garbageCollectionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD466C6F2E6FB00E69B11B4A /* Pods_garbageCollectionUITests.framework */; };
+		7DAF1C169F1305F9D4BF1B79 /* Pods_garbageCollection_ColetaUISnapshot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2760D0CD47DD82F509E215CD /* Pods_garbageCollection_ColetaUISnapshot.framework */; };
+		9533A245B9ECE8804124379A /* Pods_garbageCollection_garbageCollectionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA3258B252901A6E402EA50 /* Pods_garbageCollection_garbageCollectionUITests.framework */; };
 		C918E1A1A59E4327B8BCEB4E /* Pods_garbageCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFA5F8E5E243D7CBAD8F7B0 /* Pods_garbageCollection.framework */; };
 		D22195457D2027CAED7D8F91 /* Pods_garbageCollectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64A8C3CD553F6BCB2994C0B /* Pods_garbageCollectionTests.framework */; };
 /* End PBXBuildFile section */
@@ -278,8 +278,10 @@
 		1E0984809E2C657C02FC8BBE /* Pods-garbageCollection-garbageCollectionUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollection-garbageCollectionUITests.adhoc.xcconfig"; path = "Target Support Files/Pods-garbageCollection-garbageCollectionUITests/Pods-garbageCollection-garbageCollectionUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		1EB58D99792DB4C2B0D0E8B6 /* Pods-garbageCollectionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollectionUITests.release.xcconfig"; path = "Target Support Files/Pods-garbageCollectionUITests/Pods-garbageCollectionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		230CA8F4FBB518C122C2F346 /* Pods-garbageCollectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollectionTests.release.xcconfig"; path = "Target Support Files/Pods-garbageCollectionTests/Pods-garbageCollectionTests.release.xcconfig"; sourceTree = "<group>"; };
-		3D0C30C21AEACC2B6C09B7A5 /* Pods_ColetaUISnapshot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColetaUISnapshot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2760D0CD47DD82F509E215CD /* Pods_garbageCollection_ColetaUISnapshot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_garbageCollection_ColetaUISnapshot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BFA559E244592F8C13323A3 /* Pods-garbageCollection-ColetaUISnapshot.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollection-ColetaUISnapshot.adhoc.xcconfig"; path = "Target Support Files/Pods-garbageCollection-ColetaUISnapshot/Pods-garbageCollection-ColetaUISnapshot.adhoc.xcconfig"; sourceTree = "<group>"; };
 		467A56BC4D87311F2BD279E3 /* Pods-garbageCollectionUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollectionUITests.adhoc.xcconfig"; path = "Target Support Files/Pods-garbageCollectionUITests/Pods-garbageCollectionUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		4CA3258B252901A6E402EA50 /* Pods_garbageCollection_garbageCollectionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_garbageCollection_garbageCollectionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F280D755E54FFEE13528005 /* Pods-garbageCollectionTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollectionTests.adhoc.xcconfig"; path = "Target Support Files/Pods-garbageCollectionTests/Pods-garbageCollectionTests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		5E136BBFF91D51B0B72DD3DA /* Pods-garbageCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollection.release.xcconfig"; path = "Target Support Files/Pods-garbageCollection/Pods-garbageCollection.release.xcconfig"; sourceTree = "<group>"; };
 		61067F0EA845F0E418B85807 /* Pods-ColetaUISnapshot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColetaUISnapshot.release.xcconfig"; path = "Target Support Files/Pods-ColetaUISnapshot/Pods-ColetaUISnapshot.release.xcconfig"; sourceTree = "<group>"; };
@@ -287,7 +289,8 @@
 		A1977D5114702DCE7CA8EF30 /* Pods-garbageCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollection.debug.xcconfig"; path = "Target Support Files/Pods-garbageCollection/Pods-garbageCollection.debug.xcconfig"; sourceTree = "<group>"; };
 		A64A8C3CD553F6BCB2994C0B /* Pods_garbageCollectionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_garbageCollectionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B232AFD7DF45A98E0E1F5428 /* Pods-garbageCollection-garbageCollectionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollection-garbageCollectionUITests.debug.xcconfig"; path = "Target Support Files/Pods-garbageCollection-garbageCollectionUITests/Pods-garbageCollection-garbageCollectionUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		CD466C6F2E6FB00E69B11B4A /* Pods_garbageCollectionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_garbageCollectionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F701D20A38091F1976836313 /* Pods-garbageCollection-ColetaUISnapshot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollection-ColetaUISnapshot.release.xcconfig"; path = "Target Support Files/Pods-garbageCollection-ColetaUISnapshot/Pods-garbageCollection-ColetaUISnapshot.release.xcconfig"; sourceTree = "<group>"; };
+		FBF735B397D9799686333B8D /* Pods-garbageCollection-ColetaUISnapshot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollection-ColetaUISnapshot.debug.xcconfig"; path = "Target Support Files/Pods-garbageCollection-ColetaUISnapshot/Pods-garbageCollection-ColetaUISnapshot.debug.xcconfig"; sourceTree = "<group>"; };
 		FCA2F10B3AE146452F02732F /* Pods-garbageCollectionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garbageCollectionTests.debug.xcconfig"; path = "Target Support Files/Pods-garbageCollectionTests/Pods-garbageCollectionTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -312,7 +315,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AFFBF2CB4D1F8BD13F2E1FC /* Pods_garbageCollectionUITests.framework in Frameworks */,
+				9533A245B9ECE8804124379A /* Pods_garbageCollection_garbageCollectionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +323,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8235E360AFAAED9D84D1CE76 /* Pods_ColetaUISnapshot.framework in Frameworks */,
+				7DAF1C169F1305F9D4BF1B79 /* Pods_garbageCollection_ColetaUISnapshot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,10 +333,10 @@
 		015F591B4B52296A78FA29BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3D0C30C21AEACC2B6C09B7A5 /* Pods_ColetaUISnapshot.framework */,
 				0FFA5F8E5E243D7CBAD8F7B0 /* Pods_garbageCollection.framework */,
 				A64A8C3CD553F6BCB2994C0B /* Pods_garbageCollectionTests.framework */,
-				CD466C6F2E6FB00E69B11B4A /* Pods_garbageCollectionUITests.framework */,
+				2760D0CD47DD82F509E215CD /* Pods_garbageCollection_ColetaUISnapshot.framework */,
+				4CA3258B252901A6E402EA50 /* Pods_garbageCollection_garbageCollectionUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -854,6 +857,9 @@
 				0A76C2C2F204257E22F8A2CE /* Pods-ColetaUISnapshot.debug.xcconfig */,
 				622DED1DDBFBE33FE776C0FD /* Pods-ColetaUISnapshot.adhoc.xcconfig */,
 				61067F0EA845F0E418B85807 /* Pods-ColetaUISnapshot.release.xcconfig */,
+				FBF735B397D9799686333B8D /* Pods-garbageCollection-ColetaUISnapshot.debug.xcconfig */,
+				2BFA559E244592F8C13323A3 /* Pods-garbageCollection-ColetaUISnapshot.adhoc.xcconfig */,
+				F701D20A38091F1976836313 /* Pods-garbageCollection-ColetaUISnapshot.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -909,6 +915,7 @@
 				1C26CE662359430C008BB2D2 /* Sources */,
 				1C26CE672359430C008BB2D2 /* Frameworks */,
 				1C26CE682359430C008BB2D2 /* Resources */,
+				0381E0FBE32FFB8B2571A4A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -928,6 +935,7 @@
 				1C63A8DB23E2537F007A3163 /* Sources */,
 				1C63A8DC23E2537F007A3163 /* Frameworks */,
 				1C63A8DD23E2537F007A3163 /* Resources */,
+				F658DA855863571AA1B391FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1022,6 +1030,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0381E0FBE32FFB8B2571A4A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-garbageCollection-garbageCollectionUITests/Pods-garbageCollection-garbageCollectionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-garbageCollection-garbageCollectionUITests/Pods-garbageCollection-garbageCollectionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-garbageCollection-garbageCollectionUITests/Pods-garbageCollection-garbageCollectionUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0B076FE1508E1A03BDC4F744 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1110,7 +1135,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ColetaUISnapshot-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-garbageCollection-ColetaUISnapshot-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1154,11 +1179,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-garbageCollectionUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-garbageCollection-garbageCollectionUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F658DA855863571AA1B391FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-garbageCollection-ColetaUISnapshot/Pods-garbageCollection-ColetaUISnapshot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-garbageCollection-ColetaUISnapshot/Pods-garbageCollection-ColetaUISnapshot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-garbageCollection-ColetaUISnapshot/Pods-garbageCollection-ColetaUISnapshot-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1543,9 +1585,9 @@
 		};
 		1C26CE7A2359430C008BB2D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12B156D7FE088C4A9A4CC97F /* Pods-garbageCollectionUITests.debug.xcconfig */;
+			baseConfigurationReference = B232AFD7DF45A98E0E1F5428 /* Pods-garbageCollection-garbageCollectionUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PV4FQV4SXL;
 				INFOPLIST_FILE = garbageCollectionUITests/Info.plist;
@@ -1564,9 +1606,9 @@
 		};
 		1C26CE7B2359430C008BB2D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EB58D99792DB4C2B0D0E8B6 /* Pods-garbageCollectionUITests.release.xcconfig */;
+			baseConfigurationReference = 100451D4EEFF1FAC0E8A6DBD /* Pods-garbageCollection-garbageCollectionUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PV4FQV4SXL;
 				INFOPLIST_FILE = garbageCollectionUITests/Info.plist;
@@ -1585,7 +1627,7 @@
 		};
 		1C63A8E623E2537F007A3163 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A76C2C2F204257E22F8A2CE /* Pods-ColetaUISnapshot.debug.xcconfig */;
+			baseConfigurationReference = FBF735B397D9799686333B8D /* Pods-garbageCollection-ColetaUISnapshot.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1607,7 +1649,7 @@
 		};
 		1C63A8E723E2537F007A3163 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 622DED1DDBFBE33FE776C0FD /* Pods-ColetaUISnapshot.adhoc.xcconfig */;
+			baseConfigurationReference = 2BFA559E244592F8C13323A3 /* Pods-garbageCollection-ColetaUISnapshot.adhoc.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PV4FQV4SXL;
@@ -1628,7 +1670,7 @@
 		};
 		1C63A8E823E2537F007A3163 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61067F0EA845F0E418B85807 /* Pods-ColetaUISnapshot.release.xcconfig */;
+			baseConfigurationReference = F701D20A38091F1976836313 /* Pods-garbageCollection-ColetaUISnapshot.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PV4FQV4SXL;
@@ -1757,9 +1799,9 @@
 		};
 		1CF6695E23D7B36C00E75E11 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 467A56BC4D87311F2BD279E3 /* Pods-garbageCollectionUITests.adhoc.xcconfig */;
+			baseConfigurationReference = 1E0984809E2C657C02FC8BBE /* Pods-garbageCollection-garbageCollectionUITests.adhoc.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PV4FQV4SXL;
 				INFOPLIST_FILE = garbageCollectionUITests/Info.plist;
