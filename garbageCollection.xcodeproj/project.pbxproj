@@ -26,7 +26,6 @@
 		1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */; };
 		1C26CE562359430C008BB2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C26CE552359430C008BB2D2 /* Assets.xcassets */; };
 		1C26CE592359430C008BB2D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C26CE572359430C008BB2D2 /* LaunchScreen.storyboard */; };
-		1C26CE642359430C008BB2D2 /* garbageCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE632359430C008BB2D2 /* garbageCollectionTests.swift */; };
 		1C26CE6F2359430C008BB2D2 /* garbageCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE6E2359430C008BB2D2 /* garbageCollectionUITests.swift */; };
 		1C309ED9238CA73200B2F063 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C309ED8238CA73200B2F063 /* BasicTableViewCell.swift */; };
 		1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CBE8235B55D400653E19 /* AppCoordinator.swift */; };
@@ -176,7 +175,6 @@
 		1C26CE582359430C008BB2D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C26CE5A2359430C008BB2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C26CE5F2359430C008BB2D2 /* garbageCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = garbageCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C26CE632359430C008BB2D2 /* garbageCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = garbageCollectionTests.swift; sourceTree = "<group>"; };
 		1C26CE652359430C008BB2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C26CE6A2359430C008BB2D2 /* garbageCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = garbageCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C26CE6E2359430C008BB2D2 /* garbageCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = garbageCollectionUITests.swift; sourceTree = "<group>"; };
@@ -473,7 +471,6 @@
 		1C26CE622359430C008BB2D2 /* garbageCollectionTests */ = {
 			isa = PBXGroup;
 			children = (
-				1C26CE632359430C008BB2D2 /* garbageCollectionTests.swift */,
 				1CF15BB0235CCBE600664DE7 /* garbageCollectionModelTests.swift */,
 				1CC05478237E00C200268662 /* parseConnectionTest.swift */,
 				1C26CE652359430C008BB2D2 /* Info.plist */,
@@ -1318,7 +1315,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C26CE642359430C008BB2D2 /* garbageCollectionTests.swift in Sources */,
 				1CF15BB1235CCBE600664DE7 /* garbageCollectionModelTests.swift in Sources */,
 				1CC05479237E00C200268662 /* parseConnectionTest.swift in Sources */,
 			);
