@@ -80,7 +80,7 @@ private extension SettingsController {
     func shareApp() {
         let items: [Any]
         
-        if let shareAppMessage: String = PFConfig.current().getConfigValue(with: .shareURL) {
+        if let shareAppMessage: String = PFConfig.current().getConfigValue(with: .shareAppMessage) {
             items = [shareAppMessage]
         } else {
             let shareURL: String = PFConfig.current().getConfigValue(with: .shareURL) ?? ""
