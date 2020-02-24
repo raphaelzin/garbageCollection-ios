@@ -45,7 +45,7 @@ class FeedbackController: GCViewModelController<FeedbackViewModelType> {
         let tf = GCPaddingTextField()
         tf.layer.cornerRadius = 10
         tf.returnKeyType = .next
-        tf.backgroundColor = .secondarySystemGroupedBackground
+        tf.backgroundColor = .safeSecondarySystemGroupedBackground
         tf.placeholder = "Raphael Souza"
         tf.delegate = self
         tf.rx.text
@@ -59,7 +59,7 @@ class FeedbackController: GCViewModelController<FeedbackViewModelType> {
         let tf = GCPaddingTextField()
         tf.layer.cornerRadius = 10
         tf.returnKeyType = .next
-        tf.backgroundColor = .secondarySystemGroupedBackground
+        tf.backgroundColor = .safeSecondarySystemGroupedBackground
         tf.placeholder = "seu@email.com"
         tf.delegate = self
         
@@ -73,12 +73,12 @@ class FeedbackController: GCViewModelController<FeedbackViewModelType> {
     lazy var textView: UITextView = {
         let tv = UITextView()
         tv.layer.cornerRadius = 10
-        tv.backgroundColor = .secondarySystemGroupedBackground
+        tv.backgroundColor = .safeSecondarySystemGroupedBackground
         tv.font = .systemFont(ofSize: 16, weight: .regular)
         tv.textContainerInset = .init(top: 12, left: 12, bottom: 12, right: 12)
         tv.delegate = self
         tv.text = placeholder
-        tv.textColor = .placeholderText
+        tv.textColor = .safePlaceholderText
         tv.rx.text
             .filter { $0 != self.placeholder }
             .asDriver(onErrorJustReturn: nil)
@@ -119,7 +119,7 @@ private extension FeedbackController {
     func configureView() {
         addKeyboardListeners()
         navigationItem.title = "Contato"
-        view.backgroundColor = .systemGroupedBackground
+        view.backgroundColor = .safeSystemGroupedBackground
         
         let sendBtn = UIBarButtonItem(title: "Enviar", style: .done, target: self, action: #selector(onSendTap))
         navigationItem.rightBarButtonItem = sendBtn
@@ -244,14 +244,14 @@ extension FeedbackController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = placeholder
-            textView.textColor = .placeholderText
+            textView.textColor = .safePlaceholderText
         }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == placeholder && textView.textColor == .placeholderText {
+        if textView.text == placeholder && textView.textColor == .safePlaceholderText {
             textView.text = ""
-            textView.textColor = .label
+            textView.textColor = .safeLabel
         }
     }
     

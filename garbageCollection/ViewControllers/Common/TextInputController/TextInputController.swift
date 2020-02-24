@@ -31,7 +31,7 @@ class TextInputController: UIViewController {
     private lazy var textView: UITextView = {
         let tv = UITextView()
         tv.layer.cornerRadius = 10
-        tv.backgroundColor = .secondarySystemGroupedBackground
+        tv.backgroundColor = .safeSecondarySystemGroupedBackground
         tv.font = .systemFont(ofSize: 16, weight: .regular)
         tv.textContainerInset = .init(top: 12, left: 12, bottom: 12, right: 12)
         tv.delegate = self
@@ -73,7 +73,7 @@ class TextInputController: UIViewController {
 private extension TextInputController {
     
     func configureView() {
-        view.backgroundColor = .systemGroupedBackground
+        view.backgroundColor = .safeSystemGroupedBackground
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onViewTap)))
     }
     
@@ -138,7 +138,7 @@ extension TextInputController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == placeholder && textView.textColor == .lightGray {
             textView.text = ""
-            textView.textColor = .label
+            textView.textColor = .safeLabel
         }
     }
     

@@ -33,7 +33,7 @@ class CollectionPointDetailsController: GCViewModelController<CollectionPointDet
     
     private lazy var detailsStackContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = .secondarySystemGroupedBackground
+        view.backgroundColor = .safeSecondarySystemGroupedBackground
         view.layer.cornerRadius = 12
         return view
     }()
@@ -111,7 +111,7 @@ private extension CollectionPointDetailsController {
         addDefaultShadow(to: headerView)
         addDefaultShadow(to: detailsStackContainer)
         
-        view.backgroundColor = .systemGroupedBackground
+        view.backgroundColor = .safeSystemGroupedBackground
         navigationItem.title = viewModel.collectionPoint.safeType?.shortName
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Fechar",
                                                            style: .plain,

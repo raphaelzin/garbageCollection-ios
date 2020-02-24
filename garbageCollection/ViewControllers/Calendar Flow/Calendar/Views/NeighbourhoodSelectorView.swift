@@ -38,7 +38,7 @@ class NeighbourhoodSelectorView: UIView {
     
     private lazy var chevronImageView: UIImageView = {
         let iv = UIImageView()
-        iv.tintColor = .label
+        iv.tintColor = .safeLabel
         if #available(iOS 13.0, *) {
             iv.image = UIImage(systemName: "chevron.right")
         }
@@ -47,7 +47,7 @@ class NeighbourhoodSelectorView: UIView {
     
     private lazy var separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = .separator
+        view.backgroundColor = .safeSeparator
         return view
     }()
     
@@ -102,7 +102,7 @@ private extension NeighbourhoodSelectorView {
 private extension NeighbourhoodSelectorView {
     
     func configureView() {
-        backgroundColor = .systemBackground
+        backgroundColor = .safeSystemBackground
     }
     
     func configureLayout() {

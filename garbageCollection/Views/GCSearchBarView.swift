@@ -38,7 +38,7 @@ private extension GCSearchBarView {
         autocapitalizationType = .sentences
         autocorrectionType = .no
         leftViewMode = .always
-        backgroundColor = .systemBackground
+        backgroundColor = .safeSystemBackground
         returnKeyType = .done
         
         let imv = UIImageView(image: UIImage(systemName: "magnifyingglass"))

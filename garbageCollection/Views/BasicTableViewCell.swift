@@ -41,7 +41,7 @@ extension BasicTableViewCell {
     func bindContent(with driver: Driver<String?>, placeholder: String, disposeBag: DisposeBag) {
         driver
             .do(onNext: { (value) in
-                self.basicLabel.textColor = value == nil ? .lightGray : .label
+                self.basicLabel.textColor = value == nil ? .lightGray : .safeLabel
             })
             .map { $0 ?? placeholder }
             .drive(basicLabel.rx.text)

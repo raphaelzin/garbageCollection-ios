@@ -84,7 +84,7 @@ class CollectionPointDetailsHeaderView: UIView {
 extension CollectionPointDetailsHeaderView {
     
     func configureView() {
-        backgroundColor = .secondarySystemGroupedBackground
+        backgroundColor = .safeSecondarySystemGroupedBackground
         layer.cornerRadius = 12
     }
     

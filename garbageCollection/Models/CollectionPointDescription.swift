@@ -46,7 +46,7 @@ struct CollectionPointDescriptionElement: Decodable {
         var attributes: [NSAttributedString.Key: Any] {
             switch self {
             case .header:
-                return [.foregroundColor: UIColor.label,
+                return [.foregroundColor: UIColor.safeLabel,
                         .font: UIFont.systemFont(ofSize: 16, weight: .semibold)]
             case .paragraph:
                 return [.foregroundColor: UIColor.gray,

@@ -83,7 +83,7 @@ private extension CollectionPointInfoController {
     
     func configureView() {
         navigationItem.title = viewModel.collectionPointType.shortName
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .safeSystemBackground
     }
     
     func configureLayout() {

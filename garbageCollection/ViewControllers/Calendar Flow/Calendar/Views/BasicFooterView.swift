@@ -15,7 +15,7 @@ class BasicFooterView: UIView {
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .systemFont(ofSize: 13, weight: .regular)
-        lbl.textColor = .secondaryLabel
+        lbl.textColor = .safeSecondaryLabel
         lbl.numberOfLines = 0
         return lbl
     }()

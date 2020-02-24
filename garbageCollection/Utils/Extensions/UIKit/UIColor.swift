@@ -75,4 +75,63 @@ extension UIColor {
         return UIColor(red: 0 / 255.0, green: 192 / 255.0, blue: 255 / 255.0, alpha: 1.0)
     }
     
+    // MARK: Safe system colors
+    
+    @nonobjc class var safeSystemBackground: UIColor {
+        if #available(iOS 13.0, *) {
+            return .systemBackground
+        } else {
+            return .white
+        }
+    }
+    
+    @nonobjc class var safeLabel: UIColor {
+        if #available(iOS 13.0, *) {
+            return .label
+        } else {
+            return .black
+        }
+    }
+    
+    @nonobjc class var safeSecondaryLabel: UIColor {
+        if #available(iOS 13.0, *) {
+            return .secondaryLabel
+        } else {
+            return UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 0.6)
+        }
+    }
+
+    
+    @nonobjc class var safeSeparator: UIColor {
+        if #available(iOS 13.0, *) {
+            return .separator
+        } else {
+            return UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 0.29)
+        }
+    }
+
+    @nonobjc class var safeSecondarySystemGroupedBackground: UIColor {
+        if #available(iOS 13.0, *) {
+            return .secondarySystemGroupedBackground
+        } else {
+            return .white
+        }
+    }
+    
+    @nonobjc class var safeSystemGroupedBackground: UIColor {
+        if #available(iOS 13.0, *) {
+            return .systemGroupedBackground
+        } else {
+            return UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
+        }
+    }
+    
+    @nonobjc class var safePlaceholderText: UIColor {
+        if #available(iOS 13.0, *) {
+            return .safePlaceholderText
+        } else {
+            return UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 0.3)
+        }
+    }
+    
 }
