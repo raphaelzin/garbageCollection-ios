@@ -50,6 +50,7 @@
 		1C4979D623A6C7CB00A381A8 /* GCPaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4979D523A6C7CB00A381A8 /* GCPaddingTextField.swift */; };
 		1C4979D823A7017200A381A8 /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4979D723A7017200A381A8 /* FeedbackManager.swift */; };
 		1C57CAF2235CE114004D0E0C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C57CAF1235CE114004D0E0C /* String.swift */; };
+		1C618BF524044742008834FC /* PFConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C618BF424044742008834FC /* PFConfig.swift */; };
 		1C631EA923CA98570083479C /* CollectionPointDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C631EA823CA98570083479C /* CollectionPointDetailsController.swift */; };
 		1C631EAC23CA98CF0083479C /* InformationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C631EAB23CA98CF0083479C /* InformationStackView.swift */; };
 		1C631EAE23CAA63C0083479C /* CollectionPointDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C631EAD23CAA63C0083479C /* CollectionPointDetailsHeaderView.swift */; };
@@ -203,6 +204,7 @@
 		1C4979D523A6C7CB00A381A8 /* GCPaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCPaddingTextField.swift; sourceTree = "<group>"; };
 		1C4979D723A7017200A381A8 /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		1C57CAF1235CE114004D0E0C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		1C618BF424044742008834FC /* PFConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFConfig.swift; sourceTree = "<group>"; };
 		1C631EA823CA98570083479C /* CollectionPointDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointDetailsController.swift; sourceTree = "<group>"; };
 		1C631EAB23CA98CF0083479C /* InformationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStackView.swift; sourceTree = "<group>"; };
 		1C631EAD23CAA63C0083479C /* CollectionPointDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointDetailsHeaderView.swift; sourceTree = "<group>"; };
@@ -615,6 +617,7 @@
 			children = (
 				1C26CE8023594462008BB2D2 /* Extensions */,
 				1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */,
+				1C618BF424044742008834FC /* PFConfig.swift */,
 				1C21B3CC23941F8C003E0090 /* PFFileImageHelper.swift */,
 				1C835E0C235E9B9B00CC21EB /* GenericSection.swift */,
 				1C835E2A235FC73F00CC21EB /* GCError.swift */,
@@ -1210,6 +1213,7 @@
 				1C7B207023AE4EF800240154 /* InstallationManager.swift in Sources */,
 				1C835E2B235FC73F00CC21EB /* GCError.swift in Sources */,
 				1CBC595023BBB51F0034B0C9 /* CollectionPointMoreInfoViewModel.swift in Sources */,
+				1C618BF524044742008834FC /* PFConfig.swift in Sources */,
 				1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */,
 				1C835E26235EA88000CC21EB /* PFCloud+Rx.swift in Sources */,
 				1C835E14235EA61200CC21EB /* CollectionScheduleManager.swift in Sources */,

@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import StoreKit
 import RxBiBinding
+import Parse
 
 protocol SettingsControllerCoordinatorDelegate: class {
     func didRequestSourceCode(from controller: SettingsController)
@@ -77,7 +78,15 @@ private extension SettingsController {
 private extension SettingsController {
     
     func shareApp() {
-        let items = ["Estou usando esse app pra coleta de lixo e pontos de coleta, da uma olhada ;)"]
+        let items: [Any]
+        
+        if let shareAppMessage: String = PFConfig.current().getConfigValue(with: .shareURL) {
+            items = [shareAppMessage]
+        } else {
+            let shareURL: String = PFConfig.current().getConfigValue(with: .shareURL) ?? ""
+            items = ["Estou usando esse app pra coleta de lixo e pontos de coleta, da uma olhada ;)\n\n\(shareURL)"]
+        }
+        
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(ac, animated: true)
     }

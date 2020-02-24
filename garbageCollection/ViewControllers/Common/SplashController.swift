@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Parse
 
 protocol SplashControllerDelegate: class {
     func didFinishLoading()
@@ -108,6 +109,7 @@ private extension SplashController {
 extension SplashController {
     
     func updateData() {
+        _ = try? PFConfig.getConfig()
         guard let installation = Installation.current(), installation.objectId != nil else {
             delegate?.didFinishLoading()
             return
