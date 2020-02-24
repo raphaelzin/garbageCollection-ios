@@ -128,7 +128,7 @@ extension UIColor {
     
     @nonobjc class var safePlaceholderText: UIColor {
         if #available(iOS 13.0, *) {
-            return .safePlaceholderText
+            return .placeholderText
         } else {
             return UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 0.3)
         }
