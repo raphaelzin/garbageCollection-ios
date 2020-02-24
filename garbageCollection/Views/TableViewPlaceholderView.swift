@@ -31,8 +31,8 @@ final class TableViewPlaceholderView: UIView {
     private lazy var imageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
+        iv.image = configuration.image.withRenderingMode(.alwaysTemplate)
         iv.tintColor = .gray
-        iv.image = configuration.image.withTintColor(.gray, renderingMode: .alwaysTemplate)
         return iv
     }()
     

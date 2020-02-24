@@ -36,8 +36,8 @@ class SplashController: UIViewController {
     private lazy var trashCanIcon: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
+        iv.image = UIImage(systemName: "trash")?.withRenderingMode(.alwaysTemplate)
         iv.tintColor = .white
-        iv.image = UIImage(systemName: "trash")?.withRenderingMode(.alwaysTemplate).withTintColor(.white)
         return iv
     }()
     
@@ -50,7 +50,7 @@ class SplashController: UIViewController {
     }()
     
     private lazy var activityIndicator: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView(style: .medium)
+        let ai = UIActivityIndicatorView()
         ai.startAnimating()
         ai.color = .white
         return ai

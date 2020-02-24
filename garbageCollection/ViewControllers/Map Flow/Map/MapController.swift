@@ -40,7 +40,8 @@ class MapController: GCViewModelController<MapViewModelType> {
         btn.contentTextColor = .brownGrey
         btn.delegate = self
         
-        let image = UIImage(systemName: "line.horizontal.3.decrease.circle")?.withTintColor(.defaultBlue, renderingMode: .alwaysOriginal)
+        let image = UIImage(systemName: "line.horizontal.3.decrease.circle")?.withRenderingMode(.alwaysTemplate)
+        btn.tintColor = .defaultBlue
         btn.buttonIcon = image
         
         return btn
@@ -53,7 +54,8 @@ class MapController: GCViewModelController<MapViewModelType> {
         btn.contentBackgroundColor = .orangeyRed
         btn.delegate = self
         
-        let image = UIImage(systemName: "exclamationmark.triangle")?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        let image = UIImage(systemName: "exclamationmark.triangle")?.withRenderingMode(.alwaysTemplate)
+        btn.tintColor = .white
         btn.buttonIcon = image
         
         return btn
