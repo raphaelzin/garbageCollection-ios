@@ -40,7 +40,7 @@ class MapController: GCViewModelController<MapViewModelType> {
         btn.contentTextColor = .brownGrey
         btn.delegate = self
         
-        let image = UIImage(systemName: "line.horizontal.3.decrease.circle")?.withRenderingMode(.alwaysTemplate)
+        let image = UIImage(symbol: "line.horizontal.3.decrease.circle")?.withRenderingMode(.alwaysTemplate)
         btn.tintColor = .defaultBlue
         btn.buttonIcon = image
         
@@ -54,7 +54,7 @@ class MapController: GCViewModelController<MapViewModelType> {
         btn.contentBackgroundColor = .orangeyRed
         btn.delegate = self
         
-        let image = UIImage(systemName: "exclamationmark.triangle")?.withRenderingMode(.alwaysTemplate)
+        let image = UIImage(symbol: "exclamationmark.triangle")?.withRenderingMode(.alwaysTemplate)
         btn.tintColor = .white
         btn.buttonIcon = image
         
@@ -111,10 +111,10 @@ private extension MapController {
         navigationItem.title = "Pontos de coleta"
         
         if #available(iOS 13.0, *) {
-            tabBarItem = UITabBarItem(title: "Mapa", image: UIImage(systemName: "map"), tag: 0)
+            tabBarItem = UITabBarItem(title: "Mapa", image: UIImage(symbol: "map"), tag: 0)
         }
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"),
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(symbol: "info.circle"),
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(onMoreInfoTab))

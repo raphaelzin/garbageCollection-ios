@@ -36,7 +36,7 @@ class SplashController: UIViewController {
     private lazy var trashCanIcon: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(systemName: "trash")?.withRenderingMode(.alwaysTemplate)
+        iv.image = UIImage(symbol: "trash")?.withRenderingMode(.alwaysTemplate)
         iv.tintColor = .white
         return iv
     }()

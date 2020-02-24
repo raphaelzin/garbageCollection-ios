@@ -11,10 +11,12 @@ import UIKit
 extension UIImage {
     
     /// Helper for SF Symbols
-    @available(iOS 13.0, *)
-    func image(for sfSymbol: String, weight: UIImage.SymbolWeight) -> UIImage? {
-        let smallConfiguration = UIImage.SymbolConfiguration(weight: weight)
-        return UIImage(systemName: sfSymbol, withConfiguration: smallConfiguration)
+    convenience init?(symbol: String) {
+        if #available(iOS 13, *) {
+            self.init(systemName: symbol)
+        } else {
+            self.init(named: symbol)
+        }
     }
     
 }

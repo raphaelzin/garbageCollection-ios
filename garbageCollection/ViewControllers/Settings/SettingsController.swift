@@ -60,7 +60,7 @@ private extension SettingsController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         if #available(iOS 13.0, *) {
-            tabBarItem = UITabBarItem(title: "Configurações", image: UIImage(systemName: "gear"), tag: 0)
+            tabBarItem = UITabBarItem(title: "Configurações", image: UIImage(symbol: "gear"), tag: 0)
         }
     }
     

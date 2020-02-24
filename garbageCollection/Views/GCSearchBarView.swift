@@ -41,7 +41,7 @@ private extension GCSearchBarView {
         backgroundColor = .safeSystemBackground
         returnKeyType = .done
         
-        let imv = UIImageView(image: UIImage(systemName: "magnifyingglass"))
+        let imv = UIImageView(image: UIImage(symbol: "magnifyingglass"))
         imv.contentMode = .center
         imv.snp.makeConstraints { (make) in
             make.size.equalTo(CGSize(width: 44, height: 44))

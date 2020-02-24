@@ -61,8 +61,8 @@ extension CollectionSchedule {
             guard #available(iOS 13, *) else { return nil }
             
             switch self {
-            case .morning: return UIImage(systemName: "sun.max")!
-            case .night: return UIImage(systemName: "moon")!
+            case .morning: return UIImage(symbol: "sun.max")!
+            case .night: return UIImage(symbol: "moon")!
             }
         }
         

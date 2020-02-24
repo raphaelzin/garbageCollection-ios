@@ -138,7 +138,7 @@ private extension CalendarController {
             .combineLatest(InstallationManager.shared.notificationsEnabled,
                            viewModel.selectedNeighbourhoodObservable)
             .map { _, _ in
-                UIImage(systemName: self.viewModel.areNotificationsActive ? "bell.slash" : "bell" )
+                UIImage(symbol: self.viewModel.areNotificationsActive ? "bell.slash" : "bell" )
             }
             .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] (image) in
@@ -251,13 +251,13 @@ private extension CalendarController {
     
     func configureView() {
         navigationItem.title = "Calendário de coleta"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell"),
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(symbol: "bell"),
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(onBellTap))
         
         if #available(iOS 13.0, *) {
-            tabBarItem = UITabBarItem(title: "Calendário", image: UIImage(systemName: "calendar"), tag: 0)
+            tabBarItem = UITabBarItem(title: "Calendário", image: UIImage(symbol: "calendar"), tag: 0)
         }
     }
     

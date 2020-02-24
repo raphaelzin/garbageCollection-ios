@@ -146,7 +146,7 @@ private extension PictureSelectionView {
     }
     
     func configureStack() {
-        let cameraPic = UIImageView(image: UIImage(systemName: "photo"))
+        let cameraPic = UIImageView(image: UIImage(symbol: "photo"))
         cameraPic.contentMode = .scaleAspectFit
         cameraPic.snp.makeConstraints { (make) in
             make.size.equalTo(CGSize(width: 72, height: 40))
