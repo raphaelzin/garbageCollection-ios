@@ -38,8 +38,9 @@ class NeighbourhoodSelectorView: UIView {
     
     private lazy var chevronImageView: UIImageView = {
         let iv = UIImageView()
-        iv.tintColor = .safeLabel
         iv.image = UIImage(symbol: "chevron.right")
+        iv.tintColor = .safeLabel
+        iv.contentMode = .scaleAspectFit
         return iv
     }()
     
@@ -113,6 +114,7 @@ private extension NeighbourhoodSelectorView {
         addSubview(chevronImageView)
         chevronImageView.snp.makeConstraints { (make) in
             make.centerY.equalTo(self)
+            make.width.equalTo(8)
             make.trailing.equalTo(self).offset(-14)
         }
         
