@@ -146,7 +146,7 @@ private extension PictureSelectionView {
     }
     
     func configureStack() {
-        let cameraPic = UIImageView(image: UIImage(symbol: "photo")?.withRenderingMode(.alwaysTemplate))
+        let cameraPic = UIImageView(image: UIImage(named: "photo")?.withRenderingMode(.alwaysTemplate))
         cameraPic.tintColor = .defaultBlue
         cameraPic.contentMode = .scaleAspectFit
         cameraPic.snp.makeConstraints { (make) in
