@@ -146,7 +146,8 @@ private extension PictureSelectionView {
     }
     
     func configureStack() {
-        let cameraPic = UIImageView(image: UIImage(symbol: "photo"))
+        let cameraPic = UIImageView(image: UIImage(symbol: "photo")?.withRenderingMode(.alwaysTemplate))
+        cameraPic.tintColor = .defaultBlue
         cameraPic.contentMode = .scaleAspectFit
         cameraPic.snp.makeConstraints { (make) in
             make.size.equalTo(CGSize(width: 72, height: 40))
@@ -157,6 +158,7 @@ private extension PictureSelectionView {
         label.font = .systemFont(ofSize: 14, weight: .semibold)
         label.textColor = .defaultBlue
         
+        infoStack.spacing = 12
         infoStack.addArrangedSubview(cameraPic)
         infoStack.addArrangedSubview(label)
     }
