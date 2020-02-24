@@ -153,7 +153,10 @@ extension SettingsController {
             } else if section == 1 {
                 return [.hints, .reminders]
             } else {
-                return [.sendSuggestions, .shareApp, .review, .sourceCode]
+                if let isOpenSource: Bool = PFConfig.current().getConfigValue(with: .isOpenSource), isOpenSource {
+                    return [.sendSuggestions, .shareApp, .review, .sourceCode]
+                }
+                return [.sendSuggestions, .shareApp, .review]
             }
         }
 

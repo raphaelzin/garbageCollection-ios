@@ -12,7 +12,7 @@ import Parse
 extension PFConfig {
     
     enum ConfigField: String {
-        case shareAppMessage, shareURL
+        case shareAppMessage, shareURL, isOpenSource
     }
     
     func getConfigValue<T>(with param: ConfigField) -> T? {
