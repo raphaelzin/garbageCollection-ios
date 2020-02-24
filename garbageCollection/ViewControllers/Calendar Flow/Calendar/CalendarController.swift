@@ -256,9 +256,7 @@ private extension CalendarController {
                                                             target: self,
                                                             action: #selector(onBellTap))
         
-        if #available(iOS 13.0, *) {
-            tabBarItem = UITabBarItem(title: "Calendário", image: UIImage(symbol: "calendar"), tag: 0)
-        }
+        tabBarItem = UITabBarItem(title: "Calendário", image: UIImage(symbol: "calendar"), tag: 0)
     }
     
     func configureLayout() {

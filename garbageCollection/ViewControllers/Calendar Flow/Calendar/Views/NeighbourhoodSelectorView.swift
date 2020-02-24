@@ -39,9 +39,7 @@ class NeighbourhoodSelectorView: UIView {
     private lazy var chevronImageView: UIImageView = {
         let iv = UIImageView()
         iv.tintColor = .safeLabel
-        if #available(iOS 13.0, *) {
-            iv.image = UIImage(symbol: "chevron.right")
-        }
+        iv.image = UIImage(symbol: "chevron.right")
         return iv
     }()
     

@@ -110,9 +110,7 @@ private extension MapController {
     func configureView() {
         navigationItem.title = "Pontos de coleta"
         
-        if #available(iOS 13.0, *) {
-            tabBarItem = UITabBarItem(title: "Mapa", image: UIImage(symbol: "map"), tag: 0)
-        }
+        tabBarItem = UITabBarItem(title: "Mapa", image: UIImage(symbol: "map"), tag: 0)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(symbol: "info.circle"),
                                                             style: .plain,
