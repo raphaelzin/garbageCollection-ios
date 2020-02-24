@@ -15,7 +15,7 @@ class RubbishReportManager {
         let report = RubbishReport(location: location)
         report.seenTimestamp = date
         report.comment = details
-        report.picture = PFFileImageHelper.pffile(for: picture, compressionQuality: 0.3)
+        report.picture = PFFileImageHelper.pffile(for: picture?.resized(to: .init(width: 1000, height: 1000)), compressionQuality: 0.5)
         
         return report
             .rx
