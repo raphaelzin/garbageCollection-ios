@@ -15,7 +15,8 @@ extension UIImage {
         if #available(iOS 13, *) {
             self.init(systemName: symbol)
         } else {
-            self.init(named: symbol)
+            let extensionSafeSymbolName = symbol.replacingOccurrences(of: ".", with: "-")
+            self.init(named: extensionSafeSymbolName)
         }
     }
     

@@ -121,7 +121,7 @@ private extension CalendarController {
             .map { $0 == .idle }
             .observeOn(MainScheduler.asyncInstance)
             .asDriver(onErrorJustReturn: false)
-            .drive(self.activityIndicator.rx.isHidden)
+            .drive(activityIndicator.rx.isHidden)
             .disposed(by: disposeBag)
     }
     
@@ -137,11 +137,9 @@ private extension CalendarController {
         Observable
             .combineLatest(InstallationManager.shared.notificationsEnabled,
                            viewModel.selectedNeighbourhoodObservable)
-            .map { _, _ in
-                UIImage(symbol: self.viewModel.areNotificationsActive ? "bell.slash" : "bell" )
-            }
-            .observeOn(MainScheduler.asyncInstance)
-            .subscribe(onNext: { [weak self] (image) in
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] (_) in
+                let image = UIImage(symbol: self!.viewModel.areNotificationsActive ? "bell.slash" : "bell")
                 self?.navigationItem.rightBarButtonItem?.image = image
             }).disposed(by: disposeBag)
     }
@@ -251,7 +249,8 @@ private extension CalendarController {
     
     func configureView() {
         navigationItem.title = "Calendário de coleta"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(symbol: "bell"),
+        let image = UIImage(symbol: viewModel.areNotificationsActive ? "bell.slash" : "bell" )
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image,
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(onBellTap))

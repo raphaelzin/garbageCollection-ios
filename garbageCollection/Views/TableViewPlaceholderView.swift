@@ -20,7 +20,7 @@ final class TableViewPlaceholderView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .gray
+        lbl.textColor = .lightGray
         lbl.font = .systemFont(ofSize: 18, weight: .semibold)
         lbl.numberOfLines = 0
         lbl.textAlignment = .center
@@ -32,7 +32,7 @@ final class TableViewPlaceholderView: UIView {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = configuration.image.withRenderingMode(.alwaysTemplate)
-        iv.tintColor = .gray
+        iv.tintColor = .lightGray
         return iv
     }()
     

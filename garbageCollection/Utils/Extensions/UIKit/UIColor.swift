@@ -101,7 +101,6 @@ extension UIColor {
         }
     }
 
-    
     @nonobjc class var safeSeparator: UIColor {
         if #available(iOS 13.0, *) {
             return .separator
