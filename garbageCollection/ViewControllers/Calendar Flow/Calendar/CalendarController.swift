@@ -38,7 +38,13 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
         tv.separatorStyle = .none
         tv.showsVerticalScrollIndicator = false
         tv.keyboardDismissMode = .interactive
-        tv.contentInset = UIEdgeInsets(top: 8 + kHeaderHeight, left: 0, bottom: 0, right: 0)
+        
+        if #available(iOS 13, *) {
+            tv.contentInset = UIEdgeInsets(top: 8 + kHeaderHeight, left: 0, bottom: 0, right: 0)
+        } else {
+            tv.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
+        }
+        
         tv.registerCell(cellClass: ScheduledCollectionCell.self)
         return tv
     }()
