@@ -58,8 +58,6 @@ extension CollectionSchedule {
         case night = "NOTURNO"
         
         var icon: UIImage? {
-            guard #available(iOS 13, *) else { return nil }
-            
             switch self {
             case .morning: return UIImage(symbol: "sun.max")!
             case .night: return UIImage(symbol: "moon")!

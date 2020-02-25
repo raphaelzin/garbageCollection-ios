@@ -83,7 +83,7 @@ extension ScheduledCollectionCell {
     func configure(with collectionSchedule: WeekDayCollectionSchedule) {
         weekDayLabel.text = collectionSchedule.weekday.fullname
         scheduleDetailsLabel.text = collectionSchedule.schedule.description
-        shiftIconImageView.image = collectionSchedule.shift.icon
+        shiftIconImageView.image = collectionSchedule.shift.icon?.withRenderingMode(.alwaysTemplate)
         
         containerView.backgroundColor = collectionSchedule.shift.tint
     }

@@ -76,7 +76,10 @@ class NeighbourhoodSelectionController: GCViewModelController<NeighbourhoodSelec
         configureLayout()
         configureNavBar()
         
-        bindSearchResults()
+        if #available(iOS 13, *) {
+            bindSearchResults()
+        }
+        
         bindTableView()
         stateBinding()
     }
@@ -124,7 +127,9 @@ private extension NeighbourhoodSelectionController {
 
         Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Neighbourhood.self)).bind { [weak self] indexPath, neighbourhood in
             self?.tableView.deselectRow(at: indexPath, animated: true)
-            self?.searchController.searchBar.resignFirstResponder()
+            if #available(iOS 13, *) {
+                self?.searchController.searchBar.resignFirstResponder()
+            }
             
             Analytics.logTrackedEvent(.neighbourhoodSelection, parameters: ["selected": neighbourhood.name ?? ""])
             self?.delegate?.didSelect(neighbourhood: neighbourhood)
@@ -167,7 +172,10 @@ private extension NeighbourhoodSelectionController {
     func configureNavBar() {
         navigationItem.title = "Bairros"
         navigationItem.hidesSearchBarWhenScrolling = false
-        navigationItem.searchController = searchController
+        
+        if #available(iOS 13, *) {
+            navigationItem.searchController = searchController
+        }
     }
     
 }
