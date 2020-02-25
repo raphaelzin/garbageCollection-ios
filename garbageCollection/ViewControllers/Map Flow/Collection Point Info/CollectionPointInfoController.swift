@@ -61,6 +61,10 @@ class CollectionPointInfoController: GCViewModelController<CollectionPointMoreIn
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func onCloseTap() {
+        dismiss(animated: true)
+    }
+    
 }
 
 // MARK: Bindings

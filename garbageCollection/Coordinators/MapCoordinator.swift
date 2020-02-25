@@ -80,7 +80,18 @@ extension MapCoordinator: CollectionPointDetailsCoordinatorDelegate {
     func didRequestMoreInfo(about type: CollectionPoint.PointType, from controller: UIViewController) {
         let viewModel = CollectionPointMoreInfoViewModel(type: type)
         let detailsController = CollectionPointInfoController(viewModel: viewModel)
-        controller.present(detailsController, animated: true)
+        
+        if #available(iOS 13, *) {
+            controller.present(detailsController, animated: true)
+        } else {
+            let navigator = GCNavigationController(rootController: detailsController)
+            detailsController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Fechar",
+                                                                                 style: .plain,
+                                                                                 target: detailsController,
+                                                                                 action: #selector(detailsController.onCloseTap))
+            controller.present(navigator, animated: true)
+        }
+        
     }
     
 }
