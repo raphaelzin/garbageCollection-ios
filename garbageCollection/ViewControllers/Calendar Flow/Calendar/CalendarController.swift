@@ -73,7 +73,9 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
         
         bindTableView()
         bindSelectedNeighbourhood()
-        bindViewModelState()
+        if #available(iOS 13, *) {
+            bindViewModelState()
+        }
         bindBellState()
     }
     
@@ -126,7 +128,7 @@ private extension CalendarController {
             .state
             .map { $0 == .idle }
             .observeOn(MainScheduler.asyncInstance)
-            .asDriver(onErrorJustReturn: false)
+            .asDriver(onErrorJustReturn: true)
             .drive(activityIndicator.rx.isHidden)
             .disposed(by: disposeBag)
     }
@@ -278,9 +280,11 @@ private extension CalendarController {
             make.edges.equalTo(view)
         }
         
-        view.addSubview(activityIndicator)
-        activityIndicator.snp.makeConstraints { (make) in
-            make.center.equalTo(view)
+        if #available(iOS 13, *) {
+            view.addSubview(activityIndicator)
+            activityIndicator.snp.makeConstraints { (make) in
+                make.center.equalTo(view)
+            }
         }
     }
     
