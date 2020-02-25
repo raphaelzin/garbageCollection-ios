@@ -72,6 +72,13 @@ private extension CollectionPointFilterController {
         
         let filter = UIBarButtonItem(title: "Filtrar", style: .done, target: self, action: #selector(onFilterTap))
         navigationItem.rightBarButtonItem = filter
+        
+        if #available(iOS 13, *) { } else {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Fechar",
+                                                               style: .plain,
+                                                               target: self,
+                                                               action: #selector(onCloseTap))
+        }
     }
     
 }
@@ -121,6 +128,10 @@ private extension CollectionPointFilterController {
     
     @objc func onFilterTap() {
         filterDelegate?.didSelect(filters: viewModel.selectedCollectionPoints)
+        coordinatorDelegate?.didRequestDismiss(from: self)
+    }
+    
+    @objc func onCloseTap() {
         coordinatorDelegate?.didRequestDismiss(from: self)
     }
     
