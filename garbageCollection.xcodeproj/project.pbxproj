@@ -26,7 +26,6 @@
 		1C26CE4F23594308008BB2D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */; };
 		1C26CE562359430C008BB2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C26CE552359430C008BB2D2 /* Assets.xcassets */; };
 		1C26CE592359430C008BB2D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C26CE572359430C008BB2D2 /* LaunchScreen.storyboard */; };
-		1C26CE6F2359430C008BB2D2 /* garbageCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26CE6E2359430C008BB2D2 /* garbageCollectionUITests.swift */; };
 		1C309ED9238CA73200B2F063 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C309ED8238CA73200B2F063 /* BasicTableViewCell.swift */; };
 		1C31CBE9235B55D400653E19 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CBE8235B55D400653E19 /* AppCoordinator.swift */; };
 		1C31CBEB235B564B00653E19 /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CBEA235B564B00653E19 /* RootViewCoordinator.swift */; };
@@ -54,8 +53,6 @@
 		1C631EA923CA98570083479C /* CollectionPointDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C631EA823CA98570083479C /* CollectionPointDetailsController.swift */; };
 		1C631EAC23CA98CF0083479C /* InformationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C631EAB23CA98CF0083479C /* InformationStackView.swift */; };
 		1C631EAE23CAA63C0083479C /* CollectionPointDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C631EAD23CAA63C0083479C /* CollectionPointDetailsHeaderView.swift */; };
-		1C63A8E223E2537F007A3163 /* ColetaUISnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63A8E123E2537F007A3163 /* ColetaUISnapshot.swift */; };
-		1C63A8EB23E253E9007A3163 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63A8EA23E253E9007A3163 /* SnapshotHelper.swift */; };
 		1C696C432364C37500632085 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C422364C37500632085 /* NotificationsManager.swift */; };
 		1C696C452365EB7500632085 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C442365EB7500632085 /* Date.swift */; };
 		1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4723660CA300632085 /* UserNotification+Rx.swift */; };
@@ -118,28 +115,12 @@
 		1CF15BAF235CC3C700664DE7 /* RubbishReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BAE235CC3C700664DE7 /* RubbishReport.swift */; };
 		1CF15BB1235CCBE600664DE7 /* garbageCollectionModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BB0235CCBE600664DE7 /* garbageCollectionModelTests.swift */; };
 		1CF6696023D7BA0600E75E11 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6695F23D7BA0600E75E11 /* Analytics.swift */; };
-		7DAF1C169F1305F9D4BF1B79 /* Pods_garbageCollection_ColetaUISnapshot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2760D0CD47DD82F509E215CD /* Pods_garbageCollection_ColetaUISnapshot.framework */; };
-		9533A245B9ECE8804124379A /* Pods_garbageCollection_garbageCollectionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA3258B252901A6E402EA50 /* Pods_garbageCollection_garbageCollectionUITests.framework */; };
 		C918E1A1A59E4327B8BCEB4E /* Pods_garbageCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFA5F8E5E243D7CBAD8F7B0 /* Pods_garbageCollection.framework */; };
 		D22195457D2027CAED7D8F91 /* Pods_garbageCollectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64A8C3CD553F6BCB2994C0B /* Pods_garbageCollectionTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		1C26CE602359430C008BB2D2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C26CE4123594307008BB2D2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1C26CE4823594307008BB2D2;
-			remoteInfo = garbageCollection;
-		};
-		1C26CE6B2359430C008BB2D2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C26CE4123594307008BB2D2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1C26CE4823594307008BB2D2;
-			remoteInfo = garbageCollection;
-		};
-		1C63A8E423E2537F007A3163 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1C26CE4123594307008BB2D2 /* Project object */;
 			proxyType = 1;
@@ -178,9 +159,6 @@
 		1C26CE5A2359430C008BB2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C26CE5F2359430C008BB2D2 /* garbageCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = garbageCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C26CE652359430C008BB2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C26CE6A2359430C008BB2D2 /* garbageCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = garbageCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C26CE6E2359430C008BB2D2 /* garbageCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = garbageCollectionUITests.swift; sourceTree = "<group>"; };
-		1C26CE702359430C008BB2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C26CE86235944FC008BB2D2 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		1C309ED8238CA73200B2F063 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		1C31CBE8235B55D400653E19 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -209,10 +187,6 @@
 		1C631EA823CA98570083479C /* CollectionPointDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointDetailsController.swift; sourceTree = "<group>"; };
 		1C631EAB23CA98CF0083479C /* InformationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStackView.swift; sourceTree = "<group>"; };
 		1C631EAD23CAA63C0083479C /* CollectionPointDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointDetailsHeaderView.swift; sourceTree = "<group>"; };
-		1C63A8DF23E2537F007A3163 /* ColetaUISnapshot.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColetaUISnapshot.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C63A8E123E2537F007A3163 /* ColetaUISnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColetaUISnapshot.swift; sourceTree = "<group>"; };
-		1C63A8E323E2537F007A3163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C63A8EA23E253E9007A3163 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		1C696C422364C37500632085 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		1C696C442365EB7500632085 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		1C696C4723660CA300632085 /* UserNotification+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserNotification+Rx.swift"; sourceTree = "<group>"; };
@@ -310,22 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D22195457D2027CAED7D8F91 /* Pods_garbageCollectionTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C26CE672359430C008BB2D2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9533A245B9ECE8804124379A /* Pods_garbageCollection_garbageCollectionUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C63A8DC23E2537F007A3163 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7DAF1C169F1305F9D4BF1B79 /* Pods_garbageCollection_ColetaUISnapshot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,8 +393,6 @@
 			children = (
 				1C26CE4B23594307008BB2D2 /* garbageCollection */,
 				1C26CE622359430C008BB2D2 /* garbageCollectionTests */,
-				1C26CE6D2359430C008BB2D2 /* garbageCollectionUITests */,
-				1C63A8E023E2537F007A3163 /* ColetaUISnapshot */,
 				1C26CE4A23594307008BB2D2 /* Products */,
 				9FFD45C963FCAFA94B5FD08D /* Pods */,
 				015F591B4B52296A78FA29BB /* Frameworks */,
@@ -448,8 +404,6 @@
 			children = (
 				1C26CE4923594307008BB2D2 /* garbageCollection.app */,
 				1C26CE5F2359430C008BB2D2 /* garbageCollectionTests.xctest */,
-				1C26CE6A2359430C008BB2D2 /* garbageCollectionUITests.xctest */,
-				1C63A8DF23E2537F007A3163 /* ColetaUISnapshot.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -481,15 +435,6 @@
 				1C26CE652359430C008BB2D2 /* Info.plist */,
 			);
 			path = garbageCollectionTests;
-			sourceTree = "<group>";
-		};
-		1C26CE6D2359430C008BB2D2 /* garbageCollectionUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1C26CE6E2359430C008BB2D2 /* garbageCollectionUITests.swift */,
-				1C26CE702359430C008BB2D2 /* Info.plist */,
-			);
-			path = garbageCollectionUITests;
 			sourceTree = "<group>";
 		};
 		1C26CE7C235943D7008BB2D2 /* Core */ = {
@@ -692,16 +637,6 @@
 				1C631EAD23CAA63C0083479C /* CollectionPointDetailsHeaderView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		1C63A8E023E2537F007A3163 /* ColetaUISnapshot */ = {
-			isa = PBXGroup;
-			children = (
-				1C63A8E123E2537F007A3163 /* ColetaUISnapshot.swift */,
-				1C63A8EA23E253E9007A3163 /* SnapshotHelper.swift */,
-				1C63A8E323E2537F007A3163 /* Info.plist */,
-			);
-			path = ColetaUISnapshot;
 			sourceTree = "<group>";
 		};
 		1C696C4623660C8F00632085 /* UserNotifications */ = {
@@ -918,46 +853,6 @@
 			productReference = 1C26CE5F2359430C008BB2D2 /* garbageCollectionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1C26CE692359430C008BB2D2 /* garbageCollectionUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1C26CE792359430C008BB2D2 /* Build configuration list for PBXNativeTarget "garbageCollectionUITests" */;
-			buildPhases = (
-				D7139A7B30D08DB14E993102 /* [CP] Check Pods Manifest.lock */,
-				1C26CE662359430C008BB2D2 /* Sources */,
-				1C26CE672359430C008BB2D2 /* Frameworks */,
-				1C26CE682359430C008BB2D2 /* Resources */,
-				0381E0FBE32FFB8B2571A4A1 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1C26CE6C2359430C008BB2D2 /* PBXTargetDependency */,
-			);
-			name = garbageCollectionUITests;
-			productName = garbageCollectionUITests;
-			productReference = 1C26CE6A2359430C008BB2D2 /* garbageCollectionUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		1C63A8DE23E2537F007A3163 /* ColetaUISnapshot */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1C63A8E923E2537F007A3163 /* Build configuration list for PBXNativeTarget "ColetaUISnapshot" */;
-			buildPhases = (
-				80509CB558B030260D2212A7 /* [CP] Check Pods Manifest.lock */,
-				1C63A8DB23E2537F007A3163 /* Sources */,
-				1C63A8DC23E2537F007A3163 /* Frameworks */,
-				1C63A8DD23E2537F007A3163 /* Resources */,
-				F658DA855863571AA1B391FC /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1C63A8E523E2537F007A3163 /* PBXTargetDependency */,
-			);
-			name = ColetaUISnapshot;
-			productName = ColetaUISnapshot;
-			productReference = 1C63A8DF23E2537F007A3163 /* ColetaUISnapshot.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -973,14 +868,6 @@
 					};
 					1C26CE5E2359430C008BB2D2 = {
 						CreatedOnToolsVersion = 11.0;
-						TestTargetID = 1C26CE4823594307008BB2D2;
-					};
-					1C26CE692359430C008BB2D2 = {
-						CreatedOnToolsVersion = 11.0;
-						TestTargetID = 1C26CE4823594307008BB2D2;
-					};
-					1C63A8DE23E2537F007A3163 = {
-						CreatedOnToolsVersion = 11.3;
 						TestTargetID = 1C26CE4823594307008BB2D2;
 					};
 				};
@@ -1000,8 +887,6 @@
 			targets = (
 				1C26CE4823594307008BB2D2 /* garbageCollection */,
 				1C26CE5E2359430C008BB2D2 /* garbageCollectionTests */,
-				1C26CE692359430C008BB2D2 /* garbageCollectionUITests */,
-				1C63A8DE23E2537F007A3163 /* ColetaUISnapshot */,
 			);
 		};
 /* End PBXProject section */
@@ -1024,40 +909,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1C26CE682359430C008BB2D2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C63A8DD23E2537F007A3163 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0381E0FBE32FFB8B2571A4A1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-garbageCollection-garbageCollectionUITests/Pods-garbageCollection-garbageCollectionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-garbageCollection-garbageCollectionUITests/Pods-garbageCollection-garbageCollectionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-garbageCollection-garbageCollectionUITests/Pods-garbageCollection-garbageCollectionUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		0B076FE1508E1A03BDC4F744 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1131,28 +985,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		80509CB558B030260D2212A7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-garbageCollection-ColetaUISnapshot-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9CA7A7A0EE59A001C5BE4C80 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1173,45 +1005,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D7139A7B30D08DB14E993102 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-garbageCollection-garbageCollectionUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F658DA855863571AA1B391FC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-garbageCollection-ColetaUISnapshot/Pods-garbageCollection-ColetaUISnapshot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-garbageCollection-ColetaUISnapshot/Pods-garbageCollection-ColetaUISnapshot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-garbageCollection-ColetaUISnapshot/Pods-garbageCollection-ColetaUISnapshot-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1336,23 +1129,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1C26CE662359430C008BB2D2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C26CE6F2359430C008BB2D2 /* garbageCollectionUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C63A8DB23E2537F007A3163 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C63A8E223E2537F007A3163 /* ColetaUISnapshot.swift in Sources */,
-				1C63A8EB23E253E9007A3163 /* SnapshotHelper.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1360,16 +1136,6 @@
 			isa = PBXTargetDependency;
 			target = 1C26CE4823594307008BB2D2 /* garbageCollection */;
 			targetProxy = 1C26CE602359430C008BB2D2 /* PBXContainerItemProxy */;
-		};
-		1C26CE6C2359430C008BB2D2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1C26CE4823594307008BB2D2 /* garbageCollection */;
-			targetProxy = 1C26CE6B2359430C008BB2D2 /* PBXContainerItemProxy */;
-		};
-		1C63A8E523E2537F007A3163 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1C26CE4823594307008BB2D2 /* garbageCollection */;
-			targetProxy = 1C63A8E423E2537F007A3163 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1596,112 +1362,6 @@
 			};
 			name = Release;
 		};
-		1C26CE7A2359430C008BB2D2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B232AFD7DF45A98E0E1F5428 /* Pods-garbageCollection-garbageCollectionUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PV4FQV4SXL;
-				INFOPLIST_FILE = garbageCollectionUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raphael.garbageCollectionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = garbageCollection;
-			};
-			name = Debug;
-		};
-		1C26CE7B2359430C008BB2D2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 100451D4EEFF1FAC0E8A6DBD /* Pods-garbageCollection-garbageCollectionUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PV4FQV4SXL;
-				INFOPLIST_FILE = garbageCollectionUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raphael.garbageCollectionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = garbageCollection;
-			};
-			name = Release;
-		};
-		1C63A8E623E2537F007A3163 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBF735B397D9799686333B8D /* Pods-garbageCollection-ColetaUISnapshot.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = PV4FQV4SXL;
-				INFOPLIST_FILE = ColetaUISnapshot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.guarana.ColetaUISnapshot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = garbageCollection;
-			};
-			name = Debug;
-		};
-		1C63A8E723E2537F007A3163 /* AdHoc */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BFA559E244592F8C13323A3 /* Pods-garbageCollection-ColetaUISnapshot.adhoc.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PV4FQV4SXL;
-				INFOPLIST_FILE = ColetaUISnapshot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.guarana.ColetaUISnapshot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = garbageCollection;
-			};
-			name = AdHoc;
-		};
-		1C63A8E823E2537F007A3163 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F701D20A38091F1976836313 /* Pods-garbageCollection-ColetaUISnapshot.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PV4FQV4SXL;
-				INFOPLIST_FILE = ColetaUISnapshot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.guarana.ColetaUISnapshot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = garbageCollection;
-			};
-			name = Release;
-		};
 		1CF6695B23D7B36C00E75E11 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C9902DD2389CB520000A457 /* Development.xcconfig */;
@@ -1810,27 +1470,6 @@
 			};
 			name = AdHoc;
 		};
-		1CF6695E23D7B36C00E75E11 /* AdHoc */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E0984809E2C657C02FC8BBE /* Pods-garbageCollection-garbageCollectionUITests.adhoc.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PV4FQV4SXL;
-				INFOPLIST_FILE = garbageCollectionUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raphael.garbageCollectionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = garbageCollection;
-			};
-			name = AdHoc;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1860,26 +1499,6 @@
 				1C26CE772359430C008BB2D2 /* Debug */,
 				1CF6695D23D7B36C00E75E11 /* AdHoc */,
 				1C26CE782359430C008BB2D2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1C26CE792359430C008BB2D2 /* Build configuration list for PBXNativeTarget "garbageCollectionUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1C26CE7A2359430C008BB2D2 /* Debug */,
-				1CF6695E23D7B36C00E75E11 /* AdHoc */,
-				1C26CE7B2359430C008BB2D2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1C63A8E923E2537F007A3163 /* Build configuration list for PBXNativeTarget "ColetaUISnapshot" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1C63A8E623E2537F007A3163 /* Debug */,
-				1C63A8E723E2537F007A3163 /* AdHoc */,
-				1C63A8E823E2537F007A3163 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

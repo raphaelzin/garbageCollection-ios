@@ -11,7 +11,7 @@ import Foundation
 @testable import garbageCollection
 
 class MockGeocoderManager: GeocoderManagerType {
-    
-    
-    
+
+
+
 }
