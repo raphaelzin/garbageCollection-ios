@@ -140,7 +140,7 @@ extension MapCoordinator: RubbishReportControllerDelegate {
     }
     
     func didRequestLocation(from controller: UIViewController) {
-        let viewModel = LocationSelectionViewModel()
+        let viewModel = LocationSelectionViewModel(geocoderManager: GeocoderManager())
         let locationSelectionController = LocationSelectionController(viewModel: viewModel)
         locationSelectionController.coordinatorDelegate = self
         locationSelectionController.delegate = controller as? LocationSelectionDelegate
