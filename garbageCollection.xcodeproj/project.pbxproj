@@ -103,6 +103,7 @@
 		1CCBF429239DCBD600F70E70 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCBF428239DCBD600F70E70 /* SettingsViewModel.swift */; };
 		1CCBF42B239DD92D00F70E70 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCBF42A239DD92D00F70E70 /* WebController.swift */; };
 		1CE19F1424562CF9008657CA /* MockGeocoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE19F1324562CF9008657CA /* MockGeocoderManager.swift */; };
+		1CE19F1D24566EF5008657CA /* LocationSelectionViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE19F1C24566EF5008657CA /* LocationSelectionViewModelTest.swift */; };
 		1CE2E37123A58DCA00AD607A /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE2E37023A58DCA00AD607A /* FeedbackController.swift */; };
 		1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3432023666A2C001B1790 /* GCExpandableButton.swift */; };
 		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
@@ -239,6 +240,7 @@
 		1CCBF428239DCBD600F70E70 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		1CCBF42A239DD92D00F70E70 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		1CE19F1324562CF9008657CA /* MockGeocoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGeocoderManager.swift; sourceTree = "<group>"; };
+		1CE19F1C24566EF5008657CA /* LocationSelectionViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionViewModelTest.swift; sourceTree = "<group>"; };
 		1CE2E37023A58DCA00AD607A /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
 		1CE3432023666A2C001B1790 /* GCExpandableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCExpandableButton.swift; sourceTree = "<group>"; };
 		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 			children = (
 				1CF15BB0235CCBE600664DE7 /* garbageCollectionModelTests.swift */,
 				1CC05478237E00C200268662 /* parseConnectionTest.swift */,
+				1CE19F1924566EA2008657CA /* ViewControllers */,
 				1CE19F1224562CEC008657CA /* Manager */,
 				1C26CE652359430C008BB2D2 /* Info.plist */,
 			);
@@ -746,9 +749,41 @@
 		1CE19F1224562CEC008657CA /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				1CE19F1324562CF9008657CA /* MockGeocoderManager.swift */,
+				1CE19F1624566E1F008657CA /* GeocoderManager */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		1CE19F1624566E1F008657CA /* GeocoderManager */ = {
+			isa = PBXGroup;
+			children = (
+				1CE19F1324562CF9008657CA /* MockGeocoderManager.swift */,
+			);
+			path = GeocoderManager;
+			sourceTree = "<group>";
+		};
+		1CE19F1924566EA2008657CA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1CE19F1A24566EB9008657CA /* Common */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1CE19F1A24566EB9008657CA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1CE19F1B24566EC9008657CA /* LocationSelectionController */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1CE19F1B24566EC9008657CA /* LocationSelectionController */ = {
+			isa = PBXGroup;
+			children = (
+				1CE19F1C24566EF5008657CA /* LocationSelectionViewModelTest.swift */,
+			);
+			path = LocationSelectionController;
 			sourceTree = "<group>";
 		};
 		1CE2E36F23A58DAA00AD607A /* Feedback */ = {
@@ -1126,6 +1161,7 @@
 				1CF15BB1235CCBE600664DE7 /* garbageCollectionModelTests.swift in Sources */,
 				1CE19F1424562CF9008657CA /* MockGeocoderManager.swift in Sources */,
 				1CC05479237E00C200268662 /* parseConnectionTest.swift in Sources */,
+				1CE19F1D24566EF5008657CA /* LocationSelectionViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

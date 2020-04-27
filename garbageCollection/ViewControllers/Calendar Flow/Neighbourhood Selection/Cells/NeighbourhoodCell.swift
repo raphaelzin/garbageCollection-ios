@@ -51,7 +51,6 @@ private extension NeighbourhoodCell {
     
     func configureView() {
         separatorInset = .init(top: 0, left: 16, bottom: 0, right: 0)
-        #warning("Should only select when is the default address")
     }
     
     func configureLayout() {

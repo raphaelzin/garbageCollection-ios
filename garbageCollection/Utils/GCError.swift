@@ -15,6 +15,9 @@ struct GCError {
     enum UserInteraction: Error {
         case invalidReportInput
         case invalidFeedbackInput
+        
+        // Location Selection
+        case invalidLocationAddress
     }
     
     enum Server: Error {
@@ -47,6 +50,7 @@ extension GCError.UserInteraction: LocalizedError {
         switch self {
         case .invalidReportInput: return "Houve um problema ao criar o reporte. Verifique se há uma foto, localização e data válida ou tente novamente mais tarde"
         case .invalidFeedbackInput: return "Houve um erro ao enviar seu comentário. Verifique se o campo de comentário não está vazio e tente novamente."
+        case .invalidLocationAddress: return "Este endereço parece ser inválido. Verifique endereço e tente novamente"
         }
     }
     

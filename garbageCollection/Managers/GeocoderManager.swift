@@ -10,13 +10,12 @@ import Foundation
 import RxSwift
 import CoreLocation
 
-protocol GeocodarManagerType: class {
+protocol GeocoderManagerType: class {
     func location(for address: String) -> Single<Location?>
     func location(for latitude: Double, and longitude: Double) -> Single<Location?>
-    func handleGeocodeResult(single: ((SingleEvent<Location?>) -> Void), places: [CLPlacemark]?, error: Error?)
 }
 
-class GeocoderManager: GeocodarManagerType {
+class GeocoderManager: GeocoderManagerType {
     
     private let geocoder = CLGeocoder()
     
