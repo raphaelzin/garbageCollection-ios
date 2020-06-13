@@ -22,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ParseSetup.initialize()
         setupGlobalAppearances()
         
+        CollectionPointsManager().parseSync().subscribe(onCompleted: {
+            print("Did sync")
+        }, onError: { error in
+            print(error)
+        })
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         appCoordinator = AppCoordinator(window: window!)
         appCoordinator.start()

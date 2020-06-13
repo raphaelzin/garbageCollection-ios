@@ -58,6 +58,7 @@
 		1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4723660CA300632085 /* UserNotification+Rx.swift */; };
 		1C696C4C2366617C00632085 /* CollectionPointFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4B2366617C00632085 /* CollectionPointFilterController.swift */; };
 		1C696C4E2366619200632085 /* CollectionPointFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C696C4D2366619200632085 /* CollectionPointFilterViewModel.swift */; };
+		1C6B8D59247757A700BBE831 /* GarbageCollectionDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B8D57247757A700BBE831 /* GarbageCollectionDataModel.xcdatamodeld */; };
 		1C7489B42390AA4B00958A13 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7489B32390AA4B00958A13 /* PaddingLabel.swift */; };
 		1C7A43BD23724F59005210B9 /* CollectionPointsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */; };
 		1C7A43BF23725DCE005210B9 /* CollectionPointMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A43BE23725DCE005210B9 /* CollectionPointMarker.swift */; };
@@ -89,7 +90,11 @@
 		1C8EA74E238C95C700BADB1A /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EA74D238C95C700BADB1A /* DatePickerViewController.swift */; };
 		1C8EA750238C9BFD00BADB1A /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EA74F238C9BFD00BADB1A /* UIAlertController.swift */; };
 		1C8EA752238C9DEA00BADB1A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EA751238C9DEA00BADB1A /* UIView.swift */; };
+		1C9B51BC248D5AA400323DB9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9B51BB248D5AA400323DB9 /* CoreDataStack.swift */; };
+		1CAE522F247768F400BB64D1 /* PersistentCollectionPoint+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAE522D247768F400BB64D1 /* PersistentCollectionPoint+CoreDataClass.swift */; };
+		1CAE5230247768F400BB64D1 /* PersistentCollectionPoint+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAE522E247768F400BB64D1 /* PersistentCollectionPoint+CoreDataProperties.swift */; };
 		1CAF554523D68F73004CE0A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CAF554423D68F73004CE0A1 /* GoogleService-Info.plist */; };
+		1CAFE4C7248D85AC00F4CD29 /* PFGeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAFE4C6248D85AC00F4CD29 /* PFGeoPoint.swift */; };
 		1CB6CAB12380B15800E790CC /* CollectionPointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */; };
 		1CB6CAB32380BC7300E790CC /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */; };
 		1CB6CAB52380BC7D00E790CC /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6CAB42380BC7D00E790CC /* UICollectionView.swift */; };
@@ -151,7 +156,7 @@
 		1C21B3CE2394206F003E0090 /* PFFileObject+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PFFileObject+Rx.swift"; sourceTree = "<group>"; };
 		1C23C960238DFD7C00100BA1 /* LocationSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionController.swift; sourceTree = "<group>"; };
 		1C23C962238DFDB700100BA1 /* LocationSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionViewModel.swift; sourceTree = "<group>"; };
-		1C26CE4923594307008BB2D2 /* garbageCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = garbageCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C26CE4923594307008BB2D2 /* Coleta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coleta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C26CE4C23594308008BB2D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C26CE4E23594308008BB2D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1C26CE552359430C008BB2D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -192,6 +197,7 @@
 		1C696C4723660CA300632085 /* UserNotification+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserNotification+Rx.swift"; sourceTree = "<group>"; };
 		1C696C4B2366617C00632085 /* CollectionPointFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointFilterController.swift; sourceTree = "<group>"; };
 		1C696C4D2366619200632085 /* CollectionPointFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointFilterViewModel.swift; sourceTree = "<group>"; };
+		1C6B8D58247757A700BBE831 /* GarbageCollectionDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GarbageCollectionDataModel.xcdatamodel; sourceTree = "<group>"; };
 		1C7489B32390AA4B00958A13 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		1C7A43BC23724F59005210B9 /* CollectionPointsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointsManager.swift; sourceTree = "<group>"; };
 		1C7A43BE23725DCE005210B9 /* CollectionPointMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointMarker.swift; sourceTree = "<group>"; };
@@ -224,7 +230,11 @@
 		1C8EA74F238C9BFD00BADB1A /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		1C8EA751238C9DEA00BADB1A /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		1C9902DD2389CB520000A457 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		1C9B51BB248D5AA400323DB9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		1CAE522D247768F400BB64D1 /* PersistentCollectionPoint+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentCollectionPoint+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1CAE522E247768F400BB64D1 /* PersistentCollectionPoint+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentCollectionPoint+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1CAF554423D68F73004CE0A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1CAFE4C6248D85AC00F4CD29 /* PFGeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFGeoPoint.swift; sourceTree = "<group>"; };
 		1CB6CAAE2380AF6900E790CC /* CGCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1CB6CAB02380B15800E790CC /* CollectionPointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPointCollectionViewCell.swift; sourceTree = "<group>"; };
 		1CB6CAB22380BC7300E790CC /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
@@ -402,7 +412,7 @@
 		1C26CE4A23594307008BB2D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1C26CE4923594307008BB2D2 /* garbageCollection.app */,
+				1C26CE4923594307008BB2D2 /* Coleta.app */,
 				1C26CE5F2359430C008BB2D2 /* garbageCollectionTests.xctest */,
 			);
 			name = Products;
@@ -479,6 +489,7 @@
 				1C835E15235EA62600CC21EB /* RxParseExtensions */,
 				1C31CBFD235B5DC300653E19 /* UIKit */,
 				1C31CBFC235B5DB800653E19 /* Foundation */,
+				1CAFE4C6248D85AC00F4CD29 /* PFGeoPoint.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -667,6 +678,17 @@
 			path = Filter;
 			sourceTree = "<group>";
 		};
+		1C6B8D53247756FE00BBE831 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1CAE522D247768F400BB64D1 /* PersistentCollectionPoint+CoreDataClass.swift */,
+				1CAE522E247768F400BB64D1 /* PersistentCollectionPoint+CoreDataProperties.swift */,
+				1C6B8D57247757A700BBE831 /* GarbageCollectionDataModel.xcdatamodeld */,
+				1C9B51BB248D5AA400323DB9 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		1C7A43C223727B10005210B9 /* Map views */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,6 +817,7 @@
 		1CF15B9E235CBB2500664DE7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1C6B8D53247756FE00BBE831 /* CoreData */,
 				1CF15B9F235CBB3800664DE7 /* Parse */,
 				1C835E09235E917200CC21EB /* WeekDayCollectionSchedule.swift */,
 				1CBC594D23BBAF430034B0C9 /* CollectionPointDescription.swift */,
@@ -863,7 +886,7 @@
 			);
 			name = garbageCollection;
 			productName = garbageCollection;
-			productReference = 1C26CE4923594307008BB2D2 /* garbageCollection.app */;
+			productReference = 1C26CE4923594307008BB2D2 /* Coleta.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1C26CE5E2359430C008BB2D2 /* garbageCollectionTests */ = {
@@ -1083,6 +1106,7 @@
 				1C179993238A027A0075F06C /* TextInputController.swift in Sources */,
 				1C1E6F4823BA9DA800498049 /* CollectionPointTypeCell.swift in Sources */,
 				1CF15BA7235CC36E00664DE7 /* CollectionPoint.swift in Sources */,
+				1CAFE4C7248D85AC00F4CD29 /* PFGeoPoint.swift in Sources */,
 				1C835E21235EA88000CC21EB /* PFGeoPoint+Rx.swift in Sources */,
 				1C31CC08235B6AC100653E19 /* SettingsController.swift in Sources */,
 				1CF15BAB235CC39900664DE7 /* Feedback.swift in Sources */,
@@ -1115,6 +1139,7 @@
 				1C835E23235EA88000CC21EB /* Observable+ParseCreate.swift in Sources */,
 				1C21B3CF2394206F003E0090 /* PFFileObject+Rx.swift in Sources */,
 				1C14E5C1235BB48400E3CD94 /* NeighbourhoodSelectorView.swift in Sources */,
+				1C6B8D59247757A700BBE831 /* GarbageCollectionDataModel.xcdatamodeld in Sources */,
 				1C835E22235EA88000CC21EB /* PFPush+Rx.swift in Sources */,
 				1C31CBEB235B564B00653E19 /* RootViewCoordinator.swift in Sources */,
 				1C835E24235EA88000CC21EB /* PFObject+Rx.swift in Sources */,
@@ -1122,11 +1147,13 @@
 				1C631EAC23CA98CF0083479C /* InformationStackView.swift in Sources */,
 				1C4979D823A7017200A381A8 /* FeedbackManager.swift in Sources */,
 				1C696C4E2366619200632085 /* CollectionPointFilterViewModel.swift in Sources */,
+				1CAE5230247768F400BB64D1 /* PersistentCollectionPoint+CoreDataProperties.swift in Sources */,
 				1CB6CAB32380BC7300E790CC /* UICollectionViewCell.swift in Sources */,
 				1C46181823594A6B0054B22B /* SplashController.swift in Sources */,
 				1CF15BA5235CC35C00664DE7 /* City.swift in Sources */,
 				1C31CC06235B6AB300653E19 /* MapController.swift in Sources */,
 				1C4979D623A6C7CB00A381A8 /* GCPaddingTextField.swift in Sources */,
+				1C9B51BC248D5AA400323DB9 /* CoreDataStack.swift in Sources */,
 				1CB6CAB52380BC7D00E790CC /* UICollectionView.swift in Sources */,
 				1CBD646523A3251700D2FB02 /* BasicFooterView.swift in Sources */,
 				1C1E6F4523BA9D0100498049 /* MoreInfoController.swift in Sources */,
@@ -1144,6 +1171,7 @@
 				1CBC595223BBF4840034B0C9 /* TableViewPlaceholderView.swift in Sources */,
 				1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */,
 				1CCBF42B239DD92D00F70E70 /* WebController.swift in Sources */,
+				1CAE522F247768F400BB64D1 /* PersistentCollectionPoint+CoreDataClass.swift in Sources */,
 				1C835E11235EA2CB00CC21EB /* UITableViewCell.swift in Sources */,
 				1C631EAE23CAA63C0083479C /* CollectionPointDetailsHeaderView.swift in Sources */,
 				1C17998B2389F3D90075F06C /* RubbishReportViewModel.swift in Sources */,
@@ -1308,7 +1336,7 @@
 				CODE_SIGN_ENTITLEMENTS = garbageCollection/garbageCollection.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = G6C8VR926S;
 				INFOPLIST_FILE = garbageCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
@@ -1316,8 +1344,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelsouza.garbageCollection;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Coleta;
 				PROVISIONING_PROFILE_SPECIFIER = "garbageCollection-dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1332,7 +1361,7 @@
 				CODE_SIGN_ENTITLEMENTS = garbageCollection/garbageCollection.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = G6C8VR926S;
 				INFOPLIST_FILE = garbageCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
@@ -1340,8 +1369,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelsouza.garbageCollection;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Coleta;
 				PROVISIONING_PROFILE_SPECIFIER = "garbageCollection-prod";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1463,7 +1493,7 @@
 				CODE_SIGN_ENTITLEMENTS = garbageCollection/garbageCollection.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = G6C8VR926S;
 				INFOPLIST_FILE = garbageCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
@@ -1471,8 +1501,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelsouza.garbageCollection;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Coleta;
 				PROVISIONING_PROFILE_SPECIFIER = "garbageCollection-dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1536,6 +1567,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1C6B8D57247757A700BBE831 /* GarbageCollectionDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1C6B8D58247757A700BBE831 /* GarbageCollectionDataModel.xcdatamodel */,
+			);
+			currentVersion = 1C6B8D58247757A700BBE831 /* GarbageCollectionDataModel.xcdatamodel */;
+			path = GarbageCollectionDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1C26CE4123594307008BB2D2 /* Project object */;
 }

@@ -9,6 +9,20 @@
 import Foundation
 import Parse
 
+protocol XCollectionPoint {
+    var bairro: String? { get }
+    var identifier: String? { get }
+    var name: String? { get }
+    var address: String? { get }
+    var yearRef: String? { get }
+    var source: String? { get }
+    var regional: String? { get }
+    var phone: String? { get }
+    var hours: String? { get }
+    var location: PFGeoPoint? { get }
+    var listedDetails: [CollectionPoint.DetailsListingType] { get }
+}
+
 class CollectionPoint: PFObject, PFSubclassing {
     
     @NSManaged var bairro: String?
@@ -147,21 +161,4 @@ extension CollectionPoint {
             }
         }
     }
-}
-
-// MARK: Properties
-
-extension CollectionPoint {
-    
-    struct Properties {
-        static let bairro = "bairro"
-        static let identifier = "identifier"
-        static let name = "name"
-        static let address = "address"
-        static let yearRef = "yearRef"
-        static let source = "source"
-        static let regional = "regional"
-        static let location = "location"
-    }
-    
 }
