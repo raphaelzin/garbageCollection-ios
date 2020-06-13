@@ -83,6 +83,7 @@ extension CalendarViewModel {
     func bellTapped() {
         if areNotificationsActive {
             InstallationManager.shared.notificationsEnabled.accept(false)
+            notificationsManager.clearPendingNotifications()
         } else if let collectionSchedule = fullCollectionSchedule.value {
             notificationsManager.setupNotifications(for: collectionSchedule)
             InstallationManager.shared.updateNeighbourhood(to: selectedNeighbourhoodRelay.value)

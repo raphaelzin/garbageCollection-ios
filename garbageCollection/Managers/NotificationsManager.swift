@@ -22,6 +22,10 @@ class NotificationsManager {
         
     }
     
+    func clearPendingNotifications() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
+    
     private func setupNotification(for schedule: WeekDayCollectionSchedule) {
         
         let collectionDate: Date
