@@ -75,6 +75,10 @@ extension UIColor {
         return UIColor(red: 0 / 255.0, green: 192 / 255.0, blue: 255 / 255.0, alpha: 1.0)
     }
     
+    @nonobjc class var lightRed: UIColor {
+        UIColor(red: 1, green: 59 / 255, blue: 48 / 255, alpha: 1)
+    }
+    
     // MARK: Safe system colors
     
     @nonobjc class var safeSystemBackground: UIColor {

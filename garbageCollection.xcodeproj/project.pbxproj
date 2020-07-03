@@ -104,6 +104,10 @@
 		1CE19F1D24566EF5008657CA /* LocationSelectionViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE19F1C24566EF5008657CA /* LocationSelectionViewModelTest.swift */; };
 		1CE2E37123A58DCA00AD607A /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE2E37023A58DCA00AD607A /* FeedbackController.swift */; };
 		1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3432023666A2C001B1790 /* GCExpandableButton.swift */; };
+		1CE3A82824AF79ED005659F4 /* NextCollectionDatesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3A82724AF79ED005659F4 /* NextCollectionDatesController.swift */; };
+		1CE3A82B24AF7A09005659F4 /* CalendarDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3A82A24AF7A09005659F4 /* CalendarDateView.swift */; };
+		1CE3A82D24AF7BB3005659F4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3A82C24AF7BB3005659F4 /* UIFont.swift */; };
+		1CE3A83024AF8F6F005659F4 /* CardFlipTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3A82F24AF8F6F005659F4 /* CardFlipTransition.swift */; };
 		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
 		1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA2235CBE6B00664DE7 /* Installation.swift */; };
 		1CF15BA5235CC35C00664DE7 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA4235CC35C00664DE7 /* City.swift */; };
@@ -150,7 +154,7 @@
 		1C21B3CE2394206F003E0090 /* PFFileObject+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PFFileObject+Rx.swift"; sourceTree = "<group>"; };
 		1C23C960238DFD7C00100BA1 /* LocationSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionController.swift; sourceTree = "<group>"; };
 		1C23C962238DFDB700100BA1 /* LocationSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionViewModel.swift; sourceTree = "<group>"; };
-		1C26CE4923594307008BB2D2 /* garbageCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = garbageCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C26CE4923594307008BB2D2 /* Coleta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coleta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C26CE4C23594308008BB2D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C26CE552359430C008BB2D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C26CE582359430C008BB2D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -239,6 +243,10 @@
 		1CE19F1C24566EF5008657CA /* LocationSelectionViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionViewModelTest.swift; sourceTree = "<group>"; };
 		1CE2E37023A58DCA00AD607A /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
 		1CE3432023666A2C001B1790 /* GCExpandableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCExpandableButton.swift; sourceTree = "<group>"; };
+		1CE3A82724AF79ED005659F4 /* NextCollectionDatesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCollectionDatesController.swift; sourceTree = "<group>"; };
+		1CE3A82A24AF7A09005659F4 /* CalendarDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateView.swift; sourceTree = "<group>"; };
+		1CE3A82C24AF7BB3005659F4 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		1CE3A82F24AF8F6F005659F4 /* CardFlipTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlipTransition.swift; sourceTree = "<group>"; };
 		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
 		1CF15BA2235CBE6B00664DE7 /* Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installation.swift; sourceTree = "<group>"; };
 		1CF15BA4235CC35C00664DE7 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -302,6 +310,7 @@
 		1C14E5B9235BACC300E3CD94 /* Calendar Flow */ = {
 			isa = PBXGroup;
 			children = (
+				1CE3A82624AF79A8005659F4 /* NextCollectionDatesController */,
 				1C31CC01235B6A7F00653E19 /* Calendar */,
 				1C835E2C23611DC300CC21EB /* Neighbourhood Selection */,
 			);
@@ -400,7 +409,7 @@
 		1C26CE4A23594307008BB2D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1C26CE4923594307008BB2D2 /* garbageCollection.app */,
+				1C26CE4923594307008BB2D2 /* Coleta.app */,
 				1C26CE5F2359430C008BB2D2 /* garbageCollectionTests.xctest */,
 			);
 			name = Products;
@@ -483,6 +492,7 @@
 		1C26CE8123594468008BB2D2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1CE3A82E24AF8F61005659F4 /* Custom Animations */,
 				1C46181623594A560054B22B /* Common */,
 				1C14E5B9235BACC300E3CD94 /* Calendar Flow */,
 				1C31CBF6235B5B9900653E19 /* Map Flow */,
@@ -546,6 +556,7 @@
 			isa = PBXGroup;
 			children = (
 				1C8EA751238C9DEA00BADB1A /* UIView.swift */,
+				1CE3A82C24AF7BB3005659F4 /* UIFont.swift */,
 				1C31CBFE235B5DD700653E19 /* UIColor.swift */,
 				1C14E5C3235BB96D00E3CD94 /* UIImage.swift */,
 				1C835E0E235EA27E00CC21EB /* UITableView.swift */,
@@ -789,6 +800,31 @@
 			path = Feedback;
 			sourceTree = "<group>";
 		};
+		1CE3A82624AF79A8005659F4 /* NextCollectionDatesController */ = {
+			isa = PBXGroup;
+			children = (
+				1CE3A82724AF79ED005659F4 /* NextCollectionDatesController.swift */,
+				1CE3A82924AF79F9005659F4 /* Views */,
+			);
+			path = NextCollectionDatesController;
+			sourceTree = "<group>";
+		};
+		1CE3A82924AF79F9005659F4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1CE3A82A24AF7A09005659F4 /* CalendarDateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1CE3A82E24AF8F61005659F4 /* Custom Animations */ = {
+			isa = PBXGroup;
+			children = (
+				1CE3A82F24AF8F6F005659F4 /* CardFlipTransition.swift */,
+			);
+			path = "Custom Animations";
+			sourceTree = "<group>";
+		};
 		1CF15B9E235CBB2500664DE7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -860,7 +896,7 @@
 			);
 			name = garbageCollection;
 			productName = garbageCollection;
-			productReference = 1C26CE4923594307008BB2D2 /* garbageCollection.app */;
+			productReference = 1C26CE4923594307008BB2D2 /* Coleta.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1C26CE5E2359430C008BB2D2 /* garbageCollectionTests */ = {
@@ -1065,6 +1101,7 @@
 				1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */,
 				1C7A43C123725E97005210B9 /* PFGeoPoint.swift in Sources */,
 				1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */,
+				1CE3A83024AF8F6F005659F4 /* CardFlipTransition.swift in Sources */,
 				1C8EA752238C9DEA00BADB1A /* UIView.swift in Sources */,
 				1C8EA74E238C95C700BADB1A /* DatePickerViewController.swift in Sources */,
 				1C835E20235EA88000CC21EB /* PFUser+Rx.swift in Sources */,
@@ -1098,6 +1135,7 @@
 				1C835E2E23611DE200CC21EB /* NeighbourhoodSelectionController.swift in Sources */,
 				1CBC594E23BBAF430034B0C9 /* CollectionPointDescription.swift in Sources */,
 				1C8996FC238AE2AC0004057A /* Location.swift in Sources */,
+				1CE3A82B24AF7A09005659F4 /* CalendarDateView.swift in Sources */,
 				1C7A43C72373C119005210B9 /* SelectableCell.swift in Sources */,
 				1C57CAF2235CE114004D0E0C /* String.swift in Sources */,
 				1C362BE023CB6F6800EB9851 /* CollectionPointDetailsViewModel.swift in Sources */,
@@ -1123,6 +1161,7 @@
 				1CF15BA5235CC35C00664DE7 /* City.swift in Sources */,
 				1C31CC06235B6AB300653E19 /* MapController.swift in Sources */,
 				1C4979D623A6C7CB00A381A8 /* GCPaddingTextField.swift in Sources */,
+				1CE3A82824AF79ED005659F4 /* NextCollectionDatesController.swift in Sources */,
 				1CB6CAB52380BC7D00E790CC /* UICollectionView.swift in Sources */,
 				1CBD646523A3251700D2FB02 /* BasicFooterView.swift in Sources */,
 				1C1E6F4523BA9D0100498049 /* MoreInfoController.swift in Sources */,
@@ -1141,6 +1180,7 @@
 				1C835E352361212900CC21EB /* NeighbourhoodsManager.swift in Sources */,
 				1CCBF42B239DD92D00F70E70 /* WebController.swift in Sources */,
 				1C835E11235EA2CB00CC21EB /* UITableViewCell.swift in Sources */,
+				1CE3A82D24AF7BB3005659F4 /* UIFont.swift in Sources */,
 				1C631EAE23CAA63C0083479C /* CollectionPointDetailsHeaderView.swift in Sources */,
 				1C17998B2389F3D90075F06C /* RubbishReportViewModel.swift in Sources */,
 				1C835E29235EA88000CC21EB /* PFQuery+Rx.swift in Sources */,
@@ -1314,7 +1354,7 @@
 				);
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelsouza.garbageCollection;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Coleta;
 				PROVISIONING_PROFILE_SPECIFIER = "garbageCollection-dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1339,7 +1379,7 @@
 				);
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelsouza.garbageCollection;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Coleta;
 				PROVISIONING_PROFILE_SPECIFIER = "garbageCollection-prod";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1471,7 +1511,7 @@
 				);
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelsouza.garbageCollection;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Coleta;
 				PROVISIONING_PROFILE_SPECIFIER = "garbageCollection-dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -30,6 +30,8 @@ class CalendarController: GCViewModelController<CalendarViewModelType> {
     
     private let kHeaderHeight: CGFloat = 40
     
+    private var selectedIndexPath: IndexPath!
+    
     // Subviews
 
     private lazy var tableView: UITableView = {
@@ -108,7 +110,13 @@ private extension CalendarController {
             .zip(tableView.rx.itemSelected, tableView.rx.modelSelected(WeekDayCollectionSchedule.self))
             .subscribe(onNext: { [weak self] (indexPath, collectionSchedule) in
                 self?.tableView.deselectRow(at: indexPath, animated: true)
-                self?.alert(for: collectionSchedule)
+//                self?.alert(for: collectionSchedule)
+                self?.selectedIndexPath = indexPath
+                
+                let alert = NextCollectionDatesController()
+                alert.transitioningDelegate = alert
+                alert.modalPresentationStyle = .custom
+                self?.present(alert, animated: true)
             }).disposed(by: disposeBag)
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -339,4 +347,22 @@ extension CalendarController: NeighbourhoodSelectorDelegate {
         viewModel.select(neighbourhood: neighbourhood)
     }
     
+}
+
+extension CalendarController: CardFlipSourceAnimatable {
+    
+    func originFrame() -> CGRect {
+        guard let indexPath = selectedIndexPath else { fatalError() }
+        guard let cell = tableView.cellForRow(at: indexPath) else { fatalError() }
+        
+        let convertedFrame = tableView.convert(cell.frame, to: self.view)
+        return convertedFrame
+    }
+    
+    func originView() -> UIView {
+        guard let indexPath = selectedIndexPath else { fatalError() }
+        guard let cell = tableView.cellForRow(at: indexPath) else { fatalError() }
+        return cell
+    }
+
 }
