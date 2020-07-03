@@ -113,7 +113,7 @@ private extension CalendarController {
                 self?.selectedIndexPath = indexPath
                 
                 let alert = NextCollectionDatesController()
-                alert.collectionDate = collectionSchedule
+                alert.collectionSchedule = collectionSchedule
                 alert.transitioningDelegate = alert
                 alert.modalPresentationStyle = .custom
                 self?.present(alert, animated: true)

@@ -12,7 +12,7 @@ class NextCollectionDatesController: UIViewController {
     
     // MARK: Attributes
     
-    var collectionDate: WeekDayCollectionSchedule!
+    var collectionSchedule: WeekDayCollectionSchedule!
     
     // MARK: Subviews
     
@@ -27,7 +27,7 @@ class NextCollectionDatesController: UIViewController {
     private lazy var headerLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .white
-        lbl.text = "Coletas de sexta feira"
+        lbl.text = "Coletas de \(collectionSchedule.nextCollectionDate().weekDay.fullname)"
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
         
@@ -61,9 +61,8 @@ class NextCollectionDatesController: UIViewController {
     
     private lazy var extraInfo: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .white
         lbl.textAlignment = .center
-        lbl.text = "Entre 20:00 e 22:00"
+        lbl.text = collectionSchedule.schedule.description
         
         if #available(iOS 13, *) {
             lbl.font = .roundedFont(ofSize: 14, weight: .semibold)
@@ -114,7 +113,7 @@ private extension NextCollectionDatesController {
 private extension NextCollectionDatesController {
     
     func getDates() -> [Date] {
-        (0..<3).map { collectionDate.nextCollectionDate().addingTimeInterval(60*60*24*7*Double($0)) }
+        (0..<3).map { collectionSchedule.nextCollectionDate().addingTimeInterval(60*60*24*7*Double($0)) }
     }
     
     func getCalendarViews() -> [UIView] {
@@ -163,13 +162,19 @@ private extension NextCollectionDatesController {
             make.edges.equalToSuperview()
         }
         
-        view.addSubview(datesStack)
+        containerView.addSubview(datesStack)
         datesStack.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(headerView.snp.bottom).offset(18)
         }
         
         getCalendarViews().forEach { datesStack.addArrangedSubview($0) }
+        
+        containerView.addSubview(extraInfo)
+        extraInfo.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(datesStack.snp.bottom).offset(10)
+        }
         
     }
     
