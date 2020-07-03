@@ -12,7 +12,7 @@ class NextCollectionDatesController: UIViewController {
     
     // MARK: Attributes
     
-    var nextDate: Date!
+    var collectionDate: WeekDayCollectionSchedule!
     
     // MARK: Subviews
     
@@ -29,6 +29,14 @@ class NextCollectionDatesController: UIViewController {
         lbl.textColor = .white
         lbl.text = "Coletas de sexta feira"
         lbl.textAlignment = .center
+        lbl.numberOfLines = 0
+        
+        if #available(iOS 13, *) {
+            lbl.font = .roundedFont(ofSize: 14, weight: .medium)
+        } else {
+            lbl.font = .systemFont(ofSize: 14, weight: .medium)
+        }
+        
         return lbl
     }()
     
@@ -46,6 +54,8 @@ class NextCollectionDatesController: UIViewController {
     
     private lazy var datesStack: UIStackView = {
         let stv = UIStackView()
+        stv.spacing = 14
+        stv.axis = .horizontal
         return stv
     }()
     
@@ -54,6 +64,13 @@ class NextCollectionDatesController: UIViewController {
         lbl.textColor = .white
         lbl.textAlignment = .center
         lbl.text = "Entre 20:00 e 22:00"
+        
+        if #available(iOS 13, *) {
+            lbl.font = .roundedFont(ofSize: 14, weight: .semibold)
+        } else {
+            lbl.font = .systemFont(ofSize: 14, weight: .semibold)
+        }
+        
         return lbl
     }()
     
@@ -62,6 +79,13 @@ class NextCollectionDatesController: UIViewController {
         btn.setTitle("Fechar", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.addTarget(self, action: #selector(onDismissTap), for: .touchUpInside)
+        
+        if #available(iOS 13, *) {
+            btn.titleLabel?.font = .roundedFont(ofSize: 14, weight: .medium)
+        } else {
+            btn.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+        }
+        
         return btn
     }()
     
@@ -85,6 +109,19 @@ private extension NextCollectionDatesController {
     
 }
 
+// MARK: Private methods
+
+private extension NextCollectionDatesController {
+    
+    func getDates() -> [Date] {
+        (0..<3).map { collectionDate.nextCollectionDate().addingTimeInterval(60*60*24*7*Double($0)) }
+    }
+    
+    func getCalendarViews() -> [UIView] {
+        getDates().map { CalendarDateView(date: $0) }
+    }
+    
+}
 
 // MARK: View configuration
 
@@ -125,6 +162,14 @@ private extension NextCollectionDatesController {
         dismissButton.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        view.addSubview(datesStack)
+        datesStack.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(headerView.snp.bottom).offset(18)
+        }
+        
+        getCalendarViews().forEach { datesStack.addArrangedSubview($0) }
         
     }
     

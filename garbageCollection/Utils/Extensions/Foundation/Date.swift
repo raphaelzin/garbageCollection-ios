@@ -15,6 +15,7 @@ extension Date {
         case hours = "HH:mm"
         case day = "d"
         case month = "MMMM"
+        case dayMonthMultiline = "dd\nMMM"
     }
     
     func formatted(as format: Format) -> String {

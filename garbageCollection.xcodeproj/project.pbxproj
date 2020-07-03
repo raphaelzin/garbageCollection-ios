@@ -108,6 +108,7 @@
 		1CE3A82B24AF7A09005659F4 /* CalendarDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3A82A24AF7A09005659F4 /* CalendarDateView.swift */; };
 		1CE3A82D24AF7BB3005659F4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3A82C24AF7BB3005659F4 /* UIFont.swift */; };
 		1CE3A83024AF8F6F005659F4 /* CardFlipTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3A82F24AF8F6F005659F4 /* CardFlipTransition.swift */; };
+		1CE3A83224AFB4AF005659F4 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3A83124AFB4AF005659F4 /* CALayer.swift */; };
 		1CF15BA1235CBBE200664DE7 /* ParseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */; };
 		1CF15BA3235CBE6B00664DE7 /* Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA2235CBE6B00664DE7 /* Installation.swift */; };
 		1CF15BA5235CC35C00664DE7 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF15BA4235CC35C00664DE7 /* City.swift */; };
@@ -247,6 +248,7 @@
 		1CE3A82A24AF7A09005659F4 /* CalendarDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateView.swift; sourceTree = "<group>"; };
 		1CE3A82C24AF7BB3005659F4 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		1CE3A82F24AF8F6F005659F4 /* CardFlipTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlipTransition.swift; sourceTree = "<group>"; };
+		1CE3A83124AFB4AF005659F4 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		1CF15BA0235CBBE200664DE7 /* ParseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseSetup.swift; sourceTree = "<group>"; };
 		1CF15BA2235CBE6B00664DE7 /* Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installation.swift; sourceTree = "<group>"; };
 		1CF15BA4235CC35C00664DE7 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -556,6 +558,7 @@
 			isa = PBXGroup;
 			children = (
 				1C8EA751238C9DEA00BADB1A /* UIView.swift */,
+				1CE3A83124AFB4AF005659F4 /* CALayer.swift */,
 				1CE3A82C24AF7BB3005659F4 /* UIFont.swift */,
 				1C31CBFE235B5DD700653E19 /* UIColor.swift */,
 				1C14E5C3235BB96D00E3CD94 /* UIImage.swift */,
@@ -1100,6 +1103,7 @@
 				1C696C452365EB7500632085 /* Date.swift in Sources */,
 				1C696C4823660CA300632085 /* UserNotification+Rx.swift in Sources */,
 				1C7A43C123725E97005210B9 /* PFGeoPoint.swift in Sources */,
+				1CE3A83224AFB4AF005659F4 /* CALayer.swift in Sources */,
 				1CE3432123666A2C001B1790 /* GCExpandableButton.swift in Sources */,
 				1CE3A83024AF8F6F005659F4 /* CardFlipTransition.swift in Sources */,
 				1C8EA752238C9DEA00BADB1A /* UIView.swift in Sources */,

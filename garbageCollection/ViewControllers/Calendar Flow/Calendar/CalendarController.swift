@@ -110,10 +110,10 @@ private extension CalendarController {
             .zip(tableView.rx.itemSelected, tableView.rx.modelSelected(WeekDayCollectionSchedule.self))
             .subscribe(onNext: { [weak self] (indexPath, collectionSchedule) in
                 self?.tableView.deselectRow(at: indexPath, animated: true)
-//                self?.alert(for: collectionSchedule)
                 self?.selectedIndexPath = indexPath
                 
                 let alert = NextCollectionDatesController()
+                alert.collectionDate = collectionSchedule
                 alert.transitioningDelegate = alert
                 alert.modalPresentationStyle = .custom
                 self?.present(alert, animated: true)
