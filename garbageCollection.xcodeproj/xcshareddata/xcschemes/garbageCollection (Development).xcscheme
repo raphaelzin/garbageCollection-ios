@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1C26CE4823594307008BB2D2"
-               BuildableName = "garbageCollection.app"
+               BuildableName = "Coleta.app"
                BlueprintName = "garbageCollection"
                ReferencedContainer = "container:garbageCollection.xcodeproj">
             </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1C26CE4823594307008BB2D2"
-            BuildableName = "garbageCollection.app"
+            BuildableName = "Coleta.app"
             BlueprintName = "garbageCollection"
             ReferencedContainer = "container:garbageCollection.xcodeproj">
          </BuildableReference>
@@ -99,7 +99,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1C26CE4823594307008BB2D2"
-            BuildableName = "garbageCollection.app"
+            BuildableName = "Coleta.app"
             BlueprintName = "garbageCollection"
             ReferencedContainer = "container:garbageCollection.xcodeproj">
          </BuildableReference>

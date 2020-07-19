@@ -112,12 +112,12 @@ private extension NextCollectionDatesController {
 
 private extension NextCollectionDatesController {
     
-    func getDates() -> [Date] {
+    func getNextCollectionDates() -> [Date] {
         (0..<3).map { collectionSchedule.nextCollectionDate().addingTimeInterval(60*60*24*7*Double($0)) }
     }
     
     func getCalendarViews() -> [UIView] {
-        getDates().map { CalendarDateView(date: $0) }
+        getNextCollectionDates().map { CalendarDateView(date: $0) }
     }
     
 }

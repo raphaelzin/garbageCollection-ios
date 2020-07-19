@@ -26,6 +26,8 @@ class CardFlipTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     let duration: TimeInterval = 0.4
     
+    private static var sourceViewSnapShot: UIView?
+    
     init(isForward: Bool) {
         self.isForward = isForward
     }
@@ -44,6 +46,8 @@ class CardFlipTransition: NSObject, UIViewControllerAnimatedTransitioning {
         guard let toVC = context.viewController(forKey: .to) as? CardFlipDestinationAnimatable else { fatalError() }
         
         let originView = fromVC.originView().snapshotView(afterScreenUpdates: true)!
+        
+        CardFlipTransition.sourceViewSnapShot = originView
         
         toVC.view.clipsToBounds = true
         toVC.view.frame = fromVC.originFrame()
@@ -95,9 +99,7 @@ class CardFlipTransition: NSObject, UIViewControllerAnimatedTransitioning {
         guard let toVC = topMost as? CardFlipSourceAnimatable else { fatalError() }
         guard let fromVC = context.viewController(forKey: .from) as? CardFlipDestinationAnimatable else { fatalError() }
         
-        toVC.originView().isHidden = false
-        let destinationView = toVC.originView().snapshotView(afterScreenUpdates: true)!
-        toVC.originView().isHidden = true
+        let destinationView = CardFlipTransition.sourceViewSnapShot!
         
         let originView = fromVC.destinationView()
 
@@ -132,6 +134,7 @@ class CardFlipTransition: NSObject, UIViewControllerAnimatedTransitioning {
         frameAnimation.addCompletion { _ in
             fromVC.view.removeFromSuperview()
             toVC.originView().isHidden = false
+            CardFlipTransition.sourceViewSnapShot = nil
             context.completeTransition(!context.transitionWasCancelled)
         }
         
