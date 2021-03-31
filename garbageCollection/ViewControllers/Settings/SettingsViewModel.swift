@@ -12,7 +12,6 @@ import RxCocoa
 
 protocol SettingsViewModelType: class {
     var selectedNeighbourhood: BehaviorRelay<Neighbourhood?> { get }
-    var reminderNotifications: BehaviorRelay<Bool> { get }
     var hintsNotifications: BehaviorRelay<Bool> { get }
 }
 
@@ -24,12 +23,7 @@ class SettingsViewModel: SettingsViewModelType {
         InstallationManager.shared.selectedNeighbourhood
     }
     
-    var reminderNotifications: BehaviorRelay<Bool> {
-        InstallationManager.shared.notificationsEnabled
-    }
-    
     var hintsNotifications: BehaviorRelay<Bool> {
         InstallationManager.shared.hintsEnabled
     }
-    
 }

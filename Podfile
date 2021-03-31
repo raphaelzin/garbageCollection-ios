@@ -10,7 +10,6 @@ target 'garbageCollection' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'RxDataSources', '~> 4.0'
-  pod 'RxBiBinding'
   pod 'Parse'
   
   pod 'Firebase/Crashlytics'
