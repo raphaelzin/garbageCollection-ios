@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import StoreKit
-import RxBiBinding
 import Parse
 
 protocol SettingsControllerCoordinatorDelegate: class {
@@ -96,7 +95,7 @@ private extension SettingsController {
 extension SettingsController {
     
     enum SettingsField: UITableViewCellConfigurator {
-        case neighbourhood, hints, reminders, sendSuggestions, shareApp, review, sourceCode
+        case neighbourhood, hints, sendSuggestions, shareApp, review, sourceCode
         
         var accessory: UITableViewCell.AccessoryType {
             switch self {
@@ -110,7 +109,6 @@ extension SettingsController {
             switch self {
             case .neighbourhood: return "Seu bairro"
             case .hints: return "Dicas"
-            case .reminders: return "Lembretes de coletas"
             case .sendSuggestions: return "Enviar sugestões ou críticas"
             case .shareApp: return "Compartilhar o aplicativo"
             case .review: return "Avaliar o app"
@@ -149,7 +147,7 @@ extension SettingsController {
             if section == 0 {
                 return [.neighbourhood]
             } else if section == 1 {
-                return [.hints, .reminders]
+                return [.hints]
             } else {
                 if let isOpenSource: Bool = PFConfig.current().getConfigValue(with: .isOpenSource), isOpenSource {
                     return [.sendSuggestions, .shareApp, .review, .sourceCode]
@@ -190,12 +188,7 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeue(cellClass: BasicTableViewCell.self, indexPath: indexPath)
         cell.configure(with: field)
         
-        if field == .reminders {
-            let switchControl = UISwitch()
-            switchControl.isOn = InstallationManager.shared.notificationsEnabled.value
-            (switchControl.rx.isOn <-> InstallationManager.shared.notificationsEnabled).disposed(by: disposeBag)
-            cell.accessoryView = switchControl
-        } else if field == .hints {
+        if field == .hints {
             let switchControl = UISwitch()
             switchControl.isOn = viewModel.hintsNotifications.value
             switchControl.rx.isOn.bind(to: viewModel.hintsNotifications).disposed(by: disposeBag)

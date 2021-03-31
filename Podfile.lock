@@ -83,9 +83,6 @@ PODS:
   - Parse/Core (1.19.2):
     - Bolts/Tasks (= 1.9.1)
   - PromisesObjC (1.2.12)
-  - RxBiBinding (0.2.5):
-    - RxCocoa (~> 5.0)
-    - RxSwift (~> 5.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -104,7 +101,6 @@ DEPENDENCIES:
   - Firebase/Crashlytics
   - NotificationBannerSwift (~> 3.0.0)
   - Parse
-  - RxBiBinding
   - RxCocoa (~> 5)
   - RxDataSources (~> 4.0)
   - RxSwift (~> 5)
@@ -129,7 +125,6 @@ SPEC REPOS:
     - NotificationBannerSwift
     - Parse
     - PromisesObjC
-    - RxBiBinding
     - RxCocoa
     - RxDataSources
     - RxRelay
@@ -154,7 +149,6 @@ SPEC CHECKSUMS:
   NotificationBannerSwift: 7021be2338f8f29cf424b0aca43da462bf9e2a1a
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
-  RxBiBinding: 6cc627d9e0dfa0b2ce8470cd7e539f3cb100f782
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
@@ -162,6 +156,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 2458716ed7e212ca153196ed3077c6c9f3a2a2d4
+PODFILE CHECKSUM: a57f49e7041bac6bce690807e0927b2320dc311d
 
 COCOAPODS: 1.10.1
