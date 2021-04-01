@@ -24,7 +24,7 @@ class MapViewModel: MapViewModelType {
     
     // MARK: Private attributes
     
-    private let collectionPointsManager = CollectionPointsManager()
+    private let collectionPointsManager: CollectionPointsManagerProtocol
     
     private let highlighedCollectionPointRelay = BehaviorRelay<CollectionPoint?>(value: nil)
     
@@ -55,7 +55,9 @@ class MapViewModel: MapViewModelType {
     
     // MARK: Lifecycle
     
-    init() {
+    init(collectionPointsManager: CollectionPointsManagerProtocol) {
+        self.collectionPointsManager = collectionPointsManager
+        
         fetchCollectionPoints()
     }
     
@@ -89,7 +91,7 @@ private extension MapViewModel {
     
     func fetchCollectionPoints() {
         collectionPointsManager
-            .collectionPoints()
+            .fetchCollectionPoints()
             .asDriver(onErrorJustReturn: [])
             .drive(collectionPointsRelay)
             .disposed(by: disposeBag)

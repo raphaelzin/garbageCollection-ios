@@ -29,7 +29,7 @@ class FeedbackViewModel: FeedbackViewModelType {
     
     let contentRelay: BehaviorRelay<String?>
     
-    private lazy var feedbackManager = FeedbackManager()
+    private let feedbackManager: FeedbackManagerProtocol
     
     var validInput: Observable<Bool> {
         contentRelay
@@ -39,7 +39,9 @@ class FeedbackViewModel: FeedbackViewModelType {
     
     // MARK: Lifecycle
     
-    init() {
+    init(feedbackManager: FeedbackManagerProtocol) {
+        self.feedbackManager = feedbackManager
+        
         nameRelay = BehaviorRelay<String?>(value: nil)
         emailRelay = BehaviorRelay<String?>(value: nil)
         contentRelay = BehaviorRelay<String?>(value: nil)

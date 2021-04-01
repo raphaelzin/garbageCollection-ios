@@ -12,7 +12,7 @@ import RxSwift
 
 @testable import garbageCollection
 
-class MockGeocoderManager: GeocoderManagerType {
+class MockGeocoderManager: GeocoderManagerProtocol {
     
     private let stdLocation = Location(address: "My Address",
                                        zipcode: "ZIPCODE",

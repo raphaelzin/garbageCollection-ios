@@ -10,7 +10,11 @@ import Foundation
 import Parse
 import RxSwift
 
-class NeighbourhoodsManager {
+protocol NeighbourhoodsManagerProtocol: class {
+    func fetchNeighbourhoods() -> Single<[Neighbourhood]>
+}
+
+class NeighbourhoodsManager: NeighbourhoodsManagerProtocol {
     
     func fetchNeighbourhoods() -> Single<[Neighbourhood]> {
         guard let query = Neighbourhood.query() else { return .error(GCError.Misc.invalidquery) }

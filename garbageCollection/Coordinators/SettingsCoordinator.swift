@@ -40,7 +40,7 @@ extension SettingsCoordinator: SettingsControllerCoordinatorDelegate {
     }
     
     func didRequestSuggestionForm(from controller: SettingsController) {
-        let viewModel = FeedbackViewModel()
+        let viewModel = FeedbackViewModel(feedbackManager: FeedbackManager())
         let feedbackController = FeedbackController(viewModel: viewModel)
         feedbackController.coordinatorDelegate = self
         feedbackController.hidesBottomBarWhenPushed = true
@@ -48,7 +48,7 @@ extension SettingsCoordinator: SettingsControllerCoordinatorDelegate {
     }
     
     func didRequestNeighbourhoodSelection(from controller: SettingsController) {
-        let viewModel = NeighbourhoodSelectionViewModel()
+        let viewModel = NeighbourhoodSelectionViewModel(neighbourhoodsManager: NeighbourhoodsManager())
         let selectionController = NeighbourhoodSelectionController(viewModel: viewModel)
         selectionController.coordinatorDelegate = self
         selectionController.delegate = controller

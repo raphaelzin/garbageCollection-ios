@@ -27,7 +27,7 @@ class CalendarViewModel: CalendarViewModelType {
     
     // MARK: Attributes
     
-    private let collectionPointsManager: CollectionScheduleManagerProtocol
+    private let collectionScheduleManager: CollectionScheduleManagerProtocol
     
     private let notificationsManager: NotificationsManagerProtocol
     
@@ -63,9 +63,9 @@ class CalendarViewModel: CalendarViewModelType {
     
     // MARK: Life cycle
     
-    init(collectionPointsManager: CollectionScheduleManagerProtocol,
+    init(collectionScheduleManager: CollectionScheduleManagerProtocol,
          notificationsManager: NotificationsManagerProtocol) {
-        self.collectionPointsManager = collectionPointsManager
+        self.collectionScheduleManager = collectionScheduleManager
         self.notificationsManager = notificationsManager
         
         bindCollectionScheduleToNeighbourhood()
@@ -121,7 +121,7 @@ private extension CalendarViewModel {
                 self?.stateRelay.accept(.loading)
             })
             .flatMap { [unowned self] (neighbourhood) -> Single<CollectionSchedule> in
-                self.collectionPointsManager.collectionSchedule(for: neighbourhood)
+                self.collectionScheduleManager.collectionSchedule(for: neighbourhood)
             }
             .do(onNext: { [weak stateRelay] _ in stateRelay?.accept(.idle) })
             .bind(to: fullCollectionSchedule)

@@ -10,7 +10,11 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class FeedbackManager {
+protocol FeedbackManagerProtocol: class {
+    func sendFeedback(name: String?, email: String?, content: String) -> Completable
+}
+
+class FeedbackManager: FeedbackManagerProtocol {
     
     func sendFeedback(name: String?, email: String?, content: String) -> Completable {
         

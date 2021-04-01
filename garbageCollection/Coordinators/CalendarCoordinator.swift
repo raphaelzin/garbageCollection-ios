@@ -22,7 +22,7 @@ class CalendarCoordinator: RootViewCoordinator {
     }()
     
     func start() {
-        let viewModel = CalendarViewModel(collectionPointsManager: CollectionScheduleManager(),
+        let viewModel = CalendarViewModel(collectionScheduleManager: CollectionScheduleManager(),
                                           notificationsManager: NotificationsManager())
         
         let calendarController = CalendarController(viewModel: viewModel)
@@ -35,7 +35,7 @@ class CalendarCoordinator: RootViewCoordinator {
 extension CalendarCoordinator: CalendarControllerCoordinatorDelegate {
     
     func didRequestNeighbourhoodSelection(from controller: CalendarController) {
-        let viewModel = NeighbourhoodSelectionViewModel()
+        let viewModel = NeighbourhoodSelectionViewModel(neighbourhoodsManager: NeighbourhoodsManager())
         let selectionController = NeighbourhoodSelectionController(viewModel: viewModel)
         selectionController.coordinatorDelegate = self
         selectionController.delegate = controller

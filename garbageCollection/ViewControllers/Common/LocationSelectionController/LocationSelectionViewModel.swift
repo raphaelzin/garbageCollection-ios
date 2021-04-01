@@ -21,11 +21,11 @@ class LocationSelectionViewModel: LocationSelectionViewModelType {
     
     private let disposeBag = DisposeBag()
     
-    private let geocoderManager: GeocoderManagerType
+    private let geocoderManager: GeocoderManagerProtocol
     
     lazy var selectedLocation: BehaviorRelay<Location?> = .init(value: nil)
         
-    init(geocoderManager: GeocoderManagerType) {
+    init(geocoderManager: GeocoderManagerProtocol) {
         self.geocoderManager = geocoderManager
     }
     

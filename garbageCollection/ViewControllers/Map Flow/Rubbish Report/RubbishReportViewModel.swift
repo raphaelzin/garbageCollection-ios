@@ -26,7 +26,7 @@ class RubbishReportViewModel: RubbishReportViewModelType {
     
     // MARK: Attributes
     
-    private lazy var reportManager = RubbishReportManager()
+    private let reportManager: RubbishReportManagerProtocol
     
     // MARK: Relays
     
@@ -40,6 +40,12 @@ class RubbishReportViewModel: RubbishReportViewModelType {
     
     var isValidInput: Bool {
         ([locationRelay.value, whenRelay.value] as [Any?]).allSatisfy { $0 != nil }
+    }
+    
+    // MARK: Life cycle
+    
+    init(reportManager: RubbishReportManagerProtocol) {
+        self.reportManager = reportManager
     }
     
 }

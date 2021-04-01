@@ -10,9 +10,13 @@ import Foundation
 import Parse
 import RxSwift
 
-class CollectionPointsManager {
+protocol CollectionPointsManagerProtocol: class {
+    func fetchCollectionPoints() -> Single<[CollectionPoint]>
+}
+
+class CollectionPointsManager: CollectionPointsManagerProtocol {
     
-    func collectionPoints() -> Single<[CollectionPoint]> {
+    func fetchCollectionPoints() -> Single<[CollectionPoint]> {
         guard let query = CollectionPoint.query() else { return .error(GCError.Misc.invalidquery) }
         
         return query.rx.findObjects().map { (result) -> [CollectionPoint] in

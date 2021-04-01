@@ -10,12 +10,12 @@ import Foundation
 import RxSwift
 import CoreLocation
 
-protocol GeocoderManagerType: class {
+protocol GeocoderManagerProtocol: class {
     func location(for address: String) -> Single<Location?>
     func location(for latitude: Double, and longitude: Double) -> Single<Location?>
 }
 
-class GeocoderManager: GeocoderManagerType {
+class GeocoderManager: GeocoderManagerProtocol {
     
     private let geocoder = CLGeocoder()
     
@@ -38,7 +38,8 @@ class GeocoderManager: GeocoderManagerType {
         }
     }
     
-    func handleGeocodeResult(single: ((SingleEvent<Location?>) -> Void), places: [CLPlacemark]?, error: Error?) {
+    private func handleGeocodeResult(single: ((SingleEvent<Location?>) -> Void),
+                                     places: [CLPlacemark]?, error: Error?) {
         if let error = error {
             print(error.localizedDescription)
             // Filter geocode obliviousness error

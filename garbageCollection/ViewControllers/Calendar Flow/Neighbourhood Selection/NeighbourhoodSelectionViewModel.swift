@@ -26,7 +26,7 @@ class NeighbourhoodSelectionViewModel: NeighbourhoodSelectionViewModelType {
     
     private let disposeBag = DisposeBag()
     
-    private let neighbourhoodsManager = NeighbourhoodsManager()
+    private let neighbourhoodsManager: NeighbourhoodsManagerProtocol
     
     // Relays
     
@@ -46,7 +46,9 @@ class NeighbourhoodSelectionViewModel: NeighbourhoodSelectionViewModelType {
     
     // Lifecycle
     
-    init() {
+    init(neighbourhoodsManager: NeighbourhoodsManagerProtocol) {
+        self.neighbourhoodsManager = neighbourhoodsManager
+        
         fetchNeighbourhoods()
     }
     

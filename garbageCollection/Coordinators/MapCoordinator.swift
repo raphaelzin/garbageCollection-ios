@@ -23,7 +23,7 @@ class MapCoordinator: RootViewCoordinator {
     }()
     
     func start() {
-        let viewModel = MapViewModel()
+        let viewModel = MapViewModel(collectionPointsManager: CollectionPointsManager())
         let controller = MapController(viewModel: viewModel)
         controller.coordinatorDelegate = self
         navigationController.pushViewController(controller, animated: true)
@@ -60,7 +60,7 @@ extension MapCoordinator: MapControllerCoordinatorDelegate {
     }
     
     func didRequestRubbishReport(from controller: MapController) {
-        let viewModel = RubbishReportViewModel()
+        let viewModel = RubbishReportViewModel(reportManager: RubbishReportManager())
         let rubbishReportController = RubbishReportController(viewModel: viewModel)
         rubbishReportController.coordinatorDelegate = self
         
