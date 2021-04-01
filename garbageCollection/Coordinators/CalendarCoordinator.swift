@@ -22,7 +22,9 @@ class CalendarCoordinator: RootViewCoordinator {
     }()
     
     func start() {
-        let viewModel = CalendarViewModel()
+        let viewModel = CalendarViewModel(collectionPointsManager: CollectionScheduleManager(),
+                                          notificationsManager: NotificationsManager())
+        
         let calendarController = CalendarController(viewModel: viewModel)
         calendarController.coordinatorDelegate = self
         

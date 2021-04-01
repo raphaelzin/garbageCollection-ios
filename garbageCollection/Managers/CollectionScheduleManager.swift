@@ -10,7 +10,11 @@ import Foundation
 import Parse
 import RxSwift
 
-class CollectionScheduleManager {
+protocol CollectionScheduleManagerProtocol: class {
+    func collectionSchedule(for neighbourhood: Neighbourhood) -> Single<CollectionSchedule>
+}
+
+class CollectionScheduleManager: CollectionScheduleManagerProtocol {
     
     func collectionSchedule(for neighbourhood: Neighbourhood) -> Single<CollectionSchedule> {
         guard let query = CollectionSchedule.query() else { return .error(GCError.Misc.invalidquery) }

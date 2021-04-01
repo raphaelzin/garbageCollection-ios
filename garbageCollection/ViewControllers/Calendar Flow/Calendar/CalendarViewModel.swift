@@ -25,9 +25,11 @@ protocol CalendarViewModelType: class {
 
 class CalendarViewModel: CalendarViewModelType {
     
-    private lazy var collectionPointsManager = CollectionScheduleManager()
+    // MARK: Attributes
     
-    private lazy var notificationsManager = NotificationsManager()
+    private let collectionPointsManager: CollectionScheduleManagerProtocol
+    
+    private let notificationsManager: NotificationsManager
     
     private let disposeBag = DisposeBag()
     
@@ -37,7 +39,7 @@ class CalendarViewModel: CalendarViewModelType {
             (InstallationManager.shared.selectedNeighbourhood.value == selectedNeighbourhoodRelay.value)
     }
     
-    // Relays
+    // MARK: Relays
     
     private let selectedNeighbourhoodRelay = BehaviorRelay<Neighbourhood?>(value: Installation.current()?.neighbourhood)
     
@@ -45,7 +47,7 @@ class CalendarViewModel: CalendarViewModelType {
     
     private let stateRelay = BehaviorRelay<State>(value: .idle)
     
-    // Observables
+    // MARK: Observables
     
     var selectedNeighbourhoodObservable: Observable<Neighbourhood?> {
         selectedNeighbourhoodRelay.asObservable()
@@ -59,11 +61,16 @@ class CalendarViewModel: CalendarViewModelType {
         stateRelay.asObservable()
     }
     
-    init() {
+    // MARK: Life cycle
+    
+    init(collectionPointsManager: CollectionScheduleManagerProtocol,
+         notificationsManager: NotificationsManager) {
+        self.collectionPointsManager = collectionPointsManager
+        self.notificationsManager = notificationsManager
+        
         bindCollectionScheduleToNeighbourhood()
         sharedManagerBinding()
     }
-
 }
 
 extension CalendarViewModel {

@@ -20,14 +20,14 @@ enum LinkType {
     var title: String {
         switch self {
         case .sourceCode: return "Código Fonte"
-        case .custom(let data): return data.title
+        case .custom(let title, _): return title
         }
     }
     
     var url: URL? {
         switch self {
         case .sourceCode: return URL(string: "https://github.com/raphaelzin/garbageCollection-ios")
-        case .custom(let data): return URL(string: data.url)
+        case .custom(_, let url): return URL(string: url)
         }
     }
 }
