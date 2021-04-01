@@ -29,7 +29,7 @@ class CalendarViewModel: CalendarViewModelType {
     
     private let collectionPointsManager: CollectionScheduleManagerProtocol
     
-    private let notificationsManager: NotificationsManager
+    private let notificationsManager: NotificationsManagerProtocol
     
     private let disposeBag = DisposeBag()
     
@@ -64,7 +64,7 @@ class CalendarViewModel: CalendarViewModelType {
     // MARK: Life cycle
     
     init(collectionPointsManager: CollectionScheduleManagerProtocol,
-         notificationsManager: NotificationsManager) {
+         notificationsManager: NotificationsManagerProtocol) {
         self.collectionPointsManager = collectionPointsManager
         self.notificationsManager = notificationsManager
         

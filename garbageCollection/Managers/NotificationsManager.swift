@@ -9,7 +9,12 @@
 import Foundation
 import UserNotifications
 
-class NotificationsManager {
+protocol NotificationsManagerProtocol: class {
+    func setupNotifications(for collectionSchedule: CollectionSchedule)
+    func clearPendingNotifications()
+}
+
+class NotificationsManager: NotificationsManagerProtocol {
     
     func setupNotifications(for collectionSchedule: CollectionSchedule) {
         let weekdayCollections = collectionSchedule.weeklyCollection
